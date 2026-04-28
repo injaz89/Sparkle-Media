@@ -6,6 +6,15 @@ import { motion, AnimatePresence } from "framer-motion";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [expandedMenus, setExpandedMenus] = useState<string[]>([]);
+
+  const toggleMenu = (menuName: string) => {
+    setExpandedMenus(prev => 
+      prev.includes(menuName) 
+        ? prev.filter(m => m !== menuName)
+        : [...prev, menuName]
+    );
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,29 +91,112 @@ export function Navbar() {
                 </svg>
               </button>
 
-              <div className="flex flex-col space-y-6 mt-12 w-full text-right">
+              <div className="flex flex-col space-y-4 mt-8 w-full text-right">
                 {[
                   { name: "HOME", href: "/" },
-                  { name: "SOCIAL", href: "/services/social-media" },
-                  { name: "DIGITAL", href: "/services/content-marketing" },
-                  { name: "PRODUCTION", href: "/services/creative-lab" },
-                  { name: "CREATIVE", href: "/services/creative-lab" },
-                  { name: "BRANDING", href: "/services/creative-lab" },
-                  { name: "INDUSTRIES", href: "#" },
-                  { name: "SERVICES", href: "/services/tech-lab" },
+                  { 
+                    name: "OUR SERVICES", 
+                    href: "#",
+                    subItems: [
+                      {
+                        name: "DIGITAL LAB",
+                        href: "#",
+                        subItems: [
+                          { name: "Content Marketing", href: "/services/digital-lab/content-marketing" },
+                          { name: "Social Media Marketing", href: "/services/digital-lab/social-media" },
+                          { name: "Paid Media Management", href: "/services/digital-lab/paid-media" },
+                          { name: "Search Engine Optimisation", href: "/services/digital-lab/seo" },
+                          { name: "Search Engine Marketing", href: "/services/digital-lab/sem" },
+                          { name: "E-Mail Marketing", href: "/services/digital-lab/email-marketing" },
+                        ]
+                      },
+                      { name: "CREATIVE LAB", href: "/services/creative-lab" },
+                      { name: "TECH LAB", href: "/services/tech-lab" },
+                    ]
+                  },
                   { name: "ABOUT US", href: "/about" },
                 ].map((item, i) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-4xl md:text-[2.75rem] font-light text-gray-400 hover:text-cyan-500 transition-colors tracking-wide uppercase"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 + i * 0.05 }}
-                  >
-                    {item.name}
-                  </motion.a>
+                  <div key={item.name} className="flex flex-col items-end">
+                    {item.subItems ? (
+                      <button
+                        onClick={() => toggleMenu(item.name)}
+                        className="text-3xl md:text-[2.25rem] font-light text-gray-400 hover:text-cyan-500 transition-colors tracking-wide uppercase flex items-center justify-end space-x-2"
+                      >
+                        <span className={`transition-transform duration-300 ${expandedMenus.includes(item.name) ? "rotate-90" : ""}`}>
+                          ›
+                        </span>
+                        <span>{item.name}</span>
+                      </button>
+                    ) : (
+                      <motion.a
+                        href={item.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-3xl md:text-[2.25rem] font-light text-gray-400 hover:text-cyan-500 transition-colors tracking-wide uppercase"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 + i * 0.05 }}
+                      >
+                        {item.name}
+                      </motion.a>
+                    )}
+                    
+                    <AnimatePresence>
+                      {item.subItems && expandedMenus.includes(item.name) && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="flex flex-col space-y-3 mt-4 mb-2 overflow-hidden items-end pr-4 border-r-2 border-cyan-100"
+                        >
+                          {item.subItems.map((subItem) => (
+                            <div key={subItem.name} className="flex flex-col items-end w-full">
+                              {subItem.subItems ? (
+                                <button
+                                  onClick={() => toggleMenu(subItem.name)}
+                                  className="text-xl md:text-2xl font-light text-gray-500 hover:text-cyan-500 transition-colors tracking-wide uppercase flex items-center justify-end space-x-2"
+                                >
+                                  <span className={`transition-transform duration-300 ${expandedMenus.includes(subItem.name) ? "rotate-90" : ""}`}>
+                                    ›
+                                  </span>
+                                  <span>{subItem.name}</span>
+                                </button>
+                              ) : (
+                                <a
+                                  href={subItem.href}
+                                  onClick={() => setIsMenuOpen(false)}
+                                  className="text-xl md:text-2xl font-light text-gray-500 hover:text-cyan-500 transition-colors uppercase tracking-wide"
+                                >
+                                  {subItem.name}
+                                </a>
+                              )}
+                              
+                              <AnimatePresence>
+                                {subItem.subItems && expandedMenus.includes(subItem.name) && (
+                                  <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    className="flex flex-col space-y-2 mt-3 mb-1 overflow-hidden items-end pr-4 border-r-2 border-cyan-50"
+                                  >
+                                    {subItem.subItems.map((nestedItem) => (
+                                      <a
+                                        key={nestedItem.name}
+                                        href={nestedItem.href}
+                                        onClick={() => setIsMenuOpen(false)}
+                                        className="text-lg md:text-xl font-light text-gray-400 hover:text-cyan-500 transition-colors capitalize"
+                                      >
+                                        {nestedItem.name}
+                                      </a>
+                                    ))}
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 ))}
               </div>
             </motion.div>

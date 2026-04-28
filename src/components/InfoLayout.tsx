@@ -6,6 +6,8 @@ type Feature = {
   title: string;
   desc: string;
   icon: any;
+  link?: string;
+  linkText?: string;
 };
 
 type InfoLayoutProps = {
@@ -76,9 +78,20 @@ export function InfoLayout({ category, title, subtitle, description, features }:
                   <Icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl font-bold text-navy mb-4">{feature.title}</h3>
-                <p className="text-gray-500 font-light leading-relaxed">
+                <p className="text-gray-500 font-light leading-relaxed mb-6">
                   {feature.desc}
                 </p>
+                {feature.link && feature.linkText && (
+                  <a
+                    href={feature.link}
+                    className="inline-flex items-center text-cyan-600 font-semibold hover:text-navy transition-colors"
+                  >
+                    {feature.linkText}
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                )}
               </motion.div>
             );
           })}
