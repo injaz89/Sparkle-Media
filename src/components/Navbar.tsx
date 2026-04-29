@@ -110,11 +110,29 @@ export function Navbar() {
                           { name: "E-Mail Marketing", href: "/services/digital-lab/email-marketing" },
                         ]
                       },
-                      { name: "CREATIVE LAB", href: "/services/creative-lab" },
-                      { name: "TECH LAB", href: "/services/tech-lab" },
+                      {
+                        name: "CREATIVE LAB",
+                        href: "#",
+                        subItems: [
+                          { name: "Photography", href: "/services/creative-lab/photography" },
+                          { name: "Video Production", href: "/services/creative-lab/video-production" },
+                          { name: "Graphic Designing", href: "/services/creative-lab/graphic-designing" },
+                          { name: "Branding", href: "/services/creative-lab/branding" },
+                        ]
+                      },
+                      {
+                        name: "TECH LAB",
+                        href: "#",
+                        subItems: [
+                          { name: "Website Design & Dev", href: "/services/tech-lab/web-development" },
+                          { name: "Website Optimisation", href: "/services/tech-lab/optimisation" },
+                          { name: "Software Development", href: "/services/tech-lab/software-development" },
+                        ]
+                      },
                     ]
                   },
                   { name: "ABOUT US", href: "/about" },
+                  { name: "LIFE AT SPARKLE", href: "/life" },
                 ].map((item, i) => (
                   <div key={item.name} className="flex flex-col items-end">
                     {item.subItems ? (
