@@ -116,55 +116,114 @@ const benefits = [
   },
 ];
 
+const painPoints = [
+  "Do you see your social media as just an administrative task?",
+  "Do you often scramble to put a post together at the last minute?",
+  "No matter what you post, you can't seem to achieve the results you want?",
+];
+
 export default function SocialMediaPage() {
   return (
     <>
       <Navbar />
       <main className="pt-32 pb-24 bg-white min-h-screen">
-        {/* Header Section */}
-        <div className="max-w-7xl mx-auto px-6 mb-24 text-center">
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-cyan-500 font-bold tracking-widest uppercase mb-4"
-          >
-            Digital Lab
-          </motion.p>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold text-navy mb-8"
-          >
-            Social Media Marketing
-          </motion.h1>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h3 className="text-2xl text-navy font-medium leading-relaxed mb-6">
-              We help you choose the right platforms and target the right audience on Social Media!
-            </h3>
-            <div className="text-xl text-gray-500 font-light leading-relaxed space-y-4">
-              <p>Unleash your brand with Social Media Marketing.</p>
-              <p>
-                Social media is an ever-changing landscape with altering algorithms and topical trends; to keep your competitive edge, you must prioritize your social media management strategy.
-              </p>
-              <p>
-                Do you see your social media as just an administrative task? Do you often scramble to put a post together at the last minute after realizing you haven&apos;t posted in a few weeks? Perhaps no matter what you post, you can&apos;t seem to achieve the results you want to see?
-              </p>
-              <p className="font-medium text-cyan-600">
-                If you are looking for a more strategic approach and one that delivers results, we can help. Check out our Social Media Packages:
-              </p>
+
+        {/* Hero Header */}
+        <div className="max-w-7xl mx-auto px-6 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-cyan-500 font-bold tracking-widest uppercase mb-4 text-sm"
+              >
+                Digital Lab
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-6 leading-[1.05]"
+              >
+                Social Media{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                  Marketing
+                </span>
+              </motion.h1>
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-xl text-navy font-semibold leading-relaxed mb-6"
+              >
+                We help you choose the right platforms and target the right audience on Social Media!
+              </motion.h3>
+              <motion.a
+                href="https://calendly.com/sparklemediacreatives/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.35 }}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-navy text-white font-semibold hover:bg-cyan-600 transition-colors"
+              >
+                Book a Strategy Call
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </motion.a>
             </div>
-          </motion.div>
+
+            {/* Right: Intro copy */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.25 }}
+              className="space-y-6"
+            >
+              <div className="border-l-4 border-cyan-400 pl-6">
+                <p className="text-lg text-gray-600 font-light leading-relaxed">
+                  Unleash your brand with Social Media Marketing.
+                </p>
+                <p className="text-lg text-gray-600 font-light leading-relaxed mt-3">
+                  Social media is an ever-changing landscape with altering algorithms and topical
+                  trends; to keep your competitive edge, you must prioritize your social media
+                  management strategy.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 border border-gray-100 p-6 space-y-3">
+                <p className="text-sm font-bold text-navy uppercase tracking-widest mb-4">Sound familiar?</p>
+                {painPoints.map((pt, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mt-0.5">
+                      <span className="w-2 h-2 rounded-full bg-gray-400" />
+                    </span>
+                    <p className="text-gray-500 font-light text-sm">{pt}</p>
+                  </div>
+                ))}
+                <p className="text-cyan-600 font-semibold text-sm pt-2 border-t border-gray-200 mt-4">
+                  If you are looking for a more strategic approach that delivers results — we can help.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Packages heading */}
+        <div className="max-w-7xl mx-auto px-6 mb-10">
+          <div className="flex items-center gap-6">
+            <div className="flex-1 h-px bg-gray-100" />
+            <h2 className="text-sm font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap">
+              Our Social Media Packages
+            </h2>
+            <div className="flex-1 h-px bg-gray-100" />
+          </div>
         </div>
 
         {/* Vertical Packages List */}
         <div className="max-w-7xl mx-auto px-6 space-y-16 mb-24">
-          {packages.map((pkg, idx) => (
+          {packages.map((pkg) => (
             <motion.div
               key={pkg.name}
               initial={{ opacity: 0, y: 40 }}
@@ -172,6 +231,9 @@ export default function SocialMediaPage() {
               viewport={{ once: true, margin: "-100px" }}
               className="bg-white border border-gray-100 hover:border-cyan-200 p-8 md:p-12 shadow-xl shadow-cyan-900/5 hover:shadow-cyan-900/10 transition-all duration-300 relative overflow-hidden flex flex-col lg:flex-row gap-12"
             >
+              {/* Accent bar */}
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+
               {/* Left Column: Title & Price */}
               <div className="lg:w-1/3 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-gray-100 pb-8 lg:pb-0 lg:pr-8">
                 <div>
@@ -212,7 +274,7 @@ export default function SocialMediaPage() {
             </motion.div>
           ))}
 
-          {/* Customized Package Section */}
+          {/* Customized Package */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -222,7 +284,8 @@ export default function SocialMediaPage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500 rounded-none blur-[100px] opacity-20 pointer-events-none" />
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Customized Package</h2>
             <p className="text-cyan-100 font-light text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-              We do understand the need for a customized package. Let&apos;s pick the best for your brand. Should you wish to handpick the necessary services?
+              We do understand the need for a customized package. Let&apos;s pick the best for your brand.
+              Should you wish to handpick the necessary services?
             </p>
             <a
               href="/contact"
@@ -236,7 +299,11 @@ export default function SocialMediaPage() {
         {/* Benefits Section */}
         <div className="bg-gray-50 py-24">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center mb-16">
+              <span className="text-xs font-bold tracking-widest text-cyan-500 uppercase">Why It Works</span>
+              <h2 className="text-3xl md:text-4xl font-black text-navy mt-3">Our Social Media Philosophy</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {benefits.map((benefit, i) => {
                 const Icon = benefit.icon;
                 return (
@@ -246,15 +313,14 @@ export default function SocialMediaPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="bg-white p-10 border border-gray-100 hover:shadow-2xl hover:shadow-cyan-900/10 transition-all duration-300"
+                    className="bg-white p-10 border border-gray-100 hover:border-cyan-200 hover:shadow-2xl hover:shadow-cyan-900/10 transition-all duration-300 relative overflow-hidden group"
                   >
-                    <div className="w-16 h-16 bg-cyan-50 flex items-center justify-center text-cyan-600 mb-8">
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <div className="w-16 h-16 bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-8 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-8 h-8" />
                     </div>
                     <h3 className="text-2xl font-bold text-navy mb-4">{benefit.title}</h3>
-                    <p className="text-gray-500 font-light leading-relaxed">
-                      {benefit.desc}
-                    </p>
+                    <p className="text-gray-500 font-light leading-relaxed">{benefit.desc}</p>
                   </motion.div>
                 );
               })}
