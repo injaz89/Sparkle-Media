@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Mail, Instagram, Facebook, Linkedin, MessageSquare } from "lucide-react";
+import { Phone, Mail, MessageSquare } from "lucide-react";
 import { InstagramIcon, FacebookIcon, LinkedinIcon, TikTokIcon } from "./SocialIcons";
 
 export function Contact() {

@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useCallback } from "react";
+
+const trustItems = [
+  "60X ROAS Generated (Lead Generation)",
+  "20X ROAS Generated (E-Commerce & Retail)",
+  "300%+ Organic Growth Achieved",
+  "Multi-Country Campaign Experience",
+  "Millions Managed in Ad Spend",
+];
 
 export function Hero() {
   const containerVariants = {
@@ -9,8 +16,8 @@ export function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
       },
     },
   };
@@ -20,30 +27,19 @@ export function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8 },
     },
   };
 
-  const handleServicesClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault();
-      // Scroll to services section
-      const servicesSection = document.getElementById("services");
-      if (servicesSection) {
-        servicesSection.scrollIntoView({ behavior: "smooth" });
-      }
-    },
-    []
-  );
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-white">
       {/* Background Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-300/20 rounded-none blur-3xl pointer-events-none mix-blend-multiply" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-300/20 rounded-none blur-3xl pointer-events-none mix-blend-multiply" />
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-cyan-300/15 rounded-none blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-300/15 rounded-none blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-cyan-200/10 blur-3xl pointer-events-none" />
+
       {/* Subtle grid overlay */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
         style={{
           backgroundImage:
             "linear-gradient(#0A1128 1px, transparent 1px), linear-gradient(90deg, #0A1128 1px, transparent 1px)",
@@ -61,53 +57,100 @@ export function Hero() {
         <motion.div variants={itemVariants} className="flex justify-center mb-8">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-50 border border-cyan-100 text-cyan-600 text-xs font-semibold uppercase tracking-widest">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse inline-block" />
-            Full-Service Digital Marketing Agency
+            Performance Marketing Agency
           </span>
         </motion.div>
 
+        {/* Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-7xl lg:text-8xl font-black text-navy leading-[1.1] tracking-tight mb-8"
+          className="text-5xl md:text-6xl lg:text-7xl font-black text-navy leading-[1.08] tracking-tight mb-8"
         >
-          We engineer your brand&apos;s{" "}
+          We Don&apos;t Chase Metrics.{" "}
+          <br className="hidden md:block" />
+          We{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-            digital presence!
+            Engineer Revenue Growth.
           </span>
         </motion.h1>
 
+        {/* Subtitle */}
         <motion.p
           variants={itemVariants}
-          className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto mb-12 leading-relaxed"
+          className="text-lg md:text-xl text-gray-600 font-light max-w-3xl mx-auto mb-12 leading-relaxed"
         >
-          An exemplary digital marketing journey for your brand with a fully-fledged digital marketing agency that has a{" "}
-          <span className="font-semibold text-navy">360° wide scope</span> to cover all your needs!
+          Sparkle Media helps ambitious brands{" "}
+          <span className="font-semibold text-navy">acquire customers</span>,{" "}
+          <span className="font-semibold text-navy">increase retention</span>, and{" "}
+          <span className="font-semibold text-navy">scale profitably</span> through performance
+          marketing, SEO, AI-first search visibility, and conversion-focused digital experiences.
         </motion.p>
 
-        <motion.div variants={itemVariants} className="flex justify-center">
+        {/* CTA */}
+        <motion.div variants={itemVariants} className="flex justify-center mb-16">
           <a
-            href="#services"
-            id="hero-services-btn"
-            onClick={handleServicesClick}
-            className="group relative px-8 py-4 bg-navy text-white text-lg font-medium rounded-none overflow-hidden transition-transform hover:scale-105"
+            href="https://calendly.com/sparklemediacreatives/30min"
+            id="hero-strategy-call-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative px-10 py-5 bg-navy text-white text-lg font-semibold overflow-hidden transition-transform hover:scale-105 inline-flex items-center gap-3"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="relative z-10 flex items-center gap-2">
-              Check out our services
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <span className="relative z-10 flex items-center gap-3">
+              Book Strategy Call
+              <svg
+                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
               </svg>
             </span>
           </a>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Trust Bar */}
         <motion.div
           variants={itemVariants}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
+          className="flex flex-wrap justify-center gap-x-8 gap-y-3"
         >
-          <span className="text-xs uppercase tracking-widest font-semibold">Scroll</span>
-          <div className="w-px h-10 bg-gradient-to-b from-gray-300 to-transparent animate-pulse" />
+          {trustItems.map((item, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-2 text-sm text-gray-600 font-medium"
+            >
+              <span className="flex-shrink-0 w-5 h-5 rounded-full bg-cyan-50 border border-cyan-200 flex items-center justify-center">
+                <svg
+                  className="w-3 h-3 text-cyan-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={3}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              {item}
+            </div>
+          ))}
         </motion.div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4 }}
+      >
+        <span className="text-xs uppercase tracking-widest font-semibold">Scroll</span>
+        <div className="w-px h-10 bg-gradient-to-b from-gray-300 to-transparent animate-pulse" />
       </motion.div>
     </section>
   );
