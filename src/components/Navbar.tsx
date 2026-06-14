@@ -107,7 +107,7 @@ export function Navbar() {
                           { name: "Paid Media Management", href: "/services/digital-lab/paid-media" },
                           { name: "Search Engine Optimisation", href: "/services/digital-lab/seo" },
                           { name: "Search Engine Marketing", href: "/services/digital-lab/sem" },
-                          { name: "E-Mail Marketing", href: "/services/digital-lab/email-marketing" },
+                          { name: "CRM & Marketing Automation", href: "/services/digital-lab/email-marketing" },
                         ]
                       },
                       {

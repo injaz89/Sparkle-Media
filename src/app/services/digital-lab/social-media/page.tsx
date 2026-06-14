@@ -107,10 +107,10 @@ const benefits = [
   {
     title: "Consistency is Key",
     icon: Calendar,
-    desc: "We provide consistent content by using calendars and scheduled scheduling. Regular blogging posting helps your audience recognise your brand's voice and message, which creates an impactful relationship with them.",
+    desc: "We plan and schedule your content in advance so your brand shows up consistently. Over time, this helps your audience recognize your voice, understand your message, and stay connected with your brand.",
   },
   {
-    title: "Reporting and Analysis",
+    title: "Reporting and Insights",
     icon: BarChart3,
     desc: "Our skilled social media managers will routinely assess performance and plan fresh approaches to boost performance and account growth.",
   },
@@ -154,9 +154,9 @@ export default function SocialMediaPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-xl text-navy font-semibold leading-relaxed mb-6"
+                className="text-xl font-semibold leading-relaxed mb-6"
               >
-                We help you choose the right platforms and target the right audience on Social Media!
+                Build a social media presence that people remember
               </motion.h3>
               <motion.a
                 href="https://calendly.com/sparklemediacreatives/30min"
@@ -183,17 +183,15 @@ export default function SocialMediaPage() {
             >
               <div className="border-l-4 border-cyan-400 pl-6">
                 <p className="text-lg text-gray-600 font-light leading-relaxed">
-                  Unleash your brand with Social Media Marketing.
+                  Social media is an ever-changing landscape with altering algorithms and topical trends; to keep your competitive edge, you must prioritize your social media management strategy.
                 </p>
                 <p className="text-lg text-gray-600 font-light leading-relaxed mt-3">
-                  Social media is an ever-changing landscape with altering algorithms and topical
-                  trends; to keep your competitive edge, you must prioritize your social media
-                  management strategy.
+                  We help you stay consistent with content that reflects your brand, reaches the right people, and actually supports your business growth, not just your feed. Because every post should have a purpose, and that&apos;s exactly how we build social media strategies.
                 </p>
               </div>
 
               <div className="bg-gray-50 border border-gray-100 p-6 space-y-3">
-                <p className="text-sm font-bold text-navy uppercase tracking-widest mb-4">Sound familiar?</p>
+                <p className="text-sm font-bold text-navy uppercase tracking-widest mb-4">Does this sound familiar?</p>
                 {painPoints.map((pt, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mt-0.5">
@@ -203,7 +201,7 @@ export default function SocialMediaPage() {
                   </div>
                 ))}
                 <p className="text-cyan-600 font-semibold text-sm pt-2 border-t border-gray-200 mt-4">
-                  If you are looking for a more strategic approach that delivers results — we can help.
+                  If you are looking for a more strategic approach that delivers results — we can help. Check out our Social Media Packages:
                 </p>
               </div>
             </motion.div>
