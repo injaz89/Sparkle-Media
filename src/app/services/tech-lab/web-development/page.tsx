@@ -3,143 +3,438 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Code2, Laptop, Globe, ShoppingCart, Search, Server, CheckCircle2 } from "lucide-react";
+import {
+  Code2,
+  ShoppingCart,
+  Layout,
+  FileCode,
+  CheckCircle2,
+  Target,
+  Search,
+  Zap,
+  BarChart3,
+  ArrowRight,
+  Shield,
+  Smartphone,
+  TrendingUp,
+  Eye,
+} from "lucide-react";
+
+const whyMatters = [
+  {
+    icon: TrendingUp,
+    stat: "88%",
+    title: "Won't Return After a Poor Experience",
+    desc: "A website that is difficult to navigate, slow to load, or not mobile-friendly can drive potential customers directly to competitors.",
+  },
+  {
+    icon: Smartphone,
+    stat: "60%+",
+    title: "of Website Visits Come from Mobile",
+    desc: "Every website we build is fully responsive, ensuring a seamless experience across mobile, tablet, and desktop devices.",
+  },
+  {
+    icon: Zap,
+    stat: "1 sec",
+    title: "Delay Reduces Conversions",
+    desc: "Studies show that even a one-second delay in page loading can reduce conversion rates. Performance optimization is built into every project.",
+  },
+  {
+    icon: Shield,
+    stat: "0.05s",
+    title: "First Impressions Drive Trust",
+    desc: "Users form an opinion about a website within 0.05 seconds. Modern customers expect websites that are fast, secure, professional, and easy to use.",
+  },
+];
+
+const services = [
+  {
+    icon: Code2,
+    title: "Corporate Website Development",
+    desc: "Professional websites designed to strengthen your brand presence, showcase your services, and generate enquiries from potential customers.",
+    ideal: ["Service-based businesses", "Corporate organizations", "Professional firms", "Startups and SMEs"],
+    color: "from-cyan-400 to-blue-500",
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-Commerce Website Development",
+    desc: "Transform visitors into customers with online stores designed for seamless shopping experiences.",
+    ideal: ["Shopify Development", "WooCommerce Development", "Product Catalog Management", "Payment Gateway Integration", "Shipping Integration", "Conversion Optimization"],
+    color: "from-blue-400 to-indigo-500",
+  },
+  {
+    icon: FileCode,
+    title: "Custom Web Development",
+    desc: "Every business has unique requirements. Our development team builds tailored solutions that align with your operational workflows, customer journeys, and growth objectives.",
+    ideal: ["Custom portals", "Booking systems", "Advanced business applications", "Scalable solutions"],
+    color: "from-indigo-400 to-blue-500",
+  },
+  {
+    icon: Layout,
+    title: "Landing Page Development",
+    desc: "High-converting landing pages designed specifically for marketing campaigns, lead generation, and product promotions.",
+    ideal: ["User experience focused", "Conversion optimization", "Fast loading speeds", "Mobile responsiveness", "Analytics integration"],
+    color: "from-cyan-500 to-teal-400",
+  },
+];
+
+const differentiators = [
+  {
+    icon: Target,
+    title: "Strategy Before Design",
+    desc: "We don't start with colors and layouts. We begin by understanding your business goals, target audience, competitors, and customer journey.",
+    points: [],
+  },
+  {
+    icon: Search,
+    title: "SEO-Ready Foundation",
+    desc: "Every website is developed with search engine visibility in mind.",
+    points: ["SEO-friendly architecture", "Optimized page structure", "Meta data implementation", "Image optimization", "Technical SEO best practices"],
+  },
+  {
+    icon: Zap,
+    title: "Performance & Speed Optimization",
+    desc: "Website performance directly affects user experience and conversion rates.",
+    points: ["Image optimization", "Core Web Vitals improvements", "Caching implementation", "Code optimization", "Mobile performance enhancements"],
+  },
+  {
+    icon: BarChart3,
+    title: "Analytics & Conversion Tracking",
+    desc: "Every website can be equipped with complete visibility into how users interact and where revenue comes from.",
+    points: ["Google Analytics 4", "Google Tag Manager", "Meta Pixel", "TikTok Pixel", "Conversion Tracking", "E-commerce Tracking"],
+  },
+];
+
+const processSteps = [
+  { icon: Eye, title: "Discovery & Strategy", desc: "Understanding your business objectives, audience, and requirements." },
+  { icon: Layout, title: "Design & UX", desc: "Creating intuitive user journeys and engaging interfaces." },
+  { icon: Code2, title: "Development & Integration", desc: "Building responsive, scalable, and secure websites." },
+  { icon: Zap, title: "Testing & Optimization", desc: "Ensuring performance, compatibility, and functionality across all devices." },
+  { icon: Shield, title: "Launch & Support", desc: "Providing ongoing assistance, maintenance, and improvements after launch." },
+];
+
+const afterLaunch = [
+  "Website maintenance",
+  "Uptime Monitoring",
+  "Automated file & database backups",
+  "Security audits",
+  "Regular speed checks",
+  "Website updates",
+  "Third-party hosting management",
+  "Integrations",
+];
 
 export default function WebDevelopmentPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-0 bg-white min-h-screen">
-        
-        {/* Header Section */}
-        <div className="max-w-7xl mx-auto px-6 mb-24 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-600 mx-auto rounded-none flex items-center justify-center text-white mb-8 shadow-2xl shadow-cyan-500/30"
-          >
-            <Code2 className="w-12 h-12" />
-          </motion.div>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-cyan-500 font-bold tracking-widest uppercase mb-4"
-          >
-            Tech Lab
-          </motion.p>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black text-navy mb-8 leading-tight"
-          >
-            Website Design <br className="hidden md:block" /> & Development
-          </motion.h1>
-          <motion.h3 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-2xl text-gray-500 font-light leading-relaxed max-w-4xl mx-auto"
-          >
-            We build robust, custom websites tailored to your business, perfectly optimized to drive consumer action and scale your digital presence.
-          </motion.h3>
-        </div>
+      <main className="bg-white min-h-screen">
 
-        {/* Website Design and Development */}
-        <div className="py-24 bg-gray-50 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-200 rounded-none blur-[150px] opacity-20 pointer-events-none" />
-          
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col lg:flex-row gap-16 items-start">
-              
-              <div className="lg:w-3/5 space-y-6 text-gray-600 font-light text-lg leading-relaxed relative z-10">
-                <p>
-                  We know that it&apos;s hard to find a web design company that&apos;s just as committed to your strategic goals as you are. We&apos;re the sort of people who can&apos;t stop thinking about how you can use the web to improve your business, and we&apos;re not afraid to do some digging around online to find out exactly what you need.
+        {/* ── HERO ── */}
+        <section className="pt-32 pb-20 relative overflow-hidden bg-white">
+          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-cyan-50 blur-[120px] pointer-events-none opacity-60" />
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="max-w-3xl">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-cyan-500 font-bold tracking-widest uppercase mb-4 text-sm"
+              >
+                Tech Lab
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-4 leading-[1.05]"
+              >
+                Website Design{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                  & Development
+                </span>
+              </motion.h1>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+                className="text-2xl font-bold text-navy mb-6"
+              >
+                Websites Built for Growth, Not Just Appearance
+              </motion.h2>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="border-l-4 border-cyan-400 pl-6 mb-8 space-y-3"
+              >
+                <p className="text-lg text-gray-600 font-light leading-relaxed">
+                  Your website is often the first impression customers have of your business. In today&apos;s
+                  digital landscape, a slow, outdated, or poorly designed website can cost you valuable
+                  leads, sales, and credibility.
                 </p>
-                <p>
-                  If you&apos;re looking for a web designer or developer who can build you a custom website that&apos;s tailored to your business, look no further than Sparkle Media. We know that you want a website that&apos;s built specifically to meet your needs—and that&apos;s why we are equipped with the best web designers and developers who move with custom web development. All our custom website developments are built from the ground up with your requirements in mind.
+                <p className="text-lg text-gray-600 font-light leading-relaxed">
+                  Research shows that users form an opinion about a website within{" "}
+                  <span className="font-semibold text-navy">0.05 seconds</span>, and over{" "}
+                  <span className="font-semibold text-navy">75% of consumers</span> judge a company&apos;s
+                  credibility based on its website design.
                 </p>
-                <p>
-                  We&apos;re committed to helping you design the perfect site for your business. We take the time to learn about your business, competitors, customers, and specific needs so that your website is not only beautiful and attractive but also helpful to grow your business in a meaningful way.
+                <p className="text-lg text-gray-600 font-light leading-relaxed">
+                  At Sparkle Media, we design and develop websites that combine aesthetics,
+                  functionality, speed, and conversion-focused strategy to help businesses attract,
+                  engage, and convert customers.
                 </p>
-                <p className="border-l-4 border-cyan-400 pl-6 text-navy font-medium text-xl">
-                  We want to understand how your customers think and act as well, so that when they visit your site, they feel like they&apos;ve been welcomed into an ecosystem where they belong.
-                </p>
-              </div>
-
-              {/* Development Highlights Box */}
-              <div className="lg:w-2/5 w-full">
-                <motion.div 
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-white p-10 border border-gray-100 shadow-2xl shadow-cyan-900/5 relative z-10"
-                >
-                  <h3 className="text-2xl font-bold text-navy mb-8">What we build for you:</h3>
-                  <ul className="space-y-6">
-                    {[
-                      { icon: Laptop, text: "User & Mobile-friendly responsive websites" },
-                      { icon: Globe, text: "One-page & Corporate web designs" },
-                      { icon: ShoppingCart, text: "eCommerce with local/global payment gateways (Payhere, PayPal)" },
-                      { icon: Search, text: "Classified Web Development" }
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start group">
-                        <div className="w-12 h-12 bg-cyan-50 flex items-center justify-center text-cyan-600 mr-4 shrink-0 group-hover:scale-110 transition-transform">
-                          <item.icon className="w-6 h-6" />
-                        </div>
-                        <span className="text-gray-600 leading-relaxed font-medium mt-2">{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              </div>
-
+              </motion.div>
+              <motion.a
+                href="https://calendly.com/sparklemediacreatives/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-navy text-white font-semibold hover:bg-cyan-600 transition-colors"
+              >
+                Start Your Project
+                <ArrowRight className="w-4 h-4" />
+              </motion.a>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Detailed Services Lists */}
-        <div className="py-24 bg-white max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+        {/* ── WHY YOUR WEBSITE MATTERS ── */}
+        <section className="py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gray-50 border border-gray-100 p-12 hover:shadow-2xl hover:border-cyan-200 transition-all duration-300"
             >
-              <div className="flex items-center mb-8 pb-8 border-b border-gray-200">
-                <Server className="w-10 h-10 text-cyan-500 mr-6" />
-                <h3 className="text-3xl font-black text-navy">Web Development Services</h3>
-              </div>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-cyan-400 mr-3 shrink-0" />
-                  <span className="text-gray-700 font-medium text-lg">PHP/MySQL-based website development</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-cyan-400 mr-3 shrink-0" />
-                  <div className="text-gray-700 font-medium text-lg">
-                    Website maintenance
-                    <ul className="mt-3 ml-2 space-y-2 border-l-2 border-gray-200 pl-4">
-                      <li className="text-gray-500 font-light text-base">- Uptime Monitoring</li>
-                      <li className="text-gray-500 font-light text-base">- Automated file & database backups</li>
-                      <li className="text-gray-500 font-light text-base">- Security audits & Regular speed checks</li>
-                      <li className="text-gray-500 font-light text-base">- Website updates</li>
-                    </ul>
-                  </div>
-                </li>
-                <li className="flex items-start pt-2">
-                  <CheckCircle2 className="w-6 h-6 text-cyan-400 mr-3 shrink-0" />
-                  <span className="text-gray-700 font-medium text-lg">Third-party hosting management</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-cyan-400 mr-3 shrink-0" />
-                  <span className="text-gray-700 font-medium text-lg">Integrations</span>
-                </li>
-              </ul>
+              <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">Why It Matters</span>
+              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">Why Your Website Matters</h2>
             </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {whyMatters.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="bg-white border border-gray-100 hover:border-cyan-200 p-8 hover:shadow-xl hover:shadow-cyan-900/5 transition-all duration-300 group relative overflow-hidden"
+                  >
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <p className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">
+                      {item.stat}
+                    </p>
+                    <h3 className="text-base font-bold text-navy mb-3 leading-snug">{item.title}</h3>
+                    <p className="text-gray-500 font-light text-sm leading-relaxed">{item.desc}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </section>
+
+        {/* ── OUR SERVICES ── */}
+        <section className="py-24 bg-navy relative overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style={{
+              backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
+            }}
+          />
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">What We Build</span>
+              <h2 className="text-4xl md:text-5xl font-black text-white mt-3">Our Website Development Services</h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {services.map((service, i) => {
+                const Icon = service.icon;
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="bg-white/5 border border-white/10 hover:border-cyan-400/30 p-8 transition-all duration-300"
+                  >
+                    <div className={`w-12 h-12 bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-5`}>
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-black text-white mb-3">{service.title}</h3>
+                    <p className="text-gray-400 font-light text-sm leading-relaxed mb-5">{service.desc}</p>
+                    <div className="space-y-2">
+                      {service.ideal.map((pt, j) => (
+                        <div key={j} className="flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                          <span className="text-gray-300 text-sm font-light">{pt}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* ── WHAT MAKES US DIFFERENT ── */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">Our Edge</span>
+              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">What Makes Sparkle Media Different?</h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {differentiators.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="group bg-white border border-gray-100 hover:border-cyan-200 p-8 hover:shadow-xl hover:shadow-cyan-900/5 transition-all duration-300 relative overflow-hidden"
+                  >
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-5 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-navy mb-3">{item.title}</h3>
+                    <p className="text-gray-500 font-light text-sm leading-relaxed mb-4">{item.desc}</p>
+                    {item.points.length > 0 && (
+                      <div className="grid grid-cols-2 gap-2">
+                        {item.points.map((pt, j) => (
+                          <div key={j} className="flex items-center gap-2">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
+                            <span className="text-gray-600 text-xs font-light">{pt}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* ── PROCESS ── */}
+        <section className="py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">How We Work</span>
+              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">Our Development Process</h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+              {processSteps.map((step, i) => {
+                const Icon = step.icon;
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="relative bg-white border border-gray-100 hover:border-cyan-200 p-6 transition-all duration-300 group"
+                  >
+                    <div className="absolute top-4 right-4 text-5xl font-black text-gray-50 select-none leading-none">
+                      0{i + 1}
+                    </div>
+                    <div className="w-10 h-10 bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-sm font-bold text-navy mb-2">{step.title}</h3>
+                    <p className="text-gray-500 font-light text-xs leading-relaxed">{step.desc}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* ── AFTER LAUNCH + CTA ── */}
+        <section className="py-24 bg-navy relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500 blur-[150px] opacity-10 pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3 block">
+                  We Don&apos;t Just Forget You
+                </span>
+                <h2 className="text-4xl font-black text-white mb-6 leading-tight">
+                  After Your Website Goes Live
+                </h2>
+                <p className="text-gray-300 font-light leading-relaxed mb-8">
+                  After the website is live and thriving, we also provide ongoing assistance to
+                  our clients with:
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {afterLaunch.map((item, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                      <span className="text-gray-300 text-sm font-light">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="bg-white/5 border border-white/10 p-10"
+              >
+                <h3 className="text-2xl font-black text-white mb-4">
+                  Build a Website That Works as Hard as You Do
+                </h3>
+                <p className="text-gray-300 font-light leading-relaxed mb-4">
+                  A successful website is more than an online brochure. It should attract
+                  visitors, build trust, generate leads, and drive revenue.
+                </p>
+                <p className="text-gray-400 font-light leading-relaxed mb-8 text-sm">
+                  Whether you&apos;re starting from scratch or looking to upgrade your existing
+                  website, our team is ready to build a solution that delivers measurable results.
+                </p>
+                <a
+                  href="https://calendly.com/sparklemediacreatives/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-500 text-white font-bold hover:bg-cyan-400 transition-colors"
+                >
+                  Start Your Project
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.div>
+            </div>
+          </div>
+        </section>
 
       </main>
       <Footer />

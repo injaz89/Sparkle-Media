@@ -124,9 +124,8 @@ export function Navbar() {
                         name: "TECH LAB",
                         href: "#",
                         subItems: [
-                          { name: "Website Design & Dev", href: "/services/tech-lab/web-development" },
-                          { name: "Website Optimisation", href: "/services/tech-lab/optimisation" },
-                          { name: "Software Development", href: "/services/tech-lab/software-development" },
+                          { name: "Website Design & Development", href: "/services/tech-lab/web-development" },
+                          { name: "Software Development & Implementation", href: "/services/tech-lab/software-development" },
                         ]
                       },
                     ]
