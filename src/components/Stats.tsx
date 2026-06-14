@@ -25,7 +25,7 @@ const stats = [
     description: "Digital content delivered",
   },
   {
-    value: 35,
+    value: 15,
     suffix: "+",
     label: "Team Members",
     description: "Equipped team members",

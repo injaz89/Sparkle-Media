@@ -4,9 +4,13 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Heart, Users, Sparkles, Coffee, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import {
+  Heart, Users, Sparkles, Coffee, ChevronLeft, ChevronRight,
+  ArrowRight, MessageCircle, Phone, Mail, Instagram, Facebook,
+  Linkedin, ExternalLink, Star,
+} from "lucide-react";
 
-// Hero slider images — team & culture vibe
+// Hero slider
 const heroSlides = [
   {
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600",
@@ -30,56 +34,20 @@ const heroSlides = [
   },
 ];
 
-// Culture gallery grid
+// Culture gallery
 const galleryImages = [
-  {
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800",
-    caption: "Brainstorming Sessions",
-    tall: true,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800",
-    caption: "Client Strategy Meetings",
-    tall: false,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=800",
-    caption: "Creative Workshop",
-    tall: false,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800",
-    caption: "Team Collaboration",
-    tall: true,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800",
-    caption: "Growth Reviews",
-    tall: false,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800",
-    caption: "Celebrating Wins",
-    tall: false,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800",
-    caption: "Office Life",
-    tall: true,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800",
-    caption: "Design Reviews",
-    tall: false,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800",
-    caption: "Content Creation",
-    tall: false,
-  },
+  { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800", caption: "Brainstorming Sessions", tall: true },
+  { src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800", caption: "Client Strategy Meetings", tall: false },
+  { src: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=800", caption: "Creative Workshop", tall: false },
+  { src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800", caption: "Team Collaboration", tall: true },
+  { src: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800", caption: "Growth Reviews", tall: false },
+  { src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800", caption: "Celebrating Wins", tall: false },
+  { src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800", caption: "Office Life", tall: true },
+  { src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800", caption: "Design Reviews", tall: false },
+  { src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800", caption: "Content Creation", tall: false },
 ];
 
-// Team members for the "meet the people" section
+// Team
 const teamMembers = [
   {
     name: "Inshath Ifham",
@@ -108,30 +76,79 @@ const teamMembers = [
 ];
 
 const perks = [
+  { icon: Heart, title: "People-First Culture", desc: "Your wellbeing and growth are at the heart of everything we do." },
+  { icon: Sparkles, title: "Creative Freedom", desc: "We encourage bold ideas, experimentation, and innovation." },
+  { icon: Users, title: "Diverse Team", desc: "15+ talented individuals across 6+ countries and disciplines." },
+  { icon: Coffee, title: "Collaborative Spirit", desc: "A flat hierarchy where every voice matters and is heard." },
+];
+
+// Social media links
+const socials = [
   {
-    icon: Heart,
-    title: "People-First Culture",
-    desc: "Your wellbeing and growth are at the heart of everything we do.",
+    name: "Instagram",
+    icon: Instagram,
+    href: "https://www.instagram.com/sparklemedia_/",
+    color: "from-pink-500 to-rose-500",
+    handle: "@sparklemedia_",
   },
   {
-    icon: Sparkles,
-    title: "Creative Freedom",
-    desc: "We encourage bold ideas, experimentation, and innovation.",
+    name: "Facebook",
+    icon: Facebook,
+    href: "https://www.facebook.com/profile.php?id=100083969542491",
+    color: "from-blue-600 to-blue-700",
+    handle: "Sparkle Media",
   },
   {
-    icon: Users,
-    title: "Diverse Team",
-    desc: "35+ talented individuals across 6+ countries and disciplines.",
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/company/sparkle-media-pvt-ltd/?viewAsMember=true",
+    color: "from-blue-500 to-blue-600",
+    handle: "Sparkle Media Pvt Ltd",
   },
   {
-    icon: Coffee,
-    title: "Collaborative Spirit",
-    desc: "A flat hierarchy where every voice matters and is heard.",
+    name: "TikTok",
+    icon: ExternalLink,
+    href: "https://www.tiktok.com/@sparklemedia_?lang=en",
+    color: "from-gray-800 to-gray-900",
+    handle: "@sparklemedia_",
   },
 ];
 
+// ── HIDDEN: Testimonials (kept for future use) ──
+// const testimonials = [
+//   {
+//     name: "Arjun Perera",
+//     role: "CEO, GR Events",
+//     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200",
+//     text: "Sparkle Media completely transformed how we acquire leads. The ROAS we achieved was beyond anything we thought possible. They don't just run ads — they engineer results.",
+//     stars: 5,
+//   },
+//   {
+//     name: "Dilshan Fernando",
+//     role: "Director, Mobile Stop",
+//     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200",
+//     text: "21X ROAS in our first campaign. The team at Sparkle knows exactly what they're doing and they communicate every step of the way. Highly recommend.",
+//     stars: 5,
+//   },
+//   {
+//     name: "Priya Nair",
+//     role: "Marketing Head, Prestige Auto Detailers",
+//     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200",
+//     text: "We saw 15X ROAS and a dramatic improvement in lead quality. Sparkle Media is not your average agency — they are true performance partners.",
+//     stars: 5,
+//   },
+// ];
+
+// ── HIDDEN: Case Studies (kept for future use) ──
+// const caseStudies = [
+//   { client: "GR Events", result: "60X ROAS", category: "Lead Generation", image: "" },
+//   { client: "Mobile Stop", result: "21X ROAS", category: "E-Commerce", image: "" },
+//   { client: "Prestige Auto Detailers", result: "15X ROAS", category: "Automotive", image: "" },
+// ];
+
 export default function LifeAtSparkleMediaPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "" });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -148,7 +165,7 @@ export default function LifeAtSparkleMediaPage() {
       <Navbar />
       <main className="bg-white min-h-screen">
 
-        {/* ====== HERO SLIDER ====== */}
+        {/* ── HERO SLIDER ── */}
         <section className="relative h-screen overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
@@ -169,7 +186,6 @@ export default function LifeAtSparkleMediaPage() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Content */}
           <div className="absolute inset-0 flex flex-col items-center justify-center pt-24 z-10">
             <AnimatePresence mode="wait">
               <motion.div
@@ -194,36 +210,26 @@ export default function LifeAtSparkleMediaPage() {
 
             {/* Slide controls */}
             <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-6 z-20">
-              <button
-                onClick={prevSlide}
-                className="w-10 h-10 border border-white/30 text-white hover:border-cyan-400 hover:text-cyan-400 transition-colors flex items-center justify-center"
-              >
+              <button onClick={prevSlide} className="w-10 h-10 border border-white/30 text-white hover:border-cyan-400 hover:text-cyan-400 transition-colors flex items-center justify-center">
                 <ChevronLeft className="w-5 h-5" />
               </button>
-
               <div className="flex gap-2">
                 {heroSlides.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrentSlide(i)}
-                    className={`transition-all duration-300 rounded-none ${
-                      i === currentSlide ? "w-8 h-2 bg-cyan-400" : "w-2 h-2 bg-white/40"
-                    }`}
+                    className={`transition-all duration-300 rounded-none ${i === currentSlide ? "w-8 h-2 bg-cyan-400" : "w-2 h-2 bg-white/40"}`}
                   />
                 ))}
               </div>
-
-              <button
-                onClick={nextSlide}
-                className="w-10 h-10 border border-white/30 text-white hover:border-cyan-400 hover:text-cyan-400 transition-colors flex items-center justify-center"
-              >
+              <button onClick={nextSlide} className="w-10 h-10 border border-white/30 text-white hover:border-cyan-400 hover:text-cyan-400 transition-colors flex items-center justify-center">
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>
           </div>
         </section>
 
-        {/* ====== INTRO ====== */}
+        {/* ── INTRO ── */}
         <section className="py-24 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <motion.span
@@ -250,21 +256,30 @@ export default function LifeAtSparkleMediaPage() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              Life at Sparkle Media is exciting, rewarding, and constantly evolving. You get to work with a diverse team of people who are passionate about digital marketing and are always learning, creating, and innovating.
+              Life at Sparkle Media can be exciting and rewarding. You get to work with a diverse team of people who are passionate about digital marketing and are constantly learning and innovating.
+            </motion.p>
+            <motion.p
+              className="text-lg text-gray-500 font-light leading-relaxed mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              You&apos;ll be involved in the creative process of developing campaigns, creating content, and measuring results. You&apos;ll also be exposed to the latest technologies and strategies so you can stay ahead of the competition.
             </motion.p>
             <motion.p
               className="text-lg text-gray-500 font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.35 }}
             >
-              You&apos;ll be involved in the creative process of developing campaigns, producing content, and measuring results — all while being exposed to the latest technologies and strategies that keep you ahead of the game.
+              The hours can be long and the work can be demanding, but the rewards can be great. Working with Sparkle Media can be very rewarding, as you get to help businesses reach their goals and build their brand.
             </motion.p>
           </div>
         </section>
 
-        {/* ====== PERKS ====== */}
+        {/* ── PERKS ── */}
         <section className="py-16 bg-gray-50 border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -291,7 +306,7 @@ export default function LifeAtSparkleMediaPage() {
           </div>
         </section>
 
-        {/* ====== GALLERY ====== */}
+        {/* ── GALLERY ── */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
@@ -340,12 +355,9 @@ export default function LifeAtSparkleMediaPage() {
                       alt={img.caption}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    {/* Hover overlay */}
                     <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/40 transition-colors duration-500 flex items-end">
                       <div className="p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0 transform">
-                        <p className="text-white text-sm font-semibold uppercase tracking-widest">
-                          {img.caption}
-                        </p>
+                        <p className="text-white text-sm font-semibold uppercase tracking-widest">{img.caption}</p>
                       </div>
                     </div>
                   </div>
@@ -355,13 +367,12 @@ export default function LifeAtSparkleMediaPage() {
           </div>
         </section>
 
-        {/* ====== MEET THE TEAM ====== */}
+        {/* ── MEET THE TEAM ── */}
         <section className="py-24 bg-navy relative overflow-hidden">
           <div
             className="absolute inset-0 opacity-5 pointer-events-none"
             style={{
-              backgroundImage:
-                "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+              backgroundImage: "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
               backgroundSize: "50px 50px",
             }}
           />
@@ -407,12 +418,8 @@ export default function LifeAtSparkleMediaPage() {
                   </div>
                   <div className="p-5">
                     <h3 className="text-white font-bold text-lg mb-1">{member.name}</h3>
-                    <p className="text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-3">
-                      {member.role}
-                    </p>
-                    <p className="text-gray-400 text-sm font-light italic leading-relaxed">
-                      &ldquo;{member.quote}&rdquo;
-                    </p>
+                    <p className="text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-3">{member.role}</p>
+                    <p className="text-gray-400 text-sm font-light italic leading-relaxed">&ldquo;{member.quote}&rdquo;</p>
                   </div>
                 </motion.div>
               ))}
@@ -420,29 +427,235 @@ export default function LifeAtSparkleMediaPage() {
           </div>
         </section>
 
-        {/* ====== QUOTE ====== */}
-        <section className="py-24 bg-white">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="w-16 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-12" />
-              <blockquote className="text-2xl md:text-3xl font-light text-navy leading-relaxed italic mb-10">
-                &ldquo;The hours can be long and the work can be demanding, but the rewards are great. Working with Sparkle Media means helping businesses reach their goals and building a brand that truly sparkles.&rdquo;
-              </blockquote>
-              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto mb-10" />
+        {/* ── HIDDEN TESTIMONIALS BLOCK (ready for future) ── */}
+        {/* 
+        <section className="py-24 bg-gray-50" style={{ display: "none" }}>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <span className="text-xs font-bold tracking-widest text-cyan-500 uppercase">What Our Clients Say</span>
+              <h2 className="text-4xl font-black text-navy mt-3">Client Testimonials</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((t, i) => (
+                <div key={i} className="bg-white border border-gray-100 p-8">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(t.stars)].map((_, s) => (
+                      <Star key={s} className="w-4 h-4 text-amber-400 fill-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 font-light leading-relaxed mb-6 italic">&ldquo;{t.text}&rdquo;</p>
+                  <div className="flex items-center gap-3">
+                    <img src={t.avatar} alt={t.name} className="w-10 h-10 object-cover" />
+                    <div>
+                      <p className="font-bold text-navy text-sm">{t.name}</p>
+                      <p className="text-gray-400 text-xs">{t.role}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        */}
 
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-navy text-white font-semibold hover:bg-cyan-600 transition-colors"
+        {/* ── HIDDEN CASE STUDIES BLOCK (ready for future) ──
+        <section className="py-24 bg-navy" style={{ display: "none" }}>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <span className="text-xs font-bold tracking-widest text-cyan-400 uppercase">Proven Results</span>
+              <h2 className="text-4xl font-black text-white mt-3">Case Studies</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {caseStudies.map((cs, i) => (
+                <div key={i} className="bg-white/5 border border-white/10 p-8">
+                  <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">{cs.category}</p>
+                  <h3 className="text-2xl font-black text-white mb-2">{cs.client}</h3>
+                  <p className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">{cs.result}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        */}
+
+        {/* ── LET'S TALK ── */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+              {/* Left: Copy + contact options */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
               >
-                Join Our Team
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </motion.div>
+                <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest mb-4 block">Get In Touch</span>
+                <h2 className="text-5xl md:text-6xl font-black text-navy mb-6 leading-tight">
+                  Let&apos;s Talk!
+                </h2>
+                <div className="border-l-4 border-cyan-400 pl-6 mb-10 space-y-3">
+                  <p className="text-xl font-bold text-navy">Excited to give your brand into good hands and kick-start an exemplary digital journey?</p>
+                  <p className="text-lg text-gray-600 font-light">We are equally excited as you are!</p>
+                  <p className="text-lg text-gray-500 font-light">Let&apos;s sit for a quick chat!</p>
+                </div>
+
+                {/* Contact options */}
+                <div className="space-y-4 mb-10">
+                  <a
+                    href="https://calendly.com/sparklemediacreatives/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-5 bg-navy text-white hover:bg-cyan-600 transition-colors group"
+                  >
+                    <div className="w-10 h-10 bg-white/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm">Book a Strategy Call</p>
+                      <p className="text-cyan-200 text-xs font-light">Schedule a 30-minute session with our team</p>
+                    </div>
+                    <ArrowRight className="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform" />
+                  </a>
+
+                  <a
+                    href="https://wa.me/message/RBCP6CKB5PX6C1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-5 bg-emerald-500 text-white hover:bg-emerald-400 transition-colors group"
+                  >
+                    <div className="w-10 h-10 bg-white/10 flex items-center justify-center flex-shrink-0">
+                      <MessageCircle className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm">Ping Us on WhatsApp</p>
+                      <p className="text-emerald-100 text-xs font-light">Quick response, real conversations</p>
+                    </div>
+                    <ArrowRight className="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+
+                {/* CEO section */}
+                <div className="bg-gray-50 border border-gray-100 p-6">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Speak with our CEO</p>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-black text-xl flex-shrink-0">
+                      I
+                    </div>
+                    <div>
+                      <p className="font-black text-navy text-lg">Inshath Ifham</p>
+                      <p className="text-gray-500 text-sm font-light">Founder — Chairman & CEO</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href="https://calendly.com/sparklemediacreatives/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-navy text-white text-sm font-semibold hover:bg-cyan-600 transition-colors"
+                    >
+                      Talk Now <ArrowRight className="w-3 h-3" />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/mohamed-inshath"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 text-navy text-sm font-semibold hover:border-cyan-300 transition-colors"
+                    >
+                      LinkedIn <Linkedin className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Right: Form + Social */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                {/* Form */}
+                <div className="bg-gray-50 border border-gray-100 p-10 mb-8 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-100/50 blur-3xl opacity-50 pointer-events-none -translate-y-1/2 translate-x-1/2" />
+                  <h3 className="text-2xl font-black text-navy mb-8 relative z-10">Send Us a Message</h3>
+                  <form className="relative z-10 space-y-6">
+                    <div>
+                      <label htmlFor="life-name" className="block text-xs font-bold text-navy uppercase tracking-widest mb-2">
+                        Name <span className="text-cyan-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="life-name"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full bg-transparent border-b-2 border-gray-200 py-3 text-lg text-navy focus:outline-none focus:border-cyan-500 transition-colors placeholder:text-gray-300 font-light"
+                        placeholder="Your full name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="life-phone" className="block text-xs font-bold text-navy uppercase tracking-widest mb-2">
+                        Contact Number <span className="text-cyan-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        id="life-phone"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full bg-transparent border-b-2 border-gray-200 py-3 text-lg text-navy focus:outline-none focus:border-cyan-500 transition-colors placeholder:text-gray-300 font-light"
+                        placeholder="+94 77 XXX XXXX"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="life-email" className="block text-xs font-bold text-navy uppercase tracking-widest mb-2">
+                        E-Mail Address <span className="text-cyan-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="life-email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full bg-transparent border-b-2 border-gray-200 py-3 text-lg text-navy focus:outline-none focus:border-cyan-500 transition-colors placeholder:text-gray-300 font-light"
+                        placeholder="you@example.com"
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      className="w-full group bg-navy text-white px-8 py-4 text-sm font-bold uppercase tracking-widest flex items-center justify-between hover:bg-cyan-600 transition-all"
+                    >
+                      <span>Send Message</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </form>
+                </div>
+
+                {/* Social Media */}
+                <div>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Stalk Us on Social Media</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    {socials.map((social, i) => {
+                      const Icon = social.icon;
+                      return (
+                        <a
+                          key={i}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 p-4 bg-gray-50 border border-gray-100 hover:border-cyan-200 hover:shadow-md transition-all group"
+                        >
+                          <div className={`w-9 h-9 bg-gradient-to-br ${social.color} flex items-center justify-center text-white flex-shrink-0`}>
+                            <Icon className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <p className="font-bold text-navy text-xs">{social.name}</p>
+                            <p className="text-gray-400 text-xs font-light">{social.handle}</p>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 

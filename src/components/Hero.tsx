@@ -66,12 +66,13 @@ export function Hero() {
           variants={itemVariants}
           className="text-5xl md:text-6xl lg:text-7xl font-black text-navy leading-[1.08] tracking-tight mb-8"
         >
-          We Don&apos;t Chase Metrics.{" "}
-          <br className="hidden md:block" />
           We{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-            Engineer Revenue Growth.
-          </span>
+            Engineer
+          </span>{" "}
+          Your Brand&apos;s{" "}
+          <br className="hidden md:block" />
+          Digital Presence.
         </motion.h1>
 
         {/* Subtitle */}
@@ -79,11 +80,9 @@ export function Hero() {
           variants={itemVariants}
           className="text-lg md:text-xl text-gray-600 font-light max-w-3xl mx-auto mb-12 leading-relaxed"
         >
-          Sparkle Media helps ambitious brands{" "}
-          <span className="font-semibold text-navy">acquire customers</span>,{" "}
-          <span className="font-semibold text-navy">increase retention</span>, and{" "}
-          <span className="font-semibold text-navy">scale profitably</span> through performance
-          marketing, SEO, AI-first search visibility, and conversion-focused digital experiences.
+          An exemplary digital marketing journey for your brand with a fully-fledged digital marketing agency that has a{" "}
+          <span className="font-semibold text-navy">360° wide scope</span>{" "}
+          to cover all your needs.
         </motion.p>
 
         {/* CTA */}
