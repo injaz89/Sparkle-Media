@@ -6,8 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import {
   Heart, Users, Sparkles, Coffee, ChevronLeft, ChevronRight,
-  ArrowRight, MessageCircle, Phone, Mail, Instagram, Facebook,
-  Linkedin, ExternalLink, Star,
+  ArrowRight, MessageCircle, Phone, Briefcase, ExternalLink,
 } from "lucide-react";
 
 // Hero slider
@@ -86,21 +85,21 @@ const perks = [
 const socials = [
   {
     name: "Instagram",
-    icon: Instagram,
+    icon: ExternalLink,
     href: "https://www.instagram.com/sparklemedia_/",
     color: "from-pink-500 to-rose-500",
     handle: "@sparklemedia_",
   },
   {
     name: "Facebook",
-    icon: Facebook,
+    icon: ExternalLink,
     href: "https://www.facebook.com/profile.php?id=100083969542491",
     color: "from-blue-600 to-blue-700",
     handle: "Sparkle Media",
   },
   {
     name: "LinkedIn",
-    icon: Linkedin,
+    icon: Briefcase,
     href: "https://www.linkedin.com/company/sparkle-media-pvt-ltd/?viewAsMember=true",
     color: "from-blue-500 to-blue-600",
     handle: "Sparkle Media Pvt Ltd",
@@ -561,7 +560,7 @@ export default function LifeAtSparkleMediaPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 text-navy text-sm font-semibold hover:border-cyan-300 transition-colors"
                     >
-                      LinkedIn <Linkedin className="w-3 h-3" />
+                      LinkedIn <Briefcase className="w-3 h-3" />
                     </a>
                   </div>
                 </div>

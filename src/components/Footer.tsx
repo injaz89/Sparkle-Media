@@ -10,6 +10,7 @@ const footerLinks = {
   Company: [
     { label: "About Us", href: "/about" },
     { label: "Life at Sparkle", href: "/life" },
+    { label: "FAQs", href: "/faqs" },
     { label: "Contact", href: "/contact" },
   ],
   Legal: [

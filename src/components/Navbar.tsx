@@ -111,16 +111,6 @@ export function Navbar() {
                         ]
                       },
                       {
-                        name: "CREATIVE LAB",
-                        href: "#",
-                        subItems: [
-                          { name: "Photography", href: "/services/creative-lab/photography" },
-                          { name: "Video Production", href: "/services/creative-lab/video-production" },
-                          { name: "Graphic Designing", href: "/services/creative-lab/graphic-designing" },
-                          { name: "Branding", href: "/services/creative-lab/branding" },
-                        ]
-                      },
-                      {
                         name: "TECH LAB",
                         href: "#",
                         subItems: [
