@@ -88,7 +88,7 @@ export default function SeoPage() {
           <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-100 rounded-none blur-[100px] opacity-30 pointer-events-none" />
           
           <div className="text-center mb-16 relative z-10">
-            <h2 className="text-4xl md:text-5xl font-black text-navy mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
               We do full-on SEO for your website
             </h2>
             <p className="text-xl text-gray-500 font-light">Or pick the one you like!</p>
@@ -109,7 +109,7 @@ export default function SeoPage() {
                   <div className="w-16 h-16 bg-gray-50 flex items-center justify-center text-cyan-600 mb-8 group-hover:bg-cyan-50 transition-colors duration-300">
                     <Icon className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <h3 className="text-xl font-black text-navy mb-4 tracking-wide">{item.title}</h3>
+                  <h3 className="text-xl font-bold text-navy mb-4 tracking-wide">{item.title}</h3>
                   <p className="text-gray-500 font-light leading-relaxed">
                     {item.desc}
                   </p>
@@ -125,7 +125,7 @@ export default function SeoPage() {
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Type of SEO you can pick:
               </h2>
               <div className="w-24 h-1 bg-cyan-400" />
@@ -146,7 +146,7 @@ export default function SeoPage() {
                       <div className="w-16 h-16 bg-white flex items-center justify-center text-navy shadow-md mr-6">
                         <Icon className="w-8 h-8" />
                       </div>
-                      <h3 className="text-3xl font-black text-navy">{item.title}</h3>
+                      <h3 className="text-3xl font-bold text-navy">{item.title}</h3>
                     </div>
                     <p className="text-gray-700 font-light text-xl leading-relaxed mb-10">
                       {item.desc}

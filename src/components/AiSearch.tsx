@@ -71,7 +71,7 @@ export function AiSearch() {
           <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
             AI-First Search Visibility
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-6">
             Is Your Brand Visible{" "}
             <span
               className="text-transparent bg-clip-text"

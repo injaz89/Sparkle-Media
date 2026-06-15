@@ -72,7 +72,7 @@ export function Hero() {
         {/* Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-6xl lg:text-[5rem] font-black text-[#0A1128] leading-[1.06] tracking-tight mb-6"
+          className="text-5xl md:text-6xl lg:text-[5rem] font-bold text-[#0A1128] leading-[1.06] tracking-tight mb-6"
         >
           We{" "}
           <span
@@ -159,7 +159,7 @@ export function Hero() {
               className="bg-white/75 backdrop-blur-sm px-6 py-6 flex flex-col items-center text-center group hover:bg-white/90 transition-colors duration-200"
             >
               <span
-                className="text-3xl md:text-4xl font-black mb-1"
+                className="text-3xl md:text-4xl font-bold mb-1"
                 style={{ backgroundImage: "linear-gradient(135deg, #39bcfc, #129adc)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
               >
                 {item.value}

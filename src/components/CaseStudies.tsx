@@ -90,7 +90,7 @@ export function CaseStudies() {
                   <h3 className="text-xl font-bold text-white">{study.client}</h3>
                 </div>
 
-                <p className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400 mb-4">
+                <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400 mb-4">
                   {study.result}
                 </p>
 

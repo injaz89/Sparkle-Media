@@ -53,7 +53,7 @@ export function WhyChooseUs() {
             <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
               Why Sparkle Media
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] leading-tight">
               Why Brands Choose{" "}
               <span
                 className="text-transparent bg-clip-text"

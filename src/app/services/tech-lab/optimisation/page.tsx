@@ -31,7 +31,7 @@ export default function WebsiteOptimisationPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black text-navy mb-8"
+            className="text-5xl md:text-7xl font-bold text-navy mb-8"
           >
             Website Optimisation
           </motion.h1>
@@ -97,7 +97,7 @@ export default function WebsiteOptimisationPage() {
             >
               <div className="flex items-center mb-8 pb-8 border-b border-gray-200">
                 <Search className="w-10 h-10 text-cyan-500 mr-6" />
-                <h3 className="text-3xl font-black text-navy">Search Engine Optimization</h3>
+                <h3 className="text-3xl font-bold text-navy">Search Engine Optimization</h3>
               </div>
               <ul className="space-y-6">
                 <li className="flex items-start">

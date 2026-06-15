@@ -146,7 +146,7 @@ export default function WebDevelopmentPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-4 leading-[1.05]"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-4 leading-[1.05]"
               >
                 Website Design{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -210,7 +210,7 @@ export default function WebDevelopmentPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">Why It Matters</span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">Why Your Website Matters</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Why Your Website Matters</h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {whyMatters.map((item, i) => {
@@ -225,7 +225,7 @@ export default function WebDevelopmentPage() {
                     className="bg-white border border-gray-100 hover:border-cyan-200 p-8 hover:shadow-xl hover:shadow-cyan-900/5 transition-all duration-300 group relative overflow-hidden"
                   >
                     <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                    <p className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">
+                    <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">
                       {item.stat}
                     </p>
                     <h3 className="text-base font-bold text-navy mb-3 leading-snug">{item.title}</h3>
@@ -254,7 +254,7 @@ export default function WebDevelopmentPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">What We Build</span>
-              <h2 className="text-4xl md:text-5xl font-black text-white mt-3">Our Website Development Services</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mt-3">Our Website Development Services</h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, i) => {
@@ -271,7 +271,7 @@ export default function WebDevelopmentPage() {
                     <div className={`w-12 h-12 bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-5`}>
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-black text-white mb-3">{service.title}</h3>
+                    <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
                     <p className="text-gray-400 font-light text-sm leading-relaxed mb-5">{service.desc}</p>
                     <div className="space-y-2">
                       {service.ideal.map((pt, j) => (
@@ -298,7 +298,7 @@ export default function WebDevelopmentPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">Our Edge</span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">What Makes Sparkle Media Different?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">What Makes Sparkle Media Different?</h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {differentiators.map((item, i) => {
@@ -345,7 +345,7 @@ export default function WebDevelopmentPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">How We Work</span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">Our Development Process</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Development Process</h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
               {processSteps.map((step, i) => {
@@ -359,7 +359,7 @@ export default function WebDevelopmentPage() {
                     transition={{ delay: i * 0.1 }}
                     className="relative bg-white border border-gray-100 hover:border-cyan-200 p-6 transition-all duration-300 group"
                   >
-                    <div className="absolute top-4 right-4 text-5xl font-black text-gray-50 select-none leading-none">
+                    <div className="absolute top-4 right-4 text-5xl font-bold text-gray-50 select-none leading-none">
                       0{i + 1}
                     </div>
                     <div className="w-10 h-10 bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -387,7 +387,7 @@ export default function WebDevelopmentPage() {
                 <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3 block">
                   We Don&apos;t Just Forget You
                 </span>
-                <h2 className="text-4xl font-black text-white mb-6 leading-tight">
+                <h2 className="text-4xl font-bold text-white mb-6 leading-tight">
                   After Your Website Goes Live
                 </h2>
                 <p className="text-gray-300 font-light leading-relaxed mb-8">
@@ -411,7 +411,7 @@ export default function WebDevelopmentPage() {
                 transition={{ delay: 0.1 }}
                 className="bg-white/5 border border-white/10 p-10"
               >
-                <h3 className="text-2xl font-black text-white mb-4">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   Build a Website That Works as Hard as You Do
                 </h3>
                 <p className="text-gray-300 font-light leading-relaxed mb-4">

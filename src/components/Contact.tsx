@@ -32,7 +32,7 @@ export function Contact() {
           <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
             Get In Touch
           </span>
-          <h2 className="text-5xl md:text-6xl font-black text-[#0A1128] mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold text-[#0A1128] mb-4">
             Let&apos;s Talk<span style={{ color: "#39bcfc" }}>!</span>
           </h2>
           <p className="text-xl text-gray-500 font-light max-w-xl mx-auto">
@@ -145,7 +145,7 @@ export function Contact() {
                 style={{ background: "linear-gradient(90deg, #39bcfc, #129adc)" }}
               />
 
-              <h3 className="text-2xl font-black text-[#0A1128] mb-2">Send Us a Message</h3>
+              <h3 className="text-2xl font-bold text-[#0A1128] mb-2">Send Us a Message</h3>
               <p className="text-sm text-gray-400 font-light mb-8">We&apos;ll get back to you within 24 hours.</p>
 
               <form className="space-y-5">

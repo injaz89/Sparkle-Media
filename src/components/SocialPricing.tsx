@@ -151,12 +151,12 @@ export function SocialPricing() {
 
             <div className="flex flex-col md:flex-row justify-between mb-12 pb-10 border-b border-gray-100">
               <div>
-                <h3 className="text-4xl font-black text-navy mb-4">{currentPkg.name}</h3>
+                <h3 className="text-4xl font-bold text-navy mb-4">{currentPkg.name}</h3>
                 <p className="text-gray-500 font-light text-xl max-w-sm leading-relaxed">{currentPkg.desc}</p>
               </div>
               <div className="mt-8 md:mt-0 md:text-right">
                 <p className="text-gray-400 text-sm font-bold tracking-widest uppercase mb-2">Monthly Retainer</p>
-                <div className="text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+                <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
                   {currentPkg.price}
                 </div>
               </div>

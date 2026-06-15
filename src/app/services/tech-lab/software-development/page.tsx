@@ -170,7 +170,7 @@ export default function SoftwareDevelopmentPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-4 leading-[1.05]"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-4 leading-[1.05]"
               >
                 Software Development{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -238,7 +238,7 @@ export default function SoftwareDevelopmentPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">The Case for Custom Software</span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">
                 Why Invest in Custom Software Development?
               </h2>
             </motion.div>
@@ -284,7 +284,7 @@ export default function SoftwareDevelopmentPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Full-Spectrum Solutions</span>
-              <h2 className="text-4xl md:text-5xl font-black text-white mt-3">Our Software Development Services</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mt-3">Our Software Development Services</h2>
             </motion.div>
             <div className="space-y-6">
               {devServices.map((service, i) => {
@@ -302,7 +302,7 @@ export default function SoftwareDevelopmentPage() {
                       <div className={`w-12 h-12 bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-5`}>
                         <Icon className="w-6 h-6" />
                       </div>
-                      <h3 className="text-xl font-black text-white mb-3">{service.title}</h3>
+                      <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
                       <p className="text-gray-400 font-light text-sm leading-relaxed">{service.desc}</p>
                     </div>
                     <div className="md:w-2/3">
@@ -335,7 +335,7 @@ export default function SoftwareDevelopmentPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">How We Work</span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">Our Development Process</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Development Process</h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
               {processSteps.map((step, i) => {
@@ -349,7 +349,7 @@ export default function SoftwareDevelopmentPage() {
                     transition={{ delay: i * 0.1 }}
                     className="relative bg-white border border-gray-100 hover:border-cyan-200 p-6 transition-all duration-300 group"
                   >
-                    <div className="absolute top-4 right-4 text-5xl font-black text-gray-50 select-none leading-none">
+                    <div className="absolute top-4 right-4 text-5xl font-bold text-gray-50 select-none leading-none">
                       0{i + 1}
                     </div>
                     <div className="w-10 h-10 bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -374,7 +374,7 @@ export default function SoftwareDevelopmentPage() {
                 viewport={{ once: true }}
               >
                 <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest mb-3 block">Why Sparkle Media</span>
-                <h2 className="text-4xl md:text-5xl font-black text-navy mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
                   Why Businesses Choose Sparkle Media
                 </h2>
                 <div className="space-y-5">
@@ -412,7 +412,7 @@ export default function SoftwareDevelopmentPage() {
                 <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500 blur-[80px] opacity-15 pointer-events-none" />
                 <div className="relative z-10">
                   <Cpu className="w-12 h-12 text-cyan-400 mb-6" />
-                  <h3 className="text-2xl font-black text-white mb-4">
+                  <h3 className="text-2xl font-bold text-white mb-4">
                     Build Technology That Drives Growth
                   </h3>
                   <p className="text-gray-300 font-light leading-relaxed mb-4">

@@ -97,7 +97,7 @@ export default function VideoProductionPage() {
         {/* Visualization Types Section */}
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-navy mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
               How do you plan on visualizing your story?
             </h2>
             <div className="w-24 h-1 bg-cyan-400 mx-auto" />
@@ -125,7 +125,7 @@ export default function VideoProductionPage() {
                     </div>
                     
                     <div className="w-full md:w-2/3 p-6 md:p-0 md:pr-10 text-center md:text-left">
-                      <h3 className="text-3xl font-black text-navy mb-4">{type.title}</h3>
+                      <h3 className="text-3xl font-bold text-navy mb-4">{type.title}</h3>
                       <p className="text-xl text-gray-500 font-light leading-relaxed">
                         {type.desc}
                       </p>

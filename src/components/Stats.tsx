@@ -91,7 +91,7 @@ export function Stats() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <div className="text-4xl md:text-5xl font-black mb-2 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 to-blue-400">
+              <div className="text-4xl md:text-5xl font-bold mb-2 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 to-blue-400">
                 <AnimatedCounter
                   target={stat.value}
                   suffix={stat.suffix}

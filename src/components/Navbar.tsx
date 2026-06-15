@@ -42,9 +42,9 @@ export function Navbar() {
             <Image
               src="/SM_Black.png"
               alt="Sparkle Media"
-              width={140}
-              height={48}
-              className="h-10 w-auto object-contain"
+              width={220}
+              height={72}
+              className="h-16 w-auto object-contain"
               priority
             />
           </a>

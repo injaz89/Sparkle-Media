@@ -72,7 +72,7 @@ export function ClientAchievements() {
             <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
               Proven Track Record
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-4">
               Client Achievements
             </h2>
             <p className="text-gray-500 font-light max-w-2xl mx-auto">
@@ -101,7 +101,7 @@ export function ClientAchievements() {
                   {item.category}
                 </p>
                 <p
-                  className={`text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r ${item.color} mb-2 leading-tight`}
+                  className={`text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${item.color} mb-2 leading-tight`}
                 >
                   {item.result}
                 </p>
@@ -125,7 +125,7 @@ export function ClientAchievements() {
               <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
                 Our Mission
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-6 leading-tight">
                 Our focus is simple.
               </h2>
               <p className="text-xl text-gray-500 font-light leading-relaxed">

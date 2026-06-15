@@ -157,7 +157,7 @@ export default function SemPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-4 leading-[1.05]"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-4 leading-[1.05]"
               >
                 Search Engine{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -225,7 +225,7 @@ export default function SemPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">Why SEM</span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">
                 Why Invest in Search Engine Marketing?
               </h2>
             </motion.div>
@@ -272,7 +272,7 @@ export default function SemPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">What We Run</span>
-              <h2 className="text-4xl md:text-5xl font-black text-white mt-3">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mt-3">
                 Our Search Engine Marketing Services
               </h2>
             </motion.div>
@@ -294,7 +294,7 @@ export default function SemPage() {
                       <div className={`w-12 h-12 bg-gradient-to-br ${ad.color} flex items-center justify-center text-white mb-5`}>
                         <Icon className="w-6 h-6" />
                       </div>
-                      <h3 className="text-2xl font-black text-white mb-3">{ad.title}</h3>
+                      <h3 className="text-2xl font-bold text-white mb-3">{ad.title}</h3>
                       <p className="text-gray-400 font-light text-sm leading-relaxed">{ad.desc}</p>
                     </div>
 
@@ -329,7 +329,7 @@ export default function SemPage() {
               viewport={{ once: true }}
             >
               <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">How We Work</span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">
                 Our Performance-Driven Approach
               </h2>
             </motion.div>
@@ -345,7 +345,7 @@ export default function SemPage() {
                     transition={{ delay: i * 0.1 }}
                     className="relative p-6 border border-gray-100 hover:border-cyan-200 hover:shadow-lg transition-all duration-300 group"
                   >
-                    <div className="absolute top-6 right-4 text-5xl font-black text-gray-50 select-none leading-none">
+                    <div className="absolute top-6 right-4 text-5xl font-bold text-gray-50 select-none leading-none">
                       0{i + 1}
                     </div>
                     <div className="w-10 h-10 bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -372,7 +372,7 @@ export default function SemPage() {
                 <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest mb-3 block">
                   Proven Performance
                 </span>
-                <h2 className="text-4xl md:text-5xl font-black text-navy mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
                   Results That Matter
                 </h2>
                 <p className="text-gray-500 font-light leading-relaxed mb-8">
@@ -398,7 +398,7 @@ export default function SemPage() {
               >
                 <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500 blur-[80px] opacity-15 pointer-events-none" />
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-black text-white mb-4">
+                  <h3 className="text-2xl font-bold text-white mb-4">
                     Ready to Turn Searches Into Sales?
                   </h3>
                   <p className="text-gray-300 font-light leading-relaxed mb-8">

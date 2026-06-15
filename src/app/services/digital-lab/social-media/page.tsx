@@ -143,7 +143,7 @@ export default function SocialMediaPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-6 leading-[1.05]"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6 leading-[1.05]"
               >
                 Social Media{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -235,12 +235,12 @@ export default function SocialMediaPage() {
               {/* Left Column: Title & Price */}
               <div className="lg:w-1/3 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-gray-100 pb-8 lg:pb-0 lg:pr-8">
                 <div>
-                  <h2 className="text-4xl font-black text-navy mb-4 tracking-wide">{pkg.name}</h2>
+                  <h2 className="text-4xl font-bold text-navy mb-4 tracking-wide">{pkg.name}</h2>
                   <p className="text-gray-500 font-light text-lg mb-8">{pkg.desc}</p>
                 </div>
                 <div>
                   <p className="text-cyan-600 font-bold tracking-widest uppercase mb-2 text-sm">Monthly Investment</p>
-                  <p className="text-4xl md:text-5xl font-black text-navy">{pkg.price}</p>
+                  <p className="text-4xl md:text-5xl font-bold text-navy">{pkg.price}</p>
                 </div>
               </div>
 
@@ -299,7 +299,7 @@ export default function SocialMediaPage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-xs font-bold tracking-widest text-cyan-500 uppercase">Why It Works</span>
-              <h2 className="text-3xl md:text-4xl font-black text-navy mt-3">Our Social Media Philosophy</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-navy mt-3">Our Social Media Philosophy</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {benefits.map((benefit, i) => {

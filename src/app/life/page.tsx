@@ -198,7 +198,7 @@ export default function LifeAtSparkleMediaPage() {
                 <div className="flex justify-center mb-6">
                   <Heart className="w-10 h-10 text-pink-400 animate-pulse" />
                 </div>
-                <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                   {heroSlides[currentSlide].headline}
                 </h1>
                 <p className="text-xl text-cyan-100 font-light max-w-2xl mx-auto">
@@ -432,7 +432,7 @@ export default function LifeAtSparkleMediaPage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-xs font-bold tracking-widest text-cyan-500 uppercase">What Our Clients Say</span>
-              <h2 className="text-4xl font-black text-navy mt-3">Client Testimonials</h2>
+              <h2 className="text-4xl font-bold text-navy mt-3">Client Testimonials</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
@@ -462,14 +462,14 @@ export default function LifeAtSparkleMediaPage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-xs font-bold tracking-widest text-cyan-400 uppercase">Proven Results</span>
-              <h2 className="text-4xl font-black text-white mt-3">Case Studies</h2>
+              <h2 className="text-4xl font-bold text-white mt-3">Case Studies</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {caseStudies.map((cs, i) => (
                 <div key={i} className="bg-white/5 border border-white/10 p-8">
                   <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">{cs.category}</p>
-                  <h3 className="text-2xl font-black text-white mb-2">{cs.client}</h3>
-                  <p className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">{cs.result}</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">{cs.client}</h3>
+                  <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">{cs.result}</p>
                 </div>
               ))}
             </div>
@@ -489,7 +489,7 @@ export default function LifeAtSparkleMediaPage() {
                 viewport={{ once: true }}
               >
                 <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest mb-4 block">Get In Touch</span>
-                <h2 className="text-5xl md:text-6xl font-black text-navy mb-6 leading-tight">
+                <h2 className="text-5xl md:text-6xl font-bold text-navy mb-6 leading-tight">
                   Let&apos;s Talk!
                 </h2>
                 <div className="border-l-4 border-cyan-400 pl-6 mb-10 space-y-3">
@@ -537,11 +537,11 @@ export default function LifeAtSparkleMediaPage() {
                 <div className="bg-gray-50 border border-gray-100 p-6">
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Speak with our CEO</p>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-black text-xl flex-shrink-0">
+                    <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                       I
                     </div>
                     <div>
-                      <p className="font-black text-navy text-lg">Inshath Ifham</p>
+                      <p className="font-bold text-navy text-lg">Inshath Ifham</p>
                       <p className="text-gray-500 text-sm font-light">Founder — Chairman & CEO</p>
                     </div>
                   </div>
@@ -576,7 +576,7 @@ export default function LifeAtSparkleMediaPage() {
                 {/* Form */}
                 <div className="bg-gray-50 border border-gray-100 p-10 mb-8 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-100/50 blur-3xl opacity-50 pointer-events-none -translate-y-1/2 translate-x-1/2" />
-                  <h3 className="text-2xl font-black text-navy mb-8 relative z-10">Send Us a Message</h3>
+                  <h3 className="text-2xl font-bold text-navy mb-8 relative z-10">Send Us a Message</h3>
                   <form className="relative z-10 space-y-6">
                     <div>
                       <label htmlFor="life-name" className="block text-xs font-bold text-navy uppercase tracking-widest mb-2">

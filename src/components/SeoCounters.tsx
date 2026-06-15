@@ -35,7 +35,7 @@ function AnimatedCounter({ end, suffix, label }: { end: number, suffix: string, 
 
   return (
     <div ref={ref} className="text-center p-12 bg-white rounded-none shadow-xl shadow-cyan-900/5 hover:-translate-y-2 transition-transform duration-300 border border-gray-50">
-      <div className="text-6xl md:text-8xl font-black bg-clip-text text-transparent bg-gradient-to-br from-cyan-500 to-blue-600 mb-6 tracking-tighter">
+      <div className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-cyan-500 to-blue-600 mb-6 tracking-tighter">
         {displayCount}{suffix}
       </div>
       <p className="text-xl text-gray-500 font-light leading-relaxed max-w-xs mx-auto">

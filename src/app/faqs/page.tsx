@@ -218,7 +218,7 @@ export default function FaqsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[1.05]"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.05]"
             >
               Frequently Asked{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
@@ -304,7 +304,7 @@ export default function FaqsPage() {
                     <div className="mb-8 pb-6 border-b-2 border-gray-50">
                       <div className="flex items-center gap-3 mb-2">
                         <div className={`w-1 h-6 bg-gradient-to-b ${active.color}`} />
-                        <h2 className="text-2xl md:text-3xl font-black text-navy">{active.label}</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-navy">{active.label}</h2>
                       </div>
                       {active.badge && (
                         <span className="inline-block text-xs font-semibold text-amber-600 bg-amber-50 border border-amber-100 px-3 py-1 mt-1">
@@ -331,7 +331,7 @@ export default function FaqsPage() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">Complete Reference</span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">All Questions, One Place</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">All Questions, One Place</h2>
               <p className="text-gray-500 font-light mt-4">Browse every FAQ across all topics in a single view.</p>
             </div>
             <div className="space-y-12">
@@ -345,7 +345,7 @@ export default function FaqsPage() {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`w-8 h-0.5 bg-gradient-to-r ${cat.color}`} />
-                    <h3 className="text-sm font-black text-navy uppercase tracking-widest">{cat.label}</h3>
+                    <h3 className="text-sm font-bold text-navy uppercase tracking-widest">{cat.label}</h3>
                   </div>
                   <div className="bg-white border border-gray-100 divide-y divide-gray-50 px-6">
                     {cat.faqs.map((faq, i) => (
@@ -366,7 +366,7 @@ export default function FaqsPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight"
+              className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
             >
               Didn&apos;t find your answer?
             </motion.h2>

@@ -73,7 +73,7 @@ export default function EmailMarketingPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-6 leading-[1.05]"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6 leading-[1.05]"
               >
                 CRM &{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -144,7 +144,7 @@ export default function EmailMarketingPage() {
                 <span className="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3 block">
                   Highest-Converting Channel
                 </span>
-                <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                   WhatsApp Marketing Automation
                 </h2>
                 <p className="text-gray-300 font-light leading-relaxed mb-4">
@@ -201,7 +201,7 @@ export default function EmailMarketingPage() {
                 <span className="text-xs font-bold tracking-widest text-cyan-500 uppercase mb-3 block">
                   Highest ROI Channel
                 </span>
-                <h2 className="text-4xl md:text-5xl font-black text-navy mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
                   Email Marketing Automation
                 </h2>
                 <p className="text-gray-500 font-light leading-relaxed mb-8">
@@ -243,7 +243,7 @@ export default function EmailMarketingPage() {
               >
                 <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500 blur-[80px] opacity-15 pointer-events-none" />
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-black text-white mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-6">
                     Why Email Automation Changes Everything
                   </h3>
                   <div className="space-y-4 text-gray-300 font-light leading-relaxed">
@@ -281,7 +281,7 @@ export default function EmailMarketingPage() {
               <span className="text-xs font-bold tracking-widest text-cyan-500 uppercase mb-3 block">
                 Full Service
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy">What We Build for You</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy">What We Build for You</h2>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -315,7 +315,7 @@ export default function EmailMarketingPage() {
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500 blur-[100px] opacity-15 pointer-events-none" />
               <div className="relative z-10">
-                <h3 className="text-3xl font-black text-white mb-4">
+                <h3 className="text-3xl font-bold text-white mb-4">
                   Ready to Automate Your Growth?
                 </h3>
                 <p className="text-gray-300 font-light max-w-xl mx-auto mb-8 leading-relaxed">

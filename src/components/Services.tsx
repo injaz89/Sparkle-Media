@@ -56,7 +56,7 @@ export function Services() {
             <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
               What We Do
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-4">
               Our Services
             </h2>
             <div

@@ -49,7 +49,7 @@ export function AboutBrief() {
             <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
               About Us
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-6 leading-tight">
               Built For Businesses That{" "}
               <span
                 className="text-transparent bg-clip-text"
@@ -63,7 +63,7 @@ export function AboutBrief() {
                 Sparkle Media was founded with a simple belief:
               </p>
               <p
-                className="text-2xl font-black text-transparent bg-clip-text mt-1"
+                className="text-2xl font-bold text-transparent bg-clip-text mt-1"
                 style={{ backgroundImage: "linear-gradient(135deg, #39bcfc 0%, #129adc 100%)" }}
               >
                 Marketing should be accountable.

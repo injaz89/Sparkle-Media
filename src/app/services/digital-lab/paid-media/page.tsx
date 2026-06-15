@@ -124,7 +124,7 @@ export default function PaidMediaPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
-                  className="text-5xl md:text-6xl lg:text-7xl font-black text-navy mb-4 leading-[1.05]"
+                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-4 leading-[1.05]"
                 >
                   Paid Media{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -135,7 +135,7 @@ export default function PaidMediaPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15 }}
-                  className="text-2xl font-black text-navy mb-6"
+                  className="text-2xl font-bold text-navy mb-6"
                 >
                   Scale Faster With Ads
                 </motion.p>
@@ -184,7 +184,7 @@ export default function PaidMediaPage() {
                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Why Invest in Paid Media?</p>
                 {stats.map((stat, i) => (
                   <div key={i} className="flex items-start gap-5 p-5 bg-gray-50 border border-gray-100 hover:border-cyan-200 transition-colors">
-                    <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 flex-shrink-0 min-w-[80px]">
+                    <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 flex-shrink-0 min-w-[80px]">
                       {stat.value}
                     </span>
                     <p className="text-gray-600 font-light text-sm leading-relaxed">{stat.label}</p>
@@ -214,7 +214,7 @@ export default function PaidMediaPage() {
                 <span className="text-xs font-bold tracking-widest text-cyan-400 uppercase mb-4 block">
                   Our Mission
                 </span>
-                <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                   Performance Marketing That Turns Ad Spend Into Revenue
                 </h2>
                 <div className="border-l-2 border-cyan-400 pl-6 space-y-4">
@@ -259,7 +259,7 @@ export default function PaidMediaPage() {
                         <p className="text-white font-semibold">{r.client}</p>
                         <p className="text-xs text-gray-500 font-light">{r.category}</p>
                       </div>
-                      <span className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
+                      <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
                         {r.result}
                       </span>
                     </motion.div>
@@ -287,7 +287,7 @@ export default function PaidMediaPage() {
                 Why It Matters
               </motion.span>
               <motion.h2
-                className="text-4xl md:text-5xl font-black text-navy mt-3 mb-6"
+                className="text-4xl md:text-5xl font-bold text-navy mt-3 mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -324,7 +324,7 @@ export default function PaidMediaPage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">How We Work</span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy mt-3">Our Approach</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Approach</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {approaches.map((item, i) => {
@@ -362,7 +362,7 @@ export default function PaidMediaPage() {
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
               <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Where We Run Your Ads</span>
-              <h2 className="text-4xl md:text-5xl font-black text-white mt-3">Platforms We Manage</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mt-3">Platforms We Manage</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {platforms.map((platform, i) => {
@@ -394,7 +394,7 @@ export default function PaidMediaPage() {
             <div className="flex flex-col lg:flex-row gap-16 items-start">
               <div className="lg:w-1/3 lg:sticky lg:top-32">
                 <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">Full Service</span>
-                <h2 className="text-4xl md:text-5xl font-black text-navy mt-3 mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3 mb-6 leading-tight">
                   What We Can Do For You
                 </h2>
                 <p className="text-gray-500 font-light leading-relaxed mb-8">
@@ -440,7 +440,7 @@ export default function PaidMediaPage() {
                 viewport={{ once: true }}
               >
                 <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">Why Sparkle Media</span>
-                <h2 className="text-4xl md:text-5xl font-black text-navy mt-3 mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3 mb-6 leading-tight">
                   Why Businesses Choose Sparkle Media
                 </h2>
                 <div className="border-l-2 border-cyan-400 pl-6 space-y-3">
@@ -474,7 +474,7 @@ export default function PaidMediaPage() {
                 <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500 blur-[80px] opacity-15 pointer-events-none" />
                 <div className="relative z-10">
                   <BarChart3 className="w-12 h-12 text-cyan-400 mb-6" />
-                  <h3 className="text-2xl font-black text-white mb-4">
+                  <h3 className="text-2xl font-bold text-white mb-4">
                     Data + Creativity + Accountability
                   </h3>
                   <p className="text-gray-300 font-light leading-relaxed mb-6">

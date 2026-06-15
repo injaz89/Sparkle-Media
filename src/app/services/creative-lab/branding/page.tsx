@@ -88,7 +88,7 @@ export default function BrandingPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-black text-white mb-12 leading-tight text-center"
+              className="text-4xl md:text-6xl font-bold text-white mb-12 leading-tight text-center"
             >
               Your brand tells a story.
             </motion.h2>
@@ -120,7 +120,7 @@ export default function BrandingPage() {
         {/* Brand Recall Modes Section */}
         <div className="py-32 max-w-7xl mx-auto px-6">
           <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl font-black text-navy mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
               Which mode of brand recall <br className="hidden md:block"/> do you think your brand needs?
             </h2>
             <div className="w-24 h-1 bg-cyan-400 mx-auto" />
@@ -138,7 +138,7 @@ export default function BrandingPage() {
                   transition={{ delay: i * 0.1 }}
                   className="bg-gray-50 border border-gray-100 p-8 md:p-12 hover:bg-white hover:shadow-2xl hover:shadow-cyan-900/10 hover:border-cyan-200 transition-all duration-300 group flex flex-col md:flex-row items-center gap-8 md:gap-16"
                 >
-                  <div className="text-6xl md:text-8xl font-black text-gray-200 group-hover:text-cyan-100 transition-colors duration-500 shrink-0">
+                  <div className="text-6xl md:text-8xl font-bold text-gray-200 group-hover:text-cyan-100 transition-colors duration-500 shrink-0">
                     {mode.num}
                   </div>
                   
@@ -147,7 +147,7 @@ export default function BrandingPage() {
                   </div>
                   
                   <div className="text-center md:text-left">
-                    <h3 className="text-3xl font-black text-navy mb-4">{mode.title}</h3>
+                    <h3 className="text-3xl font-bold text-navy mb-4">{mode.title}</h3>
                     <p className="text-xl text-gray-500 font-light leading-relaxed max-w-3xl">
                       {mode.desc}
                     </p>

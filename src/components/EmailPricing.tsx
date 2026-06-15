@@ -35,7 +35,7 @@ export function EmailPricing() {
               transition={{ delay: i * 0.1 }}
             >
               {i === 2 && (
-                <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-cyan-400 text-navy text-xs font-black px-4 py-1 rounded-none uppercase tracking-widest">
+                <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-cyan-400 text-navy text-xs font-bold px-4 py-1 rounded-none uppercase tracking-widest">
                   Popular
                 </div>
               )}
@@ -48,7 +48,7 @@ export function EmailPricing() {
                 <h3 className={`text-sm font-bold tracking-widest uppercase mb-4 ${i === 2 ? 'text-gray-300' : 'text-gray-400'}`}>
                   {plan.campaigns}
                 </h3>
-                <div className={`text-4xl font-black ${i === 2 ? 'text-white' : 'text-navy'}`}>
+                <div className={`text-4xl font-bold ${i === 2 ? 'text-white' : 'text-navy'}`}>
                   {plan.price}
                 </div>
               </div>

@@ -45,7 +45,7 @@ export function OurApproach() {
           <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
             How We Work
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-6">Our Approach</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-6">Our Approach</h2>
           <p className="text-gray-500 font-light max-w-2xl mx-auto text-lg">
             A proven four-step process that turns market insight into measurable business growth.
           </p>
@@ -70,7 +70,7 @@ export function OurApproach() {
 
                 <div className="p-8 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden h-full">
                   {/* Large number watermark */}
-                  <div className="absolute -top-4 -right-4 text-[100px] font-black text-[#d6f2ff] opacity-100 z-0 pointer-events-none leading-none select-none">
+                  <div className="absolute -top-4 -right-4 text-[100px] font-bold text-[#d6f2ff] opacity-100 z-0 pointer-events-none leading-none select-none">
                     {step.number}
                   </div>
 

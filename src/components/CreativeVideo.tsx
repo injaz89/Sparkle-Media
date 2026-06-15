@@ -50,7 +50,7 @@ export function CreativeVideo() {
           <div className="absolute top-8 right-8 z-20">
             {/* 3-Second Challenge Micro-Interaction */}
             <motion.div 
-              className="bg-red-500 text-navy text-xs font-black uppercase tracking-widest px-4 py-2 rounded-none flex items-center shadow-lg shadow-red-500/20"
+              className="bg-red-500 text-navy text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-none flex items-center shadow-lg shadow-red-500/20"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >

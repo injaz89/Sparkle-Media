@@ -105,7 +105,7 @@ export default function GraphicDesigningPage() {
         {/* Types/Creativity Section */}
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-black text-navy mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
               Choose the type of creativity <br className="hidden md:block"/> your brand really needs!
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto" />
@@ -129,7 +129,7 @@ export default function GraphicDesigningPage() {
                     <Icon className="w-8 h-8" />
                   </div>
                   
-                  <h3 className="text-3xl font-black text-navy mb-4 relative z-10">{type.title}</h3>
+                  <h3 className="text-3xl font-bold text-navy mb-4 relative z-10">{type.title}</h3>
                   <p className="text-xl text-gray-600 font-light leading-relaxed relative z-10">
                     {type.desc}
                   </p>
