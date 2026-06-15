@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,9 +38,16 @@ export function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <div className="text-xl font-black tracking-widest uppercase">
-            <span className="text-[#0A1128]">SPARKLE</span><span className="text-[#3AADDB]">MEDIA</span>
-          </div>
+          <a href="/" aria-label="Sparkle Media Home">
+            <Image
+              src="/SM_Black.png"
+              alt="Sparkle Media"
+              width={140}
+              height={48}
+              className="h-10 w-auto object-contain"
+              priority
+            />
+          </a>
           
           <div className="flex items-center space-x-6">
             <a
