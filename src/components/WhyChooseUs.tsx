@@ -40,7 +40,7 @@ export function WhyChooseUs() {
   return (
     <section className="py-32 bg-white relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D1EBF5] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#87d4f8] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
@@ -50,14 +50,14 @@ export function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4">
+            <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
               Why Sparkle Media
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] leading-tight">
               Why Brands Choose{" "}
               <span
                 className="text-transparent bg-clip-text"
-                style={{ backgroundImage: "linear-gradient(135deg, #3AADDB 0%, #0083B0 100%)" }}
+                style={{ backgroundImage: "linear-gradient(135deg, #39bcfc 0%, #129adc 100%)" }}
               >
                 Sparkle Media
               </span>
@@ -69,7 +69,7 @@ export function WhyChooseUs() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <div className="border-l-[3px] border-[#3AADDB] pl-6">
+            <div className="border-l-[3px] border-[#39bcfc] pl-6">
               <p className="text-lg text-gray-500 font-light leading-relaxed">
                 Most agencies focus on impressions, likes and vanity metrics.
               </p>
@@ -85,18 +85,18 @@ export function WhyChooseUs() {
             return (
               <motion.div
                 key={i}
-                className="group p-8 bg-white border border-[#D1EBF5] hover:border-[#3AADDB]/50 hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                className="group p-8 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 {/* Hover accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#3AADDB] to-[#0083B0] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#39bcfc] to-[#129adc] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
                 <div
                   className="w-12 h-12 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300"
-                  style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+                  style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
                 >
                   <Icon className="w-5 h-5" />
                 </div>
@@ -127,7 +127,7 @@ export function WhyChooseUs() {
             rel="noopener noreferrer"
             id="why-us-cta-btn"
             className="inline-block px-10 py-4 text-white font-bold transition-all hover:scale-105 shadow-md shadow-sky-200/60"
-            style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+            style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
           >
             Book a Strategy Call
           </a>

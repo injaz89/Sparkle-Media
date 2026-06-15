@@ -33,7 +33,7 @@ const steps = [
 export function OurApproach() {
   return (
     <section className="py-32 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D1EBF5] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#87d4f8] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -42,7 +42,7 @@ export function OurApproach() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4">
+          <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
             How We Work
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-6">Our Approach</h2>
@@ -65,19 +65,19 @@ export function OurApproach() {
               >
                 {/* Connector line */}
                 {i < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-full w-6 h-px bg-gradient-to-r from-[#D1EBF5] to-[#D1EBF5] z-10" />
+                  <div className="hidden lg:block absolute top-10 left-full w-6 h-px bg-gradient-to-r from-[#87d4f8] to-[#87d4f8] z-10" />
                 )}
 
-                <div className="p-8 bg-white border border-[#D1EBF5] hover:border-[#3AADDB]/50 hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden h-full">
+                <div className="p-8 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden h-full">
                   {/* Large number watermark */}
-                  <div className="absolute -top-4 -right-4 text-[100px] font-black text-[#EDF6FB] opacity-100 z-0 pointer-events-none leading-none select-none">
+                  <div className="absolute -top-4 -right-4 text-[100px] font-black text-[#d6f2ff] opacity-100 z-0 pointer-events-none leading-none select-none">
                     {step.number}
                   </div>
 
                   <div className="relative z-10">
                     <div
                       className="w-12 h-12 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300"
-                      style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+                      style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
                     >
                       <Icon className="w-6 h-6" />
                     </div>
@@ -86,7 +86,7 @@ export function OurApproach() {
                   </div>
 
                   {/* Bottom accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#3AADDB] to-[#0083B0] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#39bcfc] to-[#129adc] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </div>
               </motion.div>
             );

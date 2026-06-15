@@ -1,13 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0A1128;
-  --color-primary: #3AADDB;
-  --color-secondary: #0083B0;
-  --color-light-blue: #EDF6FB;
-  --color-lighter-blue: #F0F8FF;
-  --color-border-blue: #D1EBF5;
-  --font-sans: var(--font-inter), sans-serif;
+  /* ── Brand Palette ── */
+  --color-primary:       #39bcfc;   /* main */
+  --color-secondary:     #129adc;   /* secondary */
+  --color-bg:            #bae7fe;   /* background */
+  --color-navy:          #0A1128;   /* dark headings */
+
+  /* Derived tints */
+  --color-primary-light: #d6f2ff;
+  --color-primary-dark:  #129adc;
+  --color-border-blue:   #87d4f8;
+
+  /* Legacy tokens kept for compat */
+  --color-light-blue:    #d6f2ff;
+  --color-lighter-blue:  #eef9ff;
+
+  --font-sans: var(--font-sans), "Source Sans 3", sans-serif;
 }
 
 @layer utilities {
@@ -25,32 +34,44 @@ html {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #bae7fe;
   color: #1a1a1a;
+  font-family: var(--font-sans), "Source Sans 3", sans-serif;
 }
 
-/* Smooth scrollbar */
+/* ── Scrollbar ── */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f0f8ff;
+  background: #d6f2ff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #3AADDB;
+  background: #39bcfc;
   border-radius: 3px;
 }
+::-webkit-scrollbar-thumb:hover {
+  background: #129adc;
+}
 
-/* Selection */
+/* ── Text selection ── */
 ::selection {
-  background: #3AADDB;
+  background: #39bcfc;
   color: white;
 }
 
-/* Wave background utility */
+/* ── Wave background ── */
 .wave-bg {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600' preserveAspectRatio='none'%3E%3Cpath fill='none' stroke='%233AADDB' stroke-width='1.5' stroke-opacity='0.12' d='M0,200 C200,100 400,300 600,200 C800,100 1000,300 1200,200 C1350,130 1420,180 1440,160'/%3E%3Cpath fill='none' stroke='%233AADDB' stroke-width='1.2' stroke-opacity='0.09' d='M0,350 C180,250 350,420 560,330 C760,240 950,400 1150,320 C1320,255 1400,300 1440,280'/%3E%3Cpath fill='none' stroke='%230083B0' stroke-width='1' stroke-opacity='0.07' d='M0,450 C220,370 410,500 620,430 C810,360 1020,470 1200,400 C1340,345 1410,380 1440,360'/%3E%3Cpath fill='none' stroke='%233AADDB' stroke-width='0.8' stroke-opacity='0.08' d='M0,100 C150,40 300,150 480,80 C660,10 820,120 1000,70 C1180,20 1340,90 1440,60'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600' preserveAspectRatio='none'%3E%3Cpath fill='none' stroke='%2339bcfc' stroke-width='1.5' stroke-opacity='0.18' d='M0,200 C200,100 400,300 600,200 C800,100 1000,300 1200,200 C1350,130 1420,180 1440,160'/%3E%3Cpath fill='none' stroke='%2339bcfc' stroke-width='1.2' stroke-opacity='0.12' d='M0,350 C180,250 350,420 560,330 C760,240 950,400 1150,320 C1320,255 1400,300 1440,280'/%3E%3Cpath fill='none' stroke='%23129adc' stroke-width='1' stroke-opacity='0.1' d='M0,450 C220,370 410,500 620,430 C810,360 1020,470 1200,400 C1340,345 1410,380 1440,360'/%3E%3Cpath fill='none' stroke='%2339bcfc' stroke-width='0.8' stroke-opacity='0.1' d='M0,100 C150,40 300,150 480,80 C660,10 820,120 1000,70 C1180,20 1340,90 1440,60'/%3E%3C/svg%3E");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* ── Glass card utility ── */
+.glass-card {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(57,188,252,0.18);
 }

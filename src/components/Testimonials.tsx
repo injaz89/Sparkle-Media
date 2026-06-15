@@ -9,7 +9,7 @@ const testimonials = [
     role: "Head of Marketing",
     company: "Select Group",
     avatar: "K",
-    avatarGrad: "linear-gradient(135deg, #3AADDB, #0083B0)",
+    avatarGrad: "linear-gradient(135deg, #39bcfc, #129adc)",
     content:
       "Sparkle Media completely revolutionized our digital presence. Their attention to detail and data-driven approach led to phenomenal growth in our conversions. Within 3 months, we saw a 240% increase in qualified leads. Highly recommend!",
     rating: 5,
@@ -38,13 +38,13 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-32 bg-[#F0F8FF] relative overflow-hidden">
+    <section id="testimonials" className="py-32 bg-[#eef9ff] relative overflow-hidden">
       {/* Top accent strip */}
-      <div className="absolute top-0 left-0 w-full h-1" style={{ background: "linear-gradient(90deg, #3AADDB, #0083B0, #3AADDB)" }} />
+      <div className="absolute top-0 left-0 w-full h-1" style={{ background: "linear-gradient(90deg, #39bcfc, #129adc, #39bcfc)" }} />
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.3]"
         style={{
-          backgroundImage: "radial-gradient(circle, #D1EBF5 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, #87d4f8 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -52,7 +52,7 @@ export function Testimonials() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <motion.span
-            className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4"
+            className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -83,7 +83,7 @@ export function Testimonials() {
           {testimonials.map((testimonial, i) => (
             <motion.div
               key={i}
-              className="bg-white border border-[#D1EBF5] p-8 relative flex flex-col hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300"
+              className="bg-white border border-[#87d4f8] p-8 relative flex flex-col hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -92,11 +92,11 @@ export function Testimonials() {
               {/* Top accent */}
               <div
                 className="absolute top-0 left-0 right-0 h-0.5"
-                style={{ background: "linear-gradient(90deg, #3AADDB, #0083B0)" }}
+                style={{ background: "linear-gradient(90deg, #39bcfc, #129adc)" }}
               />
 
               {/* Quote icon */}
-              <div className="absolute top-6 right-8 text-[#EDF6FB]">
+              <div className="absolute top-6 right-8 text-[#d6f2ff]">
                 <Quote className="w-12 h-12 fill-current" />
               </div>
 
@@ -110,7 +110,7 @@ export function Testimonials() {
                 &ldquo;{testimonial.content}&rdquo;
               </p>
 
-              <div className="flex items-center gap-4 pt-6 border-t border-[#D1EBF5]">
+              <div className="flex items-center gap-4 pt-6 border-t border-[#87d4f8]">
                 <div
                   className="w-12 h-12 flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
                   style={{ background: testimonial.avatarGrad }}
@@ -120,7 +120,7 @@ export function Testimonials() {
                 <div>
                   <h4 className="font-bold text-[#0A1128] text-sm">{testimonial.name}</h4>
                   <p className="text-xs text-gray-400 font-light">{testimonial.role}</p>
-                  <p className="text-xs text-[#0083B0] font-semibold">{testimonial.company}</p>
+                  <p className="text-xs text-[#129adc] font-semibold">{testimonial.company}</p>
                 </div>
               </div>
             </motion.div>

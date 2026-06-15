@@ -31,18 +31,18 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-white wave-bg">
+    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-[#bae7fe] wave-bg">
       {/* Soft blue radial glow */}
       <div
         className="absolute top-0 right-0 w-[700px] h-[700px] pointer-events-none"
         style={{
-          background: "radial-gradient(circle at 80% 20%, rgba(58,173,219,0.08) 0%, transparent 60%)",
+          background: "radial-gradient(circle at 80% 20%, rgba(57,188,252,0.15) 0%, transparent 60%)",
         }}
       />
       <div
         className="absolute bottom-0 left-0 w-[500px] h-[500px] pointer-events-none"
         style={{
-          background: "radial-gradient(circle at 20% 80%, rgba(0,131,176,0.06) 0%, transparent 60%)",
+          background: "radial-gradient(circle at 20% 80%, rgba(18,154,220,0.12) 0%, transparent 60%)",
         }}
       />
 
@@ -50,7 +50,7 @@ export function Hero() {
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.35]"
         style={{
-          backgroundImage: "radial-gradient(circle, #D1EBF5 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -63,8 +63,8 @@ export function Hero() {
       >
         {/* Badge */}
         <motion.div variants={itemVariants} className="flex justify-center mb-8">
-          <span className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-white border border-[#D1EBF5] shadow-sm shadow-sky-100 text-[#0083B0] text-xs font-bold uppercase tracking-[0.15em]">
-            <span className="w-2 h-2 rounded-full bg-[#3AADDB] animate-pulse inline-block" />
+          <span className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-white/70 backdrop-blur-sm border border-[#39bcfc]/30 shadow-sm shadow-sky-200 text-[#129adc] text-xs font-bold uppercase tracking-[0.15em]">
+            <span className="w-2 h-2 rounded-full bg-[#39bcfc] animate-pulse inline-block" />
             Performance Marketing Agency · Sri Lanka
           </span>
         </motion.div>
@@ -77,7 +77,7 @@ export function Hero() {
           We{" "}
           <span
             className="text-transparent bg-clip-text"
-            style={{ backgroundImage: "linear-gradient(135deg, #3AADDB 0%, #0083B0 100%)" }}
+            style={{ backgroundImage: "linear-gradient(135deg, #39bcfc 0%, #129adc 100%)" }}
           >
             Engineer
           </span>
@@ -87,7 +87,7 @@ export function Hero() {
             Digital Presence
             {/* Underline accent */}
             <motion.span
-              className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-to-r from-[#3AADDB] to-[#0083B0]"
+              className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-to-r from-[#39bcfc] to-[#129adc]"
               initial={{ scaleX: 0, originX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 1, duration: 0.7, ease: "easeOut" }}
@@ -116,8 +116,8 @@ export function Hero() {
             id="hero-strategy-call-btn"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative px-8 py-4 text-white text-base font-bold overflow-hidden transition-all hover:scale-105 inline-flex items-center gap-3 shadow-lg shadow-sky-200/60"
-            style={{ background: "linear-gradient(135deg, #3AADDB 0%, #0083B0 100%)" }}
+            className="group relative px-8 py-4 text-white text-base font-bold overflow-hidden transition-all hover:scale-105 inline-flex items-center gap-3 shadow-lg shadow-sky-300/60"
+            style={{ background: "linear-gradient(135deg, #39bcfc 0%, #129adc 100%)" }}
           >
             <span className="relative z-10 flex items-center gap-3">
               Book a Free Strategy Call
@@ -134,7 +134,7 @@ export function Hero() {
           <a
             href="#services"
             id="hero-services-btn"
-            className="group px-8 py-4 bg-white border-2 border-[#D1EBF5] text-[#0A1128] text-base font-semibold hover:border-[#3AADDB] hover:text-[#0083B0] transition-all inline-flex items-center gap-3"
+            className="group px-8 py-4 bg-white/70 backdrop-blur-sm border-2 border-[#39bcfc]/40 text-[#0A1128] text-base font-semibold hover:border-[#39bcfc] hover:text-[#129adc] transition-all inline-flex items-center gap-3"
           >
             View Our Services
             <svg
@@ -151,16 +151,16 @@ export function Hero() {
         {/* Stats Bar */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#D1EBF5] border border-[#D1EBF5] shadow-sm shadow-sky-100/50"
+          className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#39bcfc]/25 border border-[#39bcfc]/30 shadow-sm shadow-sky-200/50"
         >
           {trustItems.map((item, i) => (
             <div
               key={i}
-              className="bg-white px-6 py-6 flex flex-col items-center text-center group hover:bg-[#EDF6FB] transition-colors duration-200"
+              className="bg-white/75 backdrop-blur-sm px-6 py-6 flex flex-col items-center text-center group hover:bg-white/90 transition-colors duration-200"
             >
               <span
                 className="text-3xl md:text-4xl font-black mb-1"
-                style={{ backgroundImage: "linear-gradient(135deg, #3AADDB, #0083B0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+                style={{ backgroundImage: "linear-gradient(135deg, #39bcfc, #129adc)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
               >
                 {item.value}
               </span>
@@ -178,8 +178,8 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6 }}
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#3AADDB]">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-[#3AADDB] to-transparent animate-pulse" />
+        <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#129adc]">Scroll</span>
+        <div className="w-px h-10 bg-gradient-to-b from-[#39bcfc] to-transparent animate-pulse" />
       </motion.div>
     </section>
   );

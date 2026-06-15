@@ -45,7 +45,7 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="py-32 bg-white relative">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D1EBF5] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#87d4f8] to-transparent" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
           <motion.div
@@ -53,7 +53,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4">
+            <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
               What We Do
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-4">
@@ -61,7 +61,7 @@ export function Services() {
             </h2>
             <div
               className="w-20 h-1"
-              style={{ background: "linear-gradient(90deg, #3AADDB, #0083B0)" }}
+              style={{ background: "linear-gradient(90deg, #39bcfc, #129adc)" }}
             />
           </motion.div>
           <motion.p
@@ -82,28 +82,28 @@ export function Services() {
               <motion.a
                 href={service.href}
                 key={i}
-                className="group p-8 bg-white border border-[#D1EBF5] hover:border-[#3AADDB]/50 hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden block"
+                className="group p-8 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden block"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
                 {/* Bottom hover accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#3AADDB] to-[#0083B0] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#39bcfc] to-[#129adc] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
                 <div
                   className="w-12 h-12 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300"
-                  style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+                  style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
                 >
                   <Icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0A1128] mb-3 group-hover:text-[#0083B0] transition-colors">
+                <h3 className="text-xl font-bold text-[#0A1128] mb-3 group-hover:text-[#129adc] transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-gray-500 leading-relaxed font-light text-sm">
                   {service.description}
                 </p>
-                <div className="mt-5 flex items-center gap-1 text-[#3AADDB] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="mt-5 flex items-center gap-1 text-[#39bcfc] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   Learn more
                   <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -124,7 +124,7 @@ export function Services() {
           <a
             href="/services"
             id="view-all-services-btn"
-            className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#D1EBF5] text-[#0A1128] font-semibold hover:border-[#3AADDB] hover:text-[#0083B0] transition-all text-sm"
+            className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#87d4f8] text-[#0A1128] font-semibold hover:border-[#39bcfc] hover:text-[#129adc] transition-all text-sm"
           >
             View All Services
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

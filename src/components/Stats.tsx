@@ -77,7 +77,7 @@ export function Stats() {
       {/* Background accent */}
       <div className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(circle at 20% 50%, #00B4DB 0%, transparent 60%), radial-gradient(circle at 80% 50%, #0083B0 0%, transparent 60%)"
+          backgroundImage: "radial-gradient(circle at 20% 50%, #00B4DB 0%, transparent 60%), radial-gradient(circle at 80% 50%, #129adc 0%, transparent 60%)"
         }}
       />
       <div className="max-w-7xl mx-auto px-6 relative z-10">

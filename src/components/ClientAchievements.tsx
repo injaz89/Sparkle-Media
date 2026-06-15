@@ -8,31 +8,31 @@ const achievements = [
     client: "GR Events",
     result: "40X–60X ROAS",
     category: "Lead Generation",
-    color: "from-[#3AADDB] to-[#0083B0]",
+    color: "from-[#39bcfc] to-[#129adc]",
   },
   {
     client: "Gulabi Run",
     result: "50X ROAS",
     category: "Performance Marketing",
-    color: "from-[#0083B0] to-[#3AADDB]",
+    color: "from-[#129adc] to-[#39bcfc]",
   },
   {
     client: "Mobile Stop",
     result: "21X ROAS",
     category: "E-Commerce & Retail",
-    color: "from-[#3AADDB] to-sky-500",
+    color: "from-[#39bcfc] to-sky-500",
   },
   {
     client: "GR Events",
     result: "300% Growth",
     category: "SEO & Content",
-    color: "from-sky-500 to-[#0083B0]",
+    color: "from-sky-500 to-[#129adc]",
   },
   {
     client: "Prestige Auto",
     result: "15X ROAS",
     category: "Paid Media",
-    color: "from-[#0083B0] to-[#3AADDB]",
+    color: "from-[#129adc] to-[#39bcfc]",
   },
 ];
 
@@ -49,7 +49,7 @@ export function ClientAchievements() {
   return (
     <>
       {/* Client Achievements — light blue tint */}
-      <section className="py-24 bg-[#EDF6FB] relative overflow-hidden">
+      <section className="py-24 bg-[#d6f2ff] relative overflow-hidden">
         {/* Subtle wave pattern */}
         <div
           className="absolute inset-0 pointer-events-none opacity-40 wave-bg"
@@ -57,7 +57,7 @@ export function ClientAchievements() {
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.3]"
           style={{
-            backgroundImage: "radial-gradient(circle, #D1EBF5 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(circle, #87d4f8 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -69,7 +69,7 @@ export function ClientAchievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4">
+            <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
               Proven Track Record
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-4">
@@ -85,7 +85,7 @@ export function ClientAchievements() {
             {achievements.map((item, i) => (
               <motion.div
                 key={i}
-                className="relative group bg-white border border-[#D1EBF5] hover:border-[#3AADDB]/50 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-sky-100/60 hover:-translate-y-1"
+                className="relative group bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-sky-100/60 hover:-translate-y-1"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -95,9 +95,9 @@ export function ClientAchievements() {
                 <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${item.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`} />
 
                 <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-30 transition-opacity">
-                  <TrendingUp className="w-5 h-5 text-[#0083B0]" />
+                  <TrendingUp className="w-5 h-5 text-[#129adc]" />
                 </div>
-                <p className="text-xs font-bold text-[#0083B0] uppercase tracking-widest mb-3">
+                <p className="text-xs font-bold text-[#129adc] uppercase tracking-widest mb-3">
                   {item.category}
                 </p>
                 <p
@@ -113,7 +113,7 @@ export function ClientAchievements() {
       </section>
 
       {/* Our Focus Is Simple — white */}
-      <section className="py-20 bg-white border-b border-[#D1EBF5]">
+      <section className="py-20 bg-white border-b border-[#87d4f8]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -122,7 +122,7 @@ export function ClientAchievements() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4">
+              <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
                 Our Mission
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-6 leading-tight">
@@ -146,7 +146,7 @@ export function ClientAchievements() {
               {focusItems.map((item, i) => (
                 <motion.div
                   key={i}
-                  className="flex items-center gap-3 p-4 bg-[#F0F8FF] border border-[#D1EBF5] hover:border-[#3AADDB]/50 hover:bg-[#EDF6FB] transition-all duration-200"
+                  className="flex items-center gap-3 p-4 bg-[#eef9ff] border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:bg-[#d6f2ff] transition-all duration-200"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -154,7 +154,7 @@ export function ClientAchievements() {
                 >
                   <span
                     className="flex-shrink-0 w-6 h-6 flex items-center justify-center"
-                    style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+                    style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
                   >
                     <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -164,7 +164,7 @@ export function ClientAchievements() {
                 </motion.div>
               ))}
               <motion.div
-                className="col-span-2 mt-2 p-4 bg-[#F0F8FF] border-l-[3px] border-[#3AADDB]"
+                className="col-span-2 mt-2 p-4 bg-[#eef9ff] border-l-[3px] border-[#39bcfc]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}

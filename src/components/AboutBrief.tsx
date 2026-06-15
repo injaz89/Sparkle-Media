@@ -26,13 +26,13 @@ const beliefs = [
 
 export function AboutBrief() {
   return (
-    <section className="py-32 bg-[#F0F8FF] relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D1EBF5] to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D1EBF5] to-transparent" />
+    <section className="py-32 bg-[#eef9ff] relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#87d4f8] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#87d4f8] to-transparent" />
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.3]"
         style={{
-          backgroundImage: "radial-gradient(circle, #D1EBF5 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, #87d4f8 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -46,25 +46,25 @@ export function AboutBrief() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4">
+            <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
               About Us
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-6 leading-tight">
               Built For Businesses That{" "}
               <span
                 className="text-transparent bg-clip-text"
-                style={{ backgroundImage: "linear-gradient(135deg, #3AADDB 0%, #0083B0 100%)" }}
+                style={{ backgroundImage: "linear-gradient(135deg, #39bcfc 0%, #129adc 100%)" }}
               >
                 Expect Results
               </span>
             </h2>
-            <div className="border-l-[3px] border-[#3AADDB] pl-6 mb-8 bg-white/60 py-4 pr-4">
+            <div className="border-l-[3px] border-[#39bcfc] pl-6 mb-8 bg-white/60 py-4 pr-4">
               <p className="text-xl text-[#0A1128] font-semibold">
                 Sparkle Media was founded with a simple belief:
               </p>
               <p
                 className="text-2xl font-black text-transparent bg-clip-text mt-1"
-                style={{ backgroundImage: "linear-gradient(135deg, #3AADDB 0%, #0083B0 100%)" }}
+                style={{ backgroundImage: "linear-gradient(135deg, #39bcfc 0%, #129adc 100%)" }}
               >
                 Marketing should be accountable.
               </p>
@@ -86,7 +86,7 @@ export function AboutBrief() {
                 >
                   <span
                     className="flex-shrink-0 w-5 h-5 flex items-center justify-center mt-0.5"
-                    style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+                    style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
                   >
                     <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -99,7 +99,7 @@ export function AboutBrief() {
 
             <motion.a
               href="/about"
-              className="inline-flex items-center gap-2 mt-10 px-8 py-4 border-2 border-[#D1EBF5] text-[#0A1128] font-semibold hover:border-[#3AADDB] hover:text-[#0083B0] transition-all text-sm bg-white"
+              className="inline-flex items-center gap-2 mt-10 px-8 py-4 border-2 border-[#87d4f8] text-[#0A1128] font-semibold hover:border-[#39bcfc] hover:text-[#129adc] transition-all text-sm bg-white"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -119,7 +119,7 @@ export function AboutBrief() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-6">
+            <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-6">
               Industries We Serve
             </span>
             <div className="grid grid-cols-2 gap-4">
@@ -128,7 +128,7 @@ export function AboutBrief() {
                 return (
                   <motion.div
                     key={i}
-                    className="group flex items-center gap-4 p-5 bg-white border border-[#D1EBF5] hover:border-[#3AADDB]/50 hover:shadow-lg hover:shadow-sky-100/60 hover:-translate-y-0.5 transition-all duration-300"
+                    className="group flex items-center gap-4 p-5 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:shadow-lg hover:shadow-sky-100/60 hover:-translate-y-0.5 transition-all duration-300"
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -136,7 +136,7 @@ export function AboutBrief() {
                   >
                     <div
                       className="w-10 h-10 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
-                      style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+                      style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
                     >
                       <Icon className="w-5 h-5" />
                     </div>

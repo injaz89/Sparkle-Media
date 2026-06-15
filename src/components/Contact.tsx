@@ -6,13 +6,13 @@ import { InstagramIcon, FacebookIcon, LinkedinIcon, TikTokIcon } from "./SocialI
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-24 bg-[#EDF6FB] overflow-hidden">
+    <section id="contact" className="relative py-24 bg-[#d6f2ff] overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3AADDB]/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#39bcfc]/30 to-transparent" />
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.4]"
         style={{
-          backgroundImage: "radial-gradient(circle, #D1EBF5 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, #87d4f8 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -29,11 +29,11 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4">
+          <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
             Get In Touch
           </span>
           <h2 className="text-5xl md:text-6xl font-black text-[#0A1128] mb-4">
-            Let&apos;s Talk<span style={{ color: "#3AADDB" }}>!</span>
+            Let&apos;s Talk<span style={{ color: "#39bcfc" }}>!</span>
           </h2>
           <p className="text-xl text-gray-500 font-light max-w-xl mx-auto">
             Ready to give your brand an exemplary digital journey? Let&apos;s sit for a quick chat.
@@ -54,38 +54,38 @@ export function Contact() {
             <div className="space-y-6 mb-10">
               <a
                 href="tel:+94776540689"
-                className="group flex items-center gap-5 p-5 bg-white border border-[#D1EBF5] hover:border-[#3AADDB]/50 hover:shadow-lg hover:shadow-sky-100/60 transition-all duration-300"
+                className="group flex items-center gap-5 p-5 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:shadow-lg hover:shadow-sky-100/60 transition-all duration-300"
               >
                 <div
                   className="w-14 h-14 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform"
-                  style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+                  style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
                 >
                   <Phone className="w-6 h-6" />
                 </div>
                 <div className="flex-1">
                   <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-0.5">Ring us now</p>
-                  <p className="text-xl font-bold text-[#0A1128] group-hover:text-[#0083B0] transition-colors">+94 77 654 0689</p>
-                  <p className="text-xs text-[#3AADDB] mt-0.5 font-medium">WhatsApp & Local Networks</p>
+                  <p className="text-xl font-bold text-[#0A1128] group-hover:text-[#129adc] transition-colors">+94 77 654 0689</p>
+                  <p className="text-xs text-[#39bcfc] mt-0.5 font-medium">WhatsApp & Local Networks</p>
                 </div>
-                <ArrowRight className="w-5 h-5 text-[#D1EBF5] group-hover:text-[#3AADDB] group-hover:translate-x-1 transition-all" />
+                <ArrowRight className="w-5 h-5 text-[#87d4f8] group-hover:text-[#39bcfc] group-hover:translate-x-1 transition-all" />
               </a>
 
               <a
                 href="mailto:info@sparklemedia.lk"
-                className="group flex items-center gap-5 p-5 bg-white border border-[#D1EBF5] hover:border-[#3AADDB]/50 hover:shadow-lg hover:shadow-sky-100/60 transition-all duration-300"
+                className="group flex items-center gap-5 p-5 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:shadow-lg hover:shadow-sky-100/60 transition-all duration-300"
               >
                 <div
                   className="w-14 h-14 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform"
-                  style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+                  style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
                 >
                   <Mail className="w-6 h-6" />
                 </div>
                 <div className="flex-1">
                   <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-0.5">Email us</p>
-                  <p className="text-xl font-bold text-[#0A1128] group-hover:text-[#0083B0] transition-colors">info@sparklemedia.lk</p>
-                  <p className="text-xs text-[#3AADDB] mt-0.5 font-medium">We reply within 24 hours</p>
+                  <p className="text-xl font-bold text-[#0A1128] group-hover:text-[#129adc] transition-colors">info@sparklemedia.lk</p>
+                  <p className="text-xs text-[#39bcfc] mt-0.5 font-medium">We reply within 24 hours</p>
                 </div>
-                <ArrowRight className="w-5 h-5 text-[#D1EBF5] group-hover:text-[#3AADDB] group-hover:translate-x-1 transition-all" />
+                <ArrowRight className="w-5 h-5 text-[#87d4f8] group-hover:text-[#39bcfc] group-hover:translate-x-1 transition-all" />
               </a>
             </div>
 
@@ -105,7 +105,7 @@ export function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white border border-[#D1EBF5] flex items-center justify-center text-[#0083B0] hover:bg-[#3AADDB] hover:text-white hover:border-[#3AADDB] transition-all shadow-sm"
+                    className="w-12 h-12 bg-white border border-[#87d4f8] flex items-center justify-center text-[#129adc] hover:bg-[#39bcfc] hover:text-white hover:border-[#39bcfc] transition-all shadow-sm"
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5" />
@@ -115,14 +115,14 @@ export function Contact() {
             </div>
 
             {/* Calendly shortcut */}
-            <div className="mt-10 p-5 bg-white border-l-[3px] border-[#3AADDB] border-t border-r border-b border-[#D1EBF5]">
+            <div className="mt-10 p-5 bg-white border-l-[3px] border-[#39bcfc] border-t border-r border-b border-[#87d4f8]">
               <p className="text-sm font-semibold text-[#0A1128] mb-1">Prefer scheduling a call?</p>
               <p className="text-xs text-gray-500 font-light mb-3">Book a free 30-minute strategy session on Calendly.</p>
               <a
                 href="https://calendly.com/sparklemediacreatives/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#0083B0] hover:text-[#3AADDB] transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#129adc] hover:text-[#39bcfc] transition-colors"
               >
                 Book on Calendly
                 <ArrowRight className="w-4 h-4" />
@@ -138,11 +138,11 @@ export function Contact() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="bg-white border border-[#D1EBF5] p-8 md:p-10 shadow-xl shadow-sky-100/40 relative">
+            <div className="bg-white border border-[#87d4f8] p-8 md:p-10 shadow-xl shadow-sky-100/40 relative">
               {/* Top accent */}
               <div
                 className="absolute top-0 left-0 right-0 h-1"
-                style={{ background: "linear-gradient(90deg, #3AADDB, #0083B0)" }}
+                style={{ background: "linear-gradient(90deg, #39bcfc, #129adc)" }}
               />
 
               <h3 className="text-2xl font-black text-[#0A1128] mb-2">Send Us a Message</h3>
@@ -154,7 +154,7 @@ export function Contact() {
                   <input
                     type="text"
                     placeholder="Full name"
-                    className="w-full bg-[#F8FCFE] border border-[#D1EBF5] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#3AADDB] focus:bg-white transition-all text-sm"
+                    className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all text-sm"
                     required
                   />
                 </div>
@@ -165,7 +165,7 @@ export function Contact() {
                     <input
                       type="tel"
                       placeholder="+94 7X XXX XXXX"
-                      className="w-full bg-[#F8FCFE] border border-[#D1EBF5] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#3AADDB] focus:bg-white transition-all text-sm"
+                      className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all text-sm"
                       required
                     />
                   </div>
@@ -174,7 +174,7 @@ export function Contact() {
                     <input
                       type="email"
                       placeholder="name@company.com"
-                      className="w-full bg-[#F8FCFE] border border-[#D1EBF5] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#3AADDB] focus:bg-white transition-all text-sm"
+                      className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all text-sm"
                       required
                     />
                   </div>
@@ -185,7 +185,7 @@ export function Contact() {
                   <textarea
                     rows={4}
                     placeholder="Tell us about your project or goals..."
-                    className="w-full bg-[#F8FCFE] border border-[#D1EBF5] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#3AADDB] focus:bg-white transition-all resize-none text-sm"
+                    className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all resize-none text-sm"
                   />
                 </div>
 
@@ -194,7 +194,7 @@ export function Contact() {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   className="w-full text-white font-bold py-4 shadow-md shadow-sky-200/60 transition-all flex items-center justify-center gap-3 text-sm mt-2"
-                  style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+                  style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
                 >
                   <MessageSquare className="w-5 h-5" />
                   Send Message
