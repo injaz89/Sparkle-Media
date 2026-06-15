@@ -20,17 +20,17 @@ export function ClientLogosSlider({ title = "Trusted by leading brands", dark = 
   const duplicated = [...clients, ...clients, ...clients, ...clients];
 
   return (
-    <section className={`py-16 overflow-hidden border-b ${dark ? "bg-navy border-white/10" : "bg-white border-gray-100"}`}>
+    <section className={`py-16 overflow-hidden border-b ${dark ? "bg-[#0A1128] border-white/10" : "bg-white border-[#D1EBF5]"}`}>
       <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-        <h3 className={`text-xs font-bold tracking-widest uppercase ${dark ? "text-gray-400" : "text-gray-400"}`}>
+        <h3 className={`text-xs font-bold tracking-widest uppercase ${dark ? "text-gray-400" : "text-[#0083B0]"}`}>
           {title}
         </h3>
       </div>
 
       <div className="relative w-full flex items-center">
         {/* Edge fades */}
-        <div className={`absolute left-0 w-32 h-full bg-gradient-to-r ${dark ? "from-navy" : "from-white"} to-transparent z-10`} />
-        <div className={`absolute right-0 w-32 h-full bg-gradient-to-l ${dark ? "from-navy" : "from-white"} to-transparent z-10`} />
+        <div className={`absolute left-0 w-32 h-full bg-gradient-to-r ${dark ? "from-[#0A1128]" : "from-white"} to-transparent z-10`} />
+        <div className={`absolute right-0 w-32 h-full bg-gradient-to-l ${dark ? "from-[#0A1128]" : "from-white"} to-transparent z-10`} />
 
         <motion.div
           className="flex whitespace-nowrap items-center gap-0"

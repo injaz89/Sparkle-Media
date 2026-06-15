@@ -29,28 +29,29 @@ export function Navbar() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/80 backdrop-blur-md shadow-sm py-4"
-            : "bg-transparent py-6"
+            ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[#D1EBF5] py-4"
+            : "bg-white/80 backdrop-blur-sm py-6"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <div className="text-xl font-bold tracking-widest text-navy uppercase">
-            Sparkle Media
+          <div className="text-xl font-black tracking-widest uppercase">
+            <span className="text-[#0A1128]">SPARKLE</span><span className="text-[#3AADDB]">MEDIA</span>
           </div>
           
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-6">
             <a
               href="/contact"
-              className="hidden md:block text-sm font-semibold text-gray-800 hover:text-cyan-500 transition-colors uppercase tracking-widest"
+              className="hidden md:flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white uppercase tracking-widest transition-all hover:scale-105 shadow-sm"
+              style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
             >
-              Get in touch
+              Get in Touch
             </a>
             <button
               onClick={() => setIsMenuOpen(true)}
-              className="text-gray-800 hover:text-cyan-500 focus:outline-none"
+              className="text-[#0A1128] hover:text-[#3AADDB] focus:outline-none"
               aria-label="Open Menu"
             >
               <div className="flex space-x-1">
@@ -84,7 +85,7 @@ export function Navbar() {
             >
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute top-8 right-8 text-gray-500 hover:text-cyan-500 transition-colors focus:outline-none"
+                className="absolute top-8 right-8 text-gray-400 hover:text-[#3AADDB] transition-colors focus:outline-none"
               >
                 <svg className="w-8 h-8 font-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
@@ -127,7 +128,7 @@ export function Navbar() {
                     {item.subItems ? (
                       <button
                         onClick={() => toggleMenu(item.name)}
-                        className="text-3xl md:text-[2.25rem] font-light text-gray-400 hover:text-cyan-500 transition-colors tracking-wide uppercase flex items-center justify-end space-x-2"
+                        className="text-3xl md:text-[2.25rem] font-light text-gray-300 hover:text-[#3AADDB] transition-colors tracking-wide uppercase flex items-center justify-end space-x-2"
                       >
                         <span className={`transition-transform duration-300 ${expandedMenus.includes(item.name) ? "rotate-90" : ""}`}>
                           ›
@@ -138,7 +139,7 @@ export function Navbar() {
                       <motion.a
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-3xl md:text-[2.25rem] font-light text-gray-400 hover:text-cyan-500 transition-colors tracking-wide uppercase"
+                        className="text-3xl md:text-[2.25rem] font-light text-gray-300 hover:text-[#3AADDB] transition-colors tracking-wide uppercase"
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 + i * 0.05 }}
@@ -153,7 +154,7 @@ export function Navbar() {
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          className="flex flex-col space-y-3 mt-4 mb-2 overflow-hidden items-end pr-4 border-r-2 border-cyan-100"
+                          className="flex flex-col space-y-3 mt-4 mb-2 overflow-hidden items-end pr-4 border-r-2 border-[#D1EBF5]"
                         >
                           {item.subItems.map((subItem) => (
                             <div key={subItem.name} className="flex flex-col items-end w-full">

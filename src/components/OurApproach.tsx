@@ -8,32 +8,32 @@ const steps = [
     icon: Search,
     title: "Research",
     desc: "A digital marketing specialist will always research your competitors as well as your customers to produce better content.",
-    color: "from-cyan-400 to-blue-500",
+    number: "01",
   },
   {
     icon: ScanLine,
     title: "Assess",
     desc: "The competitors' and your brands' current situations need to be assessed to have a thorough understanding of what needs to be done and what needs to be avoided.",
-    color: "from-blue-400 to-indigo-500",
+    number: "02",
   },
   {
     icon: Lightbulb,
     title: "Strategize",
     desc: "Then a well-structured strategy needs to be sketched out, with risks analyzed in all aspects and contingency plans ready.",
-    color: "from-indigo-400 to-blue-500",
+    number: "03",
   },
   {
     icon: Rocket,
     title: "Implement",
     desc: "And it is a matter of kick-starting an exemplary digital journey for your brand in an extraordinary way.",
-    color: "from-cyan-500 to-teal-400",
+    number: "04",
   },
 ];
 
 export function OurApproach() {
   return (
     <section className="py-32 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-200 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D1EBF5] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -42,10 +42,10 @@ export function OurApproach() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block text-xs font-bold tracking-widest text-cyan-500 uppercase mb-4">
+          <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4">
             How We Work
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-navy mb-6">Our Approach</h2>
+          <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-6">Our Approach</h2>
           <p className="text-gray-500 font-light max-w-2xl mx-auto text-lg">
             A proven four-step process that turns market insight into measurable business growth.
           </p>
@@ -65,29 +65,28 @@ export function OurApproach() {
               >
                 {/* Connector line */}
                 {i < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-full w-6 h-px bg-gradient-to-r from-gray-200 to-gray-100 z-10" />
+                  <div className="hidden lg:block absolute top-10 left-full w-6 h-px bg-gradient-to-r from-[#D1EBF5] to-[#D1EBF5] z-10" />
                 )}
 
-                <div className="p-8 bg-white border border-gray-100 hover:border-cyan-200 hover:shadow-2xl hover:shadow-cyan-900/5 transition-all duration-300 relative overflow-hidden h-full">
+                <div className="p-8 bg-white border border-[#D1EBF5] hover:border-[#3AADDB]/50 hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden h-full">
                   {/* Large number watermark */}
-                  <div className="absolute -top-4 -right-4 text-[100px] font-black text-gray-50 opacity-80 z-0 pointer-events-none leading-none select-none">
-                    0{i + 1}
+                  <div className="absolute -top-4 -right-4 text-[100px] font-black text-[#EDF6FB] opacity-100 z-0 pointer-events-none leading-none select-none">
+                    {step.number}
                   </div>
 
                   <div className="relative z-10">
                     <div
-                      className={`w-12 h-12 bg-gradient-to-br ${step.color} flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}
+                      className="w-12 h-12 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300"
+                      style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
                     >
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-navy mb-4">{step.title}</h3>
+                    <h3 className="text-xl font-bold text-[#0A1128] mb-4">{step.title}</h3>
                     <p className="text-gray-500 font-light leading-relaxed text-sm">{step.desc}</p>
                   </div>
 
                   {/* Bottom accent line */}
-                  <div
-                    className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${step.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}
-                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#3AADDB] to-[#0083B0] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </div>
               </motion.div>
             );

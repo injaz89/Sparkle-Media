@@ -9,7 +9,7 @@ const testimonials = [
     role: "Head of Marketing",
     company: "Select Group",
     avatar: "K",
-    avatarColor: "from-cyan-400 to-blue-500",
+    avatarGrad: "linear-gradient(135deg, #3AADDB, #0083B0)",
     content:
       "Sparkle Media completely revolutionized our digital presence. Their attention to detail and data-driven approach led to phenomenal growth in our conversions. Within 3 months, we saw a 240% increase in qualified leads. Highly recommend!",
     rating: 5,
@@ -19,7 +19,7 @@ const testimonials = [
     role: "Brand Director",
     company: "Mysk",
     avatar: "B",
-    avatarColor: "from-violet-400 to-purple-500",
+    avatarGrad: "linear-gradient(135deg, #8B5CF6, #6D28D9)",
     content:
       "Working with them was an absolute game changer. The aesthetic of our brand has been elevated to luxury standards, and the leads have never been better. The team's creativity combined with their strategic thinking is truly unmatched.",
     rating: 5,
@@ -29,7 +29,7 @@ const testimonials = [
     role: "CEO",
     company: "Prestige Auto",
     avatar: "R",
-    avatarColor: "from-rose-400 to-pink-500",
+    avatarGrad: "linear-gradient(135deg, #F43F5E, #E11D48)",
     content:
       "We partnered with Sparkle Media for a full brand overhaul and digital campaign. The results were extraordinary — our social media engagement tripled and our website traffic grew by 180% in just two months. A world-class team!",
     rating: 5,
@@ -38,16 +38,21 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-32 bg-gray-50 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
-      <div className="absolute top-20 right-20 w-72 h-72 bg-cyan-100/50 rounded-none blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 left-20 w-72 h-72 bg-blue-100/50 rounded-none blur-3xl pointer-events-none" />
+    <section id="testimonials" className="py-32 bg-[#F0F8FF] relative overflow-hidden">
+      {/* Top accent strip */}
+      <div className="absolute top-0 left-0 w-full h-1" style={{ background: "linear-gradient(90deg, #3AADDB, #0083B0, #3AADDB)" }} />
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.3]"
+        style={{
+          backgroundImage: "radial-gradient(circle, #D1EBF5 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <motion.span
-            className="inline-block text-xs font-bold tracking-widest text-cyan-600 uppercase mb-4"
+            className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -55,7 +60,7 @@ export function Testimonials() {
             Client Stories
           </motion.span>
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-navy mb-6"
+            className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -78,37 +83,44 @@ export function Testimonials() {
           {testimonials.map((testimonial, i) => (
             <motion.div
               key={i}
-              className="bg-white p-8 rounded-none shadow-xl shadow-gray-200/60 relative flex flex-col"
+              className="bg-white border border-[#D1EBF5] p-8 relative flex flex-col hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
+              {/* Top accent */}
+              <div
+                className="absolute top-0 left-0 right-0 h-0.5"
+                style={{ background: "linear-gradient(90deg, #3AADDB, #0083B0)" }}
+              />
+
               {/* Quote icon */}
-              <div className="absolute top-6 right-8 text-gray-100">
+              <div className="absolute top-6 right-8 text-[#EDF6FB]">
                 <Quote className="w-12 h-12 fill-current" />
               </div>
 
-              <div className="flex gap-1 mb-6 text-yellow-400">
+              <div className="flex gap-1 mb-6 text-amber-400">
                 {[...Array(testimonial.rating)].map((_, idx) => (
                   <Star key={idx} className="w-4 h-4 fill-current" />
                 ))}
               </div>
 
-              <p className="text-gray-700 leading-relaxed mb-8 flex-1 text-[15px]">
+              <p className="text-gray-600 leading-relaxed mb-8 flex-1 text-[15px]">
                 &ldquo;{testimonial.content}&rdquo;
               </p>
 
-              <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
+              <div className="flex items-center gap-4 pt-6 border-t border-[#D1EBF5]">
                 <div
-                  className={`w-12 h-12 bg-gradient-to-br ${testimonial.avatarColor} rounded-none flex items-center justify-center text-white font-bold text-lg flex-shrink-0`}
+                  className="w-12 h-12 flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
+                  style={{ background: testimonial.avatarGrad }}
                 >
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <h4 className="font-bold text-navy text-sm">{testimonial.name}</h4>
-                  <p className="text-xs text-gray-500 font-light">{testimonial.role}</p>
-                  <p className="text-xs text-cyan-600 font-semibold">{testimonial.company}</p>
+                  <h4 className="font-bold text-[#0A1128] text-sm">{testimonial.name}</h4>
+                  <p className="text-xs text-gray-400 font-light">{testimonial.role}</p>
+                  <p className="text-xs text-[#0083B0] font-semibold">{testimonial.company}</p>
                 </div>
               </div>
             </motion.div>

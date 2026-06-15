@@ -8,31 +8,31 @@ const achievements = [
     client: "GR Events",
     result: "40X–60X ROAS",
     category: "Lead Generation",
-    color: "from-cyan-400 to-blue-500",
+    color: "from-[#3AADDB] to-[#0083B0]",
   },
   {
     client: "Gulabi Run",
     result: "50X ROAS",
     category: "Performance Marketing",
-    color: "from-blue-400 to-indigo-500",
+    color: "from-[#0083B0] to-[#3AADDB]",
   },
   {
     client: "Mobile Stop",
     result: "21X ROAS",
     category: "E-Commerce & Retail",
-    color: "from-cyan-500 to-teal-400",
+    color: "from-[#3AADDB] to-sky-500",
   },
   {
     client: "GR Events",
-    result: "300% Organic Growth",
+    result: "300% Growth",
     category: "SEO & Content",
-    color: "from-indigo-400 to-blue-500",
+    color: "from-sky-500 to-[#0083B0]",
   },
   {
-    client: "Prestige Auto Detailers",
+    client: "Prestige Auto",
     result: "15X ROAS",
     category: "Paid Media",
-    color: "from-blue-500 to-cyan-400",
+    color: "from-[#0083B0] to-[#3AADDB]",
   },
 ];
 
@@ -48,21 +48,17 @@ const focusItems = [
 export function ClientAchievements() {
   return (
     <>
-      {/* Client Achievements */}
-      <section className="py-24 bg-navy relative overflow-hidden">
+      {/* Client Achievements — light blue tint */}
+      <section className="py-24 bg-[#EDF6FB] relative overflow-hidden">
+        {/* Subtle wave pattern */}
         <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 50%, #00B4DB 0%, transparent 60%), radial-gradient(circle at 80% 50%, #0083B0 0%, transparent 60%)",
-          }}
+          className="absolute inset-0 pointer-events-none opacity-40 wave-bg"
         />
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.04]"
+          className="absolute inset-0 pointer-events-none opacity-[0.3]"
           style={{
-            backgroundImage:
-              "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
-            backgroundSize: "50px 50px",
+            backgroundImage: "radial-gradient(circle, #D1EBF5 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
           }}
         />
 
@@ -73,13 +69,13 @@ export function ClientAchievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-xs font-bold tracking-widest text-cyan-400 uppercase mb-4">
+            <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4">
               Proven Track Record
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-4">
               Client Achievements
             </h2>
-            <p className="text-gray-400 font-light max-w-2xl mx-auto">
+            <p className="text-gray-500 font-light max-w-2xl mx-auto">
               Real results for real businesses. These numbers aren&apos;t projections — they&apos;re
               what we delivered.
             </p>
@@ -89,16 +85,19 @@ export function ClientAchievements() {
             {achievements.map((item, i) => (
               <motion.div
                 key={i}
-                className="relative group bg-white/5 border border-white/10 hover:border-cyan-400/40 p-6 transition-all duration-300 hover:bg-white/8"
+                className="relative group bg-white border border-[#D1EBF5] hover:border-[#3AADDB]/50 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-sky-100/60 hover:-translate-y-1"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-                  <TrendingUp className="w-5 h-5 text-cyan-400" />
+                {/* Top accent bar */}
+                <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${item.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`} />
+
+                <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-30 transition-opacity">
+                  <TrendingUp className="w-5 h-5 text-[#0083B0]" />
                 </div>
-                <p className="text-xs font-semibold text-cyan-400 uppercase tracking-widest mb-3">
+                <p className="text-xs font-bold text-[#0083B0] uppercase tracking-widest mb-3">
                   {item.category}
                 </p>
                 <p
@@ -106,15 +105,15 @@ export function ClientAchievements() {
                 >
                   {item.result}
                 </p>
-                <p className="text-sm text-gray-400 font-medium">{item.client}</p>
+                <p className="text-sm text-gray-500 font-medium">{item.client}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Focus Is Simple */}
-      <section className="py-20 bg-white border-b border-gray-100">
+      {/* Our Focus Is Simple — white */}
+      <section className="py-20 bg-white border-b border-[#D1EBF5]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -123,17 +122,17 @@ export function ClientAchievements() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-xs font-bold tracking-widest text-cyan-500 uppercase mb-4">
+              <span className="inline-block text-xs font-bold tracking-widest text-[#0083B0] uppercase mb-4">
                 Our Mission
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-navy mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-black text-[#0A1128] mb-6 leading-tight">
                 Our focus is simple.
               </h2>
-              <p className="text-xl text-gray-600 font-light leading-relaxed">
+              <p className="text-xl text-gray-500 font-light leading-relaxed">
                 Generate measurable business growth through{" "}
-                <span className="font-semibold text-navy">data</span>,{" "}
-                <span className="font-semibold text-navy">creativity</span> and{" "}
-                <span className="font-semibold text-navy">performance marketing</span>.
+                <span className="font-semibold text-[#0A1128]">data</span>,{" "}
+                <span className="font-semibold text-[#0A1128]">creativity</span> and{" "}
+                <span className="font-semibold text-[#0A1128]">performance marketing</span>.
               </p>
             </motion.div>
 
@@ -147,28 +146,25 @@ export function ClientAchievements() {
               {focusItems.map((item, i) => (
                 <motion.div
                   key={i}
-                  className="flex items-center gap-3 p-4 bg-gray-50 border border-gray-100 hover:border-cyan-200 hover:bg-cyan-50/50 transition-all duration-200"
+                  className="flex items-center gap-3 p-4 bg-[#F0F8FF] border border-[#D1EBF5] hover:border-[#3AADDB]/50 hover:bg-[#EDF6FB] transition-all duration-200"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.07 }}
                 >
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
-                    <svg
-                      className="w-3 h-3 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={3}
-                    >
+                  <span
+                    className="flex-shrink-0 w-6 h-6 flex items-center justify-center"
+                    style={{ background: "linear-gradient(135deg, #3AADDB, #0083B0)" }}
+                  >
+                    <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
-                  <span className="text-sm font-semibold text-navy">{item}</span>
+                  <span className="text-sm font-semibold text-[#0A1128]">{item}</span>
                 </motion.div>
               ))}
               <motion.div
-                className="col-span-2 mt-2 p-4 bg-navy/5 border-l-2 border-cyan-400"
+                className="col-span-2 mt-2 p-4 bg-[#F0F8FF] border-l-[3px] border-[#3AADDB]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -176,7 +172,7 @@ export function ClientAchievements() {
               >
                 <p className="text-sm text-gray-600 italic font-light">
                   Every campaign is built around{" "}
-                  <span className="font-semibold text-navy">business outcomes</span>, not marketing
+                  <span className="font-semibold text-[#0A1128]">business outcomes</span>, not marketing
                   activity.
                 </p>
               </motion.div>
