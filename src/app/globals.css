@@ -8,13 +8,13 @@
   --color-navy:          #0A1128;   /* dark headings */
 
   /* Derived tints */
-  --color-primary-light: #d6f2ff;
+  --color-primary-light: #bae7fe;
   --color-primary-dark:  #129adc;
-  --color-border-blue:   #87d4f8;
+  --color-border-blue:   #39bcfc;
 
   /* Legacy tokens kept for compat */
-  --color-light-blue:    #d6f2ff;
-  --color-lighter-blue:  #eef9ff;
+  --color-light-blue:    #bae7fe;
+  --color-lighter-blue:  #bae7fe;
 
   --font-sans: var(--font-sans), "Source Sans 3", sans-serif;
 }

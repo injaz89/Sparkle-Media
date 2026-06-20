@@ -10,7 +10,7 @@ const categories = [
   {
     id: "digital-marketing",
     label: "Digital Marketing",
-    color: "from-cyan-400 to-blue-500",
+    color: "from-primary to-secondary",
     faqs: [
       {
         q: "What is the best digital marketing strategy for a growing business?",
@@ -33,7 +33,7 @@ const categories = [
   {
     id: "seo",
     label: "SEO & Search Visibility",
-    color: "from-blue-400 to-indigo-500",
+    color: "from-secondary to-primary",
     faqs: [
       {
         q: "What is SEO and why is it important?",
@@ -57,7 +57,7 @@ const categories = [
     id: "ai-search",
     label: "AI Search & GEO",
     badge: "Most agencies aren't targeting these yet",
-    color: "from-violet-400 to-purple-500",
+    color: "from-primary to-secondary",
     faqs: [
       {
         q: "What is Answer Engine Optimization (AEO)?",
@@ -88,7 +88,7 @@ const categories = [
   {
     id: "website",
     label: "Website & Conversion",
-    color: "from-cyan-500 to-teal-400",
+    color: "from-secondary to-primary",
     faqs: [
       {
         q: "Why does my business need a professional website?",
@@ -107,7 +107,7 @@ const categories = [
   {
     id: "social-media",
     label: "Social Media",
-    color: "from-pink-400 to-rose-500",
+    color: "from-primary to-secondary",
     faqs: [
       {
         q: "Does social media marketing still work in 2026?",
@@ -127,7 +127,7 @@ const categories = [
     id: "agency",
     label: "Agency Selection",
     badge: "Powerful for lead generation",
-    color: "from-amber-400 to-orange-500",
+    color: "from-secondary to-primary",
     faqs: [
       {
         q: "How do I choose the right digital marketing agency?",
@@ -160,10 +160,10 @@ function AccordionItem({ q, a, index }: { q: string; a: string; index: number })
         className="w-full flex items-start justify-between gap-4 py-6 text-left focus:outline-none"
         aria-expanded={open}
       >
-        <span className={`text-base md:text-lg font-semibold leading-snug transition-colors duration-200 ${open ? "text-cyan-600" : "text-navy group-hover:text-cyan-500"}`}>
+        <span className={`text-base md:text-lg font-semibold leading-snug transition-colors duration-200 ${open ? "text-secondary" : "text-navy group-hover:text-primary"}`}>
           {q}
         </span>
-        <span className={`flex-shrink-0 w-7 h-7 border flex items-center justify-center transition-all duration-300 mt-0.5 ${open ? "border-cyan-400 bg-cyan-400 text-white" : "border-gray-200 text-gray-400 group-hover:border-cyan-300"}`}>
+        <span className={`flex-shrink-0 w-7 h-7 border flex items-center justify-center transition-all duration-300 mt-0.5 ${open ? "border-primary bg-primary text-white" : "border-gray-200 text-gray-400 group-hover:border-primary/50"}`}>
           {open ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
         </span>
       </button>
@@ -194,23 +194,23 @@ export default function FaqsPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white min-h-screen">
+      <main className="bg-bg min-h-screen">
 
         {/* ── HERO ── */}
-        <section className="pt-32 pb-16 bg-navy relative overflow-hidden">
+        <section className="pt-32 pb-16 bg-bg relative overflow-hidden">
           <div
             className="absolute inset-0 opacity-[0.05] pointer-events-none"
             style={{
-              backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+              backgroundImage: "linear-gradient(#0A1128 1px, transparent 1px), linear-gradient(90deg, #0A1128 1px, transparent 1px)",
               backgroundSize: "60px 60px",
             }}
           />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500 blur-[200px] opacity-10 pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary blur-[200px] opacity-10 pointer-events-none" />
           <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-cyan-400 font-bold tracking-widest uppercase text-sm mb-4"
+              className="text-secondary font-bold tracking-widest uppercase text-sm mb-4"
             >
               Knowledge Base
             </motion.p>
@@ -218,10 +218,10 @@ export default function FaqsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.05]"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6 leading-[1.05]"
             >
               Frequently Asked{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                 Questions
               </span>
             </motion.h1>
@@ -229,7 +229,7 @@ export default function FaqsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
-              className="text-lg text-gray-400 font-light leading-relaxed max-w-2xl mx-auto"
+              className="text-lg text-gray-600 font-light leading-relaxed max-w-2xl mx-auto"
             >
               Everything you need to know about digital marketing, SEO, AI search visibility,
               and how Sparkle Media can help your business grow.
@@ -238,14 +238,14 @@ export default function FaqsPage() {
         </section>
 
         {/* ── CATEGORY TABS + ACCORDION ── */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-bg">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col lg:flex-row gap-12">
 
               {/* Sidebar — category nav */}
               <div className="lg:w-72 flex-shrink-0">
                 <div className="lg:sticky lg:top-32">
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-5">
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-5">
                     Browse by Topic
                   </p>
                   <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto pb-2 lg:pb-0 lg:overflow-visible">
@@ -255,8 +255,8 @@ export default function FaqsPage() {
                         onClick={() => setActiveCategory(cat.id)}
                         className={`flex-shrink-0 text-left px-4 py-3 text-sm font-semibold transition-all duration-200 border-l-2 ${
                           activeCategory === cat.id
-                            ? "border-cyan-400 bg-cyan-50 text-cyan-600"
-                            : "border-transparent text-gray-500 hover:text-navy hover:border-gray-200 hover:bg-gray-50"
+                            ? "border-primary bg-white text-secondary"
+                            : "border-transparent text-gray-500 hover:text-navy hover:border-gray-200 hover:bg-white/40"
                         }`}
                       >
                         <span className="block">{cat.label}</span>
@@ -270,18 +270,18 @@ export default function FaqsPage() {
                   </div>
 
                   {/* CTA card */}
-                  <div className="hidden lg:block mt-10 bg-navy p-6 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500 blur-[50px] opacity-20 pointer-events-none" />
+                  <div className="hidden lg:block mt-10 bg-white border border-primary/20 p-6 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary blur-[50px] opacity-20 pointer-events-none" />
                     <div className="relative z-10">
-                      <p className="text-white font-bold mb-2">Still have questions?</p>
-                      <p className="text-gray-400 text-xs font-light leading-relaxed mb-4">
+                      <p className="text-navy font-bold mb-2">Still have questions?</p>
+                      <p className="text-gray-500 text-xs font-light leading-relaxed mb-4">
                         Book a free strategy call and let&apos;s talk about your business.
                       </p>
                       <a
                         href="https://calendly.com/sparklemediacreatives/30min"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors uppercase tracking-widest"
+                        className="inline-flex items-center gap-2 text-xs font-bold text-secondary hover:text-primary transition-colors uppercase tracking-widest"
                       >
                         Book a Call <ArrowRight className="w-3 h-3" />
                       </a>
@@ -301,7 +301,7 @@ export default function FaqsPage() {
                     transition={{ duration: 0.25 }}
                   >
                     {/* Category header */}
-                    <div className="mb-8 pb-6 border-b-2 border-gray-50">
+                    <div className="mb-8 pb-6 border-b-2 border-primary/20">
                       <div className="flex items-center gap-3 mb-2">
                         <div className={`w-1 h-6 bg-gradient-to-b ${active.color}`} />
                         <h2 className="text-2xl md:text-3xl font-bold text-navy">{active.label}</h2>
@@ -327,10 +327,10 @@ export default function FaqsPage() {
         </section>
 
         {/* ── ALL FAQs QUICK VIEW — full accordion by category ── */}
-        <section className="py-24 bg-gray-50 border-t border-gray-100">
+        <section className="py-24 bg-bg border-t border-primary/20">
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-16">
-              <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">Complete Reference</span>
+              <span className="text-xs font-bold text-secondary uppercase tracking-widest">Complete Reference</span>
               <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">All Questions, One Place</h2>
               <p className="text-gray-500 font-light mt-4">Browse every FAQ across all topics in a single view.</p>
             </div>
@@ -347,7 +347,7 @@ export default function FaqsPage() {
                     <div className={`w-8 h-0.5 bg-gradient-to-r ${cat.color}`} />
                     <h3 className="text-sm font-bold text-navy uppercase tracking-widest">{cat.label}</h3>
                   </div>
-                  <div className="bg-white border border-gray-100 divide-y divide-gray-50 px-6">
+                  <div className="bg-white border border-primary/20 divide-y divide-gray-50 px-6">
                     {cat.faqs.map((faq, i) => (
                       <AccordionItem key={i} q={faq.q} a={faq.a} index={i} />
                     ))}
@@ -359,14 +359,14 @@ export default function FaqsPage() {
         </section>
 
         {/* ── BOTTOM CTA ── */}
-        <section className="py-24 bg-navy relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-cyan-500 blur-[150px] opacity-10 pointer-events-none" />
+        <section className="py-24 bg-bg border-t border-primary/20 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-primary blur-[150px] opacity-10 pointer-events-none" />
           <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+              className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight"
             >
               Didn&apos;t find your answer?
             </motion.h2>
@@ -375,7 +375,7 @@ export default function FaqsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-gray-300 font-light leading-relaxed mb-10 text-lg"
+              className="text-gray-600 font-light leading-relaxed mb-10 text-lg"
             >
               Our team is happy to answer any question specific to your business.
               Book a free 30-minute strategy call or ping us on WhatsApp.
@@ -391,7 +391,7 @@ export default function FaqsPage() {
                 href="https://calendly.com/sparklemediacreatives/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-500 text-white font-bold hover:bg-cyan-400 transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-bold hover:bg-primary transition-colors"
               >
                 Book a Strategy Call <ArrowRight className="w-4 h-4" />
               </a>
@@ -399,7 +399,7 @@ export default function FaqsPage() {
                 href="https://wa.me/message/RBCP6CKB5PX6C1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-500 text-white font-bold hover:bg-emerald-400 transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold hover:bg-secondary transition-colors"
               >
                 Chat on WhatsApp <MessageCircle className="w-4 h-4" />
               </a>

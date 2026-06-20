@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 export function AboutHero() {
   return (
-    <section className="py-32 relative bg-white overflow-hidden">
-      <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-cyan-100/50 rounded-none blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 -left-32 w-[600px] h-[600px] bg-blue-100/50 rounded-none blur-[100px] pointer-events-none" />
+    <section className="py-32 relative bg-bg overflow-hidden">
+      <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-primary/20 rounded-none blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 -left-32 w-[600px] h-[600px] bg-secondary/20 rounded-none blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <motion.p 
-          className="text-cyan-500 font-bold tracking-widest uppercase mb-4"
+          className="text-secondary font-bold tracking-widest uppercase mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >

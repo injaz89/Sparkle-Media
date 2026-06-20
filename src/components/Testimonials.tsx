@@ -19,7 +19,7 @@ const testimonials = [
     role: "Brand Director",
     company: "Mysk",
     avatar: "B",
-    avatarGrad: "linear-gradient(135deg, #8B5CF6, #6D28D9)",
+    avatarGrad: "linear-gradient(135deg, #39bcfc, #129adc)",
     content:
       "Working with them was an absolute game changer. The aesthetic of our brand has been elevated to luxury standards, and the leads have never been better. The team's creativity combined with their strategic thinking is truly unmatched.",
     rating: 5,
@@ -29,7 +29,7 @@ const testimonials = [
     role: "CEO",
     company: "Prestige Auto",
     avatar: "R",
-    avatarGrad: "linear-gradient(135deg, #F43F5E, #E11D48)",
+    avatarGrad: "linear-gradient(135deg, #129adc, #39bcfc)",
     content:
       "We partnered with Sparkle Media for a full brand overhaul and digital campaign. The results were extraordinary — our social media engagement tripled and our website traffic grew by 180% in just two months. A world-class team!",
     rating: 5,
@@ -38,7 +38,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-32 bg-[#eef9ff] relative overflow-hidden">
+    <section id="testimonials" className="py-32 bg-bg relative overflow-hidden">
       {/* Top accent strip */}
       <div className="absolute top-0 left-0 w-full h-1" style={{ background: "linear-gradient(90deg, #39bcfc, #129adc, #39bcfc)" }} />
       <div
@@ -96,7 +96,7 @@ export function Testimonials() {
               />
 
               {/* Quote icon */}
-              <div className="absolute top-6 right-8 text-[#d6f2ff]">
+              <div className="absolute top-6 right-8 text-white/40">
                 <Quote className="w-12 h-12 fill-current" />
               </div>
 

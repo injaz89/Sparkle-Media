@@ -4,23 +4,23 @@ import { motion } from "framer-motion";
 import { Camera } from "lucide-react";
 
 const categories = [
-  { name: "Commercial", span: "col-span-1 md:col-span-2 row-span-2", bg: "bg-navy" },
-  { name: "Product", span: "col-span-1", bg: "bg-cyan-900" },
-  { name: "Corporate", span: "col-span-1", bg: "bg-blue-900" },
-  { name: "Event", span: "col-span-1", bg: "bg-cyan-700" },
-  { name: "Social Media", span: "col-span-1", bg: "bg-blue-800" },
+  { name: "Commercial", span: "col-span-1 md:col-span-2 row-span-2", bg: "bg-secondary" },
+  { name: "Product", span: "col-span-1", bg: "bg-primary" },
+  { name: "Corporate", span: "col-span-1", bg: "bg-[#0e7db3]" },
+  { name: "Event", span: "col-span-1", bg: "bg-[#28abeb]" },
+  { name: "Social Media", span: "col-span-1", bg: "bg-secondary" },
 ];
 
 export function CreativePhotography() {
   return (
-    <section className="py-24 bg-gray-50 border-y border-gray-100">
+    <section className="py-24 bg-bg border-y border-primary/20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4 flex items-center">
-            <Camera className="w-10 h-10 mr-4 text-cyan-500" />
+            <Camera className="w-10 h-10 mr-4 text-secondary" />
             Photography
           </h2>
-          <p className="text-xl text-gray-500 font-light max-w-2xl">
+          <p className="text-xl text-gray-700 font-light max-w-2xl">
             High-fidelity visuals that capture the true essence of your brand across all formats.
           </p>
         </div>

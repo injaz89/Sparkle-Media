@@ -34,11 +34,11 @@ function AnimatedCounter({ end, suffix, label }: { end: number, suffix: string, 
   const displayCount = end % 1 !== 0 ? count.toFixed(1) : Math.floor(count);
 
   return (
-    <div ref={ref} className="text-center p-12 bg-white rounded-none shadow-xl shadow-cyan-900/5 hover:-translate-y-2 transition-transform duration-300 border border-gray-50">
-      <div className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-cyan-500 to-blue-600 mb-6 tracking-tighter">
+    <div ref={ref} className="text-center p-12 bg-white rounded-none shadow-xl border border-primary/20 hover:border-primary hover:-translate-y-2 transition-transform duration-300">
+      <div className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-primary to-secondary mb-6 tracking-tighter">
         {displayCount}{suffix}
       </div>
-      <p className="text-xl text-gray-500 font-light leading-relaxed max-w-xs mx-auto">
+      <p className="text-xl text-gray-650 font-light leading-relaxed max-w-xs mx-auto">
         {label}
       </p>
     </div>
@@ -47,11 +47,11 @@ function AnimatedCounter({ end, suffix, label }: { end: number, suffix: string, 
 
 export function SeoCounters() {
   return (
-    <section className="bg-gray-50 py-32 border-b border-gray-100">
+    <section className="bg-bg py-32 border-b border-primary/20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-24">
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">Why do you need SEO, AEO and GEO?</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto" />
+          <div className="w-20 h-1 bg-secondary mx-auto" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <AnimatedCounter 

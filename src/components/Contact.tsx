@@ -6,7 +6,7 @@ import { InstagramIcon, FacebookIcon, LinkedinIcon, TikTokIcon } from "./SocialI
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-24 bg-[#d6f2ff] overflow-hidden">
+    <section id="contact" className="relative py-24 bg-bg overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#39bcfc]/30 to-transparent" />
       <div

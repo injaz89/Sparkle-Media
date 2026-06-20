@@ -38,7 +38,7 @@ const focusAreas = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-32 bg-bg relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#87d4f8] to-transparent" />
 

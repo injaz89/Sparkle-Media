@@ -14,14 +14,14 @@ export function CreativeGraphics() {
   const [activeItem, setActiveItem] = useState("social");
 
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-24 bg-bg border-t border-primary/20 relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 md:text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4 flex items-center md:justify-center">
-            <PenTool className="w-10 h-10 mr-4 text-cyan-500" />
+            <PenTool className="w-10 h-10 mr-4 text-secondary" />
             Graphic Design Lookbook
           </h2>
-          <p className="text-xl text-gray-500 font-light max-w-2xl md:mx-auto">
+          <p className="text-xl text-gray-700 font-light max-w-2xl md:mx-auto">
             Explore our diverse portfolio of graphic design capabilities tailored for modern brands.
           </p>
         </div>
@@ -39,15 +39,15 @@ export function CreativeGraphics() {
                   onClick={() => setActiveItem(item.id)}
                   className={`w-full text-left p-6 rounded-none transition-all duration-300 border ${
                     isActive 
-                      ? "bg-cyan-50 border-cyan-200 shadow-lg shadow-cyan-900/5 text-navy block" 
-                      : "bg-white border-gray-100 hover:border-cyan-100 hover:bg-gray-50 text-gray-500"
+                      ? "bg-white border-primary shadow-xl shadow-sky-100/60 text-navy block" 
+                      : "bg-white border-primary/20 hover:border-primary text-gray-500"
                   }`}
                 >
                   <div className="flex items-center mb-2">
-                    <Icon className={`w-6 h-6 mr-3 ${isActive ? 'text-cyan-500' : 'text-gray-400'}`} />
+                    <Icon className={`w-6 h-6 mr-3 ${isActive ? 'text-secondary' : 'text-gray-400'}`} />
                     <h3 className="text-xl font-bold">{item.title}</h3>
                   </div>
-                  <p className={`font-light text-sm ${isActive ? 'text-gray-600' : 'text-gray-400'}`}>
+                  <p className={`font-light text-sm ${isActive ? 'text-gray-600' : 'text-gray-450'}`}>
                     {item.desc}
                   </p>
                 </button>
@@ -56,18 +56,18 @@ export function CreativeGraphics() {
           </div>
 
           {/* Viewer */}
-          <div className="w-full md:w-2/3 bg-gray-100 rounded-none h-[400px] md:h-[auto] relative overflow-hidden flex items-center justify-center p-8">
+          <div className="w-full md:w-2/3 bg-bg border border-primary/20 rounded-none h-[400px] md:h-[auto] relative overflow-hidden flex items-center justify-center p-8">
             <motion.div
               key={activeItem}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
-              className="w-full h-full bg-white rounded-none shadow-xl flex items-center justify-center relative overflow-hidden group"
+              className="w-full h-full bg-white rounded-none shadow-xl border border-primary/20 flex items-center justify-center relative overflow-hidden group"
             >
               {/* Mock content representation */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-100/50 to-blue-50/50" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
               <div className="relative z-10 text-center p-6">
-                <PenTool className="w-16 h-16 mx-auto text-cyan-200 mb-4 group-hover:scale-110 transition-transform" />
+                <PenTool className="w-16 h-16 mx-auto text-primary mb-4 group-hover:scale-110 transition-transform" />
                 <p className="text-navy font-bold tracking-widest uppercase opacity-50">
                   {activeItem} preview
                 </p>

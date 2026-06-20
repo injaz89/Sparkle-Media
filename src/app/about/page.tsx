@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 bg-white min-h-screen">
+      <main className="pt-24 bg-bg min-h-screen">
         <AboutHero />
         <MissionValues />
         <OurApproach />

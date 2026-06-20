@@ -9,13 +9,13 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white min-h-screen pt-32 pb-24">
+      <main className="bg-bg min-h-screen pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20">
           
           {/* Header & Text */}
           <div>
             <motion.p 
-              className="text-cyan-500 font-bold tracking-widest uppercase mb-4"
+              className="text-secondary font-bold tracking-widest uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -46,27 +46,27 @@ export default function ContactPage() {
             >
               <div>
                 <p className="text-gray-400 text-sm font-bold tracking-widest uppercase mb-2">Call Us</p>
-                <a href="tel:+94776540689" className="text-3xl font-light text-navy hover:text-cyan-500 transition-colors">
+                <a href="tel:+94776540689" className="text-3xl font-light text-navy hover:text-primary transition-colors">
                   (+94) 77 654 0689
                 </a>
               </div>
               <div>
                 <p className="text-gray-400 text-sm font-bold tracking-widest uppercase mb-2">Email</p>
-                <a href="mailto:hello@sparklemedia.lk" className="text-3xl font-light text-navy hover:text-cyan-500 transition-colors">
+                <a href="mailto:hello@sparklemedia.lk" className="text-3xl font-light text-navy hover:text-primary transition-colors">
                   hello@sparklemedia.lk
                 </a>
               </div>
             </motion.div>
           </div>
-
+ 
           {/* Premium Discovery Form */}
           <motion.div 
-            className="bg-gray-50 rounded-none-[3rem] p-12 md:p-16 border border-gray-100 shadow-2xl shadow-cyan-900/5 relative overflow-hidden"
+            className="bg-white rounded-none p-12 md:p-16 border border-primary/20 shadow-2xl shadow-sky-900/5 relative overflow-hidden"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-100/50 rounded-none blur-3xl opacity-50 pointer-events-none -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-none blur-3xl opacity-50 pointer-events-none -translate-y-1/2 translate-x-1/2" />
             
             <form className="relative z-10 space-y-8">
               <div>
@@ -74,35 +74,35 @@ export default function ContactPage() {
                 <input 
                   type="text" 
                   id="name" 
-                  className="w-full bg-transparent border-b-2 border-gray-200 py-3 text-xl text-navy focus:outline-none focus:border-cyan-500 transition-colors placeholder:text-gray-300 font-light"
+                  className="w-full bg-transparent border-b-2 border-gray-200 py-3 text-xl text-navy focus:outline-none focus:border-primary transition-colors placeholder:text-gray-300 font-light"
                   placeholder="John Doe"
                 />
               </div>
-
+ 
               <div>
                 <label htmlFor="phone" className="block text-sm font-bold text-navy uppercase tracking-widest mb-3">Number</label>
                 <input 
                   type="tel" 
                   id="phone" 
-                  className="w-full bg-transparent border-b-2 border-gray-200 py-3 text-xl text-navy focus:outline-none focus:border-cyan-500 transition-colors placeholder:text-gray-300 font-light"
+                  className="w-full bg-transparent border-b-2 border-gray-200 py-3 text-xl text-navy focus:outline-none focus:border-primary transition-colors placeholder:text-gray-300 font-light"
                   placeholder="+94 77 XXX XXXX"
                 />
               </div>
-
+ 
               <div>
                 <label htmlFor="email" className="block text-sm font-bold text-navy uppercase tracking-widest mb-3">Email</label>
                 <input 
                   type="email" 
                   id="email" 
-                  className="w-full bg-transparent border-b-2 border-gray-200 py-3 text-xl text-navy focus:outline-none focus:border-cyan-500 transition-colors placeholder:text-gray-300 font-light"
+                  className="w-full bg-transparent border-b-2 border-gray-200 py-3 text-xl text-navy focus:outline-none focus:border-primary transition-colors placeholder:text-gray-300 font-light"
                   placeholder="john@example.com"
                 />
               </div>
-
+ 
               <div className="pt-8">
                 <button 
                   type="button" 
-                  className="w-full group bg-navy text-white px-8 py-5 rounded-none text-lg font-bold flex items-center justify-between hover:bg-cyan-600 transition-all shadow-xl shadow-navy/20 hover:shadow-cyan-500/40"
+                  className="w-full group bg-secondary text-white px-8 py-5 rounded-none text-lg font-bold flex items-center justify-between hover:bg-primary transition-all shadow-xl shadow-sky-900/20"
                 >
                   <span>Submit Inquiry</span>
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
@@ -110,7 +110,7 @@ export default function ContactPage() {
               </div>
             </form>
           </motion.div>
-
+ 
         </div>
       </main>
       <Footer />

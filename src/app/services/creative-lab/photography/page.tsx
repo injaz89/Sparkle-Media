@@ -37,17 +37,17 @@ export default function PhotographyPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-24 bg-white min-h-screen">
+      <main className="pt-32 pb-24 bg-bg min-h-screen">
         
         {/* Header Section */}
         <div className="max-w-7xl mx-auto px-6 mb-24 flex flex-col lg:flex-row gap-16 items-center relative">
-          <div className="absolute top-0 -left-20 w-80 h-80 bg-cyan-50 rounded-none blur-[100px] pointer-events-none" />
+          <div className="absolute top-0 -left-20 w-80 h-80 bg-primary/20 rounded-none blur-[100px] pointer-events-none" />
           
           <div className="lg:w-1/2 relative z-10">
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-cyan-500 font-bold tracking-widest uppercase mb-4 flex items-center gap-2"
+              className="text-secondary font-bold tracking-widest uppercase mb-4 flex items-center gap-2"
             >
               <Camera className="w-5 h-5" /> Creative Lab
             </motion.p>
@@ -63,7 +63,7 @@ export default function PhotographyPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl text-navy font-medium leading-relaxed"
+              className="text-2xl text-navy font-semibold leading-relaxed"
             >
               Capture moments with a story!
             </motion.h3>
@@ -74,7 +74,7 @@ export default function PhotographyPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="p-10 border-l-4 border-cyan-400 bg-gray-50/50 space-y-6 text-gray-600 font-light text-lg leading-relaxed"
+              className="p-10 border-l-4 border-secondary bg-white border border-primary/20 border-l-secondary space-y-6 text-gray-700 font-light text-lg leading-relaxed shadow-md"
             >
               <p>
                 If you are a brand or entrepreneur looking to work with a photographer who understands social media as well as traditional photography, Sparkle Media can help you create engaging content that leads to success.
@@ -90,15 +90,15 @@ export default function PhotographyPage() {
         </div>
 
         {/* Gallery/Types Section */}
-        <div className="bg-navy py-24 relative overflow-hidden">
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500 rounded-none blur-[150px] opacity-20 pointer-events-none" />
+        <div className="bg-bg border-t border-primary/20 py-24 relative overflow-hidden">
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-none blur-[150px] opacity-40 pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
                 What sort of photographs <br className="hidden md:block"/> are you willing to capture?
               </h2>
-              <div className="w-24 h-1 bg-cyan-400 mx-auto" />
+              <div className="w-24 h-1 bg-secondary mx-auto" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -111,13 +111,13 @@ export default function PhotographyPage() {
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="bg-white p-1 pb-10 shadow-2xl hover:-translate-y-2 transition-transform duration-300 relative group"
+                    className="bg-white p-1 pb-10 border border-primary/20 hover:border-primary shadow-xl hover:-translate-y-2 transition-transform duration-300 relative group"
                   >
                     {/* Simulated photo frame/polaroid look */}
-                    <div className="w-full aspect-[4/3] bg-gray-100 mb-8 overflow-hidden relative">
-                       <div className="absolute inset-0 bg-cyan-900/5 group-hover:bg-transparent transition-colors" />
-                       <div className="absolute inset-0 flex items-center justify-center text-gray-300 group-hover:scale-110 group-hover:text-cyan-400 transition-all duration-500">
-                         <Icon className="w-20 h-20 opacity-50" />
+                    <div className="w-full aspect-[4/3] bg-bg border-b border-primary/20 mb-8 overflow-hidden relative">
+                       <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors" />
+                       <div className="absolute inset-0 flex items-center justify-center text-primary group-hover:scale-110 group-hover:text-secondary transition-all duration-500">
+                          <Icon className="w-20 h-20 opacity-55" />
                        </div>
                     </div>
                     <div className="px-8 text-center">

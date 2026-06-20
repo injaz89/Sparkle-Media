@@ -152,17 +152,17 @@ export default function SoftwareDevelopmentPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white min-h-screen">
+      <main className="bg-bg min-h-screen">
 
         {/* ── HERO ── */}
-        <section className="pt-32 pb-20 relative overflow-hidden bg-white">
-          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-50 blur-[120px] pointer-events-none opacity-60" />
+        <section className="pt-32 pb-20 relative overflow-hidden bg-bg">
+          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/20 blur-[120px] pointer-events-none opacity-60" />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="max-w-3xl">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-cyan-500 font-bold tracking-widest uppercase mb-4 text-sm"
+                className="text-secondary font-bold tracking-widest uppercase mb-4 text-sm"
               >
                 Tech Lab
               </motion.p>
@@ -173,7 +173,7 @@ export default function SoftwareDevelopmentPage() {
                 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-4 leading-[1.05]"
               >
                 Software Development{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                   & Implementation
                 </span>
               </motion.h1>
@@ -189,7 +189,7 @@ export default function SoftwareDevelopmentPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="border-l-4 border-cyan-400 pl-6 mb-8 space-y-3"
+                className="border-l-4 border-primary pl-6 mb-8 space-y-3"
               >
                 <p className="text-lg text-gray-600 font-light leading-relaxed">
                   In today&apos;s digital economy, businesses that leverage technology effectively grow
@@ -212,14 +212,14 @@ export default function SoftwareDevelopmentPage() {
                   href="https://calendly.com/sparklemediacreatives/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-navy text-white font-semibold hover:bg-cyan-600 transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold hover:bg-primary transition-colors"
                 >
                   Start Your Project
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 border-2 border-navy text-navy font-semibold hover:bg-navy hover:text-white transition-all"
+                  className="inline-flex items-center gap-2 px-8 py-4 border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-white transition-all bg-white"
                 >
                   Get a Quote
                 </a>
@@ -229,7 +229,7 @@ export default function SoftwareDevelopmentPage() {
         </section>
 
         {/* ── WHY INVEST ── */}
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-bg">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               className="text-center mb-16"
@@ -237,7 +237,7 @@ export default function SoftwareDevelopmentPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">The Case for Custom Software</span>
+              <span className="text-xs font-bold text-secondary uppercase tracking-widest">The Case for Custom Software</span>
               <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">
                 Why Invest in Custom Software Development?
               </h2>
@@ -252,10 +252,10 @@ export default function SoftwareDevelopmentPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="group bg-white border border-gray-100 hover:border-cyan-200 p-8 hover:shadow-xl hover:shadow-cyan-900/5 transition-all duration-300 relative overflow-hidden"
+                    className="group bg-white border border-primary/20 hover:border-primary p-8 hover:shadow-xl hover:shadow-sky-900/5 transition-all duration-300 relative overflow-hidden"
                   >
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                    <div className="w-10 h-10 bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <div className="w-10 h-10 bg-white border border-primary/20 flex items-center justify-center text-secondary mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-5 h-5" />
                     </div>
                     <h3 className="text-lg font-bold text-navy mb-3">{item.title}</h3>
@@ -268,11 +268,11 @@ export default function SoftwareDevelopmentPage() {
         </section>
 
         {/* ── SERVICES ── */}
-        <section className="py-24 bg-navy relative overflow-hidden">
+        <section className="py-24 bg-bg border-t border-primary/20 relative overflow-hidden">
           <div
-            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            className="absolute inset-0 opacity-[0.03] pointer-events-none"
             style={{
-              backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+              backgroundImage: "linear-gradient(#0A1128 1px, transparent 1px), linear-gradient(90deg, #0A1128 1px, transparent 1px)",
               backgroundSize: "60px 60px",
             }}
           />
@@ -283,8 +283,8 @@ export default function SoftwareDevelopmentPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Full-Spectrum Solutions</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mt-3">Our Software Development Services</h2>
+              <span className="text-xs font-bold text-secondary uppercase tracking-widest">Full-Spectrum Solutions</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Software Development Services</h2>
             </motion.div>
             <div className="space-y-6">
               {devServices.map((service, i) => {
@@ -296,25 +296,25 @@ export default function SoftwareDevelopmentPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.07 }}
-                    className="bg-white/5 border border-white/10 hover:border-cyan-400/30 p-8 md:p-10 transition-all duration-300 flex flex-col md:flex-row gap-10"
+                    className="bg-white border border-primary/20 hover:border-primary p-8 md:p-10 transition-all duration-300 flex flex-col md:flex-row gap-10 shadow-md"
                   >
                     <div className="md:w-1/3">
-                      <div className={`w-12 h-12 bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-5`}>
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white mb-5">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                      <p className="text-gray-400 font-light text-sm leading-relaxed">{service.desc}</p>
+                      <h3 className="text-xl font-bold text-navy mb-3">{service.title}</h3>
+                      <p className="text-gray-500 font-light text-sm leading-relaxed">{service.desc}</p>
                     </div>
                     <div className="md:w-2/3">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                         {service.points.map((pt, j) => (
                           <div key={j} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                            <span className="text-gray-300 text-sm font-light">{pt}</span>
+                            <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
+                            <span className="text-gray-600 text-sm font-light">{pt}</span>
                           </div>
                         ))}
                       </div>
-                      <p className="text-cyan-300 font-light text-sm italic border-l-2 border-cyan-400 pl-4">
+                      <p className="text-secondary font-semibold text-sm italic border-l-2 border-primary pl-4">
                         {service.note}
                       </p>
                     </div>
@@ -326,7 +326,7 @@ export default function SoftwareDevelopmentPage() {
         </section>
 
         {/* ── PROCESS ── */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-bg border-t border-primary/20">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               className="text-center mb-16"
@@ -334,7 +334,7 @@ export default function SoftwareDevelopmentPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest">How We Work</span>
+              <span className="text-xs font-bold text-secondary uppercase tracking-widest">How We Work</span>
               <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Development Process</h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
@@ -347,12 +347,12 @@ export default function SoftwareDevelopmentPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="relative bg-white border border-gray-100 hover:border-cyan-200 p-6 transition-all duration-300 group"
+                    className="relative bg-white border border-primary/20 hover:border-primary p-6 transition-all duration-300 group"
                   >
-                    <div className="absolute top-4 right-4 text-5xl font-bold text-gray-50 select-none leading-none">
+                    <div className="absolute top-4 right-4 text-5xl font-bold text-gray-100 select-none leading-none">
                       0{i + 1}
                     </div>
-                    <div className="w-10 h-10 bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-10 h-10 bg-white border border-primary/20 flex items-center justify-center text-secondary mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-5 h-5" />
                     </div>
                     <h3 className="text-sm font-bold text-navy mb-2">{step.title}</h3>
@@ -365,7 +365,7 @@ export default function SoftwareDevelopmentPage() {
         </section>
 
         {/* ── WHY SPARKLE MEDIA ── */}
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-bg border-t border-primary/20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -373,7 +373,7 @@ export default function SoftwareDevelopmentPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <span className="text-xs font-bold text-cyan-500 uppercase tracking-widest mb-3 block">Why Sparkle Media</span>
+                <span className="text-xs font-bold text-secondary uppercase tracking-widest mb-3 block">Why Sparkle Media</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
                   Why Businesses Choose Sparkle Media
                 </h2>
@@ -389,7 +389,7 @@ export default function SoftwareDevelopmentPage() {
                         transition={{ delay: i * 0.08 }}
                         className="flex items-start gap-4"
                       >
-                        <div className="w-10 h-10 bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100 flex items-center justify-center text-cyan-600 flex-shrink-0">
+                        <div className="w-10 h-10 bg-white border border-primary/20 flex items-center justify-center text-secondary flex-shrink-0">
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
@@ -407,18 +407,18 @@ export default function SoftwareDevelopmentPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-navy p-10 relative overflow-hidden"
+                className="bg-white border border-primary/20 p-10 relative overflow-hidden shadow-xl"
               >
-                <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500 blur-[80px] opacity-15 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-48 h-48 bg-primary/20 blur-[80px] opacity-15 pointer-events-none" />
                 <div className="relative z-10">
-                  <Cpu className="w-12 h-12 text-cyan-400 mb-6" />
-                  <h3 className="text-2xl font-bold text-white mb-4">
+                  <Cpu className="w-12 h-12 text-secondary mb-6" />
+                  <h3 className="text-2xl font-bold text-navy mb-4">
                     Build Technology That Drives Growth
                   </h3>
-                  <p className="text-gray-300 font-light leading-relaxed mb-4">
+                  <p className="text-gray-600 font-light leading-relaxed mb-4">
                     Technology should empower your business, not complicate it.
                   </p>
-                  <p className="text-gray-300 font-light leading-relaxed mb-8">
+                  <p className="text-gray-600 font-light leading-relaxed mb-8">
                     Whether you&apos;re launching a new product, modernizing legacy systems, or scaling
                     operations through automation, our team is ready to help bring your vision to life.
                   </p>
@@ -426,7 +426,7 @@ export default function SoftwareDevelopmentPage() {
                     href="https://calendly.com/sparklemediacreatives/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-500 text-white font-bold hover:bg-cyan-400 transition-colors"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-bold hover:bg-primary transition-colors"
                   >
                     Start Your Project
                     <ArrowRight className="w-4 h-4" />

@@ -49,7 +49,7 @@ export function ClientAchievements() {
   return (
     <>
       {/* Client Achievements — light blue tint */}
-      <section className="py-24 bg-[#d6f2ff] relative overflow-hidden">
+      <section className="py-24 bg-bg relative overflow-hidden">
         {/* Subtle wave pattern */}
         <div
           className="absolute inset-0 pointer-events-none opacity-40 wave-bg"
@@ -113,7 +113,7 @@ export function ClientAchievements() {
       </section>
 
       {/* Our Focus Is Simple — white */}
-      <section className="py-20 bg-white border-b border-[#87d4f8]">
+      <section className="py-20 bg-bg border-b border-secondary/20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -146,7 +146,7 @@ export function ClientAchievements() {
               {focusItems.map((item, i) => (
                 <motion.div
                   key={i}
-                  className="flex items-center gap-3 p-4 bg-[#eef9ff] border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:bg-[#d6f2ff] transition-all duration-200"
+                  className="flex items-center gap-3 p-4 bg-white border border-primary/30 hover:border-primary hover:bg-white/95 transition-all duration-200"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -164,7 +164,7 @@ export function ClientAchievements() {
                 </motion.div>
               ))}
               <motion.div
-                className="col-span-2 mt-2 p-4 bg-[#eef9ff] border-l-[3px] border-[#39bcfc]"
+                className="col-span-2 mt-2 p-4 bg-white/65 border-l-[3px] border-[#39bcfc]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}

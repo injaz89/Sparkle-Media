@@ -44,7 +44,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-32 bg-white relative">
+    <section id="services" className="py-32 bg-bg relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#87d4f8] to-transparent" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">

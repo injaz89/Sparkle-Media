@@ -31,7 +31,7 @@ export function Footer() {
   return (
     <footer>
       {/* Client logos slider */}
-      <div className="bg-[#d6f2ff]">
+      <div className="bg-bg">
         <ClientLogosSlider title="Our Clients" dark={false} />
       </div>
 
@@ -44,7 +44,7 @@ export function Footer() {
         {/* Wave separator top */}
         <div className="overflow-hidden leading-none" style={{ marginTop: "-1px" }}>
           <svg viewBox="0 0 1440 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 56L60 49C120 42 240 28 360 21C480 14 600 14 720 21C840 28 960 42 1080 45.5C1200 49 1320 42 1380 38.5L1440 35V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V56Z" fill="#d6f2ff"/>
+            <path d="M0 56L60 49C120 42 240 28 360 21C480 14 600 14 720 21C840 28 960 42 1080 45.5C1200 49 1320 42 1380 38.5L1440 35V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V56Z" fill="#bae7fe"/>
           </svg>
         </div>
 

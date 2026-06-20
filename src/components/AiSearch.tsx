@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 
 const aiPlatforms = [
-  { name: "ChatGPT", icon: "✦", color: "text-emerald-500" },
-  { name: "Gemini", icon: "✧", color: "text-blue-500" },
-  { name: "Claude", icon: "◈", color: "text-orange-500" },
-  { name: "Perplexity", icon: "⬡", color: "text-[#39bcfc]" },
-  { name: "AI Overviews", icon: "◉", color: "text-violet-500" },
+  { name: "ChatGPT", icon: "✦", color: "text-secondary" },
+  { name: "Gemini", icon: "✧", color: "text-primary" },
+  { name: "Claude", icon: "◈", color: "text-secondary" },
+  { name: "Perplexity", icon: "⬡", color: "text-primary" },
+  { name: "AI Overviews", icon: "◉", color: "text-secondary" },
 ];
 
 const optimizationTypes = [
@@ -16,33 +16,33 @@ const optimizationTypes = [
     full: "Search Engine Optimization",
     desc: "Rank prominently across traditional search engines with technical excellence and authority content.",
     accentColor: "#39bcfc",
-    badgeBg: "#d6f2ff",
+    badgeBg: "#bae7fe",
     badgeText: "#129adc",
-    badgeBorder: "#87d4f8",
+    badgeBorder: "#39bcfc",
   },
   {
     abbr: "AEO",
     full: "Answer Engine Optimization",
     desc: "Structure your content to be selected as the direct answer by AI assistants and featured snippets.",
     accentColor: "#129adc",
-    badgeBg: "#E8F4FB",
-    badgeText: "#005f82",
-    badgeBorder: "#B8DCF0",
+    badgeBg: "#bae7fe",
+    badgeText: "#129adc",
+    badgeBorder: "#39bcfc",
   },
   {
     abbr: "GEO",
     full: "Generative Engine Optimization",
     desc: "Optimize your brand to be cited and recommended by large language models like ChatGPT and Gemini.",
     accentColor: "#39bcfc",
-    badgeBg: "#d6f2ff",
+    badgeBg: "#bae7fe",
     badgeText: "#129adc",
-    badgeBorder: "#87d4f8",
+    badgeBorder: "#39bcfc",
   },
 ];
 
 export function AiSearch() {
   return (
-    <section className="py-32 bg-[#eef9ff] relative overflow-hidden">
+    <section className="py-32 bg-bg relative overflow-hidden">
       {/* Background decoration */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.4]"

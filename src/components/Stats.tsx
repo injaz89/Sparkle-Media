@@ -73,7 +73,7 @@ function AnimatedCounter({ target, suffix, prefix, short }: { target: number; su
 
 export function Stats() {
   return (
-    <section className="py-16 bg-navy relative overflow-hidden">
+    <section className="py-16 bg-bg relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
@@ -81,7 +81,7 @@ export function Stats() {
         }}
       />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-white/10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-[#129adc]/20">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
@@ -91,7 +91,7 @@ export function Stats() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <div className="text-4xl md:text-5xl font-bold mb-2 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 to-blue-400">
+              <div className="text-4xl md:text-5xl font-bold mb-2 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-[#39bcfc] to-[#129adc]">
                 <AnimatedCounter
                   target={stat.value}
                   suffix={stat.suffix}
@@ -99,10 +99,10 @@ export function Stats() {
                   short={stat.short}
                 />
               </div>
-              <p className="text-sm font-bold text-white uppercase tracking-widest mb-1 whitespace-nowrap">
+              <p className="text-sm font-bold text-[#0A1128] uppercase tracking-widest mb-1 whitespace-nowrap">
                 {stat.label}
               </p>
-              <p className="text-xs text-gray-400 font-light">{stat.description}</p>
+              <p className="text-xs text-gray-500 font-light">{stat.description}</p>
             </motion.div>
           ))}
         </div>

@@ -10,7 +10,7 @@ const leaders = [
     title: "CEO",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800",
     link: "https://www.linkedin.com/in/mohamed-inshath",
-    gradient: "from-cyan-400 to-blue-500",
+    gradient: "from-primary to-secondary",
   },
   {
     name: "Milsath Ahamed",
@@ -18,7 +18,7 @@ const leaders = [
     title: "Managing Director",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800",
     link: "https://www.linkedin.com/in/milsathahamed/",
-    gradient: "from-blue-400 to-indigo-500",
+    gradient: "from-secondary to-primary",
   },
   {
     name: "Kawsheka Radhakrishnan",
@@ -26,7 +26,7 @@ const leaders = [
     title: "Chief Creative Officer",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800",
     link: "https://www.linkedin.com/in/kawshekaradhakrishnan/",
-    gradient: "from-violet-400 to-purple-500",
+    gradient: "from-primary to-secondary",
   },
   {
     name: "Abdullah Buhary",
@@ -34,7 +34,7 @@ const leaders = [
     title: "Chief Operations Officer",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800",
     link: "https://www.linkedin.com/in/abdullahbuhary/",
-    gradient: "from-teal-400 to-cyan-500",
+    gradient: "from-secondary to-primary",
   },
   {
     name: "Lukman Hakeem",
@@ -42,7 +42,7 @@ const leaders = [
     title: "Chief Financial Officer",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
     link: "https://www.linkedin.com/in/lukman-hakeem-9024b717a/",
-    gradient: "from-amber-400 to-orange-500",
+    gradient: "from-primary to-secondary",
   },
   {
     name: "Nashath Naizer",
@@ -50,7 +50,7 @@ const leaders = [
     title: "Head of Finance",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800",
     link: "https://www.linkedin.com/in/nashath-naizer-1545b6142/",
-    gradient: "from-rose-400 to-pink-500",
+    gradient: "from-secondary to-primary",
   },
   {
     name: "Mohamed Amjed",
@@ -58,13 +58,13 @@ const leaders = [
     title: "Head of Content Strategy",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800",
     link: "https://www.linkedin.com/in/mohamed-amjed-a30b40151/",
-    gradient: "from-emerald-400 to-green-500",
+    gradient: "from-primary to-secondary",
   },
 ];
 
 export function LeadershipTeam() {
   return (
-    <section id="team" className="py-32 bg-white relative overflow-hidden">
+    <section id="team" className="py-32 bg-bg relative overflow-hidden">
       {/* Background grid */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -78,7 +78,7 @@ export function LeadershipTeam() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <motion.span
-            className="inline-block text-xs font-bold tracking-widest text-cyan-600 uppercase mb-4"
+            className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -134,7 +134,7 @@ function LeaderCard({
 }) {
   return (
     <motion.div
-      className={`bg-white rounded-none ${featured ? "p-8" : "p-6"} border border-gray-100 shadow-xl shadow-cyan-900/5 group text-center relative overflow-hidden`}
+      className={`bg-white rounded-none ${featured ? "p-8" : "p-6"} border border-primary/25 shadow-xl shadow-sky-900/5 group text-center relative overflow-hidden`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -166,7 +166,7 @@ function LeaderCard({
         href={leader.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center w-9 h-9 rounded-none bg-gray-50 text-gray-400 hover:bg-cyan-500 hover:text-white transition-colors"
+        className="inline-flex items-center justify-center w-9 h-9 rounded-none bg-gray-50 text-gray-400 hover:bg-[#39bcfc] hover:text-white transition-colors"
       >
         <LinkedinIcon className="w-4 h-4" />
       </a>

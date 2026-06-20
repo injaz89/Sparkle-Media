@@ -28,7 +28,7 @@ export function Hero() {
       y: 0,
       transition: { duration: 0.7, ease: "easeOut" },
     },
-  };
+  } as const;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-[#bae7fe] wave-bg">

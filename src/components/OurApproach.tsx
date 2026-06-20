@@ -32,7 +32,7 @@ const steps = [
 
 export function OurApproach() {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-32 bg-bg relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#87d4f8] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -50,7 +50,7 @@ export function OurApproach() {
             A proven four-step process that turns market insight into measurable business growth.
           </p>
         </motion.div>
-
+ 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, i) => {
             const Icon = step.icon;
@@ -67,10 +67,10 @@ export function OurApproach() {
                 {i < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-10 left-full w-6 h-px bg-gradient-to-r from-[#87d4f8] to-[#87d4f8] z-10" />
                 )}
-
+ 
                 <div className="p-8 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden h-full">
                   {/* Large number watermark */}
-                  <div className="absolute -top-4 -right-4 text-[100px] font-bold text-[#d6f2ff] opacity-100 z-0 pointer-events-none leading-none select-none">
+                  <div className="absolute -top-4 -right-4 text-[100px] font-bold text-gray-200/50 opacity-100 z-0 pointer-events-none leading-none select-none">
                     {step.number}
                   </div>
 

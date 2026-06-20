@@ -20,14 +20,14 @@ type InfoLayoutProps = {
 
 export function InfoLayout({ category, title, subtitle, description, features }: InfoLayoutProps) {
   return (
-    <main className="pt-32 pb-24 bg-white min-h-screen relative overflow-hidden">
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-50 rounded-none blur-[100px] pointer-events-none" />
+    <main className="pt-32 pb-24 bg-bg min-h-screen relative overflow-hidden">
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/20 rounded-none blur-[100px] opacity-60 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
           <div>
             <motion.p 
-              className="text-cyan-500 font-bold tracking-widest uppercase mb-4"
+              className="text-secondary font-bold tracking-widest uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -42,7 +42,7 @@ export function InfoLayout({ category, title, subtitle, description, features }:
               {title}
             </motion.h1>
             <motion.h3 
-              className="text-2xl text-navy font-medium leading-relaxed"
+              className="text-2xl text-navy font-semibold leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -56,7 +56,7 @@ export function InfoLayout({ category, title, subtitle, description, features }:
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <p className="text-xl text-gray-500 font-light leading-relaxed border-l-4 border-cyan-400 pl-6">
+            <p className="text-xl text-gray-700 font-light leading-relaxed border-l-4 border-secondary pl-6">
               {description}
             </p>
           </motion.div>
@@ -68,13 +68,13 @@ export function InfoLayout({ category, title, subtitle, description, features }:
             return (
               <motion.div 
                 key={i}
-                className="group p-10 rounded-none bg-white border border-gray-100 hover:border-cyan-200 hover:shadow-2xl hover:shadow-cyan-900/10 transition-all duration-300"
+                className="group p-10 rounded-none bg-white border border-primary/20 hover:border-primary hover:shadow-xl hover:shadow-sky-100/60 transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 + i * 0.1 }}
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-cyan-100 to-blue-50 rounded-none flex items-center justify-center text-cyan-600 mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 bg-white border border-primary/20 rounded-none flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform">
                   <Icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl font-bold text-navy mb-4">{feature.title}</h3>
@@ -84,7 +84,7 @@ export function InfoLayout({ category, title, subtitle, description, features }:
                 {feature.link && feature.linkText && (
                   <a
                     href={feature.link}
-                    className="inline-flex items-center text-cyan-600 font-semibold hover:text-navy transition-colors"
+                    className="inline-flex items-center text-secondary font-semibold hover:text-primary transition-colors"
                   >
                     {feature.linkText}
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

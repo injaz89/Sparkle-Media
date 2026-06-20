@@ -9,21 +9,21 @@ export default function WebsiteOptimisationPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-0 bg-white min-h-screen">
+      <main className="pt-32 pb-0 bg-bg min-h-screen">
         
         {/* Header Section */}
         <div className="max-w-7xl mx-auto px-6 mb-24 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-600 mx-auto rounded-none flex items-center justify-center text-white mb-8 shadow-2xl shadow-cyan-500/30"
+            className="w-24 h-24 bg-gradient-to-br from-primary to-secondary mx-auto rounded-none flex items-center justify-center text-white mb-8 shadow-2xl shadow-sky-500/30"
           >
             <Gauge className="w-12 h-12" />
           </motion.div>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-cyan-500 font-bold tracking-widest uppercase mb-4"
+            className="text-secondary font-bold tracking-widest uppercase mb-4"
           >
             Tech Lab
           </motion.p>
@@ -46,8 +46,8 @@ export default function WebsiteOptimisationPage() {
         </div>
 
         {/* Website Optimisation Section */}
-        <div className="bg-navy py-32 relative overflow-hidden">
-          <div className="absolute top-1/2 left-0 w-96 h-96 bg-cyan-500 rounded-none blur-[200px] opacity-20 pointer-events-none transform -translate-y-1/2" />
+        <div className="bg-bg py-32 border-t border-primary/20 relative overflow-hidden">
+          <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary blur-[200px] opacity-20 pointer-events-none transform -translate-y-1/2" />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -55,7 +55,7 @@ export default function WebsiteOptimisationPage() {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="space-y-6 text-cyan-50 font-light text-lg leading-relaxed"
+                className="space-y-6 text-gray-600 font-light text-lg leading-relaxed"
               >
                 <p>
                   Websites drive a brand&apos;s online success. The easier it is for consumers to find and navigate a website, the more likely it is that those consumers will take action. It&apos;s a simple truth: a well-optimized website equals better results for a business.
@@ -64,21 +64,21 @@ export default function WebsiteOptimisationPage() {
                   Website optimization involves the implementation of technical and creative tactics to holistically improve a site&apos;s ability to drive business goals. Consumers bounce from a webpage in seconds if load time takes too long or the design is not mobile-friendly. Every bounce means a business is losing out on valuable leads.
                 </p>
                 <p>
-                  By identifying issues that may inhibit consumers from converting and implementing effective solutions, <span className="font-bold text-white">Sparkle Media</span> helps our clients&apos; websites achieve optimal performance and, ultimately, boost sales. Our team of experts is well-versed in technical and creative optimization services.
+                  By identifying issues that may inhibit consumers from converting and implementing effective solutions, <span className="font-bold text-navy">Sparkle Media</span> helps our clients&apos; websites achieve optimal performance and, ultimately, boost sales. Our team of experts is well-versed in technical and creative optimization services.
                 </p>
               </motion.div>
-
+ 
               <motion.div 
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-white/5 border border-white/10 p-10 backdrop-blur-sm relative"
+                className="bg-white border border-primary/20 p-10 backdrop-blur-sm relative shadow-xl"
               >
-                <h3 className="text-2xl font-bold text-white mb-4">Optimization That Drives Action</h3>
-                <p className="text-cyan-100 font-light leading-relaxed mb-6">
+                <h3 className="text-2xl font-bold text-navy mb-4">Optimization That Drives Action</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-6">
                   Backed by a decade of experience in designing, developing and improving client websites. Our development team works on the backend to keep sites running smoothly while talented designers identify ways to improve UX.
                 </p>
-                <p className="text-cyan-100 font-light leading-relaxed">
+                <p className="text-gray-600 font-light leading-relaxed">
                   Our teams work in conjunction with expert content and SEO marketers to ensure websites are discoverable in the search engine results pages (SERPs). We&apos;re there every step of the way to make certain our clients get the best possible ROI.
                 </p>
               </motion.div>
@@ -87,29 +87,29 @@ export default function WebsiteOptimisationPage() {
         </div>
 
         {/* SEO Features */}
-        <div className="py-24 bg-white max-w-7xl mx-auto px-6">
+        <div className="py-24 max-w-7xl mx-auto px-6 bg-bg border-t border-primary/20">
           <div className="max-w-3xl mx-auto">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gray-50 border border-gray-100 p-12 hover:shadow-2xl hover:border-cyan-200 transition-all duration-300"
+              className="bg-white border border-primary/20 p-12 hover:shadow-2xl hover:border-primary transition-all duration-300 shadow-lg"
             >
               <div className="flex items-center mb-8 pb-8 border-b border-gray-200">
-                <Search className="w-10 h-10 text-cyan-500 mr-6" />
+                <Search className="w-10 h-10 text-secondary mr-6" />
                 <h3 className="text-3xl font-bold text-navy">Search Engine Optimization</h3>
               </div>
               <ul className="space-y-6">
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-cyan-400 mr-3 shrink-0" />
+                  <CheckCircle2 className="w-6 h-6 text-secondary mr-3 shrink-0" />
                   <span className="text-gray-700 font-medium text-lg">Technical audits</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-cyan-400 mr-3 shrink-0" />
+                  <CheckCircle2 className="w-6 h-6 text-secondary mr-3 shrink-0" />
                   <span className="text-gray-700 font-medium text-lg">Keyword planning</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-cyan-400 mr-3 shrink-0" />
+                  <CheckCircle2 className="w-6 h-6 text-secondary mr-3 shrink-0" />
                   <span className="text-gray-700 font-medium text-lg">Content optimizations</span>
                 </li>
               </ul>
