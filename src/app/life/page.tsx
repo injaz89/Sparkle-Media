@@ -162,7 +162,7 @@ export default function LifeAtSparkleMediaPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-bg min-h-screen">
+      <main className="min-h-screen" style={{ background: "#f0faff" }}>
 
         {/* ── HERO SLIDER ── */}
         <section className="relative h-screen overflow-hidden">
@@ -181,7 +181,7 @@ export default function LifeAtSparkleMediaPage() {
                 alt={heroSlides[currentSlide].headline}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent" />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #060f2e, rgba(6,15,46,0.6) 50%, transparent)" }} />
             </motion.div>
           </AnimatePresence>
 
@@ -198,7 +198,7 @@ export default function LifeAtSparkleMediaPage() {
                 <div className="flex justify-center mb-6">
                   <Heart className="w-10 h-10 text-pink-400 animate-pulse" />
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-5xl md:text-7xl text-white mb-6 leading-tight" style={{ fontWeight: 200, letterSpacing: "-0.04em" }}>
                   {heroSlides[currentSlide].headline}
                 </h1>
                 <p className="text-xl text-cyan-100 font-light max-w-2xl mx-auto">
@@ -229,10 +229,11 @@ export default function LifeAtSparkleMediaPage() {
         </section>
 
         {/* ── INTRO ── */}
-        <section className="py-24 bg-bg">
+        <section className="py-24" style={{ background: "#f0faff" }}>
           <div className="max-w-4xl mx-auto px-6 text-center">
             <motion.span
-              className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4"
+              className="inline-block text-xs font-bold tracking-[0.18em] uppercase mb-5"
+              style={{ color: "#00d4ff" }}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -240,7 +241,8 @@ export default function LifeAtSparkleMediaPage() {
               Our Culture
             </motion.span>
             <motion.h2
-              className="text-4xl md:text-5xl font-bold text-navy mb-8 leading-tight"
+              className="text-5xl md:text-6xl mb-8 leading-tight"
+              style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -279,7 +281,7 @@ export default function LifeAtSparkleMediaPage() {
         </section>
 
         {/* ── PERKS ── */}
-        <section className="py-16 bg-bg border-y border-primary/20">
+        <section className="py-16" style={{ background: "#e8f7ff", borderTop: "1px solid rgba(0,212,255,0.15)", borderBottom: "1px solid rgba(0,212,255,0.15)" }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {perks.map((perk, i) => {
@@ -287,16 +289,20 @@ export default function LifeAtSparkleMediaPage() {
                 return (
                   <motion.div
                     key={i}
-                    className="text-center p-8 bg-white border border-primary/20 shadow-sm hover:-translate-y-1 transition-transform duration-300"
+                    className="text-center p-8 bg-white transition-all duration-300"
+                    style={{ border: "1px solid rgba(0,212,255,0.2)" }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white mx-auto mb-5">
+                    <div
+                      className="w-14 h-14 flex items-center justify-center text-white mx-auto mb-5"
+                      style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)" }}
+                    >
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-lg font-bold text-navy mb-3">{perk.title}</h3>
+                    <h3 className="text-lg mb-3" style={{ color: "#060f2e", fontWeight: 500 }}>{perk.title}</h3>
                     <p className="text-gray-500 text-sm font-light leading-relaxed">{perk.desc}</p>
                   </motion.div>
                 );
@@ -306,11 +312,12 @@ export default function LifeAtSparkleMediaPage() {
         </section>
 
         {/* ── GALLERY ── */}
-        <section className="py-24 bg-bg">
+        <section className="py-24" style={{ background: "#f0faff" }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <motion.span
-                className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4"
+                className="inline-block text-xs font-bold tracking-[0.18em] uppercase mb-5"
+                style={{ color: "#00d4ff" }}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -318,7 +325,8 @@ export default function LifeAtSparkleMediaPage() {
                 A Glimpse Inside
               </motion.span>
               <motion.h2
-                className="text-4xl md:text-5xl font-bold text-navy mb-4"
+                className="text-5xl md:text-6xl mb-4"
+                style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -367,18 +375,19 @@ export default function LifeAtSparkleMediaPage() {
         </section>
 
         {/* ── MEET THE TEAM ── */}
-        <section className="py-24 bg-bg border-y border-primary/20 relative overflow-hidden">
+        <section className="py-24 relative overflow-hidden" style={{ background: "#e8f7ff", borderTop: "1px solid rgba(0,212,255,0.15)", borderBottom: "1px solid rgba(0,212,255,0.15)" }}>
           <div
             className="absolute inset-0 opacity-5 pointer-events-none"
             style={{
-              backgroundImage: "linear-gradient(#0A1128 1px, transparent 1px), linear-gradient(90deg, #0A1128 1px, transparent 1px)",
-              backgroundSize: "50px 50px",
+              backgroundImage: "radial-gradient(circle, rgba(0,212,255,0.1) 1px, transparent 1px)",
+              backgroundSize: "48px 48px",
             }}
           />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
               <motion.span
-                className="inline-block text-xs font-bold tracking-widest text-secondary uppercase mb-4"
+                className="inline-block text-xs font-bold tracking-[0.18em] uppercase mb-5"
+                style={{ color: "#00d4ff" }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -386,7 +395,8 @@ export default function LifeAtSparkleMediaPage() {
                 The People
               </motion.span>
               <motion.h2
-                className="text-4xl md:text-5xl font-bold text-navy mb-4"
+                className="text-5xl md:text-6xl mb-4"
+                style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -400,7 +410,8 @@ export default function LifeAtSparkleMediaPage() {
               {teamMembers.map((member, i) => (
                 <motion.div
                   key={i}
-                  className="group relative overflow-hidden bg-white border border-primary/20 hover:border-primary transition-all duration-300 shadow-md"
+                  className="group relative overflow-hidden bg-white transition-all duration-300"
+                  style={{ border: "1px solid rgba(0,212,255,0.2)" }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -417,7 +428,7 @@ export default function LifeAtSparkleMediaPage() {
                   </div>
                   <div className="p-5">
                     <h3 className="text-navy font-bold text-lg mb-1">{member.name}</h3>
-                    <p className="text-secondary text-xs font-semibold uppercase tracking-widest mb-3">{member.role}</p>
+                    <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#00d4ff" }}>{member.role}</p>
                     <p className="text-gray-500 text-sm font-light italic leading-relaxed">&ldquo;{member.quote}&rdquo;</p>
                   </div>
                 </motion.div>
@@ -472,7 +483,7 @@ export default function LifeAtSparkleMediaPage() {
                   <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">{cs.result}</p>
                 </div>
               {/* ── LET'S TALK ── */}
-        <section className="py-24 bg-bg">
+        <section className="py-24" style={{ background: "#f0faff" }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
  
@@ -483,10 +494,10 @@ export default function LifeAtSparkleMediaPage() {
                 viewport={{ once: true }}
               >
                 <span className="text-xs font-bold text-[#129adc] uppercase tracking-widest mb-4 block">Get In Touch</span>
-                <h2 className="text-5xl md:text-6xl font-bold text-navy mb-6 leading-tight">
+                <h2 className="text-5xl md:text-6xl mb-6 leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}>
                   Let&apos;s Talk!
                 </h2>
-                <div className="border-l-4 border-[#39bcfc] pl-6 mb-10 space-y-3">
+                <div className="pl-6 mb-10 space-y-3" style={{ borderLeft: "3px solid #00d4ff" }}>
                   <p className="text-xl font-bold text-navy">Excited to give your brand into good hands and kick-start an exemplary digital journey?</p>
                   <p className="text-lg text-gray-600 font-light">We are equally excited as you are!</p>
                   <p className="text-lg text-gray-500 font-light">Let&apos;s sit for a quick chat!</p>
@@ -498,7 +509,8 @@ export default function LifeAtSparkleMediaPage() {
                     href="https://calendly.com/sparklemediacreatives/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-5 bg-secondary text-white hover:bg-primary transition-colors group"
+                    className="flex items-center gap-4 p-5 text-white hover:opacity-90 transition-opacity group"
+                    style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)" }}
                   >
                     <div className="w-10 h-10 bg-white/10 flex items-center justify-center flex-shrink-0">
                       <Phone className="w-5 h-5" />
@@ -514,7 +526,8 @@ export default function LifeAtSparkleMediaPage() {
                     href="https://wa.me/message/RBCP6CKB5PX6C1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-5 bg-primary text-white hover:bg-secondary transition-colors group"
+                    className="flex items-center gap-4 p-5 text-white hover:opacity-90 transition-opacity group"
+                    style={{ background: "linear-gradient(135deg, #0099cc, #00d4ff)" }}
                   >
                     <div className="w-10 h-10 bg-white/10 flex items-center justify-center flex-shrink-0">
                       <MessageCircle className="w-5 h-5" />
@@ -528,10 +541,13 @@ export default function LifeAtSparkleMediaPage() {
                 </div>
  
                 {/* CEO section */}
-                <div className="bg-white border border-primary/20 p-6">
+                <div className="bg-white p-6" style={{ border: "1px solid rgba(0,212,255,0.2)" }}>
                   <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Speak with our CEO</p>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                    <div
+                      className="w-14 h-14 flex items-center justify-center text-white font-bold text-xl flex-shrink-0"
+                      style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)" }}
+                    >
                       I
                     </div>
                     <div>
@@ -544,7 +560,8 @@ export default function LifeAtSparkleMediaPage() {
                       href="https://calendly.com/sparklemediacreatives/30min"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-secondary text-white text-sm font-semibold hover:bg-primary transition-colors"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 text-white text-sm font-semibold transition-opacity hover:opacity-80"
+                      style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)" }}
                     >
                       Talk Now <ArrowRight className="w-3 h-3" />
                     </a>
@@ -552,7 +569,8 @@ export default function LifeAtSparkleMediaPage() {
                       href="https://www.linkedin.com/in/mohamed-inshath"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 border border-primary/20 text-navy text-sm font-semibold hover:border-primary transition-colors bg-white"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-white transition-colors"
+                      style={{ border: "1px solid rgba(0,212,255,0.3)", color: "#060f2e" }}
                     >
                       LinkedIn <Briefcase className="w-3 h-3" />
                     </a>
@@ -568,7 +586,7 @@ export default function LifeAtSparkleMediaPage() {
                 transition={{ delay: 0.1 }}
               >
                 {/* Form */}
-                <div className="bg-white border border-primary/20 p-10 mb-8 relative overflow-hidden">
+                <div className="bg-white p-10 mb-8 relative overflow-hidden" style={{ border: "1px solid rgba(0,212,255,0.2)" }}>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-primary/20 blur-3xl opacity-50 pointer-events-none -translate-y-1/2 translate-x-1/2" />
                   <h3 className="text-2xl font-bold text-navy mb-8 relative z-10">Send Us a Message</h3>
                   <form className="relative z-10 space-y-6">
@@ -613,7 +631,8 @@ export default function LifeAtSparkleMediaPage() {
                     </div>
                     <button
                       type="button"
-                      className="w-full group bg-secondary text-white px-8 py-4 text-sm font-bold uppercase tracking-widest flex items-center justify-between hover:bg-primary transition-all"
+                      className="w-full group text-white px-8 py-4 text-sm font-bold uppercase tracking-widest flex items-center justify-between hover:opacity-90 transition-opacity"
+                      style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)" }}
                     >
                       <span>Send Message</span>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -633,7 +652,8 @@ export default function LifeAtSparkleMediaPage() {
                           href={social.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-3 p-4 bg-white border border-primary/20 hover:border-primary hover:shadow-md transition-all group"
+                          className="flex items-center gap-3 p-4 bg-white transition-all group"
+                          style={{ border: "1px solid rgba(0,212,255,0.2)" }}
                         >
                           <div className={`w-9 h-9 bg-gradient-to-br ${social.color} flex items-center justify-center text-white flex-shrink-0`}>
                             <Icon className="w-4 h-4" />

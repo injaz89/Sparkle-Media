@@ -1,5 +1,3 @@
-"use client";
-
 import { InstagramIcon, FacebookIcon, LinkedinIcon, TikTokIcon } from "@/components/SocialIcons";
 import { ClientLogosSlider } from "@/components/ClientLogosSlider";
 import Image from "next/image";
@@ -53,16 +51,6 @@ export function Footer() {
           </svg>
         </div>
 
-        {/* Dot grid overlay */}
-        <div
-          className="absolute pointer-events-none"
-          style={{
-            backgroundImage: "radial-gradient(circle, rgba(0,212,255,0.07) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-            inset: 0,
-          }}
-        />
-
         <div className="py-16 px-6">
           <div className="max-w-7xl mx-auto">
 
@@ -82,27 +70,15 @@ export function Footer() {
                 <p className="text-sm font-light leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.5)" }}>
                   Exemplary digital journeys for brands that dare to sparkle. A 360° digital marketing agency.
                 </p>
-                {/* Socials */}
+
+                {/* Socials — CSS hover via .footer-social class */}
                 <div className="flex gap-3">
                   {socials.map(({ Icon, href, label }) => (
                     <a
                       key={label}
                       href={href}
                       aria-label={label}
-                      className="w-9 h-9 flex items-center justify-center transition-all duration-200 hover:scale-110"
-                      style={{
-                        background: "rgba(0,212,255,0.1)",
-                        border: "1px solid rgba(0,212,255,0.2)",
-                        color: "rgba(255,255,255,0.7)",
-                      }}
-                      onMouseEnter={e => {
-                        (e.currentTarget as HTMLElement).style.background = "rgba(0,212,255,0.25)";
-                        (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.5)";
-                      }}
-                      onMouseLeave={e => {
-                        (e.currentTarget as HTMLElement).style.background = "rgba(0,212,255,0.1)";
-                        (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.2)";
-                      }}
+                      className="footer-social w-9 h-9 flex items-center justify-center"
                     >
                       <Icon className="w-4 h-4" />
                     </a>
@@ -110,25 +86,19 @@ export function Footer() {
                 </div>
               </div>
 
-              {/* Link columns */}
+              {/* Link columns — CSS hover via .footer-link class */}
               {Object.entries(footerLinks).map(([category, links]) => (
                 <div key={category}>
                   <h4
                     className="text-xs font-bold uppercase tracking-[0.18em] mb-6"
-                    style={{ color: "rgba(0,212,255,0.6)" }}
+                    style={{ color: "rgba(0,212,255,0.65)" }}
                   >
                     {category}
                   </h4>
                   <ul className="space-y-3">
                     {links.map((link) => (
                       <li key={link.label}>
-                        <a
-                          href={link.href}
-                          className="text-sm font-light transition-colors duration-200 hover:translate-x-0.5 inline-block"
-                          style={{ color: "rgba(255,255,255,0.55)" }}
-                          onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.9)"}
-                          onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)"}
-                        >
+                        <a href={link.href} className="footer-link">
                           {link.label}
                         </a>
                       </li>
@@ -151,7 +121,7 @@ export function Footer() {
               </p>
               <div className="flex items-center gap-2">
                 <span
-                  className="w-1.5 h-1.5 rounded-full"
+                  className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                   style={{
                     background: "#00d4ff",
                     boxShadow: "0 0 6px #00d4ff",

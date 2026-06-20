@@ -60,10 +60,7 @@ export function Contact() {
             <div className="space-y-6 mb-10">
               <a
                 href="tel:+94776540689"
-                className="group flex items-center gap-5 p-5 bg-white transition-all duration-300"
-                style={{ border: "1px solid rgba(0,212,255,0.2)" }}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.45)"}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.2)"}
+                className="contact-card group flex items-center gap-5 p-5 bg-white"
               >
                 <div
                   className="w-14 h-14 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform"
@@ -81,10 +78,7 @@ export function Contact() {
 
               <a
                 href="mailto:info@sparklemedia.lk"
-                className="group flex items-center gap-5 p-5 bg-white transition-all duration-300"
-                style={{ border: "1px solid rgba(0,212,255,0.2)" }}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.45)"}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.2)"}
+                className="contact-card group flex items-center gap-5 p-5 bg-white"
               >
                 <div
                   className="w-14 h-14 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform"

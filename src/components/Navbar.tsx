@@ -110,12 +110,9 @@ export function Navbar() {
             >
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute top-8 right-8 transition-colors focus:outline-none"
-                style={{ color: "rgba(255,255,255,0.4)" }}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "#00d4ff"}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)"}
+                className="nav-item-dark absolute top-8 right-8 focus:outline-none"
               >
-                <svg className="w-8 h-8 font-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -156,10 +153,7 @@ export function Navbar() {
                     {item.subItems ? (
                       <button
                         onClick={() => toggleMenu(item.name)}
-                        className="text-3xl md:text-[2.25rem] tracking-wide uppercase flex items-center justify-end space-x-2 transition-colors"
-                        style={{ fontWeight: 200, color: "rgba(255,255,255,0.5)" }}
-                        onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "#00d4ff"}
-                        onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.5)"}
+                        className="nav-item-dark text-3xl md:text-[2.25rem] tracking-wide uppercase flex items-center justify-end space-x-2"
                       >
                         <span className={`transition-transform duration-300 ${expandedMenus.includes(item.name) ? "rotate-90" : ""}`}>
                           ›
@@ -170,10 +164,7 @@ export function Navbar() {
                       <motion.a
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-3xl md:text-[2.25rem] tracking-wide uppercase transition-colors"
-                        style={{ fontWeight: 200, color: "rgba(255,255,255,0.5)" }}
-                        onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "#00d4ff"}
-                        onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.5)"}
+                        className="nav-item-dark text-3xl md:text-[2.25rem] tracking-wide uppercase"
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 + i * 0.05 }}
@@ -195,7 +186,7 @@ export function Navbar() {
                               {subItem.subItems ? (
                                 <button
                                   onClick={() => toggleMenu(subItem.name)}
-                                  className="text-xl md:text-2xl font-light text-gray-500 hover:text-cyan-500 transition-colors tracking-wide uppercase flex items-center justify-end space-x-2"
+                                  className="nav-item-dark text-xl md:text-2xl tracking-wide uppercase flex items-center justify-end space-x-2"
                                 >
                                   <span className={`transition-transform duration-300 ${expandedMenus.includes(subItem.name) ? "rotate-90" : ""}`}>
                                     ›
@@ -206,7 +197,7 @@ export function Navbar() {
                                 <a
                                   href={subItem.href}
                                   onClick={() => setIsMenuOpen(false)}
-                                  className="text-xl md:text-2xl font-light text-gray-500 hover:text-cyan-500 transition-colors uppercase tracking-wide"
+                                  className="nav-item-dark text-xl md:text-2xl tracking-wide uppercase"
                                 >
                                   {subItem.name}
                                 </a>

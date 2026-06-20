@@ -147,9 +147,49 @@ h3 { font-weight: 400; }
   background: linear-gradient(90deg, transparent, #00d4ff 30%, #7c3aed 70%, transparent);
 }
 
-/* ── Animated border gradient ── */
-.border-animated {
-  background: linear-gradient(270deg, #00d4ff, #7c3aed, #0099cc, #00d4ff);
-  background-size: 400% 400%;
-  animation: borderRun 4s ease infinite;
+/* ── Footer social icon hover (CSS only, no JS handlers) ── */
+.footer-social {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.footer-social:hover {
+  background: rgba(0, 212, 255, 0.25);
+  border-color: rgba(0, 212, 255, 0.55);
+  color: #fff;
+  transform: scale(1.12);
+}
+
+/* ── Footer nav link hover ── */
+.footer-link {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 300;
+  font-size: 0.875rem;
+  display: inline-block;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.footer-link:hover {
+  color: rgba(255, 255, 255, 0.95);
+  transform: translateX(2px);
+}
+
+/* ── Contact card border hover ── */
+.contact-card {
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.contact-card:hover {
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.1);
+}
+
+/* ── Navbar dark menu item hover ── */
+.nav-item-dark {
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s ease;
+}
+.nav-item-dark:hover {
+  color: #00d4ff;
 }
