@@ -42,7 +42,7 @@ const optimizationTypes = [
 
 export function AiSearch() {
   return (
-    <section className="py-32 bg-bg relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden" style={{ background: "#e8f7ff" }}>
       {/* Background decoration */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.4]"
@@ -68,19 +68,24 @@ export function AiSearch() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
+          <span
+            className="inline-block text-xs font-bold tracking-[0.18em] uppercase mb-5"
+            style={{ color: "#00d4ff" }}
+          >
             AI-First Search Visibility
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-6">
+          <h2
+            className="text-5xl md:text-6xl mb-6"
+            style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
+          >
             Is Your Brand Visible{" "}
             <span
-              className="text-transparent bg-clip-text"
-              style={{ backgroundImage: "linear-gradient(135deg, #39bcfc 0%, #129adc 100%)" }}
+              style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
             >
               In AI Search?
             </span>
           </h2>
-          <p className="text-gray-500 font-light max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="font-light max-w-2xl mx-auto text-lg leading-relaxed" style={{ color: "#64748b" }}>
             Customer behavior has changed. People no longer only search on Google.
           </p>
         </motion.div>
@@ -100,16 +105,18 @@ export function AiSearch() {
             {aiPlatforms.map((platform, i) => (
               <motion.div
                 key={i}
-                className="flex items-center gap-3 px-6 py-3 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/60 hover:shadow-md hover:shadow-sky-100 transition-all duration-300"
+                className="flex items-center gap-3 px-6 py-3 bg-white transition-all duration-300"
+                style={{ border: "1px solid rgba(0,212,255,0.2)" }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 + i * 0.08 }}
+                whileHover={{ borderColor: "rgba(0,212,255,0.5)", y: -2 }}
               >
-                <span className={`text-lg font-bold ${platform.color}`}>
+                <span className="text-lg font-bold" style={{ color: "#00d4ff" }}>
                   {platform.icon}
                 </span>
-                <span className="text-[#0A1128] font-semibold text-sm">{platform.name}</span>
+                <span className="font-semibold text-sm" style={{ color: "#060f2e" }}>{platform.name}</span>
               </motion.div>
             ))}
           </div>
@@ -171,7 +178,7 @@ export function AiSearch() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 mt-8 px-8 py-4 text-white font-bold text-sm transition-all hover:scale-105 shadow-md shadow-sky-200/60"
-            style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
+            style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)", boxShadow: "0 8px 30px rgba(0,212,255,0.3)" }}
           >
             Get Discovered Everywhere
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

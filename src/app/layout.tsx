@@ -1,15 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Source_Sans_3 } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 
-// Source Sans 3 is the open-source spiritual successor to Myriad Pro —
-// both were designed by Paul Hunt / Adobe, with the same humanist feel.
-// Available as a variable font for maximum typographic flexibility.
-const sourceSans = Source_Sans_3({
+// Outfit — a geometric, humanist sans-serif with beautifully thin weights.
+// Perfect for headers (weight 200–300) and strong CTAs (weight 700–800).
+const outfit = Outfit({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "600", "700", "900"],
-  style: ["normal", "italic"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -33,9 +31,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sourceSans.variable} min-h-screen scroll-smooth antialiased`}
+      className={`${outfit.variable} min-h-screen scroll-smooth antialiased`}
     >
-      <body className="min-h-screen bg-[#bae7fe] text-gray-900 flex flex-col font-sans">
+      <body className="min-h-screen text-gray-900 flex flex-col font-sans" style={{ background: "#f0faff" }}>
         {children}
       </body>
     </html>

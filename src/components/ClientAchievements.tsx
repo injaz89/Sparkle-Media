@@ -48,8 +48,8 @@ const focusItems = [
 export function ClientAchievements() {
   return (
     <>
-      {/* Client Achievements — light blue tint */}
-      <section className="py-24 bg-bg relative overflow-hidden">
+      {/* Client Achievements — light bg */}
+      <section className="py-24 relative overflow-hidden" style={{ background: "#f0faff" }}>
         {/* Subtle wave pattern */}
         <div
           className="absolute inset-0 pointer-events-none opacity-40 wave-bg"
@@ -69,13 +69,19 @@ export function ClientAchievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
+            <span
+              className="inline-block text-xs font-bold tracking-[0.18em] uppercase mb-5"
+              style={{ color: "#00d4ff" }}
+            >
               Proven Track Record
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-4">
+            <h2
+              className="text-5xl md:text-6xl mb-4"
+              style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
+            >
               Client Achievements
             </h2>
-            <p className="text-gray-500 font-light max-w-2xl mx-auto">
+            <p className="font-light max-w-2xl mx-auto" style={{ color: "#64748b" }}>
               Real results for real businesses. These numbers aren&apos;t projections — they&apos;re
               what we delivered.
             </p>
@@ -85,19 +91,21 @@ export function ClientAchievements() {
             {achievements.map((item, i) => (
               <motion.div
                 key={i}
-                className="relative group bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 p-6 transition-all duration-300 hover:shadow-lg hover:shadow-sky-100/60 hover:-translate-y-1"
+                className="relative group bg-white p-6 transition-all duration-300"
+                style={{ border: "1px solid rgba(0,212,255,0.2)" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -6, borderColor: "rgba(0,212,255,0.45)" }}
               >
-                {/* Top accent bar */}
-                <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${item.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`} />
+                {/* Top accent bar on hover */}
+                <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
                 <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-30 transition-opacity">
-                  <TrendingUp className="w-5 h-5 text-[#129adc]" />
+                  <TrendingUp className="w-5 h-5" style={{ color: "#00d4ff" }} />
                 </div>
-                <p className="text-xs font-bold text-[#129adc] uppercase tracking-widest mb-3">
+                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#00d4ff" }}>
                   {item.category}
                 </p>
                 <p
@@ -105,15 +113,15 @@ export function ClientAchievements() {
                 >
                   {item.result}
                 </p>
-                <p className="text-sm text-gray-500 font-medium">{item.client}</p>
+                <p className="text-sm font-medium" style={{ color: "#64748b" }}>{item.client}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Focus Is Simple — white */}
-      <section className="py-20 bg-bg border-b border-secondary/20">
+      {/* Our Focus Is Simple */}
+      <section className="py-20 relative overflow-hidden" style={{ background: "#e8f7ff" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -122,17 +130,23 @@ export function ClientAchievements() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
+              <span
+                className="inline-block text-xs font-bold tracking-[0.18em] uppercase mb-5"
+                style={{ color: "#00d4ff" }}
+              >
                 Our Mission
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-6 leading-tight">
+              <h2
+                className="text-5xl md:text-6xl mb-6 leading-tight"
+                style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
+              >
                 Our focus is simple.
               </h2>
-              <p className="text-xl text-gray-500 font-light leading-relaxed">
+              <p className="text-xl font-light leading-relaxed" style={{ color: "#64748b" }}>
                 Generate measurable business growth through{" "}
-                <span className="font-semibold text-[#0A1128]">data</span>,{" "}
-                <span className="font-semibold text-[#0A1128]">creativity</span> and{" "}
-                <span className="font-semibold text-[#0A1128]">performance marketing</span>.
+                <span className="font-semibold" style={{ color: "#060f2e" }}>data</span>,{" "}
+                <span className="font-semibold" style={{ color: "#060f2e" }}>creativity</span> and{" "}
+                <span className="font-semibold" style={{ color: "#060f2e" }}>performance marketing</span>.
               </p>
             </motion.div>
 

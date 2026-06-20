@@ -6,7 +6,7 @@ import { InstagramIcon, FacebookIcon, LinkedinIcon, TikTokIcon } from "./SocialI
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-24 bg-bg overflow-hidden">
+    <section id="contact" className="relative py-24 overflow-hidden" style={{ background: "#f0faff" }}>
       {/* Background decoration */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#39bcfc]/30 to-transparent" />
       <div
@@ -29,13 +29,19 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
+          <span
+            className="inline-block text-xs font-bold tracking-[0.18em] uppercase mb-5"
+            style={{ color: "#00d4ff" }}
+          >
             Get In Touch
           </span>
-          <h2 className="text-5xl md:text-6xl font-bold text-[#0A1128] mb-4">
-            Let&apos;s Talk<span style={{ color: "#39bcfc" }}>!</span>
+          <h2
+            className="text-5xl md:text-6xl mb-4"
+            style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
+          >
+            Let&apos;s Talk<span style={{ color: "#00d4ff" }}>!</span>
           </h2>
-          <p className="text-xl text-gray-500 font-light max-w-xl mx-auto">
+          <p className="text-xl font-light max-w-xl mx-auto" style={{ color: "#64748b" }}>
             Ready to give your brand an exemplary digital journey? Let&apos;s sit for a quick chat.
           </p>
         </motion.div>
@@ -54,29 +60,35 @@ export function Contact() {
             <div className="space-y-6 mb-10">
               <a
                 href="tel:+94776540689"
-                className="group flex items-center gap-5 p-5 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:shadow-lg hover:shadow-sky-100/60 transition-all duration-300"
+                className="group flex items-center gap-5 p-5 bg-white transition-all duration-300"
+                style={{ border: "1px solid rgba(0,212,255,0.2)" }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.45)"}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.2)"}
               >
                 <div
                   className="w-14 h-14 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform"
-                  style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
+                  style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)" }}
                 >
                   <Phone className="w-6 h-6" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-0.5">Ring us now</p>
-                  <p className="text-xl font-bold text-[#0A1128] group-hover:text-[#129adc] transition-colors">+94 77 654 0689</p>
-                  <p className="text-xs text-[#39bcfc] mt-0.5 font-medium">WhatsApp & Local Networks</p>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: "#64748b" }}>Ring us now</p>
+                  <p className="text-xl font-bold group-hover:opacity-80 transition-colors" style={{ color: "#060f2e" }}>+94 77 654 0689</p>
+                  <p className="text-xs mt-0.5 font-medium" style={{ color: "#00d4ff" }}>WhatsApp &amp; Local Networks</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-[#87d4f8] group-hover:text-[#39bcfc] group-hover:translate-x-1 transition-all" />
               </a>
 
               <a
                 href="mailto:info@sparklemedia.lk"
-                className="group flex items-center gap-5 p-5 bg-white border border-[#87d4f8] hover:border-[#39bcfc]/50 hover:shadow-lg hover:shadow-sky-100/60 transition-all duration-300"
+                className="group flex items-center gap-5 p-5 bg-white transition-all duration-300"
+                style={{ border: "1px solid rgba(0,212,255,0.2)" }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.45)"}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.2)"}
               >
                 <div
                   className="w-14 h-14 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform"
-                  style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
+                  style={{ background: "linear-gradient(135deg, #00d4ff, #0099cc)" }}
                 >
                   <Mail className="w-6 h-6" />
                 </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { InstagramIcon, FacebookIcon, LinkedinIcon, TikTokIcon } from "@/components/SocialIcons";
 import { ClientLogosSlider } from "@/components/ClientLogosSlider";
 import Image from "next/image";
@@ -31,27 +33,41 @@ export function Footer() {
   return (
     <footer>
       {/* Client logos slider */}
-      <div className="bg-bg">
+      <div style={{ background: "#f0faff" }}>
         <ClientLogosSlider title="Our Clients" dark={false} />
       </div>
 
-      {/* Main footer — light blue gradient */}
+      {/* Main footer — deep navy */}
       <div
         style={{
-          background: "linear-gradient(160deg, #39bcfc 0%, #129adc 60%, #129adc 100%)",
+          background: "linear-gradient(160deg, #060f2e 0%, #0d1b4b 60%, #060f2e 100%)",
         }}
       >
         {/* Wave separator top */}
         <div className="overflow-hidden leading-none" style={{ marginTop: "-1px" }}>
           <svg viewBox="0 0 1440 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 56L60 49C120 42 240 28 360 21C480 14 600 14 720 21C840 28 960 42 1080 45.5C1200 49 1320 42 1380 38.5L1440 35V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V56Z" fill="#bae7fe"/>
+            <path
+              d="M0 56L60 49C120 42 240 28 360 21C480 14 600 14 720 21C840 28 960 42 1080 45.5C1200 49 1320 42 1380 38.5L1440 35V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V56Z"
+              fill="#f0faff"
+            />
           </svg>
         </div>
 
-        <div className="py-14 px-6">
+        {/* Dot grid overlay */}
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(0,212,255,0.07) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+            inset: 0,
+          }}
+        />
+
+        <div className="py-16 px-6">
           <div className="max-w-7xl mx-auto">
+
             {/* Main grid */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-14">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
               {/* Brand column */}
               <div className="md:col-span-1">
                 <a href="/" aria-label="Sparkle Media Home" className="inline-block mb-5">
@@ -63,7 +79,7 @@ export function Footer() {
                     className="h-10 w-auto object-contain brightness-0 invert"
                   />
                 </a>
-                <p className="text-white/80 text-sm font-light leading-relaxed mb-6">
+                <p className="text-sm font-light leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.5)" }}>
                   Exemplary digital journeys for brands that dare to sparkle. A 360° digital marketing agency.
                 </p>
                 {/* Socials */}
@@ -73,7 +89,20 @@ export function Footer() {
                       key={label}
                       href={href}
                       aria-label={label}
-                      className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 text-white transition-all duration-200 flex items-center justify-center hover:scale-110"
+                      className="w-9 h-9 flex items-center justify-center transition-all duration-200 hover:scale-110"
+                      style={{
+                        background: "rgba(0,212,255,0.1)",
+                        border: "1px solid rgba(0,212,255,0.2)",
+                        color: "rgba(255,255,255,0.7)",
+                      }}
+                      onMouseEnter={e => {
+                        (e.currentTarget as HTMLElement).style.background = "rgba(0,212,255,0.25)";
+                        (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.5)";
+                      }}
+                      onMouseLeave={e => {
+                        (e.currentTarget as HTMLElement).style.background = "rgba(0,212,255,0.1)";
+                        (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,212,255,0.2)";
+                      }}
                     >
                       <Icon className="w-4 h-4" />
                     </a>
@@ -84,7 +113,10 @@ export function Footer() {
               {/* Link columns */}
               {Object.entries(footerLinks).map(([category, links]) => (
                 <div key={category}>
-                  <h4 className="text-xs font-bold text-white/50 uppercase tracking-widest mb-6">
+                  <h4
+                    className="text-xs font-bold uppercase tracking-[0.18em] mb-6"
+                    style={{ color: "rgba(0,212,255,0.6)" }}
+                  >
                     {category}
                   </h4>
                   <ul className="space-y-3">
@@ -92,7 +124,10 @@ export function Footer() {
                       <li key={link.label}>
                         <a
                           href={link.href}
-                          className="text-white/75 text-sm font-light hover:text-white transition-colors duration-200 hover:translate-x-0.5 inline-block"
+                          className="text-sm font-light transition-colors duration-200 hover:translate-x-0.5 inline-block"
+                          style={{ color: "rgba(255,255,255,0.55)" }}
+                          onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.9)"}
+                          onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)"}
                         >
                           {link.label}
                         </a>
@@ -103,16 +138,35 @@ export function Footer() {
               ))}
             </div>
 
-            {/* Bottom bar */}
-            <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-white/60 text-xs font-light">
+            {/* ── Bottom bar — STRAIGHT & properly aligned ── */}
+            <div
+              className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+              style={{ borderTop: "1px solid rgba(0,212,255,0.15)" }}
+            >
+              <p
+                className="text-xs font-light text-center md:text-left"
+                style={{ color: "rgba(255,255,255,0.35)" }}
+              >
                 © {new Date().getFullYear()} Sparkle Media (Pvt) Ltd. All rights reserved.
               </p>
               <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                <p className="text-white/60 text-xs font-light">Engineered with precision. Built to sparkle.</p>
+                <span
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{
+                    background: "#00d4ff",
+                    boxShadow: "0 0 6px #00d4ff",
+                    animation: "pulseGlow 2s ease-in-out infinite",
+                  }}
+                />
+                <p
+                  className="text-xs font-light text-center md:text-right"
+                  style={{ color: "rgba(255,255,255,0.35)" }}
+                >
+                  Engineered with precision. Built to sparkle.
+                </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>

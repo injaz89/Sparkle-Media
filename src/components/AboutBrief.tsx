@@ -26,7 +26,7 @@ const beliefs = [
 
 export function AboutBrief() {
   return (
-    <section className="py-32 bg-[#eef9ff] relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden" style={{ background: "#e8f7ff" }}>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#87d4f8] to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#87d4f8] to-transparent" />
       <div
@@ -46,10 +46,16 @@ export function AboutBrief() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4">
+            <span
+              className="inline-block text-xs font-bold tracking-[0.18em] uppercase mb-5"
+              style={{ color: "#00d4ff" }}
+            >
               About Us
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A1128] mb-6 leading-tight">
+            <h2
+              className="text-5xl md:text-6xl mb-6 leading-tight"
+              style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
+            >
               Built For Businesses That{" "}
               <span
                 className="text-transparent bg-clip-text"

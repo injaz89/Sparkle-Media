@@ -30,9 +30,18 @@ export function Navbar() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[#39bcfc]/30 py-4"
-            : "bg-white/80 backdrop-blur-sm py-6"
+            ? "py-3"
+            : "py-5"
         }`}
+        style={{
+          background: isScrolled
+            ? "rgba(6,15,46,0.96)"
+            : "rgba(6,15,46,0.85)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          borderBottom: isScrolled ? "1px solid rgba(0,212,255,0.2)" : "none",
+          boxShadow: isScrolled ? "0 4px 30px rgba(0,0,0,0.3)" : "none",
+        }}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -52,15 +61,19 @@ export function Navbar() {
           <div className="flex items-center space-x-6">
             <a
               href="/contact"
-              className="hidden md:flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white uppercase tracking-widest transition-all hover:scale-105 shadow-sm"
-              style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
+              className="hidden md:flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-white uppercase tracking-[0.12em] transition-all hover:scale-105"
+              style={{
+                background: "linear-gradient(135deg, #00d4ff, #7c3aed)",
+                boxShadow: "0 0 20px rgba(0,212,255,0.35)",
+              }}
             >
               Get in Touch
             </a>
             <button
               onClick={() => setIsMenuOpen(true)}
-              className="text-[#0A1128] hover:text-[#39bcfc] focus:outline-none"
+              className="focus:outline-none transition-colors hover:opacity-70"
               aria-label="Open Menu"
+              style={{ color: "rgba(255,255,255,0.9)" }}
             >
               <div className="flex space-x-1">
                 <span className="w-1.5 h-6 bg-current transform rotate-12 transition-colors"></span>
@@ -85,7 +98,11 @@ export function Navbar() {
             />
             {/* Drawer */}
             <motion.div
-              className="fixed top-0 right-0 bottom-0 w-full sm:w-[400px] md:w-[500px] lg:w-[600px] z-[60] bg-white shadow-2xl flex flex-col pt-24 pb-12 px-12 sm:px-20 overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-full sm:w-[400px] md:w-[500px] lg:w-[600px] z-[60] shadow-2xl flex flex-col pt-24 pb-12 px-12 sm:px-20 overflow-y-auto"
+              style={{
+                background: "linear-gradient(160deg, #060f2e 0%, #0d1b4b 100%)",
+                borderLeft: "1px solid rgba(0,212,255,0.15)",
+              }}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -93,7 +110,10 @@ export function Navbar() {
             >
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute top-8 right-8 text-gray-400 hover:text-[#39bcfc] transition-colors focus:outline-none"
+                className="absolute top-8 right-8 transition-colors focus:outline-none"
+                style={{ color: "rgba(255,255,255,0.4)" }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "#00d4ff"}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)"}
               >
                 <svg className="w-8 h-8 font-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
@@ -136,7 +156,10 @@ export function Navbar() {
                     {item.subItems ? (
                       <button
                         onClick={() => toggleMenu(item.name)}
-                        className="text-3xl md:text-[2.25rem] font-light text-gray-300 hover:text-[#39bcfc] transition-colors tracking-wide uppercase flex items-center justify-end space-x-2"
+                        className="text-3xl md:text-[2.25rem] tracking-wide uppercase flex items-center justify-end space-x-2 transition-colors"
+                        style={{ fontWeight: 200, color: "rgba(255,255,255,0.5)" }}
+                        onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "#00d4ff"}
+                        onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.5)"}
                       >
                         <span className={`transition-transform duration-300 ${expandedMenus.includes(item.name) ? "rotate-90" : ""}`}>
                           ›
@@ -147,7 +170,10 @@ export function Navbar() {
                       <motion.a
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-3xl md:text-[2.25rem] font-light text-gray-300 hover:text-[#39bcfc] transition-colors tracking-wide uppercase"
+                        className="text-3xl md:text-[2.25rem] tracking-wide uppercase transition-colors"
+                        style={{ fontWeight: 200, color: "rgba(255,255,255,0.5)" }}
+                        onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = "#00d4ff"}
+                        onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.5)"}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 + i * 0.05 }}

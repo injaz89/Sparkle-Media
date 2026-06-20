@@ -20,17 +20,28 @@ export function ClientLogosSlider({ title = "Trusted by leading brands", dark = 
   const duplicated = [...clients, ...clients, ...clients, ...clients];
 
   return (
-    <section className={`py-16 overflow-hidden border-b ${dark ? "bg-[#39bcfc] border-white/10" : "bg-bg border-[#39bcfc]/30"}`}>
+    <section className={`py-16 overflow-hidden border-b ${dark ? "border-white/10" : "border-[rgba(0,212,255,0.15)]"}`}
+      style={{ background: dark ? "#0d1b4b" : "#f0faff" }}
+    >
       <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-        <h3 className={`text-xs font-bold tracking-widest uppercase ${dark ? "text-white/70" : "text-[#129adc]"}`}>
+        <h3
+          className="text-xs font-bold tracking-[0.18em] uppercase"
+          style={{ color: dark ? "rgba(255,255,255,0.6)" : "#00d4ff" }}
+        >
           {title}
         </h3>
       </div>
 
       <div className="relative w-full flex items-center">
         {/* Edge fades */}
-        <div className={`absolute left-0 w-32 h-full bg-gradient-to-r ${dark ? "from-[#39bcfc]" : "from-bg"} to-transparent z-10`} />
-        <div className={`absolute right-0 w-32 h-full bg-gradient-to-l ${dark ? "from-[#39bcfc]" : "from-bg"} to-transparent z-10`} />
+        <div
+          className="absolute left-0 w-32 h-full z-10"
+          style={{ background: `linear-gradient(to right, ${dark ? "#0d1b4b" : "#f0faff"}, transparent)` }}
+        />
+        <div
+          className="absolute right-0 w-32 h-full z-10"
+          style={{ background: `linear-gradient(to left, ${dark ? "#0d1b4b" : "#f0faff"}, transparent)` }}
+        />
 
         <motion.div
           className="flex whitespace-nowrap items-center gap-0"
