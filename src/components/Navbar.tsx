@@ -216,7 +216,7 @@ export function Navbar() {
                                         key={nestedItem.name}
                                         href={nestedItem.href}
                                         onClick={() => setIsMenuOpen(false)}
-                                        className="text-lg md:text-xl font-light text-gray-400 hover:text-cyan-500 transition-colors capitalize"
+                                        className="text-lg md:text-xl font-light text-gray-500 hover:text-cyan-600 transition-colors capitalize"
                                       >
                                         {nestedItem.name}
                                       </a>

@@ -3,17 +3,23 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 
-// Client logo images from /public (add more as they arrive in Drive)
+// Real client logos
 const clients = [
-  { name: "HiAcuity", img: "/hiacuity.png" },
-  { name: "Made in Ceylon", img: "/made_in_ceylon.png" },
-  { name: "Prestige Auto", img: "/prestige_auto.png" },
-  // Text fallbacks for clients awaiting logo upload
-  { name: "Select Group", img: null },
-  { name: "Mysk", img: null },
-  { name: "Alshaya", img: null },
-  { name: "Swift Furnishing", img: null },
-  { name: "Macksons", img: null },
+  { name: "Transguard", img: "/client-transguard.jpg" },
+  { name: "Xcuses", img: "/client-xcuses.png" },
+  { name: "Macksons", img: "/client-macksons.png" },
+  { name: "Prestige Auto Detailers", img: "/client-prestige-auto.png" },
+  { name: "Gems & Gifts Jewelry", img: "/client-gems-gifts.jpg" },
+  { name: "ICCT", img: "/client-icct.jpg" },
+  { name: "Real Estate", img: "/client-realestate.png" },
+  { name: "Graco", img: "/client-graco.webp" },
+  { name: "Kandy Vehicle Mart", img: "/client-kandy-vehicle-mart.png" },
+  { name: "Swift Furnishing", img: "/client-swift-furnishing.png" },
+  { name: "HiAcuity", img: "/client-hiacuity.png" },
+  { name: "Nexcite Technology", img: "/client-nexcite.png" },
+  { name: "MyBaby Cuddles", img: "/client-mybaby-cuddles.webp" },
+  { name: "Made in Ceylon", img: "/client-made-in-ceylon.png" },
+  { name: "Silik Jay", img: "/client-silik-jay.jpg" },
 ];
 
 export function ClientLogosSlider({ title = "Trusted by leading brands", dark = false }: { title?: string; dark?: boolean }) {
@@ -56,7 +62,7 @@ export function ClientLogosSlider({ title = "Trusted by leading brands", dark = 
             <div
               key={i}
               className={`mx-10 lg:mx-16 flex items-center justify-center h-14 w-36 flex-shrink-0 ${
-                dark ? "opacity-40 hover:opacity-100" : "opacity-50 hover:opacity-100"
+                dark ? "opacity-75 hover:opacity-100" : "opacity-85 hover:opacity-100"
               } transition-opacity duration-300`}
             >
               {client.img ? (
@@ -65,7 +71,7 @@ export function ClientLogosSlider({ title = "Trusted by leading brands", dark = 
                   src={client.img}
                   alt={client.name}
                   className="max-h-12 max-w-full object-contain"
-                  style={{ filter: dark ? "brightness(0) invert(1)" : "grayscale(100%)" }}
+                  style={{ filter: "none" }}
                 />
               ) : (
                 <span
