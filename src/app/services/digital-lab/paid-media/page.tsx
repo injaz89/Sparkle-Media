@@ -12,11 +12,11 @@ const stats = [
 ];
 
 const results = [
-  { client: "Mobile Stop", result: "21X ROAS", category: "E-Commerce" },
   { client: "Prestige Auto Detailers", result: "15X ROAS", category: "Automotive" },
   { client: "GR Events", result: "40X–60X ROAS", category: "Lead Generation" },
   { client: "Gulabi Run", result: "50X ROAS", category: "Events" },
   { client: "GR Events", result: "300% Organic Growth", category: "Social Media" },
+  { client: "Mobile Stop", result: "21X ROAS", category: "E-Commerce" },
 ];
 
 const approaches = [
