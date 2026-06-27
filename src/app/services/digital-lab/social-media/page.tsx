@@ -5,114 +5,19 @@ import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import {
   CheckCircle2,
-  Plus,
   Users,
   Calendar,
   BarChart3,
   TrendingUp,
   MessageSquare,
   Target,
-  Globe,
   Share2,
   Briefcase,
   Video,
   MessageCircle,
-  BarChart2,
 } from "lucide-react";
 
-// ── Pricing packages (unchanged) ──────────────────────────────────────────────
-const packages = [
-  {
-    name: "Bronze",
-    price: "LKR 27,000",
-    desc: "Test your Social Media Performance!",
-    features: [
-      "6 Static posts (Resizing will be charged additionally)",
-      "Content Scheduling (2 social media channels)",
-      "Community Management (Partial)",
-      "Tier 3 Designer",
-      "Hashtag Strategy and Research (Every 3 month)",
-      "Content languages (English, Sinhala and Tamil)",
-      "Competitor Analysis",
-      "Updated Social Media Strategy every 12 month",
-    ],
-    adds: [
-      "Monthly analysis report - LKR 7000",
-      "20 sec animation video - LKR 10,000",
-      "Paid Media Management - LKR 5000",
-    ],
-  },
-  {
-    name: "Silver",
-    price: "LKR 59,000",
-    desc: "Build your brand community and brand awareness!",
-    features: [
-      "12 Static posts (Resizing will be charged additionally)",
-      "Content Scheduling (2 - 4 social media channels, incl. GMB)",
-      "Community Management (Partial)",
-      "Monthly updated Facebook cover photo (FREE)",
-      "Tier 2 Designer",
-      "Hashtag Strategy and Research (Every month)",
-      "Content languages (English, Sinhala and Tamil)",
-      "Competitor Analysis",
-      "Updated Social Media Strategy every 6 month",
-      "Monthly analysis report",
-    ],
-    adds: [
-      "1 FREE Blog Article - 500-700 words",
-      "30 sec animation video - LKR 12,000",
-      "FREE Paid Media Management",
-    ],
-  },
-  {
-    name: "Gold",
-    price: "LKR 98,000",
-    desc: "A journey of never ending creativity to your brand and engagement with your audience.",
-    features: [
-      "21 Static posts (Free Resizing)",
-      "Content Scheduling (2 - 5 social media channels, incl. GMB)",
-      "Community Management (9am to 6pm)",
-      "Monthly updated Facebook cover photo (FREE)",
-      "Tier 1 Designer",
-      "TikTok Account Set Up & 4 videos per month (Basic)",
-      "Hashtag Strategy and Research (Every month)",
-      "Content languages (English, Sinhala and Tamil)",
-      "Competitor Analysis",
-      "Updated Social Media Strategy every 3 month",
-      "Monthly analysis report",
-    ],
-    adds: [
-      "20 sec animation video - LKR 10,000",
-      "30 sec animation video - LKR 12,000",
-      "FREE Paid Media Management",
-      "1 FREE Blog Article - 800-1000 words",
-    ],
-  },
-  {
-    name: "Platinum",
-    price: "LKR 164,000",
-    desc: "Comprehensive social media dominance and dedicated presence.",
-    features: [
-      "32 Static posts (Free Resizing)",
-      "Content Scheduling (2 - 5 social media channels, incl. GMB)",
-      "Community Management (9am to 6pm)",
-      "Monthly updated Facebook cover photo (FREE)",
-      "Tier 1 Designer",
-      "TikTok Account Set Up & 8 videos per month (Basic)",
-      "Hashtag Strategy and Research (Every month)",
-      "Content languages (English, Sinhala and Tamil)",
-      "Competitor Analysis",
-      "Updated Social Media Strategy every 3 month",
-      "Monthly analysis report",
-    ],
-    adds: [
-      "20 sec animation video - LKR 10,000",
-      "30 sec animation video - LKR 12,000",
-      "FREE Paid Media Management",
-      "1 FREE Blog Article - 800-1000 words",
-    ],
-  },
-];
+
 
 // ── Why invest stats ───────────────────────────────────────────────────────────
 const whyInvest = [
@@ -461,86 +366,7 @@ export default function SocialMediaPage() {
           </div>
         </div>
 
-        {/* ── Pricing Packages ─────────────────────────────────────────────── */}
-        <div className="bg-white border-t border-primary/15 py-24 mb-0">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex items-center gap-6 mb-12">
-              <div className="flex-1 h-px bg-primary/20" />
-              <h2 className="text-sm font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">
-                Our Social Media Packages
-              </h2>
-              <div className="flex-1 h-px bg-primary/20" />
-            </div>
 
-            <div className="space-y-16 mb-16">
-              {packages.map((pkg) => (
-                <motion.div
-                  key={pkg.name}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  className="bg-bg border border-primary/20 hover:border-primary p-8 md:p-12 shadow-xl shadow-sky-100/60 hover:shadow-2xl transition-all duration-300 relative overflow-hidden flex flex-col lg:flex-row gap-12"
-                >
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  <div className="lg:w-1/3 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-primary/20 pb-8 lg:pb-0 lg:pr-8">
-                    <div>
-                      <h3 className="text-4xl font-bold text-navy mb-4 tracking-wide">{pkg.name}</h3>
-                      <p className="text-gray-500 font-light text-lg mb-8">{pkg.desc}</p>
-                    </div>
-                    <div>
-                      <p className="text-secondary font-bold tracking-widest uppercase mb-2 text-sm">Monthly Investment</p>
-                      <p className="text-4xl md:text-5xl font-bold text-navy">{pkg.price}</p>
-                    </div>
-                  </div>
-                  <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="text-navy font-bold text-lg mb-6 border-b border-primary/20 pb-2">Included Features</h4>
-                      <ul className="space-y-4">
-                        {pkg.features.map((feat, i) => (
-                          <li key={i} className="flex items-start text-gray-600 font-light text-sm md:text-base">
-                            <CheckCircle2 className="w-5 h-5 text-secondary mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="leading-relaxed">{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="text-navy font-bold text-lg mb-6 border-b border-primary/20 pb-2">Add Up +</h4>
-                      <ul className="space-y-4">
-                        {pkg.adds.map((add, i) => (
-                          <li key={i} className="flex items-start text-gray-600 font-light text-sm md:text-base">
-                            <Plus className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                            <span className="leading-relaxed">{add}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Customized Package CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-bg border border-primary/20 p-12 text-center relative overflow-hidden shadow-xl"
-            >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-none blur-[100px] opacity-60 pointer-events-none" />
-              <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">Customized Package</h2>
-              <p className="text-gray-600 font-light text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-                We do understand the need for a customized package. Let&apos;s pick the best for your brand. Should you wish to handpick the necessary services?
-              </p>
-              <a
-                href="/contact"
-                className="inline-block px-10 py-4 bg-secondary text-white font-bold tracking-widest uppercase hover:bg-primary transition-colors"
-              >
-                Get in touch right away
-              </a>
-            </motion.div>
-          </div>
-        </div>
 
         {/* ── What We Can Do ───────────────────────────────────────────────── */}
         <div className="bg-navy py-24">
