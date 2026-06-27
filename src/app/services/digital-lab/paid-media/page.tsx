@@ -245,21 +245,27 @@ export default function PaidMediaPage() {
                 <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-6">
                   Proven Results — Recent Campaign Highlights
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.12)" }}>
                   {results.map((r, i) => (
                     <motion.div
                       key={i}
-                      className="flex items-center justify-between p-4 bg-white border border-primary/20 hover:border-primary shadow-md transition-colors"
+                      className="group flex items-center justify-between py-5 relative overflow-hidden"
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.15 + i * 0.08 }}
                     >
-                      <div>
+                      {/* Hover sweep */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                        style={{ background: "linear-gradient(90deg, rgba(0,212,255,0.06) 0%, transparent 60%)" }} />
+                      {/* Left accent */}
+                      <div className="absolute left-0 top-0 bottom-0 w-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style={{ background: "linear-gradient(180deg, #00d4ff, #7c3aed)" }} />
+                      <div className="pl-3">
                         <p className="text-navy font-semibold">{r.client}</p>
                         <p className="text-xs text-gray-500 font-light">{r.category}</p>
                       </div>
-                      <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                      <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary flex-shrink-0 ml-4">
                         {r.result}
                       </span>
                     </motion.div>
@@ -326,27 +332,69 @@ export default function PaidMediaPage() {
               <span className="text-xs font-bold text-secondary uppercase tracking-widest">How We Work</span>
               <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Approach</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {approaches.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="bg-white p-10 border border-primary/20 hover:border-primary hover:shadow-xl hover:shadow-sky-100/60 transition-all duration-300 group relative overflow-hidden"
-                  >
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                    <div className="w-14 h-14 bg-white border border-primary/20 flex items-center justify-center text-secondary mb-8 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-7 h-7" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-navy mb-4">{item.title}</h3>
-                    <p className="text-gray-500 font-light leading-relaxed">{item.desc}</p>
-                  </motion.div>
-                );
-              })}
+            {/* Numbered editorial rows — no icon boxes */}
+            <div className="max-w-4xl mx-auto">
+              <div className="relative">
+                {/* Dashed vertical line */}
+                <div
+                  className="absolute left-[19px] top-8 bottom-8 w-px hidden sm:block"
+                  style={{
+                    backgroundImage: "repeating-linear-gradient(180deg, rgba(0,212,255,0.3) 0px, rgba(0,212,255,0.3) 6px, transparent 6px, transparent 12px)",
+                  }}
+                />
+                <div className="space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.1)" }}>
+                  {approaches.map((item, i) => {
+                    const accentMap = ["#00d4ff", "#4db8ff", "#7c3aed", "#0099cc"];
+                    const accent = accentMap[i % accentMap.length];
+                    return (
+                      <motion.div
+                        key={item.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        className="group relative flex gap-8 py-8 sm:pl-14"
+                      >
+                        {/* Circle step number */}
+                        <div
+                          className="hidden sm:flex absolute left-0 top-8 w-10 h-10 rounded-full items-center justify-center flex-shrink-0 border-2 transition-all duration-300 group-hover:scale-110 bg-bg"
+                          style={{
+                            borderColor: `${accent}50`,
+                            background: `radial-gradient(circle, ${accent}14, transparent)`,
+                          }}
+                        >
+                          <span
+                            className="text-xs font-black"
+                            style={{
+                              backgroundImage: `linear-gradient(135deg, ${accent}, ${accent}88)`,
+                              WebkitBackgroundClip: "text",
+                              WebkitTextFillColor: "transparent",
+                              backgroundClip: "text",
+                            }}
+                          >
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                        </div>
+                        {/* Content */}
+                        <div className="flex-1 relative overflow-hidden">
+                          <div
+                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                            style={{ background: `linear-gradient(90deg, ${accent}06 0%, transparent 60%)` }}
+                          />
+                          <span
+                            className="sm:hidden inline-block text-xs font-black tracking-widest mb-2"
+                            style={{ color: accent }}
+                          >
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <h3 className="text-2xl font-bold text-navy mb-3">{item.title}</h3>
+                          <p className="text-gray-500 font-light leading-relaxed">{item.desc}</p>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -364,23 +412,52 @@ export default function PaidMediaPage() {
               <span className="text-xs font-bold text-secondary uppercase tracking-widest">Where We Run Your Ads</span>
               <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Platforms We Manage</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Editorial row layout — no icon boxes */}
+            <div className="max-w-3xl mx-auto space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.12)" }}>
               {platforms.map((platform, i) => {
                 const Icon = platform.icon;
+                const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
+                const accent = accentMap[i % accentMap.length];
                 return (
                   <motion.div
                     key={platform.name}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="bg-white border border-primary/20 hover:border-primary p-8 transition-all duration-300 hover:shadow-xl hover:shadow-sky-100/60"
+                    transition={{ delay: i * 0.08 }}
+                    className="group flex flex-col sm:flex-row items-start sm:items-center gap-6 py-7 relative overflow-hidden"
                   >
-                    <div className={`w-12 h-12 bg-gradient-to-br ${platform.color} flex items-center justify-center text-white mb-6`}>
-                      <Icon className="w-6 h-6" />
+                    {/* Hover sweep */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      style={{ background: `linear-gradient(90deg, ${accent}08 0%, transparent 60%)` }}
+                    />
+                    {/* Inline icon — no box */}
+                    <div
+                      className="flex-shrink-0 w-8 h-8 flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                      style={{ color: accent }}
+                    >
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-xl font-bold text-navy mb-3">{platform.name}</h3>
-                    <p className="text-gray-500 font-light text-sm leading-relaxed">{platform.desc}</p>
+                    {/* Divider line */}
+                    <div
+                      className="hidden sm:block flex-shrink-0 w-px h-8"
+                      style={{ background: `linear-gradient(180deg, transparent, ${accent}50, transparent)` }}
+                    />
+                    {/* Content */}
+                    <div className="flex-1 relative z-10">
+                      <h3 className="text-base font-bold text-navy mb-1">{platform.name}</h3>
+                      <p className="text-gray-500 font-light text-sm leading-relaxed">{platform.desc}</p>
+                    </div>
+                    {/* Arrow */}
+                    <div
+                      className="flex-shrink-0 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0"
+                      style={{ color: accent }}
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </motion.div>
                 );
               })}

@@ -1,36 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, ScanLine, Lightbulb, Rocket } from "lucide-react";
 
 const steps = [
   {
-    icon: Search,
+    number: "01",
     title: "Research",
     desc: "A digital marketing specialist will always research your competitors as well as your customers to produce better content.",
-    number: "01",
-    grad: "linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)",
+    accent: "#00d4ff",
+    symbol: "◎",
   },
   {
-    icon: ScanLine,
+    number: "02",
     title: "Assess",
     desc: "The competitors' and your brands' current situations need to be assessed to have a thorough understanding of what needs to be done.",
-    number: "02",
-    grad: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)",
+    accent: "#4db8ff",
+    symbol: "◈",
   },
   {
-    icon: Lightbulb,
+    number: "03",
     title: "Strategize",
     desc: "A well-structured strategy is sketched out, with risks analyzed in all aspects and contingency plans ready.",
-    number: "03",
-    grad: "linear-gradient(135deg, #7c3aed 0%, #00d4ff 100%)",
+    accent: "#7c3aed",
+    symbol: "◆",
   },
   {
-    icon: Rocket,
+    number: "04",
     title: "Implement",
     desc: "And it is a matter of kick-starting an exemplary digital journey for your brand in an extraordinary way.",
-    number: "04",
-    grad: "linear-gradient(135deg, #0099cc 0%, #7c3aed 100%)",
+    accent: "#0099cc",
+    symbol: "▲",
   },
 ];
 
@@ -50,7 +49,7 @@ export function OurApproach() {
 
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -72,85 +71,132 @@ export function OurApproach() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, i) => {
-            const Icon = step.icon;
-            return (
+        {/* Desktop: horizontal timeline */}
+        <div className="hidden lg:block relative">
+          {/* Connecting line */}
+          <motion.div
+            className="absolute top-[52px] left-[12.5%] right-[12.5%] h-px"
+            style={{ background: "linear-gradient(90deg, #00d4ff40, #7c3aed40, #0099cc40)" }}
+            initial={{ scaleX: 0, originX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          />
+
+          <div className="grid grid-cols-4 gap-8">
+            {steps.map((step, i) => (
               <motion.div
                 key={i}
-                className="relative group"
-                initial={{ opacity: 0, y: 40 }}
+                className="flex flex-col items-center text-center group"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
+                transition={{ duration: 0.5, delay: i * 0.15 + 0.2 }}
               >
-                {/* Connector */}
-                {i < steps.length - 1 && (
+                {/* Circle node */}
+                <div className="relative mb-10">
+                  {/* Outer ring */}
                   <div
-                    className="hidden lg:block absolute top-10 left-full w-6 h-px z-10"
-                    style={{ background: "linear-gradient(90deg, rgba(0,212,255,0.4), transparent)" }}
+                    className="absolute -inset-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                    style={{ background: `${step.accent}18` }}
                   />
-                )}
-
-                <motion.div
-                  className="relative overflow-hidden h-full p-8 transition-all duration-400"
-                  style={{
-                    background: "white",
-                    border: "1px solid rgba(0,212,255,0.2)",
-                  }}
-                  whileHover={{ y: -6, borderColor: "rgba(0,212,255,0.5)" }}
-                >
-                  {/* Large watermark number */}
                   <div
-                    className="absolute -top-4 -right-3 text-[90px] font-black pointer-events-none select-none leading-none"
+                    className="relative w-[104px] h-[104px] rounded-full flex flex-col items-center justify-center border-2 transition-all duration-300 group-hover:scale-105"
                     style={{
-                      backgroundImage: step.grad,
+                      background: `radial-gradient(135deg at 30% 30%, ${step.accent}22 0%, ${step.accent}08 100%)`,
+                      borderColor: `${step.accent}40`,
+                    }}
+                  >
+                    {/* Symbol watermark */}
+                    <span
+                      className="absolute text-3xl opacity-10 select-none"
+                      style={{ color: step.accent }}
+                    >
+                      {step.symbol}
+                    </span>
+                    <span
+                      className="text-3xl font-black leading-none"
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, ${step.accent} 0%, ${step.accent}88 100%)`,
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      {step.number}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <h3
+                  className="text-xl mb-3 font-medium"
+                  style={{ color: "#060f2e", letterSpacing: "-0.02em" }}
+                >
+                  {step.title}
+                </h3>
+                <p className="font-light leading-relaxed text-sm" style={{ color: "#64748b" }}>
+                  {step.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile: vertical stepper */}
+        <div className="lg:hidden relative pl-8">
+          {/* Vertical connecting line */}
+          <div
+            className="absolute left-[19px] top-6 bottom-6 w-px"
+            style={{ background: "linear-gradient(180deg, #00d4ff40, #7c3aed40, #0099cc40)" }}
+          />
+
+          <div className="space-y-10">
+            {steps.map((step, i) => (
+              <motion.div
+                key={i}
+                className="relative flex gap-6 group"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                {/* Circle node */}
+                <div
+                  className="absolute -left-8 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 border transition-all duration-300 group-hover:scale-110"
+                  style={{
+                    background: `radial-gradient(135deg, ${step.accent}20, ${step.accent}08)`,
+                    borderColor: `${step.accent}50`,
+                  }}
+                >
+                  <span
+                    className="text-sm font-black"
+                    style={{
+                      backgroundImage: `linear-gradient(135deg, ${step.accent}, ${step.accent}aa)`,
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
-                      opacity: 0.07,
                     }}
                   >
                     {step.number}
-                  </div>
+                  </span>
+                </div>
 
-                  {/* Top accent on hover */}
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: step.grad }}
-                  />
-
-                  <div className="relative z-10">
-                    {/* Icon */}
-                    <div
-                      className="w-14 h-14 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300"
-                      style={{ background: step.grad }}
-                    >
-                      <Icon className="w-6 h-6" />
-                    </div>
-
-                    {/* Step badge */}
-                    <span
-                      className="inline-block text-xs font-bold tracking-widest uppercase mb-3"
-                      style={{ color: "#00d4ff" }}
-                    >
-                      Step {step.number}
-                    </span>
-
-                    <h3
-                      className="text-2xl mb-4"
-                      style={{ color: "#060f2e", fontWeight: 300, letterSpacing: "-0.02em" }}
-                    >
-                      {step.title}
-                    </h3>
-                    <p className="font-light leading-relaxed text-sm" style={{ color: "#64748b" }}>
-                      {step.desc}
-                    </p>
-                  </div>
-                </motion.div>
+                {/* Content */}
+                <div>
+                  <h3
+                    className="text-xl mb-2 font-medium"
+                    style={{ color: "#060f2e", letterSpacing: "-0.02em" }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p className="font-light leading-relaxed text-sm" style={{ color: "#64748b" }}>
+                    {step.desc}
+                  </p>
+                </div>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </section>

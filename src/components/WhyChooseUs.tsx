@@ -1,44 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Target, Users, TrendingUp, ShieldCheck, BarChart3, Repeat } from "lucide-react";
 
 const focusAreas = [
   {
-    icon: TrendingUp,
     title: "Revenue Growth",
     desc: "Every decision we make is tied to growing your top and bottom line — not just marketing metrics.",
-    grad: "linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)",
+    accent: "#00d4ff",
+    metric: "↑ Rev",
   },
   {
-    icon: Target,
     title: "Qualified Leads",
     desc: "We don't just drive traffic. We attract the right people who are ready to become customers.",
-    grad: "linear-gradient(135deg, #7c3aed 0%, #00d4ff 100%)",
+    accent: "#7c3aed",
+    metric: "→ IQL",
   },
   {
-    icon: Users,
     title: "Customer Acquisition",
     desc: "Scalable acquisition systems that consistently bring new customers into your business.",
-    grad: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)",
+    accent: "#00d4ff",
+    metric: "+ CAC",
   },
   {
-    icon: Repeat,
     title: "Customer Retention",
     desc: "Great marketing doesn't stop at the sale. We help you keep customers coming back.",
-    grad: "linear-gradient(135deg, #0099cc 0%, #00d4ff 100%)",
+    accent: "#0099cc",
+    metric: "♻ LTV",
   },
   {
-    icon: ShieldCheck,
     title: "Lifetime Value",
     desc: "We build strategies that maximize what each customer is worth to your business over time.",
-    grad: "linear-gradient(135deg, #7c3aed 0%, #0099cc 100%)",
+    accent: "#7c3aed",
+    metric: "× CLV",
   },
   {
-    icon: BarChart3,
     title: "Return on Ad Spend",
     desc: "Rigorous ROAS tracking ensures every dollar in ad spend is accountable and optimized.",
-    grad: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)",
+    accent: "#00d4ff",
+    metric: "% ROAS",
   },
 ];
 
@@ -46,6 +45,14 @@ export function WhyChooseUs() {
   return (
     <section className="py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
       <div className="absolute top-0 left-0 right-0 h-px section-line" />
+
+      {/* Diagonal stripe background */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        style={{
+          backgroundImage: "repeating-linear-gradient(45deg, #00d4ff 0px, #00d4ff 1px, transparent 1px, transparent 28px)",
+        }}
+      />
 
       {/* Left radial glow */}
       <div
@@ -56,7 +63,7 @@ export function WhyChooseUs() {
       />
 
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
+        {/* Header — asymmetric split */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -107,57 +114,91 @@ export function WhyChooseUs() {
           </motion.div>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {focusAreas.map((area, i) => {
-            const Icon = area.icon;
-            return (
+        {/* Focus area rows — pill/badge style, not boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 divide-y md:divide-y-0" style={{ borderColor: "rgba(0,212,255,0.1)" }}>
+          {/* Left column */}
+          <div className="divide-y" style={{ borderColor: "rgba(0,212,255,0.1)" }}>
+            {focusAreas.slice(0, 3).map((area, i) => (
               <motion.div
                 key={i}
-                className="group relative p-8 overflow-hidden transition-all duration-400"
-                style={{
-                  background: "white",
-                  border: "1px solid rgba(0,212,255,0.2)",
-                }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                className="group flex items-start gap-5 py-7 relative overflow-hidden"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -6, borderColor: "rgba(0,212,255,0.45)" }}
+                transition={{ duration: 0.4, delay: i * 0.09 }}
               >
-                {/* Top accent */}
+                {/* Hover sweep */}
                 <div
-                  className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: area.grad }}
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{ background: `linear-gradient(90deg, ${area.accent}06 0%, transparent 70%)` }}
                 />
-
-                {/* Bottom corner glow */}
+                {/* Metric pill */}
                 <div
-                  className="absolute bottom-0 right-0 w-20 h-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="flex-shrink-0 w-16 h-8 flex items-center justify-center text-[10px] font-black tracking-wider rounded-sm transition-all duration-300 group-hover:scale-105"
                   style={{
-                    background: `radial-gradient(circle at 100% 100%, rgba(0,212,255,0.15), transparent 70%)`,
+                    background: `${area.accent}14`,
+                    color: area.accent,
+                    border: `1px solid ${area.accent}30`,
                   }}
-                />
-
-                <div
-                  className="w-14 h-14 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300"
-                  style={{ background: area.grad }}
                 >
-                  <Icon className="w-5 h-5" />
+                  {area.metric}
                 </div>
-
-                <h3
-                  className="text-xl mb-3"
-                  style={{ color: "#060f2e", fontWeight: 400, letterSpacing: "-0.02em" }}
-                >
-                  {area.title}
-                </h3>
-                <p className="font-light leading-relaxed text-sm" style={{ color: "#64748b" }}>
-                  {area.desc}
-                </p>
+                <div className="relative z-10">
+                  <h3
+                    className="text-base font-semibold mb-1 group-hover:opacity-70 transition-opacity"
+                    style={{ color: "#060f2e" }}
+                  >
+                    {area.title}
+                  </h3>
+                  <p className="font-light text-sm leading-relaxed" style={{ color: "#64748b" }}>
+                    {area.desc}
+                  </p>
+                </div>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
+
+          {/* Right column */}
+          <div className="divide-y md:border-l md:pl-12" style={{ borderColor: "rgba(0,212,255,0.1)" }}>
+            {focusAreas.slice(3).map((area, i) => (
+              <motion.div
+                key={i}
+                className="group flex items-start gap-5 py-7 relative overflow-hidden"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.09 + 0.15 }}
+              >
+                {/* Hover sweep */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{ background: `linear-gradient(90deg, ${area.accent}06 0%, transparent 70%)` }}
+                />
+                {/* Metric pill */}
+                <div
+                  className="flex-shrink-0 w-16 h-8 flex items-center justify-center text-[10px] font-black tracking-wider rounded-sm transition-all duration-300 group-hover:scale-105"
+                  style={{
+                    background: `${area.accent}14`,
+                    color: area.accent,
+                    border: `1px solid ${area.accent}30`,
+                  }}
+                >
+                  {area.metric}
+                </div>
+                <div className="relative z-10">
+                  <h3
+                    className="text-base font-semibold mb-1 group-hover:opacity-70 transition-opacity"
+                    style={{ color: "#060f2e" }}
+                  >
+                    {area.title}
+                  </h3>
+                  <p className="font-light text-sm leading-relaxed" style={{ color: "#64748b" }}>
+                    {area.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* CTA */}

@@ -1,56 +1,55 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MonitorSmartphone, Search, TrendingUp, Share2, Camera, Mail } from "lucide-react";
 
 const services = [
   {
-    icon: MonitorSmartphone,
+    number: "01",
     title: "Web & App Development",
     description: "Bespoke digital experiences that tell your brand's story perfectly — fast, beautiful and conversion-optimised.",
     href: "/services/tech-lab/web-development",
-    grad: "linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)",
-    glowColor: "rgba(0,212,255,0.3)",
+    accent: "#00d4ff",
+    tag: "Tech Lab",
   },
   {
-    icon: Search,
+    number: "02",
     title: "SEO & AEO",
     description: "Rank higher on Google and appear in AI-powered search results to reach the audience that matters most.",
     href: "/services/digital-lab/seo",
-    grad: "linear-gradient(135deg, #7c3aed 0%, #00d4ff 100%)",
-    glowColor: "rgba(124,58,237,0.3)",
+    accent: "#7c3aed",
+    tag: "Digital Lab",
   },
   {
-    icon: TrendingUp,
+    number: "03",
     title: "Performance Marketing",
     description: "Data-driven paid campaigns on Google, Meta and more — designed to maximize ROAS and revenue.",
     href: "/services/digital-lab/paid-media",
-    grad: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)",
-    glowColor: "rgba(0,212,255,0.3)",
+    accent: "#00d4ff",
+    tag: "Digital Lab",
   },
   {
-    icon: Share2,
+    number: "04",
     title: "Social Media Marketing",
     description: "Engaging content and community management that builds brand loyalty and drives measurable results.",
     href: "/services/digital-lab/social-media",
-    grad: "linear-gradient(135deg, #0099cc 0%, #00d4ff 100%)",
-    glowColor: "rgba(0,153,204,0.3)",
+    accent: "#0099cc",
+    tag: "Digital Lab",
   },
   {
-    icon: Camera,
+    number: "05",
     title: "Photography & Video",
     description: "High-end visual production tailored for modern platforms — from product shoots to brand films.",
     href: "/services/creative-lab/photography",
-    grad: "linear-gradient(135deg, #7c3aed 0%, #0099cc 100%)",
-    glowColor: "rgba(124,58,237,0.3)",
+    accent: "#7c3aed",
+    tag: "Creative Lab",
   },
   {
-    icon: Mail,
+    number: "06",
     title: "CRM & Email Marketing",
     description: "Automated email journeys that nurture leads, retain customers and maximize lifetime value.",
     href: "/services/digital-lab/email-marketing",
-    grad: "linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)",
-    glowColor: "rgba(0,212,255,0.3)",
+    accent: "#00d4ff",
+    tag: "Digital Lab",
   },
 ];
 
@@ -98,76 +97,95 @@ export function Services() {
           </motion.p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => {
-            const Icon = service.icon;
-            return (
-              <motion.a
-                href={service.href}
-                key={i}
-                className="group relative p-8 block overflow-hidden transition-all duration-400"
-                style={{
-                  background: "white",
-                  border: "1px solid rgba(0,212,255,0.2)",
-                }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ y: -6 }}
-              >
-                {/* Hover glow */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                  style={{ boxShadow: `0 20px 60px ${service.glowColor}` }}
-                />
+        {/* Service list — editorial rows */}
+        <div className="space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.12)" }}>
+          {services.map((service, i) => (
+            <motion.a
+              href={service.href}
+              key={i}
+              className="group flex flex-col sm:flex-row items-start sm:items-center gap-6 py-8 relative overflow-hidden transition-all duration-300"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+            >
+              {/* Hover bg sweep */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+                style={{ background: `linear-gradient(90deg, ${service.accent}08 0%, transparent 60%)` }}
+              />
 
-                {/* Top gradient bar */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: service.grad }}
-                />
-
-                {/* Icon */}
-                <div
-                  className="w-14 h-14 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300"
-                  style={{ background: service.grad, borderRadius: "2px" }}
+              {/* Left: oversized number */}
+              <div className="flex-shrink-0 w-20 text-right">
+                <span
+                  className="text-6xl font-black leading-none select-none"
+                  style={{
+                    backgroundImage: `linear-gradient(135deg, ${service.accent}, rgba(${service.accent === "#7c3aed" ? "124,58,237" : "0,212,255"},0.3))`,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    opacity: 0.18,
+                    transition: "opacity 0.3s",
+                  }}
                 >
-                  <Icon className="w-6 h-6" />
+                  {service.number}
+                </span>
+              </div>
+
+              {/* Divider line */}
+              <div
+                className="hidden sm:block flex-shrink-0 w-px h-12 group-hover:h-16 transition-all duration-300"
+                style={{ background: `linear-gradient(180deg, transparent, ${service.accent}, transparent)` }}
+              />
+
+              {/* Centre: title + desc */}
+              <div className="flex-1 relative z-10">
+                <div className="flex items-center gap-3 mb-1">
+                  <h3
+                    className="text-xl font-medium transition-colors duration-200 group-hover:opacity-70"
+                    style={{ color: "#060f2e", letterSpacing: "-0.02em" }}
+                  >
+                    {service.title}
+                  </h3>
+                  <span
+                    className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 opacity-60"
+                    style={{
+                      color: service.accent,
+                      border: `1px solid ${service.accent}`,
+                      borderRadius: "2px",
+                    }}
+                  >
+                    {service.tag}
+                  </span>
                 </div>
-
-                <h3
-                  className="text-xl mb-3 group-hover:opacity-80 transition-colors"
-                  style={{ color: "#060f2e", fontWeight: 500, letterSpacing: "-0.02em" }}
-                >
-                  {service.title}
-                </h3>
-                <p className="leading-relaxed font-light text-sm" style={{ color: "#64748b" }}>
+                <p className="font-light text-sm leading-relaxed max-w-xl" style={{ color: "#64748b" }}>
                   {service.description}
                 </p>
+              </div>
 
-                {/* Learn more */}
-                <div
-                  className="mt-6 flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ color: "#00d4ff" }}
+              {/* Right: arrow */}
+              <div className="flex-shrink-0 flex items-center gap-2 ml-auto">
+                <span
+                  className="text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0"
+                  style={{ color: service.accent }}
                 >
-                  Learn more
-                  <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  Explore
+                </span>
+                <div
+                  className="w-10 h-10 flex items-center justify-center border transition-all duration-300 group-hover:scale-110"
+                  style={{
+                    borderColor: `${service.accent}40`,
+                    color: service.accent,
+                    background: `${service.accent}08`,
+                  }}
+                >
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
-
-                {/* Corner accent */}
-                <div
-                  className="absolute bottom-0 right-0 w-12 h-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background: `linear-gradient(225deg, ${service.glowColor} 0%, transparent 70%)`,
-                  }}
-                />
-              </motion.a>
-            );
-          })}
+              </div>
+            </motion.a>
+          ))}
         </div>
 
         {/* CTA */}

@@ -4,23 +4,20 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SeoCounters } from "@/components/SeoCounters";
 import { motion } from "framer-motion";
-import { Globe, Wrench, Link as LinkIcon, ShoppingBag, MapPin, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const fullSeoFeatures = [
   {
-    icon: Globe,
     title: "ON-PAGE OPTIMISATION",
     desc: "The content on your website pages must match the intent and expectations of users so Google ranks your page high in the search. We'll create unique content and make expert optimisations to drive new traffic and clicks.",
     grad: "linear-gradient(135deg, #00d4ff, #0099cc)",
   },
   {
-    icon: Wrench,
     title: "TECHNICAL SEO",
     desc: "There are hundreds of elements that fall under a technical SEO remit from site speed to re-directs. We'll identify and fix the technical elements of your site to give you a solid SEO foundation for further growth.",
     grad: "linear-gradient(135deg, #7c3aed, #00d4ff)",
   },
   {
-    icon: LinkIcon,
     title: "MEDIA PLACEMENTS & LINKS",
     desc: "High-quality links from reputable sources will increase the trust of your brand in the eyes of Google and your target audience. We'll secure authority-boosting placements to generate impressions, clicks and online sales.",
     grad: "linear-gradient(135deg, #00d4ff, #7c3aed)",
@@ -29,13 +26,11 @@ const fullSeoFeatures = [
 
 const specializedSeo = [
   {
-    icon: ShoppingBag,
     title: "E-Commerce SEO",
     desc: "E-commerce SEO will bring in the right leads who have a direct interest in your brand. Save time and money by targeting a specific niche!",
     grad: "linear-gradient(135deg, #00d4ff, #0099cc)",
   },
   {
-    icon: MapPin,
     title: "Local SEO",
     desc: "People often look for services around them that are more convenient for them. Even if you provide service globally you can still attract visitors by being available to them on the local search results.",
     grad: "linear-gradient(135deg, #7c3aed, #00d4ff)",
@@ -106,43 +101,74 @@ export default function SeoPage() {
             <p className="text-xl font-light" style={{ color: "#64748b" }}>Or pick the one you like!</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {fullSeoFeatures.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group relative bg-white p-10 transition-all duration-300"
-                  style={{ border: "1px solid rgba(0,212,255,0.2)" }}
-                  whileHover={{ y: -4, borderColor: "rgba(0,212,255,0.5)" }}
-                >
-                  {/* Top accent */}
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: item.grad }}
-                  />
-                  <div
-                    className="w-16 h-16 flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-transform duration-300"
-                    style={{ background: item.grad }}
+          {/* Editorial stepper rows — no icon boxes */}
+          <div className="max-w-3xl mx-auto relative">
+            {/* Dashed vertical line */}
+            <div
+              className="absolute left-[19px] top-8 bottom-8 w-px hidden sm:block"
+              style={{
+                backgroundImage: "repeating-linear-gradient(180deg, rgba(0,212,255,0.3) 0px, rgba(0,212,255,0.3) 6px, transparent 6px, transparent 12px)",
+              }}
+            />
+            <div className="space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.12)" }}>
+              {fullSeoFeatures.map((item, i) => {
+                const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff"];
+                const accent = accentMap[i % accentMap.length];
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="group relative flex gap-8 py-8 sm:pl-14"
                   >
-                    <Icon className="w-8 h-8" />
-                  </div>
-                  <h3
-                    className="text-lg mb-4 tracking-wide"
-                    style={{ color: "#060f2e", fontWeight: 600 }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p className="font-light leading-relaxed" style={{ color: "#64748b" }}>
-                    {item.desc}
-                  </p>
-                </motion.div>
-              );
-            })}
+                    {/* Circle step number */}
+                    <div
+                      className="hidden sm:flex absolute left-0 top-8 w-10 h-10 rounded-full items-center justify-center flex-shrink-0 border-2 transition-all duration-300 group-hover:scale-110"
+                      style={{
+                        borderColor: `${accent}50`,
+                        background: `radial-gradient(circle, ${accent}14, transparent)`,
+                      }}
+                    >
+                      <span
+                        className="text-xs font-black"
+                        style={{
+                          backgroundImage: `linear-gradient(135deg, ${accent}, ${accent}88)`,
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        }}
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    {/* Content */}
+                    <div className="flex-1 relative overflow-hidden">
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                        style={{ background: `linear-gradient(90deg, ${accent}06 0%, transparent 60%)` }}
+                      />
+                      <span
+                        className="sm:hidden inline-block text-xs font-black tracking-widest mb-2"
+                        style={{ color: accent }}
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <h3
+                        className="text-lg mb-4 tracking-wide"
+                        style={{ color: "#060f2e", fontWeight: 600 }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="font-light leading-relaxed" style={{ color: "#64748b" }}>
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
 
@@ -175,44 +201,61 @@ export default function SeoPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {specializedSeo.map((item, i) => {
-                const Icon = item.icon;
+                const accentMap = ["#00d4ff", "#7c3aed"];
+                const accent = accentMap[i % accentMap.length];
                 return (
                   <motion.div
                     key={item.title}
                     initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="group relative bg-white p-12 transition-all duration-300 cursor-pointer"
+                    className="group relative bg-white p-12 transition-all duration-300 cursor-pointer overflow-hidden"
                     style={{ border: "1px solid rgba(0,212,255,0.2)" }}
-                    whileHover={{ y: -4, borderColor: "rgba(0,212,255,0.5)" }}
+                    whileHover={{ y: -4, borderColor: `${accent}60` }}
                   >
-                    {/* Top accent */}
+                    {/* Left accent bar */}
                     <div
-                      className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity"
-                      style={{ background: item.grad }}
+                      className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300"
+                      style={{ background: `linear-gradient(180deg, ${accent}60, transparent)` }}
                     />
-                    <div className="flex items-center mb-8">
-                      <div
-                        className="w-16 h-16 flex items-center justify-center text-white mr-6 flex-shrink-0 group-hover:scale-110 transition-transform"
-                        style={{ background: item.grad }}
+                    <div
+                      className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ background: `linear-gradient(180deg, ${accent}, ${accent}44)` }}
+                    />
+                    {/* Large watermark letter */}
+                    <div
+                      className="absolute -right-4 -bottom-6 text-[120px] font-black leading-none select-none pointer-events-none"
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, ${accent}22, transparent)`,
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      {item.title.charAt(0)}
+                    </div>
+                    <div className="relative z-10">
+                      <span
+                        className="inline-block text-xs font-bold tracking-widest uppercase mb-4"
+                        style={{ color: accent }}
                       >
-                        <Icon className="w-8 h-8" />
-                      </div>
+                        Specialized
+                      </span>
                       <h3
-                        className="text-3xl"
+                        className="text-3xl mb-6"
                         style={{ color: "#060f2e", fontWeight: 300, letterSpacing: "-0.02em" }}
                       >
                         {item.title}
                       </h3>
-                    </div>
-                    <p className="font-light text-xl leading-relaxed mb-10" style={{ color: "#64748b" }}>
-                      {item.desc}
-                    </p>
-                    <div
-                      className="flex items-center font-bold tracking-widest uppercase text-sm"
-                      style={{ color: "#00d4ff" }}
-                    >
-                      Learn More <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
+                      <p className="font-light text-xl leading-relaxed mb-10" style={{ color: "#64748b" }}>
+                        {item.desc}
+                      </p>
+                      <div
+                        className="flex items-center font-bold tracking-widest uppercase text-sm"
+                        style={{ color: accent }}
+                      >
+                        Learn More <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
+                      </div>
                     </div>
                   </motion.div>
                 );

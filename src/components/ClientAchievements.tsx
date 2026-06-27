@@ -1,38 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp } from "lucide-react";
 
 const achievements = [
   {
     client: "GR Events",
-    result: "40X–60X ROAS",
+    result: "40X–60X",
+    suffix: "ROAS",
     category: "Lead Generation",
-    color: "from-[#39bcfc] to-[#129adc]",
+    color: "#00d4ff",
+    span: 2, // spans 2 columns — hero card
   },
   {
     client: "Gulabi Run",
-    result: "50X ROAS",
+    result: "50X",
+    suffix: "ROAS",
     category: "Performance Marketing",
-    color: "from-[#129adc] to-[#39bcfc]",
+    color: "#7c3aed",
+    span: 1,
   },
   {
     client: "Mobile Stop",
-    result: "21X ROAS",
+    result: "21X",
+    suffix: "ROAS",
     category: "E-Commerce & Retail",
-    color: "from-[#39bcfc] to-sky-500",
+    color: "#0099cc",
+    span: 1,
   },
   {
     client: "GR Events",
-    result: "300% Growth",
+    result: "300%",
+    suffix: "Growth",
     category: "SEO & Content",
-    color: "from-sky-500 to-[#129adc]",
+    color: "#4db8ff",
+    span: 1,
   },
   {
     client: "Prestige Auto",
-    result: "15X ROAS",
+    result: "15X",
+    suffix: "ROAS",
     category: "Paid Media",
-    color: "from-[#129adc] to-[#39bcfc]",
+    color: "#7c3aed",
+    span: 1,
   },
 ];
 
@@ -48,12 +57,9 @@ const focusItems = [
 export function ClientAchievements() {
   return (
     <>
-      {/* Client Achievements — light bg */}
+      {/* Client Achievements */}
       <section className="py-24 relative overflow-hidden" style={{ background: "#f0faff" }}>
-        {/* Subtle wave pattern */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-40 wave-bg"
-        />
+        {/* Subtle dot grid */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.3]"
           style={{
@@ -87,33 +93,123 @@ export function ClientAchievements() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {achievements.map((item, i) => (
+          {/* Bento-style grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr">
+            {/* Hero card — spans 2 cols */}
+            <motion.div
+              className="col-span-2 relative group overflow-hidden p-8 md:p-10 flex flex-col justify-between"
+              style={{
+                background: "white",
+                border: "1px solid rgba(0,212,255,0.15)",
+                minHeight: "200px",
+              }}
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -4 }}
+            >
+              {/* Left accent bar */}
+              <div
+                className="absolute left-0 top-0 bottom-0 w-1"
+                style={{ background: `linear-gradient(180deg, ${achievements[0].color}, ${achievements[0].color}44)` }}
+              />
+              {/* BG watermark */}
+              <div
+                className="absolute right-4 bottom-0 text-[120px] font-black leading-none select-none pointer-events-none opacity-[0.04]"
+                style={{ color: achievements[0].color }}
+              >
+                {achievements[0].result}
+              </div>
+
+              <span
+                className="text-[10px] font-bold uppercase tracking-widest mb-4 block"
+                style={{ color: achievements[0].color }}
+              >
+                {achievements[0].category}
+              </span>
+              <div>
+                <div className="flex items-end gap-3 mb-2">
+                  <span
+                    className="text-6xl md:text-7xl font-black leading-none"
+                    style={{
+                      backgroundImage: `linear-gradient(135deg, ${achievements[0].color} 0%, ${achievements[0].color}88 100%)`,
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    {achievements[0].result}
+                  </span>
+                  <span
+                    className="text-xl font-semibold mb-2"
+                    style={{ color: achievements[0].color }}
+                  >
+                    {achievements[0].suffix}
+                  </span>
+                </div>
+                <p className="text-sm font-medium" style={{ color: "#64748b" }}>
+                  {achievements[0].client}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Remaining cards */}
+            {achievements.slice(1).map((item, i) => (
               <motion.div
                 key={i}
-                className="relative group bg-white p-6 transition-all duration-300"
-                style={{ border: "1px solid rgba(0,212,255,0.2)" }}
-                initial={{ opacity: 0, y: 30 }}
+                className="relative group overflow-hidden p-6 flex flex-col justify-between"
+                style={{
+                  background: "white",
+                  border: "1px solid rgba(0,212,255,0.15)",
+                  minHeight: "160px",
+                }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -6, borderColor: "rgba(0,212,255,0.45)" }}
+                transition={{ duration: 0.5, delay: (i + 1) * 0.1 }}
+                whileHover={{ y: -4 }}
               >
-                {/* Top accent bar on hover */}
-                <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                {/* Left accent bar */}
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300"
+                  style={{ background: `linear-gradient(180deg, ${item.color}80, transparent)` }}
+                />
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: `linear-gradient(180deg, ${item.color}, ${item.color}44)` }}
+                />
 
-                <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-30 transition-opacity">
-                  <TrendingUp className="w-5 h-5" style={{ color: "#00d4ff" }} />
-                </div>
-                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#00d4ff" }}>
-                  {item.category}
-                </p>
-                <p
-                  className={`text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${item.color} mb-2 leading-tight`}
+                <span
+                  className="text-[10px] font-bold uppercase tracking-widest mb-3 block"
+                  style={{ color: item.color }}
                 >
-                  {item.result}
-                </p>
-                <p className="text-sm font-medium" style={{ color: "#64748b" }}>{item.client}</p>
+                  {item.category}
+                </span>
+                <div>
+                  <div className="flex items-end gap-2 mb-1">
+                    <span
+                      className="text-4xl font-black leading-none"
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, ${item.color} 0%, ${item.color}88 100%)`,
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      {item.result}
+                    </span>
+                    <span
+                      className="text-sm font-semibold mb-0.5"
+                      style={{ color: item.color }}
+                    >
+                      {item.suffix}
+                    </span>
+                  </div>
+                  <p className="text-xs font-medium" style={{ color: "#64748b" }}>
+                    {item.client}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
