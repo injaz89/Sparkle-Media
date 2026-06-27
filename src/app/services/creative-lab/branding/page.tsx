@@ -3,38 +3,38 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Fingerprint, PenTool, BookMarked, FileText, IdCard, Globe } from "lucide-react";
+import { Fingerprint } from "lucide-react";
 
 const brandingModes = [
   {
     num: "01",
     title: "Logo designing",
     desc: "Create a logo that tells your brand's story and creates a remarkable memory in the viewers mind.",
-    icon: PenTool,
+    accent: "#00d4ff",
   },
   {
     num: "02",
     title: "Brand Guidelines",
     desc: "Plan out your brand's look and feel from A-Z with the professionals.",
-    icon: BookMarked,
+    accent: "#7c3aed",
   },
   {
     num: "03",
     title: "Letterheads",
     desc: "Maintain professionalism in all your paperworks.",
-    icon: FileText,
+    accent: "#4db8ff",
   },
   {
     num: "04",
     title: "Business Cards",
     desc: "If you believe that the first impression is the best impression. Then you know what to do next.",
-    icon: IdCard,
+    accent: "#0099cc",
   },
   {
     num: "05",
     title: "Digital Content Strategy",
     desc: "A fully sketched and analyzed plan for your brand's tone and language for its entire market identity.",
-    icon: Globe,
+    accent: "#7c3aed",
   },
 ];
 
@@ -49,9 +49,10 @@ export default function BrandingPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-24 h-24 bg-secondary mx-auto rounded-none flex items-center justify-center text-white mb-8"
+            className="w-24 h-24 mx-auto rounded-[2rem] rotate-3 flex items-center justify-center text-white mb-8"
+            style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)", boxShadow: "0 20px 60px rgba(0,212,255,0.4)" }}
           >
-            <Fingerprint className="w-12 h-12" />
+            <Fingerprint className="w-12 h-12 -rotate-3" />
           </motion.div>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -127,35 +128,39 @@ export default function BrandingPage() {
               <div className="w-24 h-1 bg-secondary mx-auto" />
             </div>
 
-            <div className="space-y-6">
-              {brandingModes.map((mode, i) => {
-                const Icon = mode.icon;
-                return (
-                  <motion.div
-                    key={mode.num}
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ delay: i * 0.1 }}
-                    className="bg-white border border-primary/20 p-8 md:p-12 hover:shadow-xl hover:shadow-sky-100/60 hover:border-primary transition-all duration-300 group flex flex-col md:flex-row items-center gap-8 md:gap-16"
-                  >
-                    <div className="text-6xl md:text-8xl font-bold text-primary/20 group-hover:text-primary/45 transition-colors duration-500 shrink-0">
-                      {mode.num}
-                    </div>
-                    
-                    <div className="flex items-center justify-center w-20 h-20 bg-white border border-primary/20 shadow-md shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-10 h-10 text-secondary" />
-                    </div>
-                    
-                    <div className="text-center md:text-left">
-                      <h3 className="text-3xl font-bold text-navy mb-4">{mode.title}</h3>
-                      <p className="text-xl text-gray-500 font-light leading-relaxed max-w-3xl">
-                        {mode.desc}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
+            <div className="space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.12)" }}>
+              {brandingModes.map((mode, i) => (
+                <motion.div
+                  key={mode.num}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 py-8 md:py-10 px-0 overflow-hidden"
+                >
+                  {/* Left accent bar */}
+                  <div className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 opacity-50 group-hover:opacity-100"
+                    style={{ background: `linear-gradient(180deg, ${mode.accent}, ${mode.accent}44)` }} />
+                  {/* Hover sweep */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    style={{ background: `linear-gradient(90deg, ${mode.accent}06 0%, transparent 60%)` }} />
+                  {/* Number */}
+                  <div className="text-[80px] md:text-[100px] font-black leading-none flex-shrink-0 pl-4 md:pl-8"
+                    style={{
+                      backgroundImage: `linear-gradient(135deg, ${mode.accent}40, ${mode.accent}15)`,
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}>
+                    {mode.num}
+                  </div>
+                  {/* Content */}
+                  <div className="relative z-10 pl-4 md:pl-0">
+                    <h3 className="text-3xl font-bold text-navy mb-3">{mode.title}</h3>
+                    <p className="text-xl text-gray-500 font-light leading-relaxed max-w-2xl">{mode.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>

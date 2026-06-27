@@ -3,41 +3,22 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import {
-  Cpu,
-  Globe,
-  Smartphone,
-  Users,
-  GitBranch,
-  CheckSquare,
-  CheckCircle2,
-  ArrowRight,
-  TrendingUp,
-  Target,
-  Shield,
-  Zap,
-  Eye,
-  BarChart3,
-} from "lucide-react";
+import { ArrowRight, Cpu } from "lucide-react";
 
 const whyInvest = [
   {
-    icon: TrendingUp,
     title: "Businesses Are Accelerating Digital Transformation",
     desc: "Organizations investing in digital transformation initiatives significantly improve operational efficiency, customer satisfaction, and long-term competitiveness.",
   },
   {
-    icon: Zap,
     title: "Manual Processes Reduce Productivity",
     desc: "Many businesses still rely on spreadsheets and disconnected systems. Custom software automates these processes, allowing teams to focus on growth-driving activities.",
   },
   {
-    icon: Users,
     title: "Customer Expectations Continue to Rise",
     desc: "Modern customers expect seamless digital experiences, real-time communication, and efficient service delivery. Businesses that fail to adapt risk losing market share.",
   },
   {
-    icon: TrendingUp,
     title: "Scalable Technology Supports Business Growth",
     desc: "As your business grows, your systems should grow with you. Custom-built solutions provide flexibility and scalability that off-the-shelf software often cannot deliver.",
   },
@@ -45,7 +26,6 @@ const whyInvest = [
 
 const devServices = [
   {
-    icon: Cpu,
     title: "Custom Software Development",
     color: "from-cyan-400 to-blue-500",
     desc: "Every business operates differently. We develop tailor-made software solutions designed specifically around your workflows, business objectives, and operational requirements.",
@@ -59,7 +39,6 @@ const devServices = [
     note: "Whether you require a customer portal, business management system, booking platform, ERP solution, or custom application — we build software that supports your growth.",
   },
   {
-    icon: Globe,
     title: "Web Application Development",
     color: "from-blue-400 to-indigo-500",
     desc: "Modern businesses need digital platforms that are accessible, secure, and scalable. Our web application development services include:",
@@ -75,7 +54,6 @@ const devServices = [
     note: "Built with performance, security, and scalability in mind.",
   },
   {
-    icon: Smartphone,
     title: "Mobile Application Development",
     color: "from-indigo-400 to-blue-500",
     desc: "Mobile users now account for a significant portion of digital interactions worldwide. We develop mobile applications that help businesses:",
@@ -88,7 +66,6 @@ const devServices = [
     note: "Available for both Android and iOS platforms.",
   },
   {
-    icon: Users,
     title: "Dedicated Development Teams",
     color: "from-cyan-500 to-teal-400",
     desc: "Expand your technical capabilities without the challenges of recruiting and managing in-house teams. Our dedicated development teams provide:",
@@ -103,7 +80,6 @@ const devServices = [
     note: "Allowing businesses to scale resources according to project requirements.",
   },
   {
-    icon: GitBranch,
     title: "Staff Augmentation Services",
     color: "from-blue-500 to-cyan-400",
     desc: "Need specialized technical expertise? Our staff augmentation model enables organizations to quickly integrate experienced professionals into existing teams. Ideal for:",
@@ -116,7 +92,6 @@ const devServices = [
     note: "Helping accelerate delivery while reducing recruitment costs and delays.",
   },
   {
-    icon: CheckSquare,
     title: "Software Testing & Quality Assurance",
     color: "from-indigo-500 to-blue-500",
     desc: "Quality is critical to software success. Research shows that fixing software defects after launch can cost significantly more than identifying them during development. Our QA services include:",
@@ -133,19 +108,19 @@ const devServices = [
 ];
 
 const processSteps = [
-  { icon: Eye, title: "Discovery & Business Analysis", desc: "Understanding your business objectives, workflows, challenges, and opportunities." },
-  { icon: Target, title: "Solution Architecture", desc: "Developing a strategic roadmap and technical framework tailored to your project requirements." },
-  { icon: Cpu, title: "Agile Development", desc: "Delivering software in iterative stages, ensuring flexibility, transparency, and continuous improvement." },
-  { icon: CheckSquare, title: "Testing & Optimization", desc: "Every feature undergoes comprehensive testing to ensure performance, security, and reliability." },
-  { icon: Zap, title: "Deployment & Support", desc: "Implementation support, monitoring, maintenance, and continuous improvements for long-term success." },
+  { title: "Discovery & Business Analysis", desc: "Understanding your business objectives, workflows, challenges, and opportunities." },
+  { title: "Solution Architecture", desc: "Developing a strategic roadmap and technical framework tailored to your project requirements." },
+  { title: "Agile Development", desc: "Delivering software in iterative stages, ensuring flexibility, transparency, and continuous improvement." },
+  { title: "Testing & Optimization", desc: "Every feature undergoes comprehensive testing to ensure performance, security, and reliability." },
+  { title: "Deployment & Support", desc: "Implementation support, monitoring, maintenance, and continuous improvements for long-term success." },
 ];
 
 const whySparkle = [
-  { icon: Target, title: "Business-First Approach", desc: "We focus on solving business challenges, not just writing code." },
-  { icon: TrendingUp, title: "Scalable Technology", desc: "Solutions designed to grow alongside your organization." },
-  { icon: Users, title: "Experienced Development Team", desc: "Access to skilled developers, designers, QA specialists, and project managers." },
-  { icon: BarChart3, title: "Transparent Project Delivery", desc: "Clear communication, milestone tracking, and measurable outcomes throughout every project." },
-  { icon: Shield, title: "Long-Term Partnership", desc: "From strategy and development to maintenance and optimization, we support your digital transformation journey." },
+  { title: "Business-First Approach", desc: "We focus on solving business challenges, not just writing code." },
+  { title: "Scalable Technology", desc: "Solutions designed to grow alongside your organization." },
+  { title: "Experienced Development Team", desc: "Access to skilled developers, designers, QA specialists, and project managers." },
+  { title: "Transparent Project Delivery", desc: "Clear communication, milestone tracking, and measurable outcomes throughout every project." },
+  { title: "Long-Term Partnership", desc: "From strategy and development to maintenance and optimization, we support your digital transformation journey." },
 ];
 
 export default function SoftwareDevelopmentPage() {
@@ -231,35 +206,38 @@ export default function SoftwareDevelopmentPage() {
         {/* ── WHY INVEST ── */}
         <section className="py-24 bg-bg">
           <div className="max-w-7xl mx-auto px-6">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <span className="text-xs font-bold text-secondary uppercase tracking-widest">The Case for Custom Software</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">
-                Why Invest in Custom Software Development?
-              </h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Why Invest in Custom Software Development?</h2>
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Accent stat rows */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0 max-w-4xl mx-auto" style={{ borderColor: "rgba(0,212,255,0.12)" }}>
               {whyInvest.map((item, i) => {
-                const Icon = item.icon;
+                const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
+                const accent = accentMap[i % accentMap.length];
+                const nums = ["01", "02", "03", "04"];
                 return (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="group bg-white border border-primary/20 hover:border-primary p-8 hover:shadow-xl hover:shadow-sky-900/5 transition-all duration-300 relative overflow-hidden"
+                    transition={{ delay: i * 0.09 }}
+                    className="group relative flex items-start gap-6 p-8 overflow-hidden"
                   >
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                    <div className="w-10 h-10 bg-white border border-primary/20 flex items-center justify-center text-secondary mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-5 h-5" />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      style={{ background: `linear-gradient(135deg, ${accent}06 0%, transparent 60%)` }} />
+                    <div className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ background: `linear-gradient(180deg, ${accent}, ${accent}44)` }} />
+                    <div className="flex-shrink-0">
+                      <p className="text-4xl font-black leading-none" style={{ backgroundImage: `linear-gradient(135deg, ${accent}, ${accent}88)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                        {nums[i]}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-bold text-navy mb-3">{item.title}</h3>
-                    <p className="text-gray-500 font-light text-sm leading-relaxed">{item.desc}</p>
+                    <div className="relative z-10">
+                      <h3 className="text-lg font-bold text-navy mb-2 leading-snug">{item.title}</h3>
+                      <p className="text-gray-500 font-light text-sm leading-relaxed">{item.desc}</p>
+                    </div>
                   </motion.div>
                 );
               })}
@@ -286,37 +264,42 @@ export default function SoftwareDevelopmentPage() {
               <span className="text-xs font-bold text-secondary uppercase tracking-widest">Full-Spectrum Solutions</span>
               <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Software Development Services</h2>
             </motion.div>
-            <div className="space-y-6">
+            <div className="space-y-5">
               {devServices.map((service, i) => {
-                const Icon = service.icon;
+                const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc", "#7c3aed", "#00d4ff"];
+                const accent = accentMap[i % accentMap.length];
+                const nums = ["01", "02", "03", "04", "05", "06"];
                 return (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.07 }}
-                    className="bg-white border border-primary/20 hover:border-primary p-8 md:p-10 transition-all duration-300 flex flex-col md:flex-row gap-10 shadow-md"
+                    transition={{ delay: i * 0.06 }}
+                    className="group relative bg-white p-8 md:p-10 overflow-hidden transition-all duration-300 flex flex-col md:flex-row gap-10"
+                    style={{ border: "1px solid rgba(0,212,255,0.18)" }}
+                    whileHover={{ borderColor: `${accent}50` }}
                   >
-                    <div className="md:w-1/3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white mb-5">
-                        <Icon className="w-6 h-6" />
+                    {/* Left accent */}
+                    <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(180deg, ${accent}60, transparent)` }} />
+                    <div className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity" style={{ background: `linear-gradient(180deg, ${accent}, ${accent}44)` }} />
+                    <div className="md:w-1/3 pl-2">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-xs font-black" style={{ color: `${accent}80` }}>{nums[i]}</span>
+                        <div className="h-px w-8" style={{ background: `${accent}40` }} />
                       </div>
                       <h3 className="text-xl font-bold text-navy mb-3">{service.title}</h3>
                       <p className="text-gray-500 font-light text-sm leading-relaxed">{service.desc}</p>
                     </div>
                     <div className="md:w-2/3">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                      <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4">
                         {service.points.map((pt, j) => (
-                          <div key={j} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
-                            <span className="text-gray-600 text-sm font-light">{pt}</span>
-                          </div>
+                          <span key={j} className="flex items-center gap-1.5 text-sm font-light text-gray-600">
+                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: accent }} />{pt}
+                          </span>
                         ))}
                       </div>
-                      <p className="text-secondary font-semibold text-sm italic border-l-2 border-primary pl-4">
-                        {service.note}
-                      </p>
+                      <p className="text-sm italic border-l-2 pl-4 font-light" style={{ color: accent, borderColor: `${accent}60` }}>{service.note}</p>
                     </div>
                   </motion.div>
                 );
@@ -337,23 +320,32 @@ export default function SoftwareDevelopmentPage() {
               <span className="text-xs font-bold text-secondary uppercase tracking-widest">How We Work</span>
               <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Development Process</h2>
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+            {/* Circle timeline */}
+            <div className="hidden md:block relative mb-8">
+              <div className="absolute top-[52px] left-[10%] right-[10%] h-px" style={{ background: "linear-gradient(90deg, #00d4ff40, #7c3aed40, #0099cc40)" }} />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
               {processSteps.map((step, i) => {
-                const Icon = step.icon;
+                const accentMap = ["#00d4ff", "#4db8ff", "#7c3aed", "#0099cc", "#00d4ff"];
+                const accent = accentMap[i];
                 return (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="relative bg-white border border-primary/20 hover:border-primary p-6 transition-all duration-300 group"
+                    className="group flex flex-col items-center text-center"
                   >
-                    <div className="absolute top-4 right-4 text-5xl font-bold text-gray-100 select-none leading-none">
-                      0{i + 1}
-                    </div>
-                    <div className="w-10 h-10 bg-white border border-primary/20 flex items-center justify-center text-secondary mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-5 h-5" />
+                    <div className="relative mb-6">
+                      <div className="absolute -inset-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" style={{ background: `${accent}18` }} />
+                      <div className="relative w-[88px] h-[88px] rounded-full flex items-center justify-center border-2 transition-all duration-300 group-hover:scale-105"
+                        style={{ background: `radial-gradient(circle at 30% 30%, ${accent}20, ${accent}08)`, borderColor: `${accent}40` }}>
+                        <span className="text-2xl font-black"
+                          style={{ backgroundImage: `linear-gradient(135deg, ${accent}, ${accent}88)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                      </div>
                     </div>
                     <h3 className="text-sm font-bold text-navy mb-2">{step.title}</h3>
                     <p className="text-gray-500 font-light text-xs leading-relaxed">{step.desc}</p>
@@ -377,9 +369,10 @@ export default function SoftwareDevelopmentPage() {
                 <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
                   Why Businesses Choose Sparkle Media
                 </h2>
-                <div className="space-y-5">
+                <div className="space-y-4">
                   {whySparkle.map((item, i) => {
-                    const Icon = item.icon;
+                    const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc", "#7c3aed"];
+                    const accent = accentMap[i % accentMap.length];
                     return (
                       <motion.div
                         key={i}
@@ -387,13 +380,11 @@ export default function SoftwareDevelopmentPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.08 }}
-                        className="flex items-start gap-4"
+                        className="flex items-start gap-4 group"
                       >
-                        <div className="w-10 h-10 bg-white border border-primary/20 flex items-center justify-center text-secondary flex-shrink-0">
-                          <Icon className="w-5 h-5" />
-                        </div>
+                        <span className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5" style={{ background: accent }} />
                         <div>
-                          <p className="font-bold text-navy text-sm mb-1">{item.title}</p>
+                          <p className="font-bold text-navy text-sm mb-0.5">{item.title}</p>
                           <p className="text-gray-500 font-light text-sm leading-relaxed">{item.desc}</p>
                         </div>
                       </motion.div>

@@ -3,27 +3,15 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import {
-  MessageSquare,
-  Mail,
-  Zap,
-  Users,
-  RefreshCw,
-  Bell,
-  CheckCircle2,
-  ArrowRight,
-  Database,
-  GitBranch,
-  BarChart3,
-} from "lucide-react";
+import { ArrowRight, MessageSquare, Mail } from "lucide-react";
 
 const whatsappServices = [
-  { icon: Zap, text: "Automated lead follow-ups" },
-  { icon: RefreshCw, text: "Abandoned enquiry recovery" },
-  { icon: Users, text: "Broadcast campaigns" },
-  { icon: RefreshCw, text: "Customer re-engagement flows" },
-  { icon: Bell, text: "Appointment reminders & confirmations" },
-  { icon: MessageSquare, text: "Real-time customer communication" },
+  { text: "Automated lead follow-ups" },
+  { text: "Abandoned enquiry recovery" },
+  { text: "Broadcast campaigns" },
+  { text: "Customer re-engagement flows" },
+  { text: "Appointment reminders & confirmations" },
+  { text: "Real-time customer communication" },
 ];
 
 const emailServices = [
@@ -36,19 +24,19 @@ const emailServices = [
 ];
 
 const emailDesign = [
-  { icon: Zap, text: "Behavioral triggers" },
-  { icon: GitBranch, text: "Segmentation logic" },
-  { icon: CheckCircle2, text: "Conversion-focused copywriting" },
-  { icon: BarChart3, text: "Performance tracking" },
+  { text: "Behavioral triggers" },
+  { text: "Segmentation logic" },
+  { text: "Conversion-focused copywriting" },
+  { text: "Performance tracking" },
 ];
 
 const deliverables = [
-  { icon: Database, title: "CRM Setup & Integration" },
-  { icon: Users, title: "Lead Management Systems" },
-  { icon: MessageSquare, title: "WhatsApp API Automation Flows" },
-  { icon: Mail, title: "Email Marketing Funnels" },
-  { icon: GitBranch, title: "Customer Journey Mapping" },
-  { icon: BarChart3, title: "Conversion Tracking & Optimization" },
+  { title: "CRM Setup & Integration" },
+  { title: "Lead Management Systems" },
+  { title: "WhatsApp API Automation Flows" },
+  { title: "Email Marketing Funnels" },
+  { title: "Customer Journey Mapping" },
+  { title: "Conversion Tracking & Optimization" },
 ];
 
 export default function EmailMarketingPage() {
@@ -158,15 +146,17 @@ export default function EmailMarketingPage() {
                 </p>
               </motion.div>
 
+              {/* WhatsApp feature rows — no icon squares */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3"
               >
                 {whatsappServices.map((item, i) => {
-                  const Icon = item.icon;
+                  const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc", "#7c3aed", "#00d4ff"];
+                  const accent = accentMap[i % accentMap.length];
                   return (
                     <motion.div
                       key={i}
@@ -174,9 +164,10 @@ export default function EmailMarketingPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.1 + i * 0.07 }}
-                      className="flex items-center gap-3 p-4 bg-white border border-primary/20 hover:border-primary shadow-md transition-colors"
+                      className="flex items-center gap-3 p-4 bg-white transition-colors group"
+                      style={{ border: "1px solid rgba(0,212,255,0.18)" }}
                     >
-                      <Icon className="w-5 h-5 text-secondary flex-shrink-0" />
+                      <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: accent }} />
                       <span className="text-gray-650 text-sm font-light">{item.text}</span>
                     </motion.div>
                   );
@@ -211,7 +202,7 @@ export default function EmailMarketingPage() {
                 <div className="grid grid-cols-2 gap-3 mb-8">
                   {emailServices.map((service, i) => (
                     <div key={i} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-secondary" />
                       <span className="text-gray-600 text-sm font-light">{service}</span>
                     </div>
                   ))}
@@ -220,12 +211,13 @@ export default function EmailMarketingPage() {
                 <p className="text-sm font-bold text-navy uppercase tracking-widest mb-4">
                   Every email is designed with:
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {emailDesign.map((item, i) => {
-                    const Icon = item.icon;
+                    const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
+                    const accent = accentMap[i % accentMap.length];
                     return (
-                      <div key={i} className="flex items-center gap-3 p-3 bg-white border border-primary/20 shadow-sm">
-                        <Icon className="w-5 h-5 text-secondary flex-shrink-0" />
+                      <div key={i} className="flex items-center gap-3 p-3 bg-white" style={{ border: `1px solid ${accent}25` }}>
+                        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: accent }} />
                         <span className="text-navy font-semibold text-sm">{item.text}</span>
                       </div>
                     );
@@ -284,23 +276,33 @@ export default function EmailMarketingPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-navy">What We Build for You</h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Bento-style numbered deliverable cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {deliverables.map((item, i) => {
-                const Icon = item.icon;
+                const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc", "#7c3aed", "#4db8ff"];
+                const accent = accentMap[i % accentMap.length];
+                const nums = ["01", "02", "03", "04", "05", "06"];
                 return (
                   <motion.div
                     key={item.title}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="group bg-white border border-primary/20 hover:border-primary p-8 hover:shadow-xl hover:shadow-sky-100/60 transition-all duration-300 relative overflow-hidden"
+                    transition={{ delay: i * 0.07 }}
+                    className="group relative bg-white p-8 overflow-hidden transition-all duration-300"
+                    style={{ border: "1px solid rgba(0,212,255,0.18)" }}
+                    whileHover={{ y: -4 }}
                   >
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                    <div className="w-12 h-12 bg-white border border-primary/20 flex items-center justify-center text-secondary mb-5 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-6 h-6" />
+                    <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(180deg, ${accent}60, transparent)` }} />
+                    <div className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity" style={{ background: `linear-gradient(180deg, ${accent}, ${accent}44)` }} />
+                    <div className="absolute right-4 top-3 text-[60px] font-black leading-none select-none pointer-events-none"
+                      style={{ backgroundImage: `linear-gradient(135deg, ${accent}18, transparent)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                      {nums[i]}
                     </div>
-                    <h3 className="text-lg font-bold text-navy">{item.title}</h3>
+                    <div className="relative z-10 pl-2">
+                      <span className="text-xs font-black mb-3 block" style={{ color: `${accent}80` }}>{nums[i]}</span>
+                      <h3 className="text-lg font-bold text-navy">{item.title}</h3>
+                    </div>
                   </motion.div>
                 );
               })}

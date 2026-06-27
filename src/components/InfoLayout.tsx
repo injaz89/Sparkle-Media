@@ -25,13 +25,13 @@ export function InfoLayout({ category, title, subtitle, description, features }:
       <div
         className="absolute top-1/4 right-0 w-[600px] h-[600px] pointer-events-none"
         style={{
-          background: "radial-gradient(circle at 100% 30%, rgba(0,212,255,0.07) 0%, transparent 60%)",
+          background: "radial-gradient(circle at 100% 30%, rgba(0,212,255,0.08) 0%, transparent 60%)",
         }}
       />
       <div
         className="absolute bottom-0 left-0 w-[400px] h-[400px] pointer-events-none"
         style={{
-          background: "radial-gradient(circle at 0% 100%, rgba(124,58,237,0.06) 0%, transparent 60%)",
+          background: "radial-gradient(circle at 0% 100%, rgba(124,58,237,0.07) 0%, transparent 60%)",
         }}
       />
 
@@ -87,51 +87,79 @@ export function InfoLayout({ category, title, subtitle, description, features }:
         {/* Feature cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {features.map((feature, i) => {
-            const Icon = feature.icon;
+            const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
+            const accent = accentMap[i % accentMap.length];
+            const numStr = String(i + 1).padStart(2, "0");
             return (
               <motion.div
                 key={i}
-                className="group relative p-10 bg-white transition-all duration-300"
-                style={{ border: "1px solid rgba(0,212,255,0.2)" }}
+                className="group relative p-10 bg-white overflow-hidden transition-all duration-300"
+                style={{ border: "1px solid rgba(0,212,255,0.18)" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 + i * 0.1 }}
-                whileHover={{ y: -4, borderColor: "rgba(0,212,255,0.45)" }}
+                whileHover={{ y: -4, borderColor: `${accent}40` }}
               >
-                {/* Top accent */}
+                {/* Left accent bar */}
                 <div
-                  className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: "linear-gradient(90deg, #00d4ff, #7c3aed)" }}
+                  className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300"
+                  style={{ background: `linear-gradient(180deg, ${accent}60, transparent)` }}
+                />
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: `linear-gradient(180deg, ${accent}, ${accent}44)` }}
                 />
 
+                {/* Big bg watermark number */}
                 <div
-                  className="w-14 h-14 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform"
-                  style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)" }}
+                  className="absolute right-4 bottom-2 text-[100px] font-black leading-none select-none pointer-events-none"
+                  style={{
+                    backgroundImage: `linear-gradient(135deg, ${accent}15, transparent)`,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
                 >
-                  <Icon className="w-6 h-6" />
+                  {numStr}
                 </div>
-                <h3
-                  className="text-2xl mb-4"
-                  style={{ color: "#060f2e", fontWeight: 300, letterSpacing: "-0.02em" }}
-                >
-                  {feature.title}
-                </h3>
-                <p className="font-light leading-relaxed mb-6" style={{ color: "#64748b" }}>
-                  {feature.desc}
-                </p>
-                {feature.link && feature.linkText && (
-                  <a
-                    href={feature.link}
-                    className="inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-70"
-                    style={{ color: "#00d4ff" }}
+
+                {/* Hover bg sweep */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{ background: `linear-gradient(135deg, ${accent}04 0%, transparent 60%)` }}
+                />
+
+                <div className="relative z-10 pl-2">
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-xs font-black" style={{ color: `${accent}80` }}>
+                      {numStr}
+                    </span>
+                    <div className="flex-1 h-px max-w-[40px]" style={{ background: `${accent}30` }} />
+                  </div>
+
+                  <h3
+                    className="text-2xl mb-4"
+                    style={{ color: "#060f2e", fontWeight: 300, letterSpacing: "-0.02em" }}
                   >
-                    {feature.linkText}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </a>
-                )}
+                    {feature.title}
+                  </h3>
+                  <p className="font-light leading-relaxed mb-6 text-base" style={{ color: "#64748b" }}>
+                    {feature.desc}
+                  </p>
+                  {feature.link && feature.linkText && (
+                    <a
+                      href={feature.link}
+                      className="inline-flex items-center gap-2 text-sm font-semibold transition-all hover:translate-x-1"
+                      style={{ color: accent }}
+                    >
+                      {feature.linkText}
+                      <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
               </motion.div>
             );
           })}
