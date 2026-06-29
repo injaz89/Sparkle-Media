@@ -5,7 +5,6 @@ import Image from "next/image";
 const footerLinks = {
   Services: [
     { label: "Digital Lab", href: "/services/digital-lab/content-marketing" },
-    { label: "Creative Lab", href: "/services/creative-lab/photography" },
     { label: "Tech Lab", href: "/services/tech-lab/web-development" },
   ],
   Company: [
