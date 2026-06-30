@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { CheckCircle2, Users, Target, PenTool, TrendingUp, BarChart3, Globe, Briefcase, Share2, Play } from "lucide-react";
+import { ServiceSidebar, ServiceMobileNav } from "@/components/ServiceNavigation";
 
 const stats = [
   { value: "71%", label: "of consumers discover products and brands through social media" },
@@ -105,14 +106,23 @@ export default function PaidMediaPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-bg min-h-screen">
+      <main className="bg-bg min-h-screen relative overflow-hidden">
+        {/* Background glow */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[120px] pointer-events-none opacity-60" />
 
-        {/* ── HERO ── */}
-        <section className="pt-32 pb-20 relative overflow-hidden bg-bg">
-          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/20 blur-[120px] pointer-events-none opacity-60" />
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
+        <div className="max-w-7xl mx-auto px-6 pt-32 pb-24 relative z-10">
+          
+          {/* Mobile Service Navigation */}
+          <ServiceMobileNav />
+
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-8 items-start">
+            
+            {/* Left Content Area (Hero + Stats + Content Sections) */}
+            <div className="lg:col-span-3 space-y-12">
+
+              {/* ── HERO ── */}
+              <div className="space-y-6">
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -152,7 +162,7 @@ export default function PaidMediaPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="flex flex-wrap gap-4"
+                  className="flex flex-wrap gap-4 mb-8"
                 >
                   <a
                     href="https://calendly.com/sparklemediacreatives/30min"
@@ -172,309 +182,295 @@ export default function PaidMediaPage() {
                     Start a Campaign
                   </a>
                 </motion.div>
+
+                {/* Hero Stats */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.25 }}
+                  className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-primary/10"
+                >
+                  {stats.map((stat, i) => (
+                    <div key={i} className="flex flex-col p-5 bg-white border border-primary/20 hover:border-primary transition-colors shadow-md">
+                      <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-2">
+                        {stat.value}
+                      </span>
+                      <p className="text-gray-650 font-light text-xs leading-relaxed">{stat.label}</p>
+                    </div>
+                  ))}
+                </motion.div>
               </div>
 
-              {/* Why Invest stats */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.25 }}
-                className="space-y-4"
-              >
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6">Why Invest in Paid Media?</p>
-                {stats.map((stat, i) => (
-                  <div key={i} className="flex items-start gap-5 p-5 bg-white border border-primary/20 hover:border-primary transition-colors shadow-md">
-                    <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary flex-shrink-0 min-w-[80px]">
-                      {stat.value}
-                    </span>
-                    <p className="text-gray-600 font-light text-sm leading-relaxed">{stat.label}</p>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── WHAT WE DO ── */}
-        <section className="py-20 bg-bg border-t border-primary/20 relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.04] pointer-events-none"
-            style={{
-              backgroundImage: "linear-gradient(#0A1128 1px, transparent 1px), linear-gradient(90deg, #0A1128 1px, transparent 1px)",
-              backgroundSize: "50px 50px",
-            }}
-          />
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
-                <span className="text-xs font-bold tracking-widest text-secondary uppercase mb-4 block">
-                  Our Mission
-                </span>
-                <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
-                  Performance Marketing That Turns Ad Spend Into Revenue
-                </h2>
-                <div className="border-l-2 border-secondary pl-6 space-y-4">
-                  <p className="text-gray-700 font-light leading-relaxed">
-                    Most businesses don&apos;t need more traffic.{" "}
-                    <span className="text-navy font-semibold">They need more customers.</span>
-                  </p>
-                  <p className="text-gray-700 font-light leading-relaxed">
-                    At Sparkle Media, we build data-driven ad campaigns that connect your business
-                    with the right audience at the right time, transforming advertising budgets into
-                    measurable business growth.
-                  </p>
-                  <p className="text-gray-700 font-light leading-relaxed">
-                    From lead generation and e-commerce sales to event registrations and brand
-                    awareness, our paid media specialists create campaigns designed to maximize
-                    return on investment and deliver results that matter.
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Results */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-              >
-                <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-6">
-                  Proven Results — Recent Campaign Highlights
-                </p>
-                <div className="space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.12)" }}>
-                  {results.map((r, i) => (
-                    <motion.div
-                      key={i}
-                      className="group flex items-center justify-between py-5 relative overflow-hidden"
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.15 + i * 0.08 }}
-                    >
-                      {/* Hover sweep */}
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                        style={{ background: "linear-gradient(90deg, rgba(0,212,255,0.06) 0%, transparent 60%)" }} />
-                      {/* Left accent */}
-                      <div className="absolute left-0 top-0 bottom-0 w-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{ background: "linear-gradient(180deg, #00d4ff, #7c3aed)" }} />
-                      <div className="pl-3">
-                        <p className="text-navy font-semibold">{r.client}</p>
-                        <p className="text-xs text-gray-500 font-light">{r.category}</p>
-                      </div>
-                      <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary flex-shrink-0 ml-4">
-                        {r.result}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-                <p className="text-gray-600 text-xs font-light mt-4 italic">
-                  These results were built through audience research, strategic campaign planning,
-                  compelling creatives, and continuous optimization.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── WHY PERFORMANCE MARKETING MATTERS ── */}
-        <section className="py-20 bg-bg border-t border-primary/20">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-3xl mx-auto text-center">
-              <motion.span
-                className="text-xs font-bold text-secondary uppercase tracking-widest"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-              >
-                Why It Matters
-              </motion.span>
-              <motion.h2
-                className="text-4xl md:text-5xl font-bold text-navy mt-3 mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                Why Performance Marketing Matters
-              </motion.h2>
-              <motion.div
-                className="space-y-5 text-left"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-              >
-                <p className="text-gray-700 font-light leading-relaxed text-lg">
-                  Today&apos;s consumers spend hours every day across social media platforms, search
-                  engines, websites, and mobile applications. Performance marketing allows your
-                  business to reach highly targeted audiences based on their interests, behaviors,
-                  demographics, purchase intent, and online activity.
-                </p>
-                <p className="text-gray-700 font-light leading-relaxed text-lg">
-                  Instead of waiting for customers to find you, we place your brand directly in
-                  front of the people most likely to convert. Whether your objective is lead
-                  generation, e-commerce sales, event registrations, app downloads, or brand
-                  awareness, paid media remains one of the fastest ways to scale growth when
-                  executed correctly.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── OUR APPROACH ── */}
-        <section className="py-24 bg-bg border-t border-primary/20">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <span className="text-xs font-bold text-secondary uppercase tracking-widest">How We Work</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Approach</h2>
-            </div>
-            {/* Numbered editorial rows — no icon boxes */}
-            <div className="max-w-4xl mx-auto">
-              <div className="relative">
-                {/* Dashed vertical line */}
+              {/* ── WHAT WE DO ── */}
+              <section className="py-8 bg-bg border-t border-primary/20 relative overflow-hidden">
                 <div
-                  className="absolute left-[19px] top-8 bottom-8 w-px hidden sm:block"
+                  className="absolute inset-0 opacity-[0.04] pointer-events-none"
                   style={{
-                    backgroundImage: "repeating-linear-gradient(180deg, rgba(0,212,255,0.3) 0px, rgba(0,212,255,0.3) 6px, transparent 6px, transparent 12px)",
+                    backgroundImage: "linear-gradient(#0A1128 1px, transparent 1px), linear-gradient(90deg, #0A1128 1px, transparent 1px)",
+                    backgroundSize: "50px 50px",
                   }}
                 />
-                <div className="space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.1)" }}>
-                  {approaches.map((item, i) => {
-                    const accentMap = ["#00d4ff", "#4db8ff", "#7c3aed", "#0099cc"];
-                    const accent = accentMap[i % accentMap.length];
-                    return (
-                      <motion.div
-                        key={item.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.1 }}
-                        className="group relative flex gap-8 py-8 sm:pl-14"
-                      >
-                        {/* Circle step number */}
-                        <div
-                          className="hidden sm:flex absolute left-0 top-8 w-10 h-10 rounded-full items-center justify-center flex-shrink-0 border-2 transition-all duration-300 group-hover:scale-110 bg-bg"
-                          style={{
-                            borderColor: `${accent}50`,
-                            background: `radial-gradient(circle, ${accent}14, transparent)`,
-                          }}
+                <div className="relative z-10">
+                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
+                    <motion.div
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      <span className="text-xs font-bold tracking-widest text-secondary uppercase mb-4 block">
+                        Our Mission
+                      </span>
+                      <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+                        Performance Marketing That Turns Ad Spend Into Revenue
+                      </h2>
+                      <div className="border-l-2 border-secondary pl-6 space-y-4">
+                        <p className="text-gray-700 font-light leading-relaxed">
+                          Most businesses don&apos;t need more traffic.{" "}
+                          <span className="text-navy font-semibold">They need more customers.</span>
+                        </p>
+                        <p className="text-gray-700 font-light leading-relaxed">
+                          At Sparkle Media, we build data-driven ad campaigns that connect your business
+                          with the right audience at the right time, transforming advertising budgets into
+                          measurable business growth.
+                        </p>
+                        <p className="text-gray-700 font-light leading-relaxed">
+                          Whether your goal is to generate online sales, capture leads, download apps,
+                          or build brand awareness, our performance marketing specialists optimize every
+                          campaign for the outcomes that drive your success.
+                        </p>
+                      </div>
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 }}
+                      className="bg-secondary text-white p-10 border border-secondary shadow-xl shadow-sky-200/50 relative overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 w-48 h-48 bg-primary blur-[80px] opacity-40 pointer-events-none" />
+                      <div className="relative z-10">
+                        <Users className="w-12 h-12 text-white mb-6 animate-pulse" />
+                        <h3 className="text-2xl font-bold text-white mb-4">
+                          Optimizing for Business Growth
+                        </h3>
+                        <p className="text-white/90 font-light leading-relaxed mb-6">
+                          Many agencies focus on impressions, clicks, or likes. We believe marketing
+                          campaigns should deliver tangible revenue.
+                        </p>
+                        <p className="text-white/90 font-light leading-relaxed mb-8">
+                          We continuously test, refine, and optimize targeting, bidding, creative
+                          assets, and landing pages to lower your acquisition costs and maximize your
+                          advertising budget.
+                        </p>
+                        <a
+                          href="https://calendly.com/sparklemediacreatives/30min"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold hover:bg-bg hover:text-navy transition-colors"
                         >
-                          <span
-                            className="text-xs font-black"
-                            style={{
-                              backgroundImage: `linear-gradient(135deg, ${accent}, ${accent}88)`,
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                              backgroundClip: "text",
-                            }}
-                          >
-                            {String(i + 1).padStart(2, "0")}
-                          </span>
-                        </div>
-                        {/* Content */}
-                        <div className="flex-1 relative overflow-hidden">
+                          Book Strategy Call
+                        </a>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+              </section>
+
+              {/* ── CLIENT CASE STUDIES ── */}
+              <section className="py-8 bg-bg border-t border-primary/20">
+                <div>
+                  <div className="text-center mb-16">
+                    <span className="text-xs font-bold text-secondary uppercase tracking-widest">Case Studies</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Results We Have Generated</h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    {results.map((item, i) => {
+                      const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc", "#7c3aed"];
+                      const accent = accentMap[i % accentMap.length];
+                      return (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: i * 0.08 }}
+                          className="group relative bg-white p-8 border border-primary/20 hover:border-primary hover:shadow-lg transition-all"
+                        >
+                          <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(180deg, ${accent}60, transparent)` }} />
+                          <span className="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-2">{item.category}</span>
+                          <h3 className="text-xl font-bold text-navy mb-4">{item.client}</h3>
+                          <div className="text-3xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary group-hover:scale-105 transition-transform origin-left">
+                            {item.result}
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </section>
+
+              {/* ── OUR APPROACH ── */}
+              <section className="py-8 bg-bg border-t border-primary/20">
+                <div>
+                  <div className="text-center mb-16">
+                    <span className="text-xs font-bold text-secondary uppercase tracking-widest">How We Work</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Approach</h2>
+                  </div>
+                  {/* Numbered editorial rows — no icon boxes */}
+                  <div className="max-w-4xl mx-auto">
+                    <div className="relative">
+                      {/* Dashed vertical line */}
+                      <div
+                        className="absolute left-[19px] top-8 bottom-8 w-px hidden sm:block"
+                        style={{
+                          backgroundImage: "repeating-linear-gradient(180deg, rgba(0,212,255,0.3) 0px, rgba(0,212,255,0.3) 6px, transparent 6px, transparent 12px)",
+                        }}
+                      />
+                      <div className="space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.1)" }}>
+                        {approaches.map((item, i) => {
+                          const accentMap = ["#00d4ff", "#4db8ff", "#7c3aed", "#0099cc"];
+                          const accent = accentMap[i % accentMap.length];
+                          return (
+                            <motion.div
+                              key={item.title}
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: i * 0.1 }}
+                              className="group relative flex gap-8 py-8 sm:pl-14"
+                            >
+                              {/* Circle step number */}
+                              <div
+                                className="hidden sm:flex absolute left-0 top-8 w-10 h-10 rounded-full items-center justify-center flex-shrink-0 border-2 transition-all duration-300 group-hover:scale-110 bg-bg"
+                                style={{
+                                  borderColor: `${accent}50`,
+                                  background: `radial-gradient(circle, ${accent}14, transparent)`,
+                                }}
+                              >
+                                <span
+                                  className="text-xs font-black"
+                                  style={{
+                                    backgroundImage: `linear-gradient(135deg, ${accent}, ${accent}88)`,
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                  }}
+                                >
+                                  {String(i + 1).padStart(2, "0")}
+                                </span>
+                              </div>
+                              {/* Content */}
+                              <div className="flex-1 relative overflow-hidden">
+                                <div
+                                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                                  style={{ background: `linear-gradient(90deg, ${accent}06 0%, transparent 60%)` }}
+                                />
+                                <span
+                                  className="sm:hidden inline-block text-xs font-black tracking-widest mb-2"
+                                  style={{ color: accent }}
+                                >
+                                  {String(i + 1).padStart(2, "0")}
+                                </span>
+                                <h3 className="text-2xl font-bold text-navy mb-3">{item.title}</h3>
+                                <p className="text-gray-650 font-light leading-relaxed">{item.desc}</p>
+                              </div>
+                            </motion.div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* ── PLATFORMS WE MANAGE ── */}
+              <section className="py-8 bg-bg border-t border-primary/20 relative overflow-hidden">
+                <div
+                  className="absolute inset-0 opacity-[0.04] pointer-events-none"
+                  style={{
+                    backgroundImage: "radial-gradient(circle at 30% 50%, #39bcfc 0%, transparent 60%)",
+                  }}
+                />
+                <div className="relative z-10">
+                  <div className="text-center mb-16">
+                    <span className="text-xs font-bold text-secondary uppercase tracking-widest">Where We Run Your Ads</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Platforms We Manage</h2>
+                  </div>
+                  {/* Editorial row layout — no icon boxes */}
+                  <div className="max-w-3xl mx-auto space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.12)" }}>
+                    {platforms.map((platform, i) => {
+                      const Icon = platform.icon;
+                      const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
+                      const accent = accentMap[i % accentMap.length];
+                      return (
+                        <motion.div
+                          key={platform.name}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: i * 0.08 }}
+                          className="group flex flex-col sm:flex-row items-start sm:items-center gap-6 py-7 relative overflow-hidden"
+                        >
+                          {/* Hover sweep */}
                           <div
                             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                            style={{ background: `linear-gradient(90deg, ${accent}06 0%, transparent 60%)` }}
+                            style={{ background: `linear-gradient(90deg, ${accent}08 0%, transparent 60%)` }}
                           />
-                          <span
-                            className="sm:hidden inline-block text-xs font-black tracking-widest mb-2"
+                          {/* Inline icon ─ no box */}
+                          <div
+                            className="flex-shrink-0 w-8 h-8 flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                             style={{ color: accent }}
                           >
-                            {String(i + 1).padStart(2, "0")}
-                          </span>
-                          <h3 className="text-2xl font-bold text-navy mb-3">{item.title}</h3>
-                          <p className="text-gray-500 font-light leading-relaxed">{item.desc}</p>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          {/* Divider line */}
+                          <div
+                            className="hidden sm:block flex-shrink-0 w-px h-8"
+                            style={{ background: `linear-gradient(180deg, transparent, ${accent}50, transparent)` }}
+                          />
+                          {/* Content */}
+                          <div className="flex-1 relative z-10">
+                            <h3 className="text-base font-bold text-navy mb-1">{platform.name}</h3>
+                            <p className="text-gray-500 font-light text-sm leading-relaxed">{platform.desc}</p>
+                          </div>
+                          {/* Arrow */}
+                          <div
+                            className="flex-shrink-0 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0"
+                            style={{ color: accent }}
+                          >
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
+              </section>
 
-        {/* ── PLATFORMS WE MANAGE ── */}
-        <section className="py-24 bg-bg border-t border-primary/20 relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.04] pointer-events-none"
-            style={{
-              backgroundImage: "radial-gradient(circle at 30% 50%, #39bcfc 0%, transparent 60%)",
-            }}
-          />
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
-              <span className="text-xs font-bold text-secondary uppercase tracking-widest">Where We Run Your Ads</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Platforms We Manage</h2>
             </div>
-            {/* Editorial row layout — no icon boxes */}
-            <div className="max-w-3xl mx-auto space-y-0 divide-y" style={{ borderColor: "rgba(0,212,255,0.12)" }}>
-              {platforms.map((platform, i) => {
-                const Icon = platform.icon;
-                const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
-                const accent = accentMap[i % accentMap.length];
-                return (
-                  <motion.div
-                    key={platform.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="group flex flex-col sm:flex-row items-start sm:items-center gap-6 py-7 relative overflow-hidden"
-                  >
-                    {/* Hover sweep */}
-                    <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                      style={{ background: `linear-gradient(90deg, ${accent}08 0%, transparent 60%)` }}
-                    />
-                    {/* Inline icon — no box */}
-                    <div
-                      className="flex-shrink-0 w-8 h-8 flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-                      style={{ color: accent }}
-                    >
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    {/* Divider line */}
-                    <div
-                      className="hidden sm:block flex-shrink-0 w-px h-8"
-                      style={{ background: `linear-gradient(180deg, transparent, ${accent}50, transparent)` }}
-                    />
-                    {/* Content */}
-                    <div className="flex-1 relative z-10">
-                      <h3 className="text-base font-bold text-navy mb-1">{platform.name}</h3>
-                      <p className="text-gray-500 font-light text-sm leading-relaxed">{platform.desc}</p>
-                    </div>
-                    {/* Arrow */}
-                    <div
-                      className="flex-shrink-0 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0"
-                      style={{ color: accent }}
-                    >
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
 
-        {/* ── WHAT WE CAN DO FOR YOU ── */}
-        <section className="py-24 bg-bg border-t border-primary/20">
+            {/* Right Sticky Sidebar Area */}
+            <div className="lg:col-span-1 lg:sticky lg:top-32">
+              <ServiceSidebar />
+            </div>
+
+          </div>
+        </div>
+
+        {/* ── WHAT WE CAN DO FOR YOU (Moved Outside Grid) ── */}
+        <section className="py-12 bg-bg border-t border-primary/20">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col lg:flex-row gap-16 items-start">
-              <div className="lg:w-1/3 lg:sticky lg:top-32">
+            <div className="flex flex-col xl:flex-row gap-16 items-start">
+              <div className="xl:w-1/3 xl:sticky xl:top-32">
                 <span className="text-xs font-bold text-secondary uppercase tracking-widest">Full Service</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3 mb-6 leading-tight">
                   What We Can Do For You
                 </h2>
-                <p className="text-gray-700 font-light leading-relaxed mb-8">
+                <p className="text-gray-750 font-light leading-relaxed mb-8">
                   From simple awareness campaigns to complex conversion tracking, we handle every
                   aspect of your paid media ecosystem to ensure maximum return on ad spend.
                 </p>
@@ -488,7 +484,7 @@ export default function PaidMediaPage() {
                 </a>
               </div>
 
-              <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="xl:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {capabilities.map((cap, i) => (
                   <motion.div
                     key={cap}
@@ -507,10 +503,10 @@ export default function PaidMediaPage() {
           </div>
         </section>
 
-        {/* ── WHY SPARKLE MEDIA ── */}
-        <section className="py-24 bg-bg border-t border-primary/20">
+        {/* ── WHY SPARKLE MEDIA (Moved Outside Grid) ── */}
+        <section className="py-12 bg-bg border-t border-primary/20">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -524,7 +520,7 @@ export default function PaidMediaPage() {
                   <p className="text-xl font-semibold text-navy">We don&apos;t optimize for impressions.</p>
                   <p className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                     We optimize for outcomes.
-                  </p>
+                </p>
                 </div>
                 <p className="text-gray-750 font-light mt-6 mb-4">Our focus is on helping businesses:</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
@@ -561,7 +557,7 @@ export default function PaidMediaPage() {
                   <p className="text-white/90 font-light leading-relaxed mb-8">
                     Because at the end of the day, successful marketing isn&apos;t about spending more.
                     It&apos;s about generating more from every dollar invested.
-                  </p>
+                    </p>
                   <a
                     href="https://calendly.com/sparklemediacreatives/30min"
                     target="_blank"

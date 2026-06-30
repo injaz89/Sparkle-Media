@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { ArrowRight, Cpu } from "lucide-react";
+import { ServiceSidebar, ServiceMobileNav } from "@/components/ServiceNavigation";
 
 const whyInvest = [
   {
@@ -127,189 +128,178 @@ export default function SoftwareDevelopmentPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-bg min-h-screen">
+      <main className="bg-bg min-h-screen relative overflow-hidden">
+        {/* Background glow */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[120px] pointer-events-none opacity-60" />
 
-        {/* ── HERO ── */}
-        <section className="pt-32 pb-20 relative overflow-hidden bg-bg">
-          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/20 blur-[120px] pointer-events-none opacity-60" />
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="max-w-3xl">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-secondary font-bold tracking-widest uppercase mb-4 text-sm"
-              >
-                Tech Lab
-              </motion.p>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-4 leading-[1.05]"
-              >
-                Software Development{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                  & Implementation
-                </span>
-              </motion.h1>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
-                className="text-2xl font-bold text-navy mb-6"
-              >
-                Transform Ideas into Scalable Digital Solutions
-              </motion.h2>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="border-l-4 border-primary pl-6 mb-8 space-y-3"
-              >
-                <p className="text-lg text-gray-600 font-light leading-relaxed">
-                  In today&apos;s digital economy, businesses that leverage technology effectively grow
-                  faster, operate more efficiently, and create better customer experiences.
-                </p>
-                <p className="text-lg text-gray-600 font-light leading-relaxed">
-                  At Sparkle Media, we design, develop, and implement custom software solutions
-                  that solve real business challenges. Our team combines technical expertise,
-                  strategic thinking, and agile development methodologies to deliver software
-                  solutions that align with your business goals, budget, and timeline.
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="flex flex-wrap gap-4"
-              >
-                <a
-                  href="https://calendly.com/sparklemediacreatives/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold hover:bg-primary transition-colors"
+        <div className="max-w-7xl mx-auto px-6 pt-32 pb-24 relative z-10">
+          
+          {/* Mobile Service Navigation */}
+          <ServiceMobileNav />
+
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-8 items-start">
+            
+            {/* Left Content Area (Hero + Content Sections) */}
+            <div className="lg:col-span-3 space-y-12">
+
+              {/* ── HERO ── */}
+              <div className="space-y-6">
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-secondary font-bold tracking-widest uppercase mb-4 text-sm"
                 >
-                  Start Your Project
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-white transition-all bg-white"
+                  Tech Lab
+                </motion.p>
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-4 leading-[1.05]"
                 >
-                  Get a Quote
-                </a>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── WHY INVEST ── */}
-        <section className="py-24 bg-bg">
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <span className="text-xs font-bold text-secondary uppercase tracking-widest">The Case for Custom Software</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Why Invest in Custom Software Development?</h2>
-            </motion.div>
-            {/* Accent stat rows */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0 max-w-4xl mx-auto" style={{ borderColor: "rgba(0,212,255,0.12)" }}>
-              {whyInvest.map((item, i) => {
-                const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
-                const accent = accentMap[i % accentMap.length];
-                const nums = ["01", "02", "03", "04"];
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.09 }}
-                    className="group relative flex items-start gap-6 p-8 overflow-hidden"
+                  Software Development{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                    & Implementation
+                  </span>
+                </motion.h1>
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 }}
+                  className="text-2xl font-bold text-navy mb-6"
+                >
+                  Transform Ideas into Scalable Digital Solutions
+                </motion.h2>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="border-l-4 border-primary pl-6 mb-8 space-y-3"
+                >
+                  <p className="text-lg text-gray-650 font-light leading-relaxed">
+                    In today&apos;s digital economy, businesses that leverage technology effectively grow
+                    faster, operate more efficiently, and create better customer experiences.
+                  </p>
+                  <p className="text-lg text-gray-650 font-light leading-relaxed">
+                    At Sparkle Media, we design, develop, and implement custom software solutions
+                    that solve real business challenges. Our team combines technical expertise,
+                    strategic thinking, and agile development methodologies to deliver software
+                    solutions that align with your business goals, budget, and timeline.
+                  </p>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="flex flex-wrap gap-4 mb-8"
+                >
+                  <a
+                    href="https://calendly.com/sparklemediacreatives/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold hover:bg-primary transition-colors"
                   >
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                      style={{ background: `linear-gradient(135deg, ${accent}06 0%, transparent 60%)` }} />
-                    <div className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{ background: `linear-gradient(180deg, ${accent}, ${accent}44)` }} />
-                    <div className="flex-shrink-0">
-                      <p className="text-4xl font-black leading-none" style={{ backgroundImage: `linear-gradient(135deg, ${accent}, ${accent}88)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                        {nums[i]}
-                      </p>
-                    </div>
-                    <div className="relative z-10">
-                      <h3 className="text-lg font-bold text-navy mb-2 leading-snug">{item.title}</h3>
-                      <p className="text-gray-500 font-light text-sm leading-relaxed">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ── SERVICES ── */}
-        <section className="py-24 bg-bg border-t border-primary/20 relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.03] pointer-events-none"
-            style={{
-              backgroundImage: "linear-gradient(#0A1128 1px, transparent 1px), linear-gradient(90deg, #0A1128 1px, transparent 1px)",
-              backgroundSize: "60px 60px",
-            }}
-          />
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-xs font-bold text-secondary uppercase tracking-widest">Full-Spectrum Solutions</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Our Software Development Services</h2>
-            </motion.div>
-            <div className="space-y-5">
-              {devServices.map((service, i) => {
-                const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc", "#7c3aed", "#00d4ff"];
-                const accent = accentMap[i % accentMap.length];
-                const nums = ["01", "02", "03", "04", "05", "06"];
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.06 }}
-                    className="group relative bg-white p-8 md:p-10 overflow-hidden transition-all duration-300 flex flex-col md:flex-row gap-10"
-                    style={{ border: "1px solid rgba(0,212,255,0.18)" }}
-                    whileHover={{ borderColor: `${accent}50` }}
+                    Start Your Project
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-8 py-4 border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-white transition-all bg-white"
                   >
-                    {/* Left accent */}
-                    <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(180deg, ${accent}60, transparent)` }} />
-                    <div className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity" style={{ background: `linear-gradient(180deg, ${accent}, ${accent}44)` }} />
-                    <div className="md:w-1/3 pl-2">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-xs font-black" style={{ color: `${accent}80` }}>{nums[i]}</span>
-                        <div className="h-px w-8" style={{ background: `${accent}40` }} />
-                      </div>
-                      <h3 className="text-xl font-bold text-navy mb-3">{service.title}</h3>
-                      <p className="text-gray-500 font-light text-sm leading-relaxed">{service.desc}</p>
-                    </div>
-                    <div className="md:w-2/3">
-                      <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4">
-                        {service.points.map((pt, j) => (
-                          <span key={j} className="flex items-center gap-1.5 text-sm font-light text-gray-600">
-                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: accent }} />{pt}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="text-sm italic border-l-2 pl-4 font-light" style={{ color: accent, borderColor: `${accent}60` }}>{service.note}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+                    Get a Quote
+                  </a>
+                </motion.div>
+              </div>
 
-        {/* ── PROCESS ── */}
-        <section className="py-24 bg-bg border-t border-primary/20">
+              {/* ── WHY INVEST ── */}
+              <section className="py-8 border-t border-primary/20">
+                <div>
+                  <div className="text-center mb-16">
+                    <span className="text-xs font-bold text-secondary uppercase tracking-widest">Digital Acceleration</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Why Invest in Custom Software?</h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {whyInvest.map((item, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.08 }}
+                        className="p-8 bg-white border border-primary/20 hover:border-primary transition-all relative overflow-hidden group shadow-sm"
+                      >
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-secondary" />
+                        <h3 className="text-lg font-bold text-navy mb-3 leading-snug group-hover:text-primary transition-colors">{item.title}</h3>
+                        <p className="text-gray-500 font-light text-sm leading-relaxed">{item.desc}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* ── SERVICES ── */}
+              <section className="py-8 border-t border-primary/20">
+                <div>
+                  <div className="text-center mb-16">
+                    <span className="text-xs font-bold text-secondary uppercase tracking-widest">Our Capabilities</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Development &amp; Implementation Services</h2>
+                  </div>
+
+                  <div className="space-y-12">
+                    {devServices.map((service, i) => {
+                      const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc", "#7c3aed", "#4db8ff"];
+                      const accent = accentMap[i % accentMap.length];
+                      return (
+                        <motion.div
+                          key={service.title}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.1 }}
+                          className="bg-white border border-primary/20 p-8 sm:p-12 relative overflow-hidden shadow-sm"
+                        >
+                          <div className="absolute left-0 top-0 bottom-0 w-1.5" style={{ background: `linear-gradient(180deg, ${accent}, transparent)` }} />
+                          
+                          <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                            <div className="xl:col-span-1">
+                              <h3 className="text-2xl font-bold text-navy mb-4">{service.title}</h3>
+                              <p className="text-gray-650 font-light text-sm leading-relaxed mb-6">{service.desc}</p>
+                            </div>
+
+                            <div className="xl:col-span-2">
+                              <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Core Deliverables &amp; Focus:</h4>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                                {service.points.map((pt, pIdx) => (
+                                  <div key={pIdx} className="flex items-center gap-3">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
+                                    <span className="text-gray-700 text-sm font-light">{pt}</span>
+                                  </div>
+                                ))}
+                              </div>
+                              <p className="text-sm italic border-l-2 pl-4 font-light" style={{ color: accent, borderColor: `${accent}60` }}>{service.note}</p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
+            {/* Right Sticky Sidebar Area */}
+            <div className="lg:col-span-1 lg:sticky lg:top-32">
+              <ServiceSidebar />
+            </div>
+
+          </div>
+        </div>
+
+        {/* ── PROCESS (Moved Outside Grid) ── */}
+        <section className="py-12 border-t border-primary/20 bg-bg">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               className="text-center mb-16"
@@ -324,7 +314,7 @@ export default function SoftwareDevelopmentPage() {
             <div className="hidden md:block relative mb-8">
               <div className="absolute top-[52px] left-[10%] right-[10%] h-px" style={{ background: "linear-gradient(90deg, #00d4ff40, #7c3aed40, #0099cc40)" }} />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-5 gap-6">
               {processSteps.map((step, i) => {
                 const accentMap = ["#00d4ff", "#4db8ff", "#7c3aed", "#0099cc", "#00d4ff"];
                 const accent = accentMap[i];
@@ -356,10 +346,10 @@ export default function SoftwareDevelopmentPage() {
           </div>
         </section>
 
-        {/* ── WHY SPARKLE MEDIA ── */}
-        <section className="py-24 bg-bg border-t border-primary/20">
+        {/* ── WHY SPARKLE MEDIA (Moved Outside Grid) ── */}
+        <section className="py-12 border-t border-primary/20 bg-bg">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -406,10 +396,10 @@ export default function SoftwareDevelopmentPage() {
                   <h3 className="text-2xl font-bold text-navy mb-4">
                     Build Technology That Drives Growth
                   </h3>
-                  <p className="text-gray-600 font-light leading-relaxed mb-4">
+                  <p className="text-gray-650 font-light leading-relaxed mb-4">
                     Technology should empower your business, not complicate it.
                   </p>
-                  <p className="text-gray-600 font-light leading-relaxed mb-8">
+                  <p className="text-gray-650 font-light leading-relaxed mb-8">
                     Whether you&apos;re launching a new product, modernizing legacy systems, or scaling
                     operations through automation, our team is ready to help bring your vision to life.
                   </p>

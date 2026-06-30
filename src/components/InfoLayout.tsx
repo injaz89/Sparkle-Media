@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ServiceSidebar, ServiceMobileNav } from "./ServiceNavigation";
 
 type Feature = {
   title: string;
@@ -36,133 +37,143 @@ export function InfoLayout({ category, title, subtitle, description, features }:
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
-          <div>
-            <motion.p
-              className="text-xs font-bold tracking-[0.18em] uppercase mb-5"
-              style={{ color: "#00d4ff" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              {category}
-            </motion.p>
-            <motion.h1
-              className="text-5xl md:text-6xl mb-8 leading-tight"
-              style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-            >
-              {title}
-            </motion.h1>
-            <motion.h3
-              className="text-2xl font-light leading-relaxed"
-              style={{ color: "#334155" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              {subtitle}
-            </motion.h3>
-          </div>
-          <motion.div
-            className="flex items-center"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            <p
-              className="text-xl font-light leading-relaxed pl-6"
-              style={{
-                color: "#64748b",
-                borderLeft: "3px solid #00d4ff",
-              }}
-            >
-              {description}
-            </p>
-          </motion.div>
-        </div>
+        
+        {/* Mobile Navigation */}
+        <ServiceMobileNav />
 
-        {/* Feature cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {features.map((feature, i) => {
-            const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
-            const accent = accentMap[i % accentMap.length];
-            const numStr = String(i + 1).padStart(2, "0");
-            return (
-              <motion.div
-                key={i}
-                className="group relative p-10 bg-white overflow-hidden transition-all duration-300"
-                style={{ border: "1px solid rgba(0,212,255,0.18)" }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 + i * 0.1 }}
-                whileHover={{ y: -4, borderColor: `${accent}40` }}
+        {/* Responsive Grid Layout containing Content and Sidebar */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-8">
+          {/* Main content column */}
+          <div className="lg:col-span-3 space-y-12">
+            
+            {/* Header (Hero) */}
+            <div className="space-y-6">
+              <motion.p
+                className="text-xs font-bold tracking-[0.18em] uppercase mb-4"
+                style={{ color: "#00d4ff" }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
               >
-                {/* Left accent bar */}
-                <div
-                  className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300"
-                  style={{ background: `linear-gradient(180deg, ${accent}60, transparent)` }}
-                />
-                <div
-                  className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: `linear-gradient(180deg, ${accent}, ${accent}44)` }}
-                />
-
-                {/* Big bg watermark number */}
-                <div
-                  className="absolute right-4 bottom-2 text-[100px] font-black leading-none select-none pointer-events-none"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, ${accent}15, transparent)`,
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >
-                  {numStr}
-                </div>
-
-                {/* Hover bg sweep */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{ background: `linear-gradient(135deg, ${accent}04 0%, transparent 60%)` }}
-                />
-
-                <div className="relative z-10 pl-2">
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="text-xs font-black" style={{ color: `${accent}80` }}>
-                      {numStr}
-                    </span>
-                    <div className="flex-1 h-px max-w-[40px]" style={{ background: `${accent}30` }} />
-                  </div>
-
-                  <h3
-                    className="text-2xl mb-4"
-                    style={{ color: "#060f2e", fontWeight: 300, letterSpacing: "-0.02em" }}
-                  >
-                    {feature.title}
-                  </h3>
-                  <p className="font-light leading-relaxed mb-6 text-base" style={{ color: "#64748b" }}>
-                    {feature.desc}
-                  </p>
-                  {feature.link && feature.linkText && (
-                    <a
-                      href={feature.link}
-                      className="inline-flex items-center gap-2 text-sm font-semibold transition-all hover:translate-x-1"
-                      style={{ color: accent }}
-                    >
-                      {feature.linkText}
-                      <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </a>
-                  )}
-                </div>
+                {category}
+              </motion.p>
+              <motion.h1
+                className="text-5xl md:text-6xl mb-6 leading-[1.1]"
+                style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+              >
+                {title}
+              </motion.h1>
+              <motion.h3
+                className="text-2xl font-light leading-relaxed mb-6"
+                style={{ color: "#334155" }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                {subtitle}
+              </motion.h3>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                className="border-l-3 pl-6"
+                style={{ borderColor: "#00d4ff" }}
+              >
+                <p className="text-xl font-light leading-relaxed text-gray-500" style={{ color: "#64748b" }}>
+                  {description}
+                </p>
               </motion.div>
-            );
-          })}
+            </div>
+
+            {/* Feature cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {features.map((feature, i) => {
+                const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
+                const accent = accentMap[i % accentMap.length];
+                const numStr = String(i + 1).padStart(2, "0");
+                return (
+                  <motion.div
+                    key={i}
+                    className="group relative p-10 bg-white overflow-hidden transition-all duration-300"
+                    style={{ border: "1px solid rgba(0,212,255,0.18)" }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 + i * 0.1 }}
+                    whileHover={{ y: -4, borderColor: `${accent}40` }}
+                  >
+                    {/* Left accent bar */}
+                    <div
+                      className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300"
+                      style={{ background: `linear-gradient(180deg, ${accent}60, transparent)` }}
+                    />
+                    <div
+                      className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ background: `linear-gradient(180deg, ${accent}, ${accent}44)` }}
+                    />
+
+                    {/* Big bg watermark number */}
+                    <div
+                      className="absolute right-4 bottom-2 text-[100px] font-black leading-none select-none pointer-events-none"
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, ${accent}15, transparent)`,
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      {numStr}
+                    </div>
+
+                    {/* Hover bg sweep */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      style={{ background: `linear-gradient(135deg, ${accent}04 0%, transparent 60%)` }}
+                    />
+
+                    <div className="relative z-10 pl-2">
+                      <div className="flex items-center gap-3 mb-6">
+                        <span className="text-xs font-black" style={{ color: `${accent}80` }}>
+                          {numStr}
+                        </span>
+                        <div className="flex-1 h-px max-w-[40px]" style={{ background: `${accent}30` }} />
+                      </div>
+
+                      <h3
+                        className="text-2xl mb-4"
+                        style={{ color: "#060f2e", fontWeight: 300, letterSpacing: "-0.02em" }}
+                      >
+                        {feature.title}
+                      </h3>
+                      <p className="font-light leading-relaxed mb-6 text-base" style={{ color: "#64748b" }}>
+                        {feature.desc}
+                      </p>
+                      {feature.link && feature.linkText && (
+                        <a
+                          href={feature.link}
+                          className="inline-flex items-center gap-2 text-sm font-semibold transition-all hover:translate-x-1"
+                          style={{ color: accent }}
+                        >
+                          {feature.linkText}
+                          <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Sticky Sidebar column */}
+          <div className="lg:col-span-1 lg:sticky lg:top-32">
+            <ServiceSidebar />
+          </div>
         </div>
       </div>
     </main>
