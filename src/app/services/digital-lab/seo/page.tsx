@@ -48,7 +48,7 @@ export default function SeoPage() {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none"
           style={{ background: "radial-gradient(circle at 100% 0%, rgba(0,212,255,0.07) 0%, transparent 60%)" }} />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="w-full max-w-none px-6 lg:px-12 relative z-10">
           
           {/* Mobile Service Navigation */}
           <ServiceMobileNav />
@@ -57,7 +57,7 @@ export default function SeoPage() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-8 items-start">
             
             {/* Left Content Area */}
-            <div className="lg:col-span-3 space-y-12">
+            <div className="lg:col-span-3 space-y-12 max-w-[1100px] w-full">
 
               {/* Header / Hero */}
               <div className="space-y-6">

@@ -36,7 +36,7 @@ export function InfoLayout({ category, title, subtitle, description, features }:
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="w-full max-w-none px-6 lg:px-12 relative z-10">
         
         {/* Mobile Navigation */}
         <ServiceMobileNav />
@@ -44,7 +44,7 @@ export function InfoLayout({ category, title, subtitle, description, features }:
         {/* Responsive Grid Layout containing Content and Sidebar */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-8">
           {/* Main content column */}
-          <div className="lg:col-span-3 space-y-12">
+          <div className="lg:col-span-3 space-y-12 max-w-[1100px] w-full">
             
             {/* Header (Hero) */}
             <div className="space-y-6">

@@ -48,7 +48,7 @@ export default function EmailMarketingPage() {
         {/* Background glow */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[120px] pointer-events-none opacity-60" />
 
-        <div className="max-w-7xl mx-auto px-6 pt-32 pb-24 relative z-10">
+        <div className="w-full max-w-none px-6 lg:px-12 pt-32 pb-24 relative z-10">
           
           {/* Mobile Service Navigation */}
           <ServiceMobileNav />
@@ -57,7 +57,7 @@ export default function EmailMarketingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-8 items-start">
             
             {/* Left Content Area (Hero + Content Sections) */}
-            <div className="lg:col-span-3 space-y-12">
+            <div className="lg:col-span-3 space-y-12 max-w-[1100px] w-full">
 
               {/* ── HERO ── */}
               <div className="space-y-6">

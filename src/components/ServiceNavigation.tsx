@@ -50,7 +50,7 @@ export function ServiceSidebar() {
   if (services.length === 0) return null;
 
   return (
-    <aside className="w-full hidden lg:block sticky top-32">
+    <aside className="w-full lg:max-w-[320px] ml-auto hidden lg:block sticky top-32">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
