@@ -9,6 +9,24 @@ const trustItems = [
   { value: "360°", label: "Service Scope", sub: "All Digital Needs" },
 ];
 
+/* ─── tiny SVG loop icon ─── */
+function LoopIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+    >
+      <path d="M20 11a8 8 0 0 0-14-5M4 13a8 8 0 0 0 14 5" />
+      <path d="M6 2v4H2M22 22v-4h-4" />
+    </svg>
+  );
+}
+
 export function Hero() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -28,217 +46,393 @@ export function Hero() {
   } as const;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
-
-      {/* ── Deep gradient background ── */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(145deg, #060f2e 0%, #0d1b4b 40%, #071a3e 70%, #060f2e 100%)",
-        }}
-      />
-
-      {/* ── Radial glow top-right (cyan) ── */}
-      <div
-        className="absolute top-0 right-0 w-[800px] h-[800px] pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle at 80% 10%, rgba(0,212,255,0.18) 0%, transparent 55%)",
-        }}
-      />
-
-      {/* ── Radial glow bottom-left (violet) ── */}
-      <div
-        className="absolute bottom-0 left-0 w-[600px] h-[600px] pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle at 10% 90%, rgba(124,58,237,0.18) 0%, transparent 55%)",
-        }}
-      />
-
-      {/* ── Animated floating orb ── */}
-      <motion.div
-        className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%)",
-          filter: "blur(40px)",
-        }}
-        animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      {/* ── Grid dot overlay ── */}
+    <section
+      className="relative w-full min-h-screen flex items-center overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(ellipse 900px 600px at 78% -5%, rgba(0,212,255,.13), transparent 60%)," +
+          "radial-gradient(ellipse 700px 700px at 12% 110%, rgba(124,58,237,.1), transparent 55%)," +
+          "linear-gradient(160deg, #060f2e 0%, #0d1b4b 55%, #071a3e 100%)",
+      }}
+    >
+      {/* ── automation grid overlay ── */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(0,212,255,0.12) 1px, transparent 1px)",
-          backgroundSize: "44px 44px",
+            "linear-gradient(rgba(0,212,255,.04) 1px, transparent 1px)," +
+            "linear-gradient(90deg, rgba(0,212,255,.04) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+          maskImage:
+            "radial-gradient(120% 120% at 60% 30%, #000 35%, transparent 78%)",
+          WebkitMaskImage:
+            "radial-gradient(120% 120% at 60% 30%, #000 35%, transparent 78%)",
         }}
       />
 
-      {/* ── Animated diagonal lines ── */}
+      {/* ── floating orb ── */}
+      <motion.div
+        className="absolute top-1/4 right-1/4 w-72 h-72 rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%)",
+          filter: "blur(48px)",
+        }}
+        animate={{ scale: [1, 1.25, 1], opacity: [0.5, 0.9, 0.5] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* ── diagonal lines ── */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(45deg, #00d4ff 0px, #00d4ff 1px, transparent 1px, transparent 60px)",
+            "repeating-linear-gradient(45deg,#00d4ff 0px,#00d4ff 1px,transparent 1px,transparent 60px)",
         }}
       />
 
-      <motion.div
-        className="max-w-6xl mx-auto px-6 text-center relative z-10 w-full"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {/* ── Badge ── */}
-        <motion.div variants={itemVariants} className="flex justify-center mb-8">
-          <span className="inline-flex items-center gap-2.5 px-5 py-2 border text-xs font-semibold uppercase tracking-[0.18em] backdrop-blur-sm"
-            style={{
-              borderColor: "rgba(0,212,255,0.35)",
-              background: "rgba(0,212,255,0.08)",
-              color: "#00d4ff",
-            }}
-          >
+      {/* ════════════ MAIN LAYOUT ════════════ */}
+      <div className="relative z-10 w-full max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-20 py-36 lg:py-28 flex flex-col lg:flex-row items-center gap-14 lg:gap-16">
+
+        {/* ── LEFT COLUMN ── */}
+        <motion.div
+          className="flex-1 min-w-0 flex flex-col items-center lg:items-start text-center lg:text-left"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* eyebrow */}
+          <motion.div variants={itemVariants} className="flex justify-center lg:justify-start mb-7">
             <span
-              className="w-2 h-2 rounded-full inline-block"
+              className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[.22em]"
               style={{
-                background: "#00d4ff",
-                boxShadow: "0 0 8px #00d4ff",
-                animation: "pulseGlow 2s ease-in-out infinite",
-              }}
-            />
-            Performance Marketing Agency · Sri Lanka
-          </span>
-        </motion.div>
-
-        {/* ── Headline ── */}
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.04] tracking-[-0.04em] mb-6 text-white"
-          style={{ fontWeight: 200 }}
-        >
-          We{" "}
-          <span
-            style={{
-              backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              fontWeight: 300,
-            }}
-          >
-            Engineer
-          </span>
-          <br className="hidden md:block" />
-          Your Brand&apos;s{" "}
-          <span className="relative inline-block">
-            <span style={{ fontWeight: 300 }}>Digital Presence</span>
-            {/* Animated underline */}
-            <motion.span
-              className="absolute -bottom-2 left-0 right-0 h-[2px]"
-              style={{
-                background: "linear-gradient(90deg, #00d4ff, #7c3aed)",
-              }}
-              initial={{ scaleX: 0, originX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 1.1, duration: 0.9, ease: "easeOut" }}
-            />
-          </span>
-          .
-        </motion.h1>
-
-        {/* ── Subtitle ── */}
-        <motion.p
-          variants={itemVariants}
-          className="text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
-          style={{ color: "rgba(255,255,255,0.6)", fontWeight: 300 }}
-        >
-          An exemplary digital marketing journey for your brand — with a{" "}
-          <span className="font-semibold text-white">360° wide scope</span>{" "}
-          to cover all your digital needs through data, creativity and performance.
-        </motion.p>
-
-        {/* ── CTAs ── */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-        >
-          <a
-            href="https://calendly.com/sparklemediacreatives/30min"
-            id="hero-strategy-call-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative px-8 py-4 text-white text-sm font-semibold overflow-hidden transition-all hover:scale-105 inline-flex items-center gap-3 tracking-wide"
-            style={{
-              background: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)",
-              boxShadow: "0 0 30px rgba(0,212,255,0.4), 0 4px 24px rgba(124,58,237,0.25)",
-            }}
-          >
-            {/* Shimmer */}
-            <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <span className="relative z-10 flex items-center gap-3">
-              Book a Free Strategy Call
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </span>
-          </a>
-
-          <a
-            href="#services"
-            id="hero-services-btn"
-            className="group px-8 py-4 text-sm font-semibold hover:scale-105 transition-all inline-flex items-center gap-3 backdrop-blur-sm"
-            style={{
-              border: "1px solid rgba(0,212,255,0.35)",
-              color: "rgba(255,255,255,0.85)",
-              background: "rgba(0,212,255,0.06)",
-            }}
-          >
-            View Our Services
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </motion.div>
-
-        {/* ── Stats Bar ── */}
-        <motion.div
-          variants={itemVariants}
-          className="grid grid-cols-2 md:grid-cols-4"
-          style={{ border: "1px solid rgba(0,212,255,0.18)" }}
-        >
-          {trustItems.map((item, i) => (
-            <div
-              key={i}
-              className="px-6 py-7 flex flex-col items-center text-center group cursor-default transition-all duration-300"
-              style={{
-                background: "rgba(0,212,255,0.04)",
-                borderRight: i < 3 ? "1px solid rgba(0,212,255,0.15)" : undefined,
+                fontFamily: "ui-monospace,SFMono-Regular,Menlo,monospace",
+                color: "#00d4ff",
               }}
             >
-              <motion.span
-                className="text-3xl md:text-4xl mb-1"
+              <span
+                className="w-2 h-2 rounded-full"
                 style={{
-                  backgroundImage: "linear-gradient(135deg, #00d4ff, #7c3aed)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  fontWeight: 700,
+                  background: "#7c3aed",
+                  boxShadow: "0 0 0 4px rgba(124,58,237,.22)",
                 }}
-                whileHover={{ scale: 1.08 }}
+              />
+              AI-powered performance marketing
+            </span>
+          </motion.div>
+
+          {/* headline */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-[clamp(2.4rem,6vw,5.5rem)] leading-[1.02] tracking-[-0.03em] text-white mb-6"
+            style={{ fontWeight: 700 }}
+          >
+            Turn ad spend into{" "}
+            <br className="hidden sm:block" />
+            <span
+              style={{
+                fontFamily: "'Lora', 'Georgia', serif",
+                fontStyle: "italic",
+                fontWeight: 600,
+                backgroundImage:
+                  "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                letterSpacing: "-.01em",
+                paddingRight: ".06em",
+              }}
+            >
+              predictable
+            </span>{" "}
+            ROAS.
+          </motion.h1>
+
+          {/* subtitle */}
+          <motion.p
+            variants={itemVariants}
+            className="text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
+            style={{ color: "rgba(255,255,255,0.55)", fontWeight: 300 }}
+          >
+            AI automations watch, test, and optimize every campaign around the
+            clock — so you{" "}
+            <strong className="text-white font-semibold">
+              scale returns
+            </strong>{" "}
+            without scaling headcount.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-12 w-full sm:w-auto"
+          >
+            <a
+              href="https://calendly.com/sparklemediacreatives/30min"
+              id="hero-strategy-call-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-[17px] text-sm font-semibold tracking-wide overflow-hidden transition-all hover:scale-105 rounded-[14px]"
+              style={{
+                background:
+                  "linear-gradient(180deg, #2ee8ff 0%, #00d4ff 48%, #009ac2 100%)",
+                color: "#06112e",
+                boxShadow:
+                  "0 14px 38px -12px rgba(0,212,255,.55), inset 0 1px 0 rgba(255,255,255,.35)",
+              }}
+            >
+              <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[14px]" />
+              <span className="relative z-10 flex items-center gap-3">
+                Book a growth audit
+                <svg
+                  className="w-[18px] h-[18px] group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </span>
+            </a>
+
+            <a
+              href="#services"
+              id="hero-services-btn"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-[17px] text-sm font-semibold hover:scale-105 transition-all backdrop-blur-sm rounded-[14px]"
+              style={{
+                border: "1px solid rgba(0,212,255,.3)",
+                color: "rgba(255,255,255,.85)",
+                background: "rgba(0,212,255,.05)",
+              }}
+            >
+              <span
+                className="w-5 h-5 rounded-full inline-flex items-center justify-center text-[9px]"
+                style={{
+                  border: "1px solid rgba(0,212,255,.6)",
+                  color: "#00d4ff",
+                }}
               >
-                {item.value}
-              </motion.span>
-              <span className="text-[10px] font-bold text-white/50 uppercase tracking-[0.15em]">{item.label}</span>
-              <span className="text-[11px] mt-0.5" style={{ color: "rgba(0,212,255,0.6)" }}>{item.sub}</span>
-            </div>
-          ))}
+                ▶
+              </span>
+              See how it works
+            </a>
+          </motion.div>
+
+          {/* trust bar */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap justify-center lg:justify-start items-center gap-x-5 gap-y-2"
+            style={{
+              fontFamily: "ui-monospace,SFMono-Regular,Menlo,monospace",
+              fontSize: "13px",
+              letterSpacing: ".02em",
+              color: "rgba(255,255,255,.45)",
+            }}
+          >
+            <span>
+              <span className="text-white font-semibold">200+</span> DTC brands
+              scaled
+            </span>
+            <span
+              className="w-1.5 h-1.5 rounded-full hidden sm:inline-block"
+              style={{ background: "rgba(0,212,255,.35)" }}
+            />
+            <span>
+              <span className="text-white font-semibold">$40M+</span> ad spend
+              managed
+            </span>
+            <span
+              className="w-1.5 h-1.5 rounded-full hidden sm:inline-block"
+              style={{ background: "rgba(0,212,255,.35)" }}
+            />
+            <span>
+              <span className="text-white font-semibold">4.7×</span> avg ROAS
+            </span>
+          </motion.div>
         </motion.div>
-      </motion.div>
+
+        {/* ── RIGHT COLUMN — chart panel ── */}
+        <motion.div
+          className="flex-shrink-0 w-full max-w-[520px] lg:max-w-[480px] xl:max-w-[540px]"
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <div
+            className="relative w-full rounded-[28px] p-7 sm:p-8"
+            style={{
+              background:
+                "linear-gradient(165deg, rgba(255,255,255,.06), rgba(255,255,255,.015))",
+              border: "1px solid rgba(0,212,255,.18)",
+              boxShadow:
+                "0 40px 80px -40px rgba(0,0,0,.65), inset 0 1px 0 rgba(0,212,255,.1)",
+              backdropFilter: "blur(2px)",
+            }}
+          >
+            {/* panel header */}
+            <div className="flex justify-between items-start mb-5">
+              <span
+                className="text-xs uppercase tracking-[.22em]"
+                style={{
+                  fontFamily: "ui-monospace,SFMono-Regular,Menlo,monospace",
+                  color: "rgba(255,255,255,.4)",
+                }}
+              >
+                Return on ad spend
+              </span>
+              <span
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[.12em] rounded-full px-3 py-1.5"
+                style={{
+                  fontFamily: "ui-monospace,SFMono-Regular,Menlo,monospace",
+                  color: "#00d4ff",
+                  border: "1px solid rgba(0,212,255,.3)",
+                  background: "rgba(0,212,255,.07)",
+                }}
+              >
+                <LoopIcon /> AI · always on
+              </span>
+            </div>
+
+            {/* stat readouts */}
+            <div className="grid grid-cols-3 gap-3 mb-5">
+              {[
+                { k: "ROAS", val: "4.7×", delta: "▲ 61%", up: true },
+                { k: "CAC", val: "−38%", delta: "▼ lower", up: false },
+                { k: "Spend live", val: "$1.2M", delta: null, up: false },
+              ].map((s) => (
+                <div
+                  key={s.k}
+                  className="rounded-2xl px-3 py-3"
+                  style={{
+                    border: "1px solid rgba(0,212,255,.14)",
+                    background: "rgba(0,212,255,.04)",
+                  }}
+                >
+                  <div
+                    className="text-[10px] uppercase tracking-[.16em] mb-1.5"
+                    style={{
+                      fontFamily: "ui-monospace,SFMono-Regular,Menlo,monospace",
+                      color: "rgba(255,255,255,.38)",
+                    }}
+                  >
+                    {s.k}
+                  </div>
+                  <div
+                    className="text-xl sm:text-2xl font-bold tracking-[-0.02em]"
+                    style={{
+                      color: s.up ? "#00d4ff" : "#fff",
+                    }}
+                  >
+                    {s.val}
+                    {s.delta && (
+                      <span
+                        className="text-[11px] font-medium ml-1.5"
+                        style={{
+                          fontFamily:
+                            "ui-monospace,SFMono-Regular,Menlo,monospace",
+                          color: "#7c3aed",
+                        }}
+                      >
+                        {s.delta}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* chart */}
+            <div className="relative" style={{ height: "220px" }}>
+              {/* annotation tooltip */}
+              <div
+                className="absolute z-10 text-[11px] font-bold px-2.5 py-1.5 rounded-[8px] whitespace-nowrap"
+                style={{
+                  left: "65%",
+                  top: "18%",
+                  transform: "translate(-50%, -110%)",
+                  fontFamily: "ui-monospace,SFMono-Regular,Menlo,monospace",
+                  background:
+                    "linear-gradient(180deg, #2ee8ff, #00d4ff)",
+                  color: "#06112e",
+                  boxShadow: "0 10px 24px -10px rgba(0,212,255,.6)",
+                  letterSpacing: ".06em",
+                }}
+              >
+                4.7× ROAS
+                <span
+                  className="absolute left-1/2 -bottom-[5px] w-2.5 h-2.5 rounded-sm"
+                  style={{
+                    transform: "translateX(-50%) rotate(45deg)",
+                    background: "#00d4ff",
+                  }}
+                />
+              </div>
+
+              <svg
+                viewBox="0 0 600 240"
+                preserveAspectRatio="none"
+                style={{ display: "block", width: "100%", height: "100%", overflow: "visible" }}
+              >
+                <defs>
+                  <linearGradient id="heroFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stopColor="#00d4ff" stopOpacity=".35" />
+                    <stop offset="1" stopColor="#00d4ff" stopOpacity="0" />
+                  </linearGradient>
+                  <linearGradient id="heroStroke" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stopColor="#7c3aed" />
+                    <stop offset="0.5" stopColor="#00d4ff" />
+                    <stop offset="1" stopColor="#2ee8ff" />
+                  </linearGradient>
+                </defs>
+                {/* grid lines */}
+                <g stroke="rgba(0,212,255,.1)" strokeWidth="1">
+                  <line x1="0" y1="48"  x2="600" y2="48"  />
+                  <line x1="0" y1="104" x2="600" y2="104" />
+                  <line x1="0" y1="160" x2="600" y2="160" />
+                  <line x1="0" y1="216" x2="600" y2="216" />
+                </g>
+                {/* area fill */}
+                <path
+                  d="M0,218 C90,213 150,204 210,190 C280,174 330,150 390,120 C450,90 510,62 600,32 L600,240 L0,240 Z"
+                  fill="url(#heroFill)"
+                />
+                {/* line */}
+                <path
+                  d="M0,218 C90,213 150,204 210,190 C280,174 330,150 390,120 C450,90 510,62 600,32"
+                  fill="none"
+                  stroke="url(#heroStroke)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+                {/* highlight dot */}
+                <circle cx="390" cy="120" r="8" fill="#0d1b4b" stroke="#00d4ff" strokeWidth="3" />
+                {/* end dot */}
+                <circle cx="600" cy="32" r="5" fill="#00d4ff" />
+              </svg>
+            </div>
+
+            {/* axis labels */}
+            <div
+              className="flex justify-between mt-3"
+              style={{
+                fontFamily: "ui-monospace,SFMono-Regular,Menlo,monospace",
+                fontSize: "10px",
+                letterSpacing: ".14em",
+                color: "rgba(255,255,255,.3)",
+              }}
+            >
+              {["JAN", "FEB", "MAR", "APR", "MAY", "JUN"].map((m) => (
+                <span key={m}>{m}</span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
 
       {/* ── Scroll indicator ── */}
       <motion.div
@@ -247,7 +441,12 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] font-semibold" style={{ color: "rgba(0,212,255,0.6)" }}>Scroll</span>
+        <span
+          className="text-[10px] uppercase tracking-[.2em] font-semibold"
+          style={{ color: "rgba(0,212,255,.5)" }}
+        >
+          Scroll
+        </span>
         <div
           className="w-px h-10"
           style={{

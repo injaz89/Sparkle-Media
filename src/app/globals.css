@@ -19,6 +19,7 @@
   --color-lighter-blue:   #f0faff;
 
   --font-sans: var(--font-sans), "Outfit", sans-serif;
+  --font-serif: var(--font-serif), "Lora", "Georgia", serif;
 }
 
 @layer utilities {
