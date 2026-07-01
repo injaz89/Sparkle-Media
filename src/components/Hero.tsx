@@ -235,23 +235,24 @@ export function Hero() {
             }}
           >
             <span>
-              <span className="text-white font-semibold">200+</span> DTC brands
-              scaled
+              <span className="text-white font-semibold">$5M+</span> revenue
+              generated
             </span>
             <span
               className="w-1.5 h-1.5 rounded-full hidden sm:inline-block"
               style={{ background: "rgba(0,212,255,.35)" }}
             />
             <span>
-              <span className="text-white font-semibold">$40M+</span> ad spend
-              managed
+              <span className="text-white font-semibold">38%</span> avg CAC
+              reduction
             </span>
             <span
               className="w-1.5 h-1.5 rounded-full hidden sm:inline-block"
               style={{ background: "rgba(0,212,255,.35)" }}
             />
             <span>
-              <span className="text-white font-semibold">4.7×</span> avg ROAS
+              <span className="text-white font-semibold">150K+</span> qualified
+              leads
             </span>
           </motion.div>
         </motion.div>
@@ -283,7 +284,7 @@ export function Hero() {
                   color: "rgba(255,255,255,.4)",
                 }}
               >
-                Return on ad spend
+                Real client results
               </span>
               <span
                 className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[.12em] rounded-full px-3 py-1.5"
@@ -301,9 +302,9 @@ export function Hero() {
             {/* stat readouts */}
             <div className="grid grid-cols-3 gap-3 mb-5">
               {[
-                { k: "ROAS", val: "4.7×", delta: "▲ 61%", up: true },
-                { k: "CAC", val: "−38%", delta: "▼ lower", up: false },
-                { k: "Spend live", val: "$1.2M", delta: null, up: false },
+                { k: "Revenue Generated", val: "$5M+", delta: "approx", up: true },
+                { k: "CAC Reduction", val: "−38%", delta: "▼ avg", up: false },
+                { k: "Leads Generated", val: "150K+", delta: "qualified", up: true },
               ].map((s) => (
                 <div
                   key={s.k}
@@ -363,7 +364,7 @@ export function Hero() {
                   letterSpacing: ".06em",
                 }}
               >
-                4.7× ROAS
+                $5M+ Revenue
                 <span
                   className="absolute left-1/2 -bottom-[5px] w-2.5 h-2.5 rounded-sm"
                   style={{

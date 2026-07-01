@@ -16,7 +16,6 @@ const digitalLabServices = [
 const techLabServices = [
   { name: "Website Design & Development", href: "/services/tech-lab/web-development" },
   { name: "Software Development & Implementation", href: "/services/tech-lab/software-development" },
-  { name: "Website Optimisation", href: "/services/tech-lab/optimisation" },
 ];
 
 const listVariants = {
