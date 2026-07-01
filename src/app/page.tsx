@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
+import { CarouselSlides } from "@/components/CarouselSlides";
 import { ClientAchievements } from "@/components/ClientAchievements";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { AiSearch } from "@/components/AiSearch";
@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <Hero />
+        <CarouselSlides />
         <ClientAchievements />
         <WhyChooseUs />
         <AiSearch />
