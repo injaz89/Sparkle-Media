@@ -42,27 +42,27 @@ function TiktokBrandIcon() {
   );
 }
 
-// High quality slides
+// Real branded team slides — local images in /public
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600",
-    headline: "Where Ideas Spark",
-    sub: "A culture built on creativity, collaboration, and relentless ambition.",
+    image: "/life-team1.png",
+    headline: "Together We Create Success",
+    sub: "Collaboration, creativity and innovation drive everything we do.",
   },
   {
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1600",
-    headline: "We Work as One",
-    sub: "Diverse minds united by a shared passion for digital excellence.",
+    image: "/life-team2.png",
+    headline: "Innovation Starts Here",
+    sub: "Every campaign begins with bold ideas and passionate teamwork.",
   },
   {
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600",
-    headline: "Always Innovating",
-    sub: "Staying ahead of the curve with the latest trends, tools, and creative strategies.",
+    image: "/life-team3.png",
+    headline: "Work Hard. Celebrate Together.",
+    sub: "Success is best enjoyed as a team, and every achievement is worth celebrating.",
   },
   {
-    image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1600",
+    image: "/life-team4.png",
     headline: "Grow With Us",
-    sub: "A fast-paced environment where your career, creativity, and character flourish.",
+    sub: "We foster a workplace where learning, creativity and growth happen every day.",
   },
 ];
 
