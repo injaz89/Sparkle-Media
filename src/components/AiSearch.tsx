@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 
 const aiPlatforms = [
-  { name: "ChatGPT", icon: "✦", color: "text-secondary" },
-  { name: "Gemini", icon: "✧", color: "text-primary" },
-  { name: "Claude", icon: "◈", color: "text-secondary" },
-  { name: "Perplexity", icon: "⬡", color: "text-primary" },
-  { name: "AI Overviews", icon: "◉", color: "text-secondary" },
+  { name: "ChatGPT", icon: "✦", color: "#10a37f" },
+  { name: "Gemini", icon: "✧", color: "#4285f4" },
+  { name: "Claude", icon: "◈", color: "#d97706" },
+  { name: "Perplexity", icon: "⬡", color: "#a855f7" },
+  { name: "AI Overviews", icon: "◉", color: "#00d4ff" },
 ];
 
 const optimizationTypes = [
@@ -15,50 +15,217 @@ const optimizationTypes = [
     abbr: "SEO",
     full: "Search Engine Optimization",
     desc: "Rank prominently across traditional search engines with technical excellence and authority content.",
-    accentColor: "#39bcfc",
-    badgeBg: "#bae7fe",
-    badgeText: "#129adc",
-    badgeBorder: "#39bcfc",
+    accentColor: "#00d4ff",
+    icon: "🔍",
+    detail: "Keyword Research · Technical SEO · Link Building · Content Strategy",
   },
   {
     abbr: "AEO",
     full: "Answer Engine Optimization",
     desc: "Structure your content to be selected as the direct answer by AI assistants and featured snippets.",
-    accentColor: "#129adc",
-    badgeBg: "#bae7fe",
-    badgeText: "#129adc",
-    badgeBorder: "#39bcfc",
+    accentColor: "#a855f7",
+    icon: "💡",
+    detail: "Featured Snippets · FAQ Schema · Voice Search · Entity Optimization",
   },
   {
     abbr: "GEO",
     full: "Generative Engine Optimization",
     desc: "Optimize your brand to be cited and recommended by large language models like ChatGPT and Gemini.",
-    accentColor: "#39bcfc",
-    badgeBg: "#bae7fe",
-    badgeText: "#129adc",
-    badgeBorder: "#39bcfc",
+    accentColor: "#38bdf8",
+    icon: "🤖",
+    detail: "LLM Training Data · Brand Authority · Citation Building · AI Indexing",
   },
 ];
+
+/* ── Radar Visual ── */
+function RadarVisual() {
+  const rings = [1, 2, 3, 4];
+  return (
+    <div className="relative flex items-center justify-center" style={{ width: "280px", height: "280px" }}>
+      {/* Radar rings */}
+      {rings.map((r, i) => (
+        <div
+          key={i}
+          className="absolute rounded-full border"
+          style={{
+            width: `${r * 64}px`,
+            height: `${r * 64}px`,
+            borderColor: `rgba(0,212,255,${0.25 - i * 0.05})`,
+            animation: `radarPulse ${2.5 + i * 0.8}s ease-out ${i * 0.5}s infinite`,
+          }}
+        />
+      ))}
+
+      {/* Radar sweep line */}
+      <motion.div
+        className="absolute w-full h-[1px] origin-left"
+        style={{
+          background: "linear-gradient(90deg, rgba(0,212,255,0.8), transparent)",
+          top: "50%",
+          left: "50%",
+          width: "50%",
+        }}
+        animate={{ rotate: [0, 360] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+      />
+
+      {/* Center dot */}
+      <div
+        className="absolute w-3 h-3 rounded-full z-10"
+        style={{ background: "#00d4ff", boxShadow: "0 0 16px rgba(0,212,255,0.8), 0 0 32px rgba(0,212,255,0.4)" }}
+      />
+
+      {/* Orbiting platform dots */}
+      {aiPlatforms.map((p, i) => {
+        const angle = (i / aiPlatforms.length) * 360;
+        const radius = 100;
+        const rad = (angle * Math.PI) / 180;
+        const x = Math.cos(rad) * radius;
+        const y = Math.sin(rad) * radius;
+        return (
+          <motion.div
+            key={i}
+            className="absolute flex flex-col items-center"
+            style={{ left: `calc(50% + ${x}px)`, top: `calc(50% + ${y}px)`, transform: "translate(-50%, -50%)" }}
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 + i * 0.15, type: "spring" }}
+          >
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
+              style={{
+                background: `radial-gradient(circle, ${p.color}30, ${p.color}10)`,
+                border: `1.5px solid ${p.color}60`,
+                boxShadow: `0 0 12px ${p.color}40`,
+                color: p.color,
+              }}
+            >
+              {p.icon}
+            </div>
+            <span
+              className="text-[9px] font-mono font-bold mt-1 whitespace-nowrap"
+              style={{ color: p.color }}
+            >
+              {p.name}
+            </span>
+          </motion.div>
+        );
+      })}
+    </div>
+  );
+}
+
+/* ── Flip Card ── */
+function FlipCard({ type, i }: { type: typeof optimizationTypes[0]; i: number }) {
+  return (
+    <motion.div
+      className="group relative h-56"
+      style={{ perspective: "1000px" }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: i * 0.15 }}
+    >
+      <div
+        className="relative w-full h-full transition-all duration-700"
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* Front */}
+        <div
+          className="absolute inset-0 rounded-2xl p-7 flex flex-col justify-between group-hover:[transform:rotateY(180deg)] transition-all duration-700"
+          style={{
+            background: "rgba(255,255,255,0.85)",
+            backdropFilter: "blur(10px)",
+            border: `1px solid ${type.accentColor}30`,
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            boxShadow: "0 4px 24px rgba(0,153,204,0.08)",
+          }}
+        >
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-2xl">{type.icon}</span>
+              <span
+                className="text-xs font-black px-3 py-1 rounded-full border uppercase tracking-widest"
+                style={{
+                  background: type.accentColor + "15",
+                  color: type.accentColor,
+                  borderColor: type.accentColor + "40",
+                }}
+              >
+                {type.abbr}
+              </span>
+            </div>
+            <h3 className="text-lg font-bold mb-2" style={{ color: "#060f2e", letterSpacing: "-0.02em" }}>{type.full}</h3>
+            <p className="text-sm font-light leading-relaxed" style={{ color: "#64748b" }}>{type.desc}</p>
+          </div>
+          <div
+            className="absolute bottom-3 right-3 text-[10px] font-mono uppercase tracking-widest"
+            style={{ color: type.accentColor }}
+          >
+            Hover for details →
+          </div>
+        </div>
+
+        {/* Back */}
+        <div
+          className="absolute inset-0 rounded-2xl p-7 flex flex-col justify-center [transform:rotateY(180deg)] group-hover:[transform:rotateY(360deg)] transition-all duration-700"
+          style={{
+            background: `linear-gradient(135deg, ${type.accentColor}18, ${type.accentColor}05)`,
+            border: `1px solid ${type.accentColor}40`,
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+          }}
+        >
+          <span
+            className="text-3xl font-black mb-3 block"
+            style={{
+              backgroundImage: `linear-gradient(135deg, ${type.accentColor}, #fff)`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            {type.abbr}
+          </span>
+          <h3 className="font-bold text-base mb-4" style={{ color: "#060f2e" }}>{type.full}</h3>
+          <div className="space-y-2">
+            {type.detail.split(" · ").map((d, j) => (
+              <div key={j} className="flex items-center gap-2">
+                <div
+                  className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style={{ background: type.accentColor }}
+                />
+                <span className="text-xs font-medium" style={{ color: "#060f2e" }}>{d}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export function AiSearch() {
   return (
     <section className="py-32 relative overflow-hidden" style={{ background: "#e8f7ff" }}>
-      {/* Background decoration */}
+      {/* Background dots */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.4]"
+        className="absolute inset-0 pointer-events-none opacity-[0.35]"
         style={{
           backgroundImage: "radial-gradient(circle, #87d4f8 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(58,173,219,0.06) 0%, transparent 70%)",
-        }}
-      />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#39bcfc]/30 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#39bcfc]/30 to-transparent" />
+
+      {/* Central glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 65%)", filter: "blur(40px)" }}
+      />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
@@ -68,10 +235,7 @@ export function AiSearch() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span
-            className="inline-block text-xs font-bold tracking-[0.18em] uppercase mb-5"
-            style={{ color: "#00d4ff" }}
-          >
+          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }}>
             AI-First Search Visibility
           </span>
           <h2
@@ -80,87 +244,105 @@ export function AiSearch() {
           >
             Is Your Brand Visible{" "}
             <span
-              style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+              style={{
+                backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
             >
               In AI Search?
             </span>
           </h2>
           <p className="font-light max-w-2xl mx-auto text-lg leading-relaxed" style={{ color: "#64748b" }}>
-            Customer behavior has changed. People no longer only search on Google.
+            Customer behaviour has changed. People no longer only search on Google — they ask AI.
           </p>
         </motion.div>
 
-        {/* AI Platforms */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
-          <p className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">
-            They now ask:
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {aiPlatforms.map((platform, i) => (
-              <motion.div
-                key={i}
-                className="flex items-center gap-3 px-6 py-3 bg-white transition-all duration-300"
-                style={{ border: "1px solid rgba(0,212,255,0.2)" }}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 + i * 0.08 }}
-                whileHover={{ borderColor: "rgba(0,212,255,0.5)", y: -2 }}
+        {/* Main: radar + text */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          {/* Radar visual */}
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div
+              className="relative p-12 rounded-full"
+              style={{
+                background: "radial-gradient(circle, rgba(0,212,255,0.08) 0%, rgba(240,250,255,0.8) 70%)",
+                border: "1px solid rgba(0,212,255,0.2)",
+              }}
+            >
+              <RadarVisual />
+            </div>
+          </motion.div>
+
+          {/* Text content */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="space-y-6">
+              <div
+                className="p-5 rounded-xl"
+                style={{ background: "rgba(255,255,255,0.8)", border: "1px solid rgba(0,212,255,0.2)" }}
               >
-                <span className="text-lg font-bold" style={{ color: "#00d4ff" }}>
-                  {platform.icon}
+                <p className="font-bold text-base" style={{ color: "#060f2e" }}>
+                  "Hey ChatGPT, what&apos;s the best digital marketing agency in Dubai?"
+                </p>
+                <p className="text-sm font-light mt-1" style={{ color: "#64748b" }}>— Your potential customer</p>
+              </div>
+              <div
+                className="p-5 rounded-xl"
+                style={{ background: "rgba(255,255,255,0.8)", border: "1px solid rgba(0,212,255,0.2)" }}
+              >
+                <p className="font-bold text-base" style={{ color: "#060f2e" }}>
+                  "Gemini, find me a performance marketing agency with proven ROAS."
+                </p>
+                <p className="text-sm font-light mt-1" style={{ color: "#64748b" }}>— Your potential customer</p>
+              </div>
+              <p className="text-lg font-semibold" style={{ color: "#060f2e" }}>
+                Will they find{" "}
+                <span
+                  style={{
+                    backgroundImage: "linear-gradient(135deg, #00d4ff, #7c3aed)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  your brand?
                 </span>
-                <span className="font-semibold text-sm" style={{ color: "#060f2e" }}>{platform.name}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Divider */}
-        <div className="flex items-center gap-6 mb-16">
-          <div className="flex-1 h-px bg-[#87d4f8]" />
-          <p className="text-sm text-[#129adc] font-bold uppercase tracking-widest whitespace-nowrap">
-            We optimize brands for
-          </p>
-          <div className="flex-1 h-px bg-[#87d4f8]" />
+              </p>
+              <p className="font-light leading-relaxed" style={{ color: "#64748b" }}>
+                We make sure the answer is always <strong style={{ color: "#060f2e" }}>yes</strong> — across every AI platform and search engine.
+              </p>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Optimization Types */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        {/* Divider */}
+        <div className="flex items-center gap-6 mb-12">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#87d4f8]" />
+          <p className="text-sm text-[#129adc] font-black uppercase tracking-widest whitespace-nowrap">
+            We optimize brands for all of this
+          </p>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#87d4f8]" />
+        </div>
+
+        {/* Flip cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
           {optimizationTypes.map((type, i) => (
-            <motion.div
-              key={i}
-              className="relative p-8 bg-white border border-[#87d4f8] hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 group"
-              style={{ borderLeftColor: type.accentColor, borderLeftWidth: "3px" }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-            >
-              {/* Hover top accent */}
-              <div
-                className="absolute top-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                style={{ background: `linear-gradient(90deg, ${type.accentColor}, transparent)` }}
-              />
-              <span
-                className="inline-block text-xs font-bold px-3 py-1 border mb-4 uppercase tracking-widest"
-                style={{ background: type.badgeBg, color: type.badgeText, borderColor: type.badgeBorder }}
-              >
-                {type.abbr}
-              </span>
-              <h3 className="text-xl font-bold text-[#0A1128] mb-3">{type.full}</h3>
-              <p className="text-gray-500 font-light leading-relaxed text-sm">{type.desc}</p>
-            </motion.div>
+            <FlipCard key={i} type={type} i={i} />
           ))}
         </div>
 
-        {/* Bottom text */}
+        {/* CTA */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0 }}
@@ -168,17 +350,19 @@ export function AiSearch() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <p className="text-gray-500 font-light text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 font-light text-lg max-w-2xl mx-auto mb-8">
             So your business is{" "}
-            <span className="font-semibold text-[#0A1128]">discoverable everywhere</span> your customers
-            search — not just Google.
+            <span className="font-semibold text-[#0A1128]">discoverable everywhere</span> your customers search — not just Google.
           </p>
           <a
             href="https://calendly.com/sparklemediacreatives/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-8 px-8 py-4 text-white font-bold text-sm transition-all hover:scale-105 shadow-md shadow-sky-200/60"
-            style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)", boxShadow: "0 8px 30px rgba(0,212,255,0.3)" }}
+            className="inline-flex items-center gap-2 px-8 py-4 text-white font-bold text-sm transition-all hover:scale-105 rounded-xl"
+            style={{
+              background: "linear-gradient(135deg, #00d4ff, #7c3aed)",
+              boxShadow: "0 8px 30px rgba(0,212,255,0.3)",
+            }}
           >
             Get Discovered Everywhere
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
