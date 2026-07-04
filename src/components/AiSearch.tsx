@@ -80,8 +80,8 @@ function RadarVisual() {
         const angle = (i / aiPlatforms.length) * 360;
         const radius = 100;
         const rad = (angle * Math.PI) / 180;
-        const x = Math.cos(rad) * radius;
-        const y = Math.sin(rad) * radius;
+        const x = Math.round(Math.cos(rad) * radius * 10000) / 10000;
+        const y = Math.round(Math.sin(rad) * radius * 10000) / 10000;
         return (
           <motion.div
             key={i}

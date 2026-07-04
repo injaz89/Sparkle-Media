@@ -42,13 +42,13 @@ function useCountUp(end: number, duration = 2000, suffix = "", prefix = "") {
 }
 
 /* ── Sparkle particle ── */
-function SparkleParticle({ x, y, delay, size }: { x: string; y: string; delay: number; size: number }) {
+function SparkleParticle({ x, y, delay, size, duration }: { x: string; y: string; delay: number; size: number; duration: number }) {
   return (
     <div
       className="absolute pointer-events-none"
       style={{
         left: x, top: y,
-        animation: `sparkle ${2.5 + Math.random() * 2}s ease-in-out ${delay}s infinite`,
+        animation: `sparkle ${duration}s ease-in-out ${delay}s infinite`,
       }}
     >
       <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
@@ -314,14 +314,14 @@ function StatCounter({ end, suffix, prefix, label }: { end: number; suffix: stri
 }
 
 const sparkles = [
-  { x: "8%",  y: "15%", delay: 0,    size: 10 },
-  { x: "18%", y: "72%", delay: 0.8,  size: 7  },
-  { x: "92%", y: "20%", delay: 0.4,  size: 9  },
-  { x: "85%", y: "68%", delay: 1.2,  size: 6  },
-  { x: "52%", y: "8%",  delay: 0.6,  size: 8  },
-  { x: "65%", y: "88%", delay: 1.8,  size: 7  },
-  { x: "30%", y: "40%", delay: 2.1,  size: 5  },
-  { x: "78%", y: "45%", delay: 0.2,  size: 11 },
+  { x: "8%",  y: "15%", delay: 0,    size: 10, duration: 3.1 },
+  { x: "18%", y: "72%", delay: 0.8,  size: 7,  duration: 4.2 },
+  { x: "92%", y: "20%", delay: 0.4,  size: 9,  duration: 2.7 },
+  { x: "85%", y: "68%", delay: 1.2,  size: 6,  duration: 3.8 },
+  { x: "52%", y: "8%",  delay: 0.6,  size: 8,  duration: 2.5 },
+  { x: "65%", y: "88%", delay: 1.8,  size: 7,  duration: 3.4 },
+  { x: "30%", y: "40%", delay: 2.1,  size: 5,  duration: 4.0 },
+  { x: "78%", y: "45%", delay: 0.2,  size: 11, duration: 3.6 },
 ];
 
 export function Hero() {
