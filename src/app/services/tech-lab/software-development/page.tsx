@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowRight, Cpu } from "lucide-react";
 import { ServiceSidebar, ServiceMobileNav } from "@/components/ServiceNavigation";
 
@@ -203,12 +204,12 @@ export default function SoftwareDevelopmentPage() {
                     Start Your Project
                     <ArrowRight className="w-4 h-4" />
                   </a>
-                  <a
+                  <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-white transition-all bg-white"
                   >
                     Get a Quote
-                  </a>
+                  </Link>
                 </motion.div>
               </div>
 

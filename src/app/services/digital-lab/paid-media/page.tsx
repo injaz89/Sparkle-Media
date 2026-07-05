@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { CheckCircle2, Users, Target, PenTool, TrendingUp, BarChart3, Globe, Briefcase, Share2, Play } from "lucide-react";
 import { ServiceSidebar, ServiceMobileNav } from "@/components/ServiceNavigation";
 
@@ -175,12 +176,12 @@ export default function PaidMediaPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </a>
-                  <a
+                  <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-white transition-all"
                   >
                     Start a Campaign
-                  </a>
+                  </Link>
                 </motion.div>
 
                 {/* Hero Stats */}

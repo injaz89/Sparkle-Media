@@ -478,13 +478,13 @@ export default function ServicesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </a>
-                <a
+                <Link
                   href="/contact"
                   className="inline-flex items-center gap-3 px-8 py-4 text-sm font-semibold rounded-2xl transition-all hover:scale-105"
                   style={{ border: "1px solid rgba(0,212,255,0.3)", color: "rgba(255,255,255,0.85)", background: "rgba(0,212,255,0.06)" }}
                 >
                   Contact Us
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>

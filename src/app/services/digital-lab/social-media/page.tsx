@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   Users,
   Calendar,
@@ -258,12 +259,12 @@ export default function SocialMediaPage() {
                       <p className="text-gray-650 font-light leading-relaxed mb-8">
                         These results are achieved through a combination of strategic planning, creative storytelling, audience insights, and ongoing optimization.
                       </p>
-                      <a
+                      <Link
                         href="/contact"
                         className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-white transition-all"
                       >
                         Start Growing Today
-                      </a>
+                      </Link>
                     </div>
                     
                     {/* Results — accent-line style, no box borders */}
