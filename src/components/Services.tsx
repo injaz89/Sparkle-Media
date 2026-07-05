@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Globe, Search, Target, Share2, FileText, Mail } from "lucide-react";
 
 const services = [
   {
     number: "01",
-    icon: "💻",
+    icon: Globe,
     title: "Web & App Development",
     description: "Bespoke digital experiences that tell your brand's story perfectly — fast, beautiful and conversion-optimised.",
     href: "/services/tech-lab/web-development",
@@ -16,17 +17,17 @@ const services = [
   },
   {
     number: "02",
-    icon: "🔍",
+    icon: Search,
     title: "SEO & AEO",
     description: "Rank higher on Google and appear in AI-powered search results to reach the audience that matters most.",
     href: "/services/digital-lab/seo",
-    accent: "#a855f7",
+    accent: "#38bdf8",
     tag: "Digital Lab",
     features: ["Keyword Strategy", "Technical SEO", "AI Visibility", "Content Authority"],
   },
   {
     number: "03",
-    icon: "📈",
+    icon: Target,
     title: "Performance Marketing",
     description: "Data-driven paid campaigns on Google, Meta and more — designed to maximize ROAS and revenue.",
     href: "/services/digital-lab/paid-media",
@@ -36,7 +37,7 @@ const services = [
   },
   {
     number: "04",
-    icon: "📱",
+    icon: Share2,
     title: "Social Media Marketing",
     description: "Engaging content and community management that builds brand loyalty and drives measurable results.",
     href: "/services/digital-lab/social-media",
@@ -46,21 +47,21 @@ const services = [
   },
   {
     number: "05",
-    icon: "🎥",
-    title: "Photography & Video",
-    description: "High-end visual production tailored for modern platforms — from product shoots to brand films.",
-    href: "/services/creative-lab/photography",
-    accent: "#a855f7",
-    tag: "Creative Lab",
-    features: ["Brand Films", "Product Shoots", "Reels & Shorts", "Drone Footage"],
+    icon: FileText,
+    title: "Content Marketing",
+    description: "Strategic content that tells your brand's story, builds authority, and converts visitors into customers.",
+    href: "/services/digital-lab/content-marketing",
+    accent: "#00d4ff",
+    tag: "Digital Lab",
+    features: ["Blogs & Articles", "Social Content", "Landing Pages", "Vlogs"],
   },
   {
     number: "06",
-    icon: "✉️",
+    icon: Mail,
     title: "CRM & Email Marketing",
     description: "Automated email journeys that nurture leads, retain customers and maximize lifetime value.",
     href: "/services/digital-lab/email-marketing",
-    accent: "#34d399",
+    accent: "#38bdf8",
     tag: "Digital Lab",
     features: ["Drip Campaigns", "Segmentation", "A/B Testing", "Automation"],
   },
@@ -114,14 +115,15 @@ function ServiceCard({ service, i }: { service: typeof services[0]; i: number })
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
           <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-transform duration-300"
+            className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300"
             style={{
               background: `linear-gradient(135deg, ${service.accent}18, ${service.accent}08)`,
               border: `1px solid ${service.accent}25`,
+              color: service.accent,
               transform: hovered ? "scale(1.1) rotate(3deg)" : "scale(1) rotate(0deg)",
             }}
           >
-            {service.icon}
+            <service.icon className="w-5 h-5" />
           </div>
           <div>
             <span

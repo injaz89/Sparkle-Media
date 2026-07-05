@@ -1,49 +1,50 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { TrendingUp, Target, Zap, Users, Gem, BarChart3 } from "lucide-react";
 
 const focusAreas = [
   {
-    icon: "📈",
+    icon: TrendingUp,
     title: "Revenue Growth",
     desc: "Every decision we make is tied to growing your top and bottom line — not just marketing metrics.",
     accent: "#00d4ff",
     gradient: "linear-gradient(135deg, rgba(0,212,255,0.12) 0%, rgba(0,212,255,0.03) 100%)",
   },
   {
-    icon: "🎯",
+    icon: Target,
     title: "Qualified Leads",
     desc: "We don't just drive traffic. We attract the right people who are ready to become your customers.",
-    accent: "#a855f7",
-    gradient: "linear-gradient(135deg, rgba(168,85,247,0.12) 0%, rgba(168,85,247,0.03) 100%)",
-  },
-  {
-    icon: "⚡",
-    title: "Customer Acquisition",
-    desc: "Scalable acquisition systems that consistently bring new customers into your business, month after month.",
     accent: "#38bdf8",
     gradient: "linear-gradient(135deg, rgba(56,189,248,0.12) 0%, rgba(56,189,248,0.03) 100%)",
   },
   {
-    icon: "🔄",
-    title: "Customer Retention",
-    desc: "Great marketing doesn't stop at the sale. We help you keep customers coming back for more.",
-    accent: "#34d399",
-    gradient: "linear-gradient(135deg, rgba(52,211,153,0.12) 0%, rgba(52,211,153,0.03) 100%)",
-  },
-  {
-    icon: "💎",
-    title: "Lifetime Value",
-    desc: "We build strategies that maximize what each customer is worth to your business over time.",
-    accent: "#a855f7",
-    gradient: "linear-gradient(135deg, rgba(168,85,247,0.12) 0%, rgba(168,85,247,0.03) 100%)",
-  },
-  {
-    icon: "📊",
-    title: "Return on Ad Spend",
-    desc: "Rigorous ROAS tracking ensures every dollar in ad spend is accountable, optimized, and growing.",
+    icon: Zap,
+    title: "Customer Acquisition",
+    desc: "Scalable acquisition systems that consistently bring new customers into your business, month after month.",
     accent: "#00d4ff",
     gradient: "linear-gradient(135deg, rgba(0,212,255,0.12) 0%, rgba(0,212,255,0.03) 100%)",
+  },
+  {
+    icon: Users,
+    title: "Customer Retention",
+    desc: "Great marketing doesn't stop at the sale. We help you keep customers coming back for more.",
+    accent: "#38bdf8",
+    gradient: "linear-gradient(135deg, rgba(56,189,248,0.12) 0%, rgba(56,189,248,0.03) 100%)",
+  },
+  {
+    icon: Gem,
+    title: "Lifetime Value",
+    desc: "We build strategies that maximize what each customer is worth to your business over time.",
+    accent: "#00d4ff",
+    gradient: "linear-gradient(135deg, rgba(0,212,255,0.12) 0%, rgba(0,212,255,0.03) 100%)",
+  },
+  {
+    icon: BarChart3,
+    title: "Return on Ad Spend",
+    desc: "Rigorous ROAS tracking ensures every dollar in ad spend is accountable, optimized, and growing.",
+    accent: "#38bdf8",
+    gradient: "linear-gradient(135deg, rgba(56,189,248,0.12) 0%, rgba(56,189,248,0.03) 100%)",
   },
 ];
 
@@ -161,13 +162,14 @@ export function WhyChooseUs() {
               <div className="relative z-10">
                 {/* Icon */}
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5 transition-transform duration-300 group-hover:scale-110"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
                   style={{
                     background: area.gradient.replace("0.12", "0.15").replace("0.03", "0.08"),
                     border: `1px solid ${area.accent}25`,
+                    color: area.accent,
                   }}
                 >
-                  {area.icon}
+                  <area.icon className="w-5 h-5" />
                 </div>
 
                 <h3

@@ -4,7 +4,24 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import {
+  Heart,
+  Sparkles,
+  Globe,
+  MessageSquare,
+  Rocket,
+  GraduationCap,
+  Search,
+  Lightbulb,
+  Trophy,
+  HeartHandshake,
+  Zap,
+  Award
+} from "lucide-react";
 
+/* ─────────────────────────────────────────
+   Brand SVG icons
+───────────────────────────────────────── */
 function InstagramIcon() {
   return (
     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -34,35 +51,38 @@ function TikTokIcon() {
   );
 }
 
+/* ─────────────────────────────────────────
+   Static data
+───────────────────────────────────────── */
 const heroSlides = [
   { headline: "Together We Create Magic", sub: "Collaboration, creativity and innovation drive everything we do every single day.", accent: "#00d4ff" },
-  { headline: "Innovation Starts Here", sub: "Every campaign begins with bold ideas and the passionate energy of our team.", accent: "#a855f7" },
-  { headline: "Work Hard. Celebrate Together.", sub: "Success is best enjoyed as a team, and every milestone is worth celebrating.", accent: "#38bdf8" },
-  { headline: "Grow With Us", sub: "We foster a workplace where learning, creativity and growth happen every single day.", accent: "#00d4ff" },
+  { headline: "Innovation Starts Here", sub: "Every campaign begins with bold ideas and the passionate energy of our team.", accent: "#38bdf8" },
+  { headline: "Work Hard. Celebrate Together.", sub: "Success is best enjoyed as a team, and every milestone is worth celebrating.", accent: "#00d4ff" },
+  { headline: "Grow With Us", sub: "We foster a workplace where learning, creativity and growth happen every single day.", accent: "#38bdf8" },
 ];
 
 const perks = [
-  { emoji: "❤️", title: "People-First Culture", desc: "Your wellbeing, balance, and growth are at the heart of everything we build here.", accent: "#ff4b72", glow: "rgba(255,75,114,0.25)" },
-  { emoji: "✨", title: "Creative Freedom", desc: "We encourage bold ideas, wild experimentation, and out-of-the-box innovation without limits.", accent: "#00d4ff", glow: "rgba(0,212,255,0.25)" },
-  { emoji: "🌍", title: "Diverse Global Team", desc: "Talented specialists collaborating seamlessly across countries, time zones and disciplines.", accent: "#7c3aed", glow: "rgba(124,58,237,0.25)" },
-  { emoji: "☕", title: "Collaborative Spirit", desc: "A flat hierarchy where every voice is heard, valued, celebrated and acted on.", accent: "#0099cc", glow: "rgba(0,153,204,0.25)" },
-  { emoji: "🚀", title: "Rapid Career Growth", desc: "Fast-track your career with mentorship, real ownership, and constant stretch opportunities.", accent: "#f59e0b", glow: "rgba(245,158,11,0.25)" },
-  { emoji: "🎓", title: "Always Learning", desc: "Continuous training, certifications, and exposure to the latest tools keeps you razor-sharp.", accent: "#34d399", glow: "rgba(52,211,153,0.25)" },
+  { icon: Heart, title: "People-First Culture", desc: "Your wellbeing, balance, and growth are at the heart of everything we build here.", accent: "#00d4ff", glow: "rgba(0,212,255,0.20)" },
+  { icon: Sparkles, title: "Creative Freedom", desc: "We encourage bold ideas, wild experimentation, and out-of-the-box innovation without limits.", accent: "#38bdf8", glow: "rgba(56,189,248,0.20)" },
+  { icon: Globe, title: "Diverse Global Team", desc: "Talented specialists collaborating seamlessly across countries, time zones and disciplines.", accent: "#00d4ff", glow: "rgba(0,212,255,0.20)" },
+  { icon: MessageSquare, title: "Collaborative Spirit", desc: "A flat hierarchy where every voice is heard, valued, celebrated and acted on.", accent: "#38bdf8", glow: "rgba(56,189,248,0.20)" },
+  { icon: Rocket, title: "Rapid Career Growth", desc: "Fast-track your career with mentorship, real ownership, and constant stretch opportunities.", accent: "#00d4ff", glow: "rgba(0,212,255,0.20)" },
+  { icon: GraduationCap, title: "Always Learning", desc: "Continuous training, certifications, and exposure to the latest tools keeps you razor-sharp.", accent: "#38bdf8", glow: "rgba(56,189,248,0.20)" },
 ];
 
 const values = [
-  { label: "Transparency", icon: "🔍", color: "#00d4ff" },
-  { label: "Bold Thinking", icon: "💡", color: "#a855f7" },
-  { label: "Ownership", icon: "🏆", color: "#f59e0b" },
-  { label: "Empathy", icon: "🤝", color: "#34d399" },
-  { label: "Innovation", icon: "⚡", color: "#38bdf8" },
-  { label: "Excellence", icon: "💎", color: "#ff4b72" },
+  { label: "Transparency", icon: Search, color: "#00d4ff" },
+  { label: "Bold Thinking", icon: Lightbulb, color: "#38bdf8" },
+  { label: "Ownership", icon: Trophy, color: "#00d4ff" },
+  { label: "Empathy", icon: HeartHandshake, color: "#38bdf8" },
+  { label: "Innovation", icon: Zap, color: "#00d4ff" },
+  { label: "Excellence", icon: Award, color: "#38bdf8" },
 ];
 
 const quotes = [
   { quote: "Working at Sparkle Media feels like being part of a family that genuinely cares about your growth and celebrates every win together.", name: "Inshath Ifham", role: "Founder & CEO", initial: "I", accent: "#00d4ff" },
-  { quote: "The culture here is electric. Every single day I come in excited to learn something new and push the boundaries of what we build.", name: "Creative Lead", role: "Design & Branding", initial: "C", accent: "#a855f7" },
-  { quote: "There is no ceiling here. You are given real responsibility from day one, and the team support makes you unstoppable.", name: "Performance Strategist", role: "Paid Media & Analytics", initial: "P", accent: "#38bdf8" },
+  { quote: "The culture here is electric. Every single day I come in excited to learn something new and push the boundaries of what we build.", name: "Creative Lead", role: "Design & Branding", initial: "C", accent: "#38bdf8" },
+  { quote: "There is no ceiling here. You are given real responsibility from day one, and the team support makes you unstoppable.", name: "Performance Strategist", role: "Paid Media & Analytics", initial: "P", accent: "#00d4ff" },
 ];
 
 const socials = [
@@ -174,9 +194,9 @@ export default function LifeAtSparkleMediaPage() {
           <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-10">
             {[
               { val: "50+",   label: "Team Members Worldwide", accent: "#00d4ff" },
-              { val: "5+",    label: "Years of Excellence",    accent: "#a855f7" },
-              { val: "150K+", label: "Leads Generated",        accent: "#38bdf8" },
-              { val: "98%",   label: "Team Satisfaction Rate", accent: "#34d399" },
+              { val: "5+",    label: "Years of Excellence",    accent: "#38bdf8" },
+              { val: "150K+", label: "Leads Generated",        accent: "#00d4ff" },
+              { val: "98%",   label: "Team Satisfaction Rate", accent: "#38bdf8" },
             ].map((s, i) => (
               <motion.div key={i} className="text-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <div className="text-4xl md:text-5xl font-black tracking-[-0.04em] mb-2" style={{ backgroundImage: `linear-gradient(135deg, ${s.accent}, #fff 70%)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>{s.val}</div>
@@ -215,7 +235,7 @@ export default function LifeAtSparkleMediaPage() {
             <div className="text-center mb-16">
               <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5 font-mono" style={{ color: "#00d4ff" }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Why Work With Us</motion.span>
               <motion.h2 className="text-5xl md:text-6xl text-white leading-tight" style={{ fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                What Makes Us{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #a855f7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Different</span>
+                What Makes Us{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Different</span>
               </motion.h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -224,7 +244,9 @@ export default function LifeAtSparkleMediaPage() {
                   <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none" style={{ background: `radial-gradient(ellipse 200px 150px at 50% 0%, ${perk.glow} 0%, transparent 70%)` }} />
                   <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: `linear-gradient(90deg, transparent, ${perk.accent}, transparent)` }} />
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6 transition-transform duration-300 group-hover:scale-110" style={{ background: `linear-gradient(135deg, ${perk.accent}20, ${perk.accent}08)`, border: `1px solid ${perk.accent}30`, boxShadow: `0 4px 20px ${perk.glow}` }}>{perk.emoji}</div>
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110" style={{ background: `linear-gradient(135deg, ${perk.accent}20, ${perk.accent}08)`, border: `1px solid ${perk.accent}30`, boxShadow: `0 4px 20px ${perk.glow}`, color: perk.accent }}>
+                      <perk.icon className="w-6 h-6" />
+                    </div>
                     <h3 className="text-lg font-bold mb-3 text-white">{perk.title}</h3>
                     <p className="font-light text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>{perk.desc}</p>
                     <div className="mt-6 h-0.5 w-0 group-hover:w-full transition-all duration-500 rounded-full" style={{ background: `linear-gradient(90deg, ${perk.accent}, transparent)` }} />
@@ -244,7 +266,7 @@ export default function LifeAtSparkleMediaPage() {
               <div>
                 <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>What We Stand For</motion.span>
                 <motion.h2 className="text-5xl md:text-6xl mb-8 leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  Our Core{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Values</span>
+                  Our Core{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Values</span>
                 </motion.h2>
                 <motion.div className="pl-6 py-2" style={{ borderLeft: "3px solid #00d4ff" }} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
                   <p className="text-lg font-light leading-relaxed" style={{ color: "#64748b" }}>These are not words on a wall. They are the principles that guide every decision we make, every campaign we run, and every person we hire.</p>
@@ -253,7 +275,9 @@ export default function LifeAtSparkleMediaPage() {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {values.map((v, i) => (
                   <motion.div key={i} className="group relative rounded-2xl p-6 text-center cursor-default overflow-hidden" style={{ background: "rgba(255,255,255,0.8)", backdropFilter: "blur(12px)", border: "1px solid rgba(0,212,255,0.12)", boxShadow: "0 4px 24px rgba(0,153,204,0.06)" }} initial={{ opacity: 0, scale: 0.92 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} whileHover={{ y: -4 }}>
-                    <div className="text-3xl mb-3">{v.icon}</div>
+                    <div className="flex justify-center mb-3" style={{ color: v.color }}>
+                      <v.icon className="w-7 h-7" />
+                    </div>
                     <div className="text-sm font-bold" style={{ color: "#060f2e" }}>{v.label}</div>
                     <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: v.color }} />
                   </motion.div>
@@ -272,7 +296,7 @@ export default function LifeAtSparkleMediaPage() {
                 <div className="text-[80px] leading-none font-serif mb-4" style={{ color: "rgba(0,212,255,0.15)" }}>&ldquo;</div>
                 <p className="text-xl md:text-2xl font-light leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.75)", fontFamily: "'Lora','Georgia',serif", fontStyle: "italic" }}>{quotes[quoteIdx].quote}</p>
                 <div className="flex items-center justify-center gap-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-lg" style={{ background: `linear-gradient(135deg, ${quotes[quoteIdx].accent}, #7c3aed)` }}>{quotes[quoteIdx].initial}</div>
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-lg" style={{ background: `linear-gradient(135deg, ${quotes[quoteIdx].accent}, #38bdf8)` }}>{quotes[quoteIdx].initial}</div>
                   <div className="text-left">
                     <p className="text-white font-bold text-sm">{quotes[quoteIdx].name}</p>
                     <p className="text-xs font-mono" style={{ color: "rgba(255,255,255,0.4)" }}>{quotes[quoteIdx].role}</p>
@@ -295,7 +319,7 @@ export default function LifeAtSparkleMediaPage() {
             <div className="text-center mb-14">
               <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Follow Our Journey</motion.span>
               <motion.h2 className="text-5xl md:text-6xl leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                Find Us on{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Social Media</span>
+                Find Us on{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Social Media</span>
               </motion.h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -324,30 +348,28 @@ export default function LifeAtSparkleMediaPage() {
                   {"Let's Talk"}
                 </span>
                 <h2 className="text-5xl md:text-6xl text-white mb-6 leading-tight" style={{ fontWeight: 200, letterSpacing: "-0.04em" }}>
-                  Ready to Start{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #a855f7 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Something Great?</span>
+                  Ready to Start{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Something Great?</span>
                 </h2>
                 <p className="text-lg font-light mb-10" style={{ color: "rgba(255,255,255,0.5)" }}>Whether you want to join the team or grow your brand, we are excited to connect with you.</p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                  <a href="https://calendly.com/sparklemediacreatives/30min" target="_blank" rel="noopener noreferrer" id="life-cta-call-btn" className="group relative inline-flex items-center gap-3 px-7 py-4 text-sm font-bold rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f", boxShadow: "0 10px 30px -10px rgba(0,212,255,0.6)" }}>
+                  <a href="https://calendly.com/sparklemediacreatives/30min" target="_blank" rel="noopener noreferrer" id="life-cta-call-btn" className="group relative inline-flex items-center gap-3 px-7 py-4 text-sm font-bold tracking-wide rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f", boxShadow: "0 10px 30px -10px rgba(0,212,255,0.6)" }}>
                     <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                     <span className="relative z-10">Book a Strategy Call</span>
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                   </a>
-                  <a href="https://wa.me/message/RBCP6CKB5PX6C1" target="_blank" rel="noopener noreferrer" id="life-whatsapp-btn" className="inline-flex items-center gap-3 px-7 py-4 text-sm font-semibold rounded-2xl transition-all duration-300 hover:scale-105" style={{ border: "1px solid rgba(0,212,255,0.3)", color: "rgba(255,255,255,0.85)", background: "rgba(0,212,255,0.06)" }}>
-                    {"💬 WhatsApp Us"}
-                  </a>
+                  <a href="https://wa.me/message/RBCP6CKB5PX6C1" target="_blank" rel="noopener noreferrer" id="life-whatsapp-btn" className="inline-flex items-center gap-3 px-7 py-4 text-sm font-semibold rounded-2xl transition-all hover:scale-105" style={{ border: "1px solid rgba(0,212,255,0.3)", color: "rgba(255,255,255,0.85)", background: "rgba(0,212,255,0.06)" }}>{"WhatsApp Us"}</a>
                 </div>
                 <div className="rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(0,212,255,0.15)", backdropFilter: "blur(12px)" }}>
                   <p className="text-[10px] font-bold uppercase tracking-[.2em] font-mono mb-4" style={{ color: "rgba(255,255,255,0.3)" }}>Speak with our Founder & CEO</p>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-extrabold text-xl" style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)" }}>I</div>
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-extrabold text-xl" style={{ background: "linear-gradient(135deg, #00d4ff, #38bdf8)" }}>I</div>
                     <div>
                       <p className="font-bold text-white text-sm">Inshath Ifham</p>
                       <p className="text-[11px] font-mono" style={{ color: "rgba(255,255,255,0.4)" }}>Founder — Chairman & CEO</p>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-3">
-                    <a href="https://calendly.com/sparklemediacreatives/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all hover:scale-105" style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)", color: "#04091f" }}>Talk Now →</a>
+                    <a href="https://calendly.com/sparklemediacreatives/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all hover:scale-105" style={{ background: "linear-gradient(135deg, #00d4ff, #38bdf8)", color: "#04091f" }}>Talk Now →</a>
                     <a href="https://www.linkedin.com/in/mohamed-inshath" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all hover:scale-105" style={{ border: "1px solid rgba(0,212,255,0.3)", color: "rgba(255,255,255,0.7)", background: "rgba(0,212,255,0.07)" }}><LinkedInIcon /> LinkedIn</a>
                   </div>
                 </div>
@@ -367,9 +389,9 @@ export default function LifeAtSparkleMediaPage() {
                   </div>
                   {[
                     { role: "Performance Marketing Lead", type: "Full-time", color: "#00d4ff" },
-                    { role: "Content Creator & Strategist", type: "Full-time", color: "#a855f7" },
-                    { role: "Graphic Designer", type: "Full-time", color: "#38bdf8" },
-                    { role: "SEO & GEO Specialist", type: "Full-time", color: "#34d399" },
+                    { role: "Content Creator & Strategist", type: "Full-time", color: "#38bdf8" },
+                    { role: "Graphic Designer", type: "Full-time", color: "#00d4ff" },
+                    { role: "SEO & GEO Specialist", type: "Full-time", color: "#38bdf8" },
                   ].map((r, i, arr) => (
                     <div key={i} className="flex items-center justify-between py-4" style={{ borderBottom: i < arr.length - 1 ? "1px solid rgba(0,212,255,0.08)" : "none" }}>
                       <div>

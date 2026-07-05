@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Search, Lightbulb, Bot } from "lucide-react";
 
 const aiPlatforms = [
   { name: "ChatGPT", icon: "✦", color: "#10a37f" },
@@ -16,23 +17,23 @@ const optimizationTypes = [
     full: "Search Engine Optimization",
     desc: "Rank prominently across traditional search engines with technical excellence and authority content.",
     accentColor: "#00d4ff",
-    icon: "🔍",
+    icon: Search,
     detail: "Keyword Research · Technical SEO · Link Building · Content Strategy",
   },
   {
     abbr: "AEO",
     full: "Answer Engine Optimization",
     desc: "Structure your content to be selected as the direct answer by AI assistants and featured snippets.",
-    accentColor: "#a855f7",
-    icon: "💡",
+    accentColor: "#38bdf8",
+    icon: Lightbulb,
     detail: "Featured Snippets · FAQ Schema · Voice Search · Entity Optimization",
   },
   {
     abbr: "GEO",
     full: "Generative Engine Optimization",
     desc: "Optimize your brand to be cited and recommended by large language models like ChatGPT and Gemini.",
-    accentColor: "#38bdf8",
-    icon: "🤖",
+    accentColor: "#00d4ff",
+    icon: Bot,
     detail: "LLM Training Data · Brand Authority · Citation Building · AI Indexing",
   },
 ];
@@ -145,7 +146,9 @@ function FlipCard({ type, i }: { type: typeof optimizationTypes[0]; i: number })
         >
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-2xl">{type.icon}</span>
+              <span className="flex-shrink-0" style={{ color: type.accentColor }}>
+                <type.icon className="w-6 h-6" />
+              </span>
               <span
                 className="text-xs font-black px-3 py-1 rounded-full border uppercase tracking-widest"
                 style={{
