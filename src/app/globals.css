@@ -263,16 +263,100 @@ h3 { font-weight: 400; }
 }
 
 /* ── Service Page Grid Overrides (Full width content, hide default sidebar) ── */
-main.pt-32 .grid.lg\:grid-cols-4 {
+main .grid.lg\:grid-cols-4 {
   display: block !important;
-  max-width: 900px !important;
+  max-width: 1050px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
-main.pt-32 .lg\:col-span-3 {
+main .lg\:col-span-3 {
   width: 100% !important;
   max-width: 100% !important;
+  position: relative !important;
 }
-main.pt-32 .lg\:col-span-1 {
+main .lg\:col-span-1 {
   display: none !important;
+}
+
+/* Background vertical accent guide-line */
+@media (min-width: 1024px) {
+  main .lg\:col-span-3::before {
+    content: "" !important;
+    position: absolute !important;
+    left: -2.5rem !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 1px !important;
+    background: linear-gradient(to bottom, rgba(0, 212, 255, 0.16) 0%, rgba(0, 212, 255, 0.02) 100%) !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Asymmetric Hero Split (Left: Title/Sub, Right: Description & CTA) */
+@media (min-width: 1024px) {
+  main .lg\:col-span-3 .space-y-6 {
+    display: grid !important;
+    grid-template-cols: 1.2fr 1fr !important;
+    gap: 2rem 4rem !important;
+    align-items: start !important;
+    text-align: left !important;
+    margin-bottom: 6rem !important;
+  }
+
+  main .lg\:col-span-3 .space-y-6 > *:nth-child(1) { grid-column: 1 !important; grid-row: 1 !important; }
+  main .lg\:col-span-3 .space-y-6 > *:nth-child(2) { grid-column: 1 !important; grid-row: 2 !important; }
+  main .lg\:col-span-3 .space-y-6 > *:nth-child(3) { grid-column: 1 !important; grid-row: 3 !important; }
+  
+  main .lg\:col-span-3 .space-y-6 > *:nth-child(4) { 
+    grid-column: 2 !important; 
+    grid-row: 1 / span 3 !important;
+    align-self: center !important;
+  }
+  
+  main .lg\:col-span-3 .space-y-6 > *:nth-child(5) { 
+    grid-column: 2 !important; 
+    grid-row: 4 !important; 
+    margin-top: 1.5rem !important;
+  }
+}
+
+/* Premium styled description card */
+main .lg\:col-span-3 .space-y-6 div[class*="border-l"] {
+  border-left: 3px solid #00d4ff !important;
+  padding: 1.75rem !important;
+  background: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 153, 204, 0.05) !important;
+}
+
+/* Staggered masonry feature cards */
+@media (min-width: 768px) {
+  main .lg\:col-span-3 [class*="grid-cols-2"] {
+    display: grid !important;
+    grid-template-cols: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+    padding-bottom: 4rem !important;
+  }
+  main .lg\:col-span-3 [class*="grid-cols-2"] > *:nth-child(even) {
+    transform: translateY(40px) !important;
+  }
+}
+
+/* Extra polishing for stepper list rows (staggered editorial views) */
+main .lg\:col-span-3 .space-y-0.divide-y > div {
+  transition: transform 0.3s ease, background-color 0.3s ease !important;
+  border-radius: 12px !important;
+  margin-bottom: 0.5rem !important;
+  border: 1px solid transparent !important;
+}
+main .lg\:col-span-3 .space-y-0.divide-y > div:hover {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-color: rgba(0, 212, 255, 0.12) !important;
+  transform: translateX(8px) !important;
+}
+main .lg\:col-span-3 .space-y-0.divide-y > div:hover div[class*="rounded-full"] {
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5) !important;
+  transform: scale(1.1) !important;
 }
