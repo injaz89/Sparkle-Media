@@ -1,8 +1,10 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Phone, Mail, ArrowRight, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { ChevronRight, Layers, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import Link from "next/link";
 
 const digitalLabServices = [
   { name: "Content Marketing", href: "/services/digital-lab/content-marketing" },
@@ -18,156 +20,136 @@ const techLabServices = [
   { name: "Software Development & Implementation", href: "/services/tech-lab/software-development" },
 ];
 
-const listVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -15 },
-  show: { 
-    opacity: 1, 
-    x: 0, 
-    transition: { type: "spring" as const, stiffness: 260, damping: 20 } 
-  }
-};
-
-export function ServiceSidebar() {
+export function FloatingServiceNav() {
   const pathname = usePathname();
-  
+  const [isOpen, setIsOpen] = useState(false);
+
   const isDigitalLab = pathname.includes("/services/digital-lab");
   const isTechLab = pathname.includes("/services/tech-lab");
-  
+
   const services = isDigitalLab ? digitalLabServices : isTechLab ? techLabServices : [];
   const categoryTitle = isDigitalLab ? "DIGITAL LAB" : isTechLab ? "TECH LAB" : "SERVICES";
-  
+
   if (services.length === 0) return null;
 
   return (
-    <aside className="w-full lg:max-w-[320px] ml-auto hidden lg:block sticky top-32">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="p-6 shadow-2xl shadow-[#060f2e]/30 border border-primary/20"
+    <>
+      {/* Floating Action Button */}
+      <motion.button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex flex-col items-center justify-center cursor-pointer shadow-xl text-white border border-primary/20 hover:scale-105 transition-all duration-300"
         style={{
-          background: "linear-gradient(160deg, #060f2e 0%, #0d1b4b 100%)",
+          background: "linear-gradient(165deg, #060f2e 0%, #0d1b4b 100%)",
+          boxShadow: "0 10px 30px rgba(0, 212, 255, 0.4), inset 0 1px 0 rgba(255,255,255,0.1)",
         }}
+        whileTap={{ scale: 0.95 }}
       >
-        {/* Services list */}
-        <div>
-          <h4 className="text-xs font-bold uppercase tracking-[0.18em] mb-4 text-[#00d4ff]">
-            {categoryTitle} SERVICES
-          </h4>
-          <div className="w-12 h-[2px] bg-gradient-to-r from-primary to-secondary mb-6" />
-          
-          <motion.nav 
-            variants={listVariants}
-            initial="hidden"
-            animate="show"
-            className="flex flex-col gap-2"
-          >
-            {services.map((service) => {
-              const isActive = pathname === service.href;
-              return (
-                <motion.a
-                  key={service.href}
-                  href={service.href}
-                  variants={itemVariants}
-                  whileHover={{ x: 4, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-                  className={`group relative flex items-center justify-between p-4 transition-all duration-300 border-l-[3px] font-sans text-sm tracking-wide ${
-                    isActive
-                      ? "border-primary bg-primary/10 text-primary font-semibold"
-                      : "border-transparent text-white/70 hover:text-primary"
-                  }`}
-                >
-                  <span className="relative z-10">{service.name}</span>
-                  <ChevronRight
-                    className={`w-4 h-4 relative z-10 transition-transform duration-300 ${
-                      isActive ? "text-primary translate-x-0.5" : "text-white/40 group-hover:text-primary group-hover:translate-x-1"
-                    }`}
-                  />
-                </motion.a>
-              );
-            })}
-          </motion.nav>
-        </div>
+        <AnimatePresence mode="wait">
+          {isOpen ? (
+            <motion.div
+              key="close"
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <X className="w-6 h-6 text-primary" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="menu"
+              initial={{ rotate: 90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: -90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-col items-center justify-center"
+            >
+              <Layers className="w-5 h-5 text-primary" />
+              <span className="text-[7px] font-mono font-bold tracking-widest mt-0.5 text-primary">SERVICES</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.button>
 
-      </motion.div>
-    </aside>
+      {/* Popup Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop click to close */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+            />
+
+            {/* Menu Panel */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", duration: 0.4 }}
+              className="fixed bottom-24 right-6 z-50 w-full max-w-[340px] p-6 shadow-2xl border border-primary/20 rounded-2xl"
+              style={{
+                background: "linear-gradient(160deg, #060f2e 0%, #0d1b4b 100%)",
+              }}
+            >
+              <div className="flex justify-between items-center mb-4">
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-[0.18em] text-[#00d4ff]">
+                    {categoryTitle} SERVICES
+                  </h4>
+                  <div className="w-12 h-[2px] bg-gradient-to-r from-primary to-secondary mt-1.5" />
+                </div>
+                <button 
+                  onClick={() => setIsOpen(false)}
+                  className="p-1.5 rounded-full hover:bg-white/5 text-white/50 hover:text-white transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              <nav className="flex flex-col gap-2 mt-4">
+                {services.map((service) => {
+                  const isActive = pathname === service.href;
+                  return (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      onClick={() => setIsOpen(false)}
+                      className={
+                        "group relative flex items-center justify-between p-4 rounded-xl transition-all duration-300 border-l-[3px] font-sans text-sm tracking-wide " +
+                        (isActive
+                          ? "border-primary bg-primary/10 text-primary font-semibold"
+                          : "border-transparent text-white/70 hover:text-primary hover:bg-white/5")
+                      }
+                    >
+                      <span className="relative z-10">{service.name}</span>
+                      <ChevronRight
+                        className={
+                          "w-4 h-4 relative z-10 transition-transform duration-300 " +
+                          (isActive
+                            ? "text-primary translate-x-0.5"
+                            : "text-white/40 group-hover:text-primary group-hover:translate-x-1")
+                        }
+                      />
+                    </Link>
+                  );
+                })}
+              </nav>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
-export function ServiceMobileNav() {
-  const pathname = usePathname();
-  
-  const isDigitalLab = pathname.includes("/services/digital-lab");
-  const isTechLab = pathname.includes("/services/tech-lab");
-  
-  const services = isDigitalLab ? digitalLabServices : isTechLab ? techLabServices : [];
-  
-  if (services.length === 0) return null;
+export function ServiceSidebar() {
+  return null;
+}
 
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="w-full lg:hidden my-6 z-40"
-    >
-      <div 
-        className="relative p-4 border border-primary/20 shadow-md"
-        style={{
-          background: "linear-gradient(160deg, #060f2e 0%, #0d1b4b 100%)"
-        }}
-      >
-        {/* Soft fading edges to indicate scrollability */}
-        <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-[#060f2e] to-transparent pointer-events-none z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-4 bg-gradient-to-l from-[#0d1b4b] to-transparent pointer-events-none z-10" />
-        
-        <div 
-          className="flex gap-2 overflow-x-auto pb-2 px-2"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-        >
-          {/* Hiding scrollbar in custom inline styles for compatibility */}
-          <style dangerouslySetInnerHTML={{__html: `
-            .flex.overflow-x-auto::-webkit-scrollbar {
-              display: none;
-            }
-          `}} />
-          
-          {services.map((service) => {
-            const isActive = pathname === service.href;
-            return (
-              <motion.a
-                key={service.href}
-                href={service.href}
-                whileTap={{ scale: 0.95 }}
-                className={`py-2.5 px-4 text-xs font-semibold tracking-wider uppercase whitespace-nowrap transition-all duration-300 shrink-0 ${
-                  isActive
-                    ? "text-white glow-cyan"
-                    : "text-white/60 bg-white/5 border border-white/10 hover:border-primary/50 hover:text-white"
-                }`}
-                style={{
-                  background: isActive
-                    ? "linear-gradient(135deg, #00d4ff, #0099cc)"
-                    : undefined
-                }}
-              >
-                {service.name}
-              </motion.a>
-            );
-          })}
-        </div>
-      </div>
-    </motion.div>
-  );
+export function ServiceMobileNav() {
+  return <FloatingServiceNav />;
 }

@@ -261,3 +261,18 @@ h3 { font-weight: 400; }
 .nav-item-dark:hover {
   color: #00d4ff;
 }
+
+/* ── Service Page Grid Overrides (Full width content, hide default sidebar) ── */
+main.pt-32 .grid.lg\:grid-cols-4 {
+  display: block !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+main.pt-32 .lg\:col-span-3 {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+main.pt-32 .lg\:col-span-1 {
+  display: none !important;
+}
