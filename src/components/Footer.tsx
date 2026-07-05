@@ -1,6 +1,7 @@
 import { InstagramIcon, FacebookIcon, LinkedinIcon, TikTokIcon } from "@/components/SocialIcons";
 import { ClientLogosSlider } from "@/components/ClientLogosSlider";
 import Image from "next/image";
+import Link from "next/link";
 
 const footerLinks = {
   Services: [
@@ -30,29 +31,46 @@ export function Footer() {
         <ClientLogosSlider title="Our Clients" dark={false} />
       </div>
 
-      {/* Main footer — deep navy */}
       <div
         style={{
           background: "linear-gradient(160deg, #060f2e 0%, #0d1b4b 60%, #060f2e 100%)",
+          borderTop: "1px solid rgba(0, 212, 255, 0.18)",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
+        {/* Ambient glow spots */}
+        <div
+          className="absolute top-0 right-0 w-[400px] h-[400px] pointer-events-none opacity-40 select-none"
+          style={{
+            background: "radial-gradient(circle at 90% 10%, rgba(0,212,255,0.08) 0%, transparent 70%)",
+            filter: "blur(60px)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 w-[300px] h-[300px] pointer-events-none opacity-30 select-none"
+          style={{
+            background: "radial-gradient(circle at 10% 90%, rgba(124,58,237,0.06) 0%, transparent 70%)",
+            filter: "blur(50px)",
+          }}
+        />
 
-        <div className="py-16 px-6">
+        <div className="py-16 px-6 relative z-10">
           <div className="max-w-7xl mx-auto">
 
             {/* Main grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
               {/* Brand column */}
               <div className="md:col-span-1">
-                <a href="/" aria-label="Sparkle Media Home" className="inline-block mb-5">
+                <Link href="/" aria-label="Sparkle Media Home" className="inline-block mb-5">
                   <Image
-                    src="/SM_Black.png"
+                    src="/SM_White.png"
                     alt="Sparkle Media"
-                    width={140}
-                    height={48}
-                    className="h-10 w-auto object-contain brightness-0 invert"
+                    width={175}
+                    height={60}
+                    className="h-12 w-auto object-contain"
                   />
-                </a>
+                </Link>
                 <p className="text-sm font-light leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.5)" }}>
                   Exemplary digital journeys for brands that dare to sparkle. A 360° digital marketing agency.
                 </p>
@@ -84,9 +102,9 @@ export function Footer() {
                   <ul className="space-y-3">
                     {links.map((link) => (
                       <li key={link.label}>
-                        <a href={link.href} className="footer-link">
+                        <Link href={link.href} className="footer-link">
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

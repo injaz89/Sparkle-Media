@@ -316,3 +316,33 @@ main .lg\:col-span-3 .space-y-6 div[class*="border-l"]::after {
   height: 2px !important;
   background: linear-gradient(90deg, transparent, #00d4ff 50%, transparent) !important;
 }
+
+/* ── Premium Footer Enhancements ── */
+.footer-social {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  color: rgba(255, 255, 255, 0.45) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 9999px !important;
+}
+
+.footer-social:hover {
+  color: #00d4ff !important;
+  background: rgba(0, 212, 255, 0.08) !important;
+  border-color: rgba(0, 212, 255, 0.4) !important;
+  transform: translateY(-3px) scale(1.08) !important;
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.25) !important;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.5) !important;
+  transition: all 0.25s ease !important;
+  position: relative !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+}
+
+.footer-link:hover {
+  color: #00d4ff !important;
+  transform: translateX(4px) !important;
+}

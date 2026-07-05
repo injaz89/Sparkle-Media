@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,11 +37,7 @@ export function Navbar() {
             : "py-5"
         }`}
         style={{
-          background: isScrolled
-            ? "rgba(6,15,46,0.96)"
-            : "rgba(6,15,46,0.85)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
+          background: "#060f2e",
           borderBottom: isScrolled ? "1px solid rgba(0,212,255,0.2)" : "none",
           boxShadow: isScrolled ? "0 4px 30px rgba(0,0,0,0.3)" : "none",
         }}
@@ -47,19 +46,19 @@ export function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <a href="/" aria-label="Sparkle Media Home">
+          <Link href="/" aria-label="Sparkle Media Home">
             <Image
-              src="/SM_Black.png"
+              src="/SM_White.png"
               alt="Sparkle Media"
-              width={220}
-              height={72}
-              className="h-16 w-auto object-contain"
+              width={260}
+              height={84}
+              className="h-[72px] w-auto object-contain"
               priority
             />
-          </a>
+          </Link>
           
           <div className="flex items-center space-x-6">
-            <a
+            <Link
               href="/contact"
               className="hidden md:flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-white uppercase tracking-[0.12em] transition-all hover:scale-105"
               style={{
@@ -68,7 +67,7 @@ export function Navbar() {
               }}
             >
               Get in Touch
-            </a>
+            </Link>
             <button
               onClick={() => setIsMenuOpen(true)}
               className="focus:outline-none transition-colors hover:opacity-70"
@@ -161,7 +160,7 @@ export function Navbar() {
                         <span>{item.name}</span>
                       </button>
                     ) : (
-                      <motion.a
+                      <MotionLink
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
                         className="nav-item-dark text-3xl md:text-[2.25rem] tracking-wide uppercase"
@@ -170,7 +169,7 @@ export function Navbar() {
                         transition={{ delay: 0.1 + i * 0.05 }}
                       >
                         {item.name}
-                      </motion.a>
+                      </MotionLink>
                     )}
                     
                     <AnimatePresence>
@@ -194,13 +193,13 @@ export function Navbar() {
                                   <span>{subItem.name}</span>
                                 </button>
                               ) : (
-                                <a
+                                <Link
                                   href={subItem.href}
                                   onClick={() => setIsMenuOpen(false)}
                                   className="nav-item-dark text-xl md:text-2xl tracking-wide uppercase"
                                 >
                                   {subItem.name}
-                                </a>
+                                </Link>
                               )}
                               
                               <AnimatePresence>
@@ -212,14 +211,14 @@ export function Navbar() {
                                     className="flex flex-col space-y-2 mt-3 mb-1 overflow-hidden items-end pr-4 border-r-2 border-cyan-50"
                                   >
                                     {subItem.subItems.map((nestedItem) => (
-                                      <a
+                                      <Link
                                         key={nestedItem.name}
                                         href={nestedItem.href}
                                         onClick={() => setIsMenuOpen(false)}
                                         className="text-lg md:text-xl font-light text-gray-500 hover:text-cyan-600 transition-colors capitalize"
                                       >
                                         {nestedItem.name}
-                                      </a>
+                                      </Link>
                                     ))}
                                   </motion.div>
                                 )}
