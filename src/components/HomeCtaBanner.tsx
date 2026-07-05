@@ -188,7 +188,7 @@ export function HomeCtaBanner() {
               boxShadow: "0 4px 20px rgba(0,153,204,0.08)",
             }}
           >
-            See Our Work
+            See Our Services
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

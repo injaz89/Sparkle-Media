@@ -1,10 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Mail, MessageSquare, ArrowRight } from "lucide-react";
+import { Phone, Mail, MessageSquare, ArrowRight, CheckCircle2 } from "lucide-react";
 import { InstagramIcon, FacebookIcon, LinkedinIcon, TikTokIcon } from "./SocialIcons";
+import { useState } from "react";
 
 export function Contact() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("_subject", "New Contact Inquiry - Sparkle Media Website");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/sparklemediacreatives@gmail.com", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
   return (
     <section id="contact" className="relative py-24 overflow-hidden" style={{ background: "#f0faff" }}>
       {/* Background decoration */}
@@ -154,58 +182,87 @@ export function Contact() {
               <h3 className="text-2xl font-bold text-[#0A1128] mb-2">Send Us a Message</h3>
               <p className="text-sm text-gray-400 font-light mb-8">We&apos;ll get back to you within 24 hours.</p>
 
-              <form className="space-y-5">
-                <div>
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">Your Name *</label>
-                  <input
-                    type="text"
-                    placeholder="Full name"
-                    className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all text-sm"
-                    required
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">Phone *</label>
-                    <input
-                      type="tel"
-                      placeholder="+94 7X XXX XXXX"
-                      className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all text-sm"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">Email *</label>
-                    <input
-                      type="email"
-                      placeholder="name@company.com"
-                      className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all text-sm"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">Message</label>
-                  <textarea
-                    rows={4}
-                    placeholder="Tell us about your project or goals..."
-                    className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all resize-none text-sm"
-                  />
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="w-full text-white font-bold py-4 shadow-md shadow-sky-200/60 transition-all flex items-center justify-center gap-3 text-sm mt-2"
-                  style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
+              {status === "success" ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center text-center py-12 px-4"
                 >
-                  <MessageSquare className="w-5 h-5" />
-                  Send Message
-                </motion.button>
-              </form>
+                  <CheckCircle2 className="w-16 h-16 text-[#129adc] mb-4 float" />
+                  <h4 className="text-xl font-bold text-[#0A1128] mb-2">Thank You!</h4>
+                  <p className="text-sm text-gray-500 font-light max-w-sm">
+                    Your message has been sent successfully. We will get back to you at the email provided within 24 hours.
+                  </p>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div>
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">Your Name *</label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Full name"
+                      className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all text-sm"
+                      required
+                      disabled={status === "sending"}
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">Phone *</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="+94 7X XXX XXXX"
+                        className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all text-sm"
+                        required
+                        disabled={status === "sending"}
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">Email *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="name@company.com"
+                        className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all text-sm"
+                        required
+                        disabled={status === "sending"}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">Message</label>
+                    <textarea
+                      rows={4}
+                      name="message"
+                      placeholder="Tell us about your project or goals..."
+                      className="w-full bg-[#F8FCFE] border border-[#87d4f8] px-5 py-3.5 text-[#0A1128] placeholder-gray-300 focus:outline-none focus:border-[#39bcfc] focus:bg-white transition-all resize-none text-sm"
+                      disabled={status === "sending"}
+                    />
+                  </div>
+
+                  {status === "error" && (
+                    <p className="text-xs font-semibold text-red-500 mt-2">
+                      Failed to send message. Please check your network and try again.
+                    </p>
+                  )}
+
+                  <motion.button
+                    whileHover={{ scale: status === "sending" ? 1 : 1.02 }}
+                    whileTap={{ scale: status === "sending" ? 1 : 0.98 }}
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="w-full text-white font-bold py-4 shadow-md shadow-sky-200/60 transition-all flex items-center justify-center gap-3 text-sm mt-2 cursor-pointer disabled:cursor-not-allowed disabled:opacity-75"
+                    style={{ background: "linear-gradient(135deg, #39bcfc, #129adc)" }}
+                  >
+                    <MessageSquare className="w-5 h-5" />
+                    {status === "sending" ? "Sending Message..." : "Send Message"}
+                  </motion.button>
+                </form>
+              )}
             </div>
           </motion.div>
         </div>

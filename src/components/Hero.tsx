@@ -481,7 +481,7 @@ export function Hero() {
             >
               <span className="w-6 h-6 rounded-full inline-flex items-center justify-center text-[10px]"
                 style={{ border: "1.5px solid rgba(0,212,255,0.7)", color: "#00d4ff" }}>▶</span>
-              See Our Work
+              See Our Services
             </a>
           </motion.div>
 

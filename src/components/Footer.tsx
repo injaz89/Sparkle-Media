@@ -13,10 +13,6 @@ const footerLinks = {
     { label: "FAQs", href: "/faqs" },
     { label: "Contact", href: "/contact" },
   ],
-  Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-  ],
 };
 
 const socials = [
@@ -45,7 +41,7 @@ export function Footer() {
           <div className="max-w-7xl mx-auto">
 
             {/* Main grid */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
               {/* Brand column */}
               <div className="md:col-span-1">
                 <a href="/" aria-label="Sparkle Media Home" className="inline-block mb-5">

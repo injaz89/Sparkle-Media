@@ -353,25 +353,10 @@ export function AiSearch() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <p className="text-gray-500 font-light text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-gray-500 font-light text-lg max-w-2xl mx-auto mb-0">
             So your business is{" "}
             <span className="font-semibold text-[#0A1128]">discoverable everywhere</span> your customers search — not just Google.
           </p>
-          <a
-            href="https://calendly.com/sparklemediacreatives/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 text-white font-bold text-sm transition-all hover:scale-105 rounded-xl"
-            style={{
-              background: "linear-gradient(135deg, #00d4ff, #7c3aed)",
-              boxShadow: "0 8px 30px rgba(0,212,255,0.3)",
-            }}
-          >
-            Get Discovered Everywhere
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
         </motion.div>
       </div>
     </section>

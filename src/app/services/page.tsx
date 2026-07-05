@@ -94,7 +94,15 @@ const sparkleData = [
   { x: "50%", y: "3%",  delay: 0.8, size: 5, duration: 4.5 },
 ];
 
-function SparkleParticle({ x, y, delay, size, duration }) {
+interface SparkleParticleProps {
+  x: string;
+  y: string;
+  delay: number;
+  size: number;
+  duration: number;
+}
+
+function SparkleParticle({ x, y, delay, size, duration }: SparkleParticleProps) {
   return (
     <div
       className="absolute pointer-events-none"
@@ -110,7 +118,22 @@ function SparkleParticle({ x, y, delay, size, duration }) {
   );
 }
 
-function ServiceCard({ service, accent, i }) {
+interface ServiceItem {
+  number: string;
+  icon: any;
+  title: string;
+  desc: string;
+  href: string;
+  features: string[];
+}
+
+interface ServiceCardProps {
+  service: ServiceItem;
+  accent: string;
+  i: number;
+}
+
+function ServiceCard({ service, accent, i }: ServiceCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
