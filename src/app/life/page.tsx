@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   Heart,
   Sparkles,
@@ -172,11 +173,11 @@ export default function LifeAtSparkleMediaPage() {
             </div>
 
             <motion.div className="flex flex-col sm:flex-row gap-4 items-center" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-              <a href="https://calendly.com/sparklemediacreatives/30min" target="_blank" rel="noopener noreferrer" id="life-hero-join-btn" className="group relative inline-flex items-center gap-3 px-8 py-[18px] text-sm font-bold tracking-wide rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f", boxShadow: "0 14px 40px -12px rgba(0,212,255,0.65)", animation: "pulseGlow 3s ease-in-out infinite" }}>
+              <Link href="/contact" id="life-hero-join-btn" className="group relative inline-flex items-center gap-3 px-8 py-[18px] text-sm font-bold tracking-wide rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f", boxShadow: "0 14px 40px -12px rgba(0,212,255,0.65)", animation: "pulseGlow 3s ease-in-out infinite" }}>
                 <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                 <span className="relative z-10">Join Our Team</span>
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-              </a>
+              </Link>
               <a href="#culture" id="life-explore-btn" className="inline-flex items-center gap-3 px-8 py-[18px] text-sm font-semibold rounded-2xl transition-all duration-300 hover:scale-105" style={{ border: "1px solid rgba(0,212,255,0.3)", color: "rgba(255,255,255,0.85)", background: "rgba(0,212,255,0.06)" }}>
                 Explore Culture ↓
               </a>
@@ -352,11 +353,11 @@ export default function LifeAtSparkleMediaPage() {
                 </h2>
                 <p className="text-lg font-light mb-10" style={{ color: "rgba(255,255,255,0.5)" }}>Whether you want to join the team or grow your brand, we are excited to connect with you.</p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                  <a href="https://calendly.com/sparklemediacreatives/30min" target="_blank" rel="noopener noreferrer" id="life-cta-call-btn" className="group relative inline-flex items-center gap-3 px-7 py-4 text-sm font-bold tracking-wide rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f", boxShadow: "0 10px 30px -10px rgba(0,212,255,0.6)" }}>
+                  <Link href="/contact" id="life-cta-call-btn" className="group relative inline-flex items-center gap-3 px-7 py-4 text-sm font-bold tracking-wide rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f", boxShadow: "0 10px 30px -10px rgba(0,212,255,0.6)" }}>
                     <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                     <span className="relative z-10">Book a Strategy Call</span>
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                  </a>
+                  </Link>
                   <a href="https://wa.me/message/RBCP6CKB5PX6C1" target="_blank" rel="noopener noreferrer" id="life-whatsapp-btn" className="inline-flex items-center gap-3 px-7 py-4 text-sm font-semibold rounded-2xl transition-all hover:scale-105" style={{ border: "1px solid rgba(0,212,255,0.3)", color: "rgba(255,255,255,0.85)", background: "rgba(0,212,255,0.06)" }}>{"WhatsApp Us"}</a>
                 </div>
                 <div className="rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(0,212,255,0.15)", backdropFilter: "blur(12px)" }}>
@@ -369,7 +370,7 @@ export default function LifeAtSparkleMediaPage() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-3">
-                    <a href="https://calendly.com/sparklemediacreatives/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all hover:scale-105" style={{ background: "linear-gradient(135deg, #00d4ff, #38bdf8)", color: "#04091f" }}>Talk Now →</a>
+                    <Link href="/contact" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all hover:scale-105" style={{ background: "linear-gradient(135deg, #00d4ff, #38bdf8)", color: "#04091f" }}>Talk Now →</Link>
                     <a href="https://www.linkedin.com/in/mohamed-inshath" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all hover:scale-105" style={{ border: "1px solid rgba(0,212,255,0.3)", color: "rgba(255,255,255,0.7)", background: "rgba(0,212,255,0.07)" }}><LinkedInIcon /> LinkedIn</a>
                   </div>
                 </div>
@@ -401,7 +402,7 @@ export default function LifeAtSparkleMediaPage() {
                       <div className="text-[10px] font-bold px-3 py-1 rounded-full font-mono" style={{ background: `${r.color}15`, color: r.color, border: `1px solid ${r.color}30` }}>Open</div>
                     </div>
                   ))}
-                  <a href="https://calendly.com/sparklemediacreatives/30min" target="_blank" rel="noopener noreferrer" className="mt-6 w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold transition-all hover:scale-[1.02]" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f" }}>Apply Now →</a>
+                  <Link href="/contact" className="mt-6 w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold transition-all hover:scale-[1.02]" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f" }}>Apply Now →</Link>
                 </div>
               </motion.div>
             </div>

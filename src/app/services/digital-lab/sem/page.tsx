@@ -184,15 +184,13 @@ export default function SemPage() {
                   transition={{ delay: 0.3 }}
                   className="flex flex-wrap gap-4 mb-8"
                 >
-                  <a
-                    href="https://calendly.com/sparklemediacreatives/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold hover:bg-primary transition-colors"
                   >
                     Chat with our CEO
                     <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </Link>
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-white transition-all"
@@ -377,15 +375,13 @@ export default function SemPage() {
                           By combining data, creativity, and performance marketing expertise, we help
                           businesses transform search demand into measurable revenue growth.
                         </p>
-                        <a
-                          href="https://calendly.com/sparklemediacreatives/30min"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <Link
+                          href="/contact"
                           className="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold hover:bg-bg hover:text-navy transition-colors"
                         >
                           Chat with our CEO
                           <ArrowRight className="w-4 h-4" />
-                        </a>
+                        </Link>
                       </div>
                     </motion.div>
                   </div>

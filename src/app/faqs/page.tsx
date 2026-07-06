@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Plus, Minus, ArrowRight, MessageCircle } from "lucide-react";
+import Link from "next/link";
 
 const categories = [
   {
@@ -277,14 +278,12 @@ export default function FaqsPage() {
                       <p className="text-gray-500 text-xs font-light leading-relaxed mb-4">
                         Book a free strategy call and let&apos;s talk about your business.
                       </p>
-                      <a
-                        href="https://calendly.com/sparklemediacreatives/30min"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        href="/contact"
                         className="inline-flex items-center gap-2 text-xs font-bold text-secondary hover:text-primary transition-colors uppercase tracking-widest"
                       >
                         Book a Call <ArrowRight className="w-3 h-3" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -387,14 +386,12 @@ export default function FaqsPage() {
               transition={{ delay: 0.2 }}
               className="flex flex-wrap justify-center gap-4"
             >
-              <a
-                href="https://calendly.com/sparklemediacreatives/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-bold hover:bg-primary transition-colors"
               >
                 Book a Strategy Call <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
               <a
                 href="https://wa.me/message/RBCP6CKB5PX6C1"
                 target="_blank"

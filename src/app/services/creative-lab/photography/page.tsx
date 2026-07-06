@@ -3,6 +3,9 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 const photographyTypes = [
   {
@@ -86,10 +89,8 @@ export default function PhotographyPage() {
                     Capture moments with a story!
                   </p>
                 </motion.div>
-                <motion.a
-                  href="https://calendly.com/sparklemediacreatives/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <MotionLink
+                  href="/contact"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.35 }}
@@ -100,7 +101,7 @@ export default function PhotographyPage() {
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </motion.a>
+                </MotionLink>
               </div>
 
               {/* Right: intro copy */}

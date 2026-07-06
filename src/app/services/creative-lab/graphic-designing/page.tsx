@@ -3,6 +3,9 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 const graphicTypes = [
   {
@@ -81,9 +84,8 @@ export default function GraphicDesigningPage() {
               className="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-8" style={{ color: "#64748b" }}>
               Give your brand life with creativity!
             </motion.p>
-            <motion.a
-              href="https://calendly.com/sparklemediacreatives/30min"
-              target="_blank" rel="noopener noreferrer"
+            <MotionLink
+              href="/contact"
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}
               className="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold transition-all hover:scale-105"
               style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)", boxShadow: "0 8px 30px rgba(0,212,255,0.35)" }}
@@ -92,7 +94,7 @@ export default function GraphicDesigningPage() {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </motion.a>
+            </MotionLink>
           </div>
         </section>
 

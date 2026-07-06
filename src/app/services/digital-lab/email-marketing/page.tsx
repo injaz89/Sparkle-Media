@@ -4,6 +4,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageSquare, Mail } from "lucide-react";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 import { ServiceSidebar, ServiceMobileNav } from "@/components/ServiceNavigation";
 
 const whatsappServices = [
@@ -102,10 +105,8 @@ export default function EmailMarketingPage() {
                     scalable communication.
                   </p>
                 </motion.div>
-                <motion.a
-                  href="https://calendly.com/sparklemediacreatives/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <MotionLink
+                  href="/contact"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
@@ -113,7 +114,7 @@ export default function EmailMarketingPage() {
                 >
                   Book a Strategy Call
                   <ArrowRight className="w-4 h-4" />
-                </motion.a>
+                </MotionLink>
               </div>
 
               {/* ── WHATSAPP MARKETING AUTOMATION ── */}
@@ -333,15 +334,13 @@ export default function EmailMarketingPage() {
                         Let&apos;s build a system that nurtures leads, recovers lost revenue, and keeps
                         customers coming back — automatically.
                       </p>
-                      <a
-                        href="https://calendly.com/sparklemediacreatives/30min"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        href="/contact"
                         className="inline-flex items-center gap-2 px-10 py-4 bg-secondary text-white font-bold hover:bg-primary transition-colors"
                       >
                         Book a Strategy Call
                         <ArrowRight className="w-4 h-4" />
-                      </a>
+                      </Link>
                     </div>
                   </motion.div>
                 </div>

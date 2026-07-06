@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function HomeCtaBanner() {
   return (
@@ -154,10 +155,8 @@ export function HomeCtaBanner() {
           transition={{ delay: 0.3 }}
         >
           {/* Primary */}
-          <a
-            href="https://calendly.com/sparklemediacreatives/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             id="cta-banner-primary-btn"
             className="group relative inline-flex items-center gap-3 px-10 py-5 text-base font-black rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105"
             style={{
@@ -173,10 +172,10 @@ export function HomeCtaBanner() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </span>
-          </a>
+          </Link>
 
           {/* Secondary */}
-          <a
+          <Link
             href="/services"
             id="cta-banner-secondary-btn"
             className="inline-flex items-center gap-3 px-10 py-5 text-base font-semibold rounded-2xl transition-all duration-300 hover:scale-105"
@@ -192,7 +191,7 @@ export function HomeCtaBanner() {
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </motion.div>
 
         {/* Trust indicators */}

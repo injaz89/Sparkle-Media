@@ -4,6 +4,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import Link from "next/link";
+
+const MotionLink = motion(Link);
 import {
   Users,
   Calendar,
@@ -213,10 +215,8 @@ export default function SocialMediaPage() {
                 >
                   Create meaningful connections. Grow your audience. Turn social media into a powerful business growth channel.
                 </motion.p>
-                <motion.a
-                  href="https://calendly.com/sparklemediacreatives/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <MotionLink
+                  href="/contact"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.38 }}
@@ -226,7 +226,7 @@ export default function SocialMediaPage() {
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </motion.a>
+                </MotionLink>
 
                 {/* Hero Intro Copy */}
                 <motion.div
@@ -529,17 +529,15 @@ export default function SocialMediaPage() {
                 <p className="text-gray-650 font-light leading-relaxed mb-10">
                   Because successful social media marketing isn&apos;t about posting more. It&apos;s about creating meaningful connections that turn audiences into customers and customers into advocates.
                 </p>
-                <a
-                  href="https://calendly.com/sparklemediacreatives/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold hover:bg-primary transition-colors"
                 >
                   Book a Free Strategy Call
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
               
               {/* Benefits — row style, no boxes */}

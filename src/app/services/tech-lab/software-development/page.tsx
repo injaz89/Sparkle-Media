@@ -195,15 +195,13 @@ export default function SoftwareDevelopmentPage() {
                   transition={{ delay: 0.3 }}
                   className="flex flex-wrap gap-4 mb-8"
                 >
-                  <a
-                    href="https://calendly.com/sparklemediacreatives/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold hover:bg-primary transition-colors"
                   >
                     Start Your Project
                     <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </Link>
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-white transition-all bg-white"
@@ -404,15 +402,13 @@ export default function SoftwareDevelopmentPage() {
                     Whether you&apos;re launching a new product, modernizing legacy systems, or scaling
                     operations through automation, our team is ready to help bring your vision to life.
                   </p>
-                  <a
-                    href="https://calendly.com/sparklemediacreatives/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-bold hover:bg-primary transition-colors"
                   >
                     Start Your Project
                     <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             </div>

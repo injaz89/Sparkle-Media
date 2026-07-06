@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Globe, Search, Target, Share2, FileText, Mail } from "lucide-react";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 const services = [
   {
@@ -71,7 +74,7 @@ function ServiceCard({ service, i }: { service: typeof services[0]; i: number })
   const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.a
+    <MotionLink
       href={service.href}
       className="group relative rounded-2xl p-7 flex flex-col gap-4 overflow-hidden cursor-pointer transition-all duration-400"
       style={{
@@ -198,7 +201,7 @@ function ServiceCard({ service, i }: { service: typeof services[0]; i: number })
           opacity: hovered ? 0.6 : 0,
         }}
       />
-    </motion.a>
+      </MotionLink>
   );
 }
 
@@ -257,7 +260,7 @@ export function Services() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <a
+          <Link
             href="/services"
             id="view-all-services-btn"
             className="inline-flex items-center gap-2 px-9 py-4 font-bold text-sm transition-all hover:scale-105 rounded-xl"
@@ -272,7 +275,7 @@ export function Services() {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

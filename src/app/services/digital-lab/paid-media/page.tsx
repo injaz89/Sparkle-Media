@@ -165,17 +165,15 @@ export default function PaidMediaPage() {
                   transition={{ delay: 0.3 }}
                   className="flex flex-wrap gap-4 mb-8"
                 >
-                  <a
-                    href="https://calendly.com/sparklemediacreatives/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold hover:bg-primary transition-colors"
                   >
                     Book Strategy Call
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                  </a>
+                  </Link>
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 border-2 border-secondary text-secondary font-semibold hover:bg-secondary hover:text-white transition-all"
@@ -264,14 +262,12 @@ export default function PaidMediaPage() {
                           assets, and landing pages to lower your acquisition costs and maximize your
                           advertising budget.
                         </p>
-                        <a
-                          href="https://calendly.com/sparklemediacreatives/30min"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <Link
+                          href="/contact"
                           className="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold hover:bg-bg hover:text-navy transition-colors"
                         >
                           Book Strategy Call
-                        </a>
+                        </Link>
                       </div>
                     </motion.div>
                   </div>
@@ -475,14 +471,12 @@ export default function PaidMediaPage() {
                   From simple awareness campaigns to complex conversion tracking, we handle every
                   aspect of your paid media ecosystem to ensure maximum return on ad spend.
                 </p>
-                <a
-                  href="https://calendly.com/sparklemediacreatives/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold hover:bg-primary transition-colors"
                 >
                   Start a Campaign
-                </a>
+                </Link>
               </div>
 
               <div className="xl:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -559,14 +553,12 @@ export default function PaidMediaPage() {
                     Because at the end of the day, successful marketing isn&apos;t about spending more.
                     It&apos;s about generating more from every dollar invested.
                     </p>
-                  <a
-                    href="https://calendly.com/sparklemediacreatives/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/contact"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold hover:bg-bg hover:text-navy transition-colors"
                   >
                     Book a Strategy Call
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             </div>

@@ -4,6 +4,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 import { ServiceSidebar, ServiceMobileNav } from "@/components/ServiceNavigation";
 
 const whyMatters = [
@@ -168,15 +171,13 @@ export default function WebDevelopmentPage() {
                     engage, and convert customers.
                   </p>
                 </motion.div>
-                <motion.a
-                  href="https://calendly.com/sparklemediacreatives/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <MotionLink
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold hover:bg-primary transition-colors mb-8 animate-pulse"
                 >
                   Start Your Project
                   <ArrowRight className="w-4 h-4" />
-                </motion.a>
+                </MotionLink>
               </div>
 
               {/* ── WHY YOUR WEBSITE MATTERS ── */}
@@ -411,15 +412,13 @@ export default function WebDevelopmentPage() {
                   Whether you&apos;re starting from scratch or looking to upgrade your existing
                   website, our team is ready to build a solution that delivers measurable results.
                 </p>
-                <a
-                  href="https://calendly.com/sparklemediacreatives/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-bold hover:bg-primary transition-colors"
                 >
                   Start Your Project
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </motion.div>
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { TrendingUp, Target, Zap, Users, Gem, BarChart3 } from "lucide-react";
+import Link from "next/link";
 
 const focusAreas = [
   {
@@ -293,10 +294,8 @@ export function WhyChooseUs() {
           <p className="font-light mb-8" style={{ color: "#64748b" }}>
             Ready to start growing your revenue?
           </p>
-          <a
-            href="https://calendly.com/sparklemediacreatives/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             id="why-us-cta-btn"
             className="inline-block px-10 py-4 text-white font-bold transition-all hover:scale-105 rounded-xl"
             style={{
@@ -305,7 +304,7 @@ export function WhyChooseUs() {
             }}
           >
             Book a Strategy Call →
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

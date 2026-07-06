@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 /* ── Rotating headline phrases ── */
 const HEADLINES = [
@@ -446,11 +447,9 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-12 w-full sm:w-auto"
           >
             {/* Primary CTA */}
-            <a
-              href="https://calendly.com/sparklemediacreatives/30min"
+            <Link
+              href="/contact"
               id="hero-strategy-call-btn"
-              target="_blank"
-              rel="noopener noreferrer"
               className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-[18px] text-sm font-bold tracking-wide rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105"
               style={{
                 background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)",
@@ -466,7 +465,7 @@ export function Hero() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </span>
-            </a>
+            </Link>
 
             {/* Secondary CTA */}
             <a

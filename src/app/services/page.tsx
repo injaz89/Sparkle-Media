@@ -466,10 +466,8 @@ export default function ServicesPage() {
                 Book a free 30-minute strategy call and our experts will map the perfect solution for your business goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://calendly.com/sparklemediacreatives/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact"
                   className="group inline-flex items-center gap-3 px-8 py-4 text-sm font-bold rounded-2xl transition-all hover:scale-105"
                   style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f", boxShadow: "0 10px 30px -10px rgba(0,212,255,0.6)" }}
                 >
@@ -477,7 +475,7 @@ export default function ServicesPage() {
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </a>
+                </Link>
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-3 px-8 py-4 text-sm font-semibold rounded-2xl transition-all hover:scale-105"

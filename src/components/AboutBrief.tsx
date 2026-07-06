@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Building2, Hotel, ShoppingBag, Globe, CalendarCheck, Briefcase } from "lucide-react";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 const industries = [
   { icon: Building2, name: "Real Estate" },
@@ -103,7 +106,7 @@ export function AboutBrief() {
               ))}
             </div>
 
-            <motion.a
+            <MotionLink
               href="/about"
               className="inline-flex items-center gap-2 mt-10 px-8 py-4 border-2 border-[#87d4f8] text-[#0A1128] font-semibold hover:border-[#39bcfc] hover:text-[#129adc] transition-all text-sm bg-white"
               initial={{ opacity: 0 }}
@@ -115,7 +118,7 @@ export function AboutBrief() {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </motion.a>
+            </MotionLink>
           </motion.div>
 
           {/* Right: Industries */}
