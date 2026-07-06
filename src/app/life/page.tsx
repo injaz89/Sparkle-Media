@@ -87,10 +87,10 @@ const quotes = [
 ];
 
 const socials = [
-  { name: "Instagram", handle: "@sparklemedia_", href: "https://www.instagram.com/sparklemedia_/", Icon: InstagramIcon, bg: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)" },
-  { name: "Facebook", handle: "Sparkle Media", href: "https://www.facebook.com/profile.php?id=100083969542491", Icon: FacebookIcon, bg: "#1877F2" },
-  { name: "LinkedIn", handle: "Sparkle Media Pvt Ltd", href: "https://www.linkedin.com/company/sparkle-media-creatives", Icon: LinkedInIcon, bg: "#0A66C2" },
-  { name: "TikTok", handle: "@sparklemedia_", href: "https://www.tiktok.com/@sparklemedia_", Icon: TikTokIcon, bg: "#010101" },
+  { name: "Instagram", handle: "@sparklemedia.lk", href: "https://www.instagram.com/sparklemedia.lk/", Icon: InstagramIcon, bg: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)" },
+  { name: "Facebook", handle: "Sparkle Media", href: "https://www.facebook.com/people/Sparkle-Media/100083969542491/", Icon: FacebookIcon, bg: "#1877F2" },
+  { name: "LinkedIn", handle: "Sparkle Media Pvt Ltd", href: "https://www.linkedin.com/company/sparkle-media-pvt-ltd/", Icon: LinkedInIcon, bg: "#0A66C2" },
+  { name: "TikTok", handle: "@sparklemedia_", href: "https://www.tiktok.com/@sparklemedia_?lang=en", Icon: TikTokIcon, bg: "#010101" },
 ];
 
 const sparkleData = [

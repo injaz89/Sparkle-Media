@@ -105,7 +105,7 @@ export function Contact() {
               </a>
 
               <a
-                href="mailto:info@sparklemedia.lk"
+                href="mailto:sparklemediacreatives@gmail.com"
                 className="contact-card group flex items-center gap-5 p-5 bg-white"
               >
                 <div
@@ -116,7 +116,9 @@ export function Contact() {
                 </div>
                 <div className="flex-1">
                   <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-0.5">Email us</p>
-                  <p className="text-xl font-bold text-[#0A1128] group-hover:text-[#129adc] transition-colors">info@sparklemedia.lk</p>
+                  <p className="text-xl font-bold text-[#0A1128] group-hover:text-[#129adc] transition-colors" style={{ wordBreak: "break-all" }}>
+                    sparklemediacreatives@gmail.com
+                  </p>
                   <p className="text-xs text-[#39bcfc] mt-0.5 font-medium">We reply within 24 hours</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-[#87d4f8] group-hover:text-[#39bcfc] group-hover:translate-x-1 transition-all" />
@@ -128,8 +130,8 @@ export function Contact() {
               <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-5">Follow Us on Social Media</p>
               <div className="flex gap-3">
                 {[
-                  { icon: InstagramIcon, href: "https://www.instagram.com/sparklemedia_/", label: "Instagram" },
-                  { icon: FacebookIcon, href: "https://www.facebook.com/profile.php?id=100083969542491", label: "Facebook" },
+                  { icon: InstagramIcon, href: "https://www.instagram.com/sparklemedia.lk/", label: "Instagram" },
+                  { icon: FacebookIcon, href: "https://www.facebook.com/people/Sparkle-Media/100083969542491/", label: "Facebook" },
                   { icon: LinkedinIcon, href: "https://www.linkedin.com/company/sparkle-media-pvt-ltd/", label: "LinkedIn" },
                   { icon: TikTokIcon, href: "https://www.tiktok.com/@sparklemedia_?lang=en", label: "TikTok" }
                 ].map((social, index) => (

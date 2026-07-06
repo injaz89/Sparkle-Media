@@ -17,8 +17,8 @@ const footerLinks = {
 };
 
 const socials = [
-  { Icon: InstagramIcon, href: "https://www.instagram.com/sparklemedia_/", label: "Instagram" },
-  { Icon: FacebookIcon, href: "#", label: "Facebook" },
+  { Icon: InstagramIcon, href: "https://www.instagram.com/sparklemedia.lk/", label: "Instagram" },
+  { Icon: FacebookIcon, href: "https://www.facebook.com/people/Sparkle-Media/100083969542491/", label: "Facebook" },
   { Icon: LinkedinIcon, href: "https://www.linkedin.com/company/sparkle-media-pvt-ltd/", label: "LinkedIn" },
   { Icon: TikTokIcon, href: "https://www.tiktok.com/@sparklemedia_?lang=en", label: "TikTok" },
 ];
@@ -71,9 +71,16 @@ export function Footer() {
                     className="h-12 w-auto object-contain"
                   />
                 </Link>
-                <p className="text-sm font-light leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.5)" }}>
+                <p className="text-sm font-light leading-relaxed mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>
                   Exemplary digital journeys for brands that dare to sparkle. A 360° digital marketing agency.
                 </p>
+                <a
+                  href="mailto:sparklemediacreatives@gmail.com"
+                  className="block text-xs font-light hover:text-[#00d4ff] transition-colors mb-6"
+                  style={{ color: "rgba(255,255,255,0.4)" }}
+                >
+                  sparklemediacreatives@gmail.com
+                </a>
 
                 {/* Socials — CSS hover via .footer-social class */}
                 <div className="flex gap-3">
