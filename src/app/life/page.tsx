@@ -202,9 +202,14 @@ export default function LifeAtSparkleMediaPage() {
           <div className="absolute top-0 left-0 right-0 h-px section-line" />
           <div className="absolute top-0 left-0 w-[600px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(circle at 0% 0%, rgba(0,212,255,0.07) 0%, transparent 60%)" }} />
           <div className="absolute bottom-0 right-0 w-[500px] h-[400px] pointer-events-none" style={{ background: "radial-gradient(circle at 100% 100%, rgba(124,58,237,0.05) 0%, transparent 60%)" }} />
+          {/* Floating dot accent */}
+          <motion.div className="absolute left-[8%] top-1/3 w-3 h-3 rounded-full pointer-events-none" style={{ background: "#00d4ff", boxShadow: "0 0 16px rgba(0,212,255,0.6)" }} animate={{ y: [0, -14, 0], opacity: [0.6, 1, 0.6] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }} />
+          <motion.div className="absolute right-[8%] top-2/3 w-2 h-2 rounded-full pointer-events-none" style={{ background: "#7c3aed", boxShadow: "0 0 12px rgba(124,58,237,0.6)" }} animate={{ y: [0, 12, 0], opacity: [0.5, 1, 0.5] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }} />
           <div className="max-w-4xl mx-auto px-6 text-center relative">
-            <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Our Culture</motion.span>
-            <motion.h2 className="text-5xl md:text-6xl mb-10 leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Our Culture</motion.span>
+            {/* Animated divider line */}
+            <motion.div className="w-0 h-px mx-auto mb-6" style={{ background: "linear-gradient(90deg, transparent, #00d4ff, transparent)" }} whileInView={{ width: "120px" }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }} />
+            <motion.h2 className="text-5xl md:text-6xl mb-10 leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
               Life at{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Sparkle Media</span>
             </motion.h2>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-light">
@@ -213,7 +218,7 @@ export default function LifeAtSparkleMediaPage() {
                 "You will be involved in the creative process of developing campaigns, creating content, and measuring results while being exposed to the latest AI-powered technologies that stay ahead of the competition.",
                 "The work is demanding but deeply fulfilling. We directly help businesses reach their goals and build their brand, and every team member feels the impact of their contribution.",
               ].map((p, i) => (
-                <motion.p key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12 }}>{p}</motion.p>
+                <motion.p key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: i * 0.15 }}>{p}</motion.p>
               ))}
             </div>
           </div>
@@ -255,22 +260,26 @@ export default function LifeAtSparkleMediaPage() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>What We Stand For</motion.span>
-                <motion.h2 className="text-5xl md:text-6xl mb-8 leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>What We Stand For</motion.span>
+                {/* Animated reveal line */}
+                <motion.div className="w-0 h-px mb-5" style={{ background: "linear-gradient(90deg, #00d4ff, transparent)" }} whileInView={{ width: "80px" }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.1 }} />
+                <motion.h2 className="text-5xl md:text-6xl mb-8 leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
                   Our Core{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Values</span>
                 </motion.h2>
-                <motion.div className="pl-6 py-2" style={{ borderLeft: "3px solid #00d4ff" }} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+                <motion.div className="pl-6 py-2" style={{ borderLeft: "3px solid #00d4ff" }} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.6 }}>
                   <p className="text-lg font-light leading-relaxed" style={{ color: "#64748b" }}>These are not words on a wall. They are the principles that guide every decision we make, every campaign we run, and every person we hire.</p>
                 </motion.div>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {values.map((v, i) => (
-                  <motion.div key={i} className="group relative rounded-2xl p-6 text-center cursor-default overflow-hidden" style={{ background: "rgba(255,255,255,0.8)", backdropFilter: "blur(12px)", border: "1px solid rgba(0,212,255,0.12)", boxShadow: "0 4px 24px rgba(0,153,204,0.06)" }} initial={{ opacity: 0, scale: 0.92 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} whileHover={{ y: -4 }}>
-                    <div className="flex justify-center mb-3" style={{ color: v.color }}>
+                  <motion.div key={i} className="group relative rounded-2xl p-6 text-center cursor-default overflow-hidden" style={{ background: "rgba(255,255,255,0.8)", backdropFilter: "blur(12px)", border: "1px solid rgba(0,212,255,0.12)", boxShadow: "0 4px 24px rgba(0,153,204,0.06)" }} initial={{ opacity: 0, scale: 0.88, y: 20 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.09 }} whileHover={{ y: -5, boxShadow: "0 12px 36px rgba(0,153,204,0.14)" }}>
+                    <motion.div className="flex justify-center mb-3" style={{ color: v.color }} whileHover={{ scale: 1.2, rotate: 8 }} transition={{ type: "spring", stiffness: 300 }}>
                       <v.icon className="w-7 h-7" />
-                    </div>
+                    </motion.div>
                     <div className="text-sm font-bold" style={{ color: "#060f2e" }}>{v.label}</div>
-                    <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: v.color }} />
+                    <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300" style={{ background: v.color }} />
+                    {/* Subtle glow on hover */}
+                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: `radial-gradient(ellipse 80px 60px at 50% 0%, ${v.color}15 0%, transparent 70%)` }} />
                   </motion.div>
                 ))}
               </div>
@@ -306,22 +315,27 @@ export default function LifeAtSparkleMediaPage() {
         {/* ── SOCIAL MEDIA ── */}
         <section className="py-28 relative overflow-hidden" style={{ background: "#f0faff" }}>
           <div className="absolute top-0 left-0 right-0 h-px section-line" />
+          {/* Floating accent shapes */}
+          <motion.div className="absolute right-[5%] top-1/4 w-4 h-4 rounded-full pointer-events-none" style={{ background: "rgba(0,212,255,0.25)", boxShadow: "0 0 20px rgba(0,212,255,0.4)" }} animate={{ y: [0, -18, 0], scale: [1, 1.2, 1] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} />
+          <motion.div className="absolute left-[5%] bottom-1/4 w-3 h-3 rounded-full pointer-events-none" style={{ background: "rgba(124,58,237,0.3)", boxShadow: "0 0 14px rgba(124,58,237,0.4)" }} animate={{ y: [0, 14, 0], scale: [1, 1.15, 1] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }} />
           <div className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-14">
-              <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Follow Our Journey</motion.span>
-              <motion.h2 className="text-5xl md:text-6xl leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Follow Our Journey</motion.span>
+              {/* Animated underline */}
+              <motion.div className="w-0 h-px mx-auto mb-6" style={{ background: "linear-gradient(90deg, transparent, #00d4ff, transparent)" }} whileInView={{ width: "100px" }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }} />
+              <motion.h2 className="text-5xl md:text-6xl leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
                 Find Us on{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Social Media</span>
               </motion.h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {socials.map((s, i) => (
-                <motion.a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-5 p-6 rounded-2xl" style={{ background: "rgba(255,255,255,0.8)", backdropFilter: "blur(12px)", border: "1px solid rgba(0,212,255,0.12)", boxShadow: "0 4px 24px rgba(0,153,204,0.06)" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(0,153,204,0.14)" }}>
-                  <div className="w-12 h-12 flex items-center justify-center text-white rounded-xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110" style={{ background: s.bg }}><s.Icon /></div>
+                <motion.a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-5 p-6 rounded-2xl" style={{ background: "rgba(255,255,255,0.8)", backdropFilter: "blur(12px)", border: "1px solid rgba(0,212,255,0.12)", boxShadow: "0 4px 24px rgba(0,153,204,0.06)" }} initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: i * 0.12 }} whileHover={{ y: -5, boxShadow: "0 16px 44px rgba(0,153,204,0.16)" }}>
+                  <motion.div className="w-12 h-12 flex items-center justify-center text-white rounded-xl flex-shrink-0" style={{ background: s.bg }} whileHover={{ scale: 1.15, rotate: 6 }} transition={{ type: "spring", stiffness: 300 }}><s.Icon /></motion.div>
                   <div className="flex-1 min-w-0">
                     <p className="font-bold text-base" style={{ color: "#060f2e" }}>{s.name}</p>
                     <p className="text-sm font-light" style={{ color: "#64748b" }}>{s.handle}</p>
                   </div>
-                  <svg className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="#060f2e"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  <motion.svg className="w-4 h-4" style={{ color: "#060f2e", opacity: 0.3 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" whileHover={{ x: 4, opacity: 1 }} transition={{ duration: 0.2 }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></motion.svg>
                 </motion.a>
               ))}
             </div>
