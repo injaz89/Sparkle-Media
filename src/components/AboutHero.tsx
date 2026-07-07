@@ -239,26 +239,26 @@ export function AboutHero() {
                   Expect Results
                 </span>
               </h2>
-              <div className="pl-6 py-2 mb-8" style={{ borderLeft: "3px solid #00d4ff" }}>
-                <p className="text-xl font-semibold" style={{ color: "#0A1128" }}>
-                  Sparkle Media was founded with a simple belief:
-                </p>
-                <p className="text-xl font-bold mt-1" style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  Marketing should be accountable.
+              <div className="pl-6 py-2.5 mb-8" style={{ borderLeft: "3px solid #00d4ff" }}>
+                <p className="text-xl font-bold leading-normal" style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  At Sparkle Media, we help businesses grow by turning ideas into impactful digital experiences.
                 </p>
               </div>
-              <div className="space-y-5 text-gray-600 font-light leading-relaxed">
+              <div className="space-y-6 text-gray-600 font-light leading-relaxed text-base">
                 {[
-                  "Our team of experienced professionals has a passion for all things digital, constantly staying up-to-date on the latest trends to keep our clients ahead of the curve.",
-                  "We offer a full range of digital, creative and tech services — from photography and branding to digital marketing and software development.",
-                  "We believe every business is unique. We take the time to understand your goals before crafting a customized strategy that delivers real, measurable results.",
+                  "We are a full-service digital marketing agency passionate about helping brands build a strong online presence, connect with the right audience, and achieve measurable growth. By combining strategic thinking, creative storytelling, and data-driven marketing, we deliver solutions that create real business impact.",
+                  "Every brand has a unique story, and we believe its marketing should reflect that. Rather than relying on one-size-fits-all strategies, we take the time to understand your business, industry, and goals to craft customized marketing solutions that drive meaningful results.",
+                  "The digital world is constantly evolving—and so are we. At Sparkle Media, staying ahead isn't just something we do; it's part of who we are. We continuously keep up with the latest marketing trends, platform updates, AI-powered solutions, automation technologies, and industry best practices to ensure our clients benefit from the most effective and innovative strategies available. By embracing new tools and adapting to changes early, we help businesses stay competitive in an ever-changing digital landscape.",
+                  "Beyond delivering marketing services, we believe in building lasting partnerships. We take the time to understand your vision, collaborate closely with your team, and create strategies that align with your long-term business goals. Your success is our success, and we're committed to growing alongside your brand.",
+                  "From social media marketing and paid advertising to branding, website development, content creation, search engine optimization, and performance marketing, our team works collaboratively to ensure every campaign is purposeful, creative, and results-driven.",
+                  "At Sparkle Media, we're more than a service provider—we're your digital growth partner, committed to helping your business adapt, evolve, and thrive through innovative marketing solutions that deliver lasting results."
                 ].map((p, i) => (
                   <motion.p
                     key={i}
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.12 }}
+                    transition={{ delay: i * 0.1 }}
                   >
                     {p}
                   </motion.p>
