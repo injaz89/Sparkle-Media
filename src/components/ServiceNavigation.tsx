@@ -3,7 +3,8 @@
 import { usePathname } from "next/navigation";
 import { ChevronRight, Layers, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 
 const digitalLabServices = [
@@ -23,6 +24,11 @@ const techLabServices = [
 export function FloatingServiceNav() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const isDigitalLab = pathname.includes("/services/digital-lab");
   const isTechLab = pathname.includes("/services/tech-lab");
@@ -30,14 +36,14 @@ export function FloatingServiceNav() {
   const services = isDigitalLab ? digitalLabServices : isTechLab ? techLabServices : [];
   const categoryTitle = isDigitalLab ? "DIGITAL LAB" : isTechLab ? "TECH LAB" : "SERVICES";
 
-  if (services.length === 0) return null;
+  if (services.length === 0 || !mounted) return null;
 
-  return (
+  return createPortal(
     <>
       {/* Floating Action Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex flex-col items-center justify-center cursor-pointer shadow-xl text-white border border-primary/20 hover:scale-105 transition-all duration-300"
+        className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full flex flex-col items-center justify-center cursor-pointer shadow-xl text-white border border-primary/20 hover:scale-105 transition-all duration-300"
         style={{
           background: "linear-gradient(165deg, #060f2e 0%, #0d1b4b 100%)",
           boxShadow: "0 10px 30px rgba(0, 212, 255, 0.4), inset 0 1px 0 rgba(255,255,255,0.1)",
@@ -81,7 +87,7 @@ export function FloatingServiceNav() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9998]"
             />
 
             {/* Menu Panel */}
@@ -90,7 +96,7 @@ export function FloatingServiceNav() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", duration: 0.4 }}
-              className="fixed bottom-24 right-6 z-50 w-full max-w-[340px] p-6 shadow-2xl border border-primary/20 rounded-2xl"
+              className="fixed bottom-24 right-6 z-[9999] w-full max-w-[340px] p-6 shadow-2xl border border-primary/20 rounded-2xl"
               style={{
                 background: "linear-gradient(160deg, #060f2e 0%, #0d1b4b 100%)",
               }}
@@ -142,7 +148,8 @@ export function FloatingServiceNav() {
           </>
         )}
       </AnimatePresence>
-    </>
+    </>,
+    document.body
   );
 }
 

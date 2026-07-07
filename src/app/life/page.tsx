@@ -172,16 +172,6 @@ export default function LifeAtSparkleMediaPage() {
               ))}
             </div>
 
-            <motion.div className="flex flex-col sm:flex-row gap-4 items-center" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-              <Link href="/contact" id="life-hero-join-btn" className="group relative inline-flex items-center gap-3 px-8 py-[18px] text-sm font-bold tracking-wide rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f", boxShadow: "0 14px 40px -12px rgba(0,212,255,0.65)", animation: "pulseGlow 3s ease-in-out infinite" }}>
-                <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                <span className="relative z-10">Join Our Team</span>
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-              </Link>
-              <a href="#culture" id="life-explore-btn" className="inline-flex items-center gap-3 px-8 py-[18px] text-sm font-semibold rounded-2xl transition-all duration-300 hover:scale-105" style={{ border: "1px solid rgba(0,212,255,0.3)", color: "rgba(255,255,255,0.85)", background: "rgba(0,212,255,0.06)" }}>
-                Explore Culture ↓
-              </a>
-            </motion.div>
 
             <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }}>
               <span className="text-[9px] uppercase tracking-[.22em] font-mono font-semibold" style={{ color: "rgba(0,212,255,0.45)" }}>Scroll</span>
