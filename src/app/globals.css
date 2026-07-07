@@ -262,60 +262,7 @@ h3 { font-weight: 400; }
   color: #00d4ff;
 }
 
-/* ── Service Page Grid Overrides (Isolated to .lg\:col-span-3) ── */
-main .lg\:col-span-3 {
-  grid-column: 1 / -1 !important;
-  width: 100% !important;
-  max-width: 900px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
 
-main .lg\:col-span-1 {
-  display: none !important;
-}
-
-/* ── Service Page Header & Description Centering Overrides ── */
-main .lg\:col-span-3 .space-y-6 {
-  text-align: center !important;
-  max-width: 800px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-bottom: 3.5rem !important;
-}
-
-main .lg\:col-span-3 .space-y-6 div[class*="border-l"] {
-  border-left: none !important;
-  padding-left: 0 !important;
-  max-width: 650px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  position: relative !important;
-  padding-top: 1.5rem !important;
-  padding-bottom: 1.5rem !important;
-}
-
-main .lg\:col-span-3 .space-y-6 div[class*="border-l"]::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 120px !important;
-  height: 2px !important;
-  background: linear-gradient(90deg, transparent, #00d4ff 50%, transparent) !important;
-}
-
-main .lg\:col-span-3 .space-y-6 div[class*="border-l"]::after {
-  content: "" !important;
-  position: absolute !important;
-  bottom: 0 !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 120px !important;
-  height: 2px !important;
-  background: linear-gradient(90deg, transparent, #00d4ff 50%, transparent) !important;
-}
 
 /* ── Premium Footer Enhancements ── */
 .footer-social {

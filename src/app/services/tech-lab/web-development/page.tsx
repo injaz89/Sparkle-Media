@@ -114,63 +114,61 @@ export default function WebDevelopmentPage() {
           {/* Mobile Service Navigation */}
           <ServiceMobileNav />
 
-          {/* Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mt-8 items-start">
-            
-            {/* Left Content Area (Hero + Content Sections) */}
-            <div className="lg:col-span-3 space-y-12 max-w-[1100px] w-full">
+          {/* Centered Single Column Content Layout */}
+          <div className="max-w-5xl mx-auto space-y-12 w-full mt-8">
 
-              {/* ── HERO ── */}
-              <div className="space-y-6">
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-secondary font-bold tracking-widest uppercase mb-4 text-sm"
-                >
-                  Tech Lab
-                </motion.p>
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
-                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-4 leading-[1.05]"
-                >
-                  Website Design{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                    & Development
-                  </span>
-                </motion.h1>
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.15 }}
-                  className="text-2xl font-bold text-navy mb-6"
-                >
-                  Websites Built for Growth, Not Just Appearance
-                </motion.h2>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="border-l-4 border-primary pl-6 mb-8 space-y-3"
-                >
-                  <p className="text-lg text-gray-600 font-light leading-relaxed">
-                    Your website is often the first impression customers have of your business. In today&apos;s
-                    digital landscape, a slow, outdated, or poorly designed website can cost you valuable
-                    leads, sales, and credibility.
-                  </p>
-                  <p className="text-lg text-gray-600 font-light leading-relaxed">
-                    Research shows that users form an opinion about a website within{" "}
-                    <span className="font-semibold text-navy">0.05 seconds</span>, and over{" "}
-                    <span className="font-semibold text-navy">75% of consumers</span> judge a company&apos;s
-                    credibility based on its website design.
-                  </p>
-                  <p className="text-lg text-gray-600 font-light leading-relaxed">
-                    At Sparkle Media, we design and develop websites that combine aesthetics,
-                    functionality, speed, and conversion-focused strategy to help businesses attract,
-                    engage, and convert customers.
-                  </p>
-                </motion.div>
+            {/* ── HERO ── */}
+            <div className="space-y-6 text-center">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-secondary font-bold tracking-widest uppercase mb-4 text-sm"
+              >
+                Tech Lab
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-4 leading-[1.05] text-center"
+              >
+                Website Design{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                  & Development
+                </span>
+              </motion.h1>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+                className="text-2xl font-bold text-navy mb-6 text-center"
+              >
+                Websites Built for Growth, Not Just Appearance
+              </motion.h2>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="max-w-3xl mx-auto py-6 border-y border-primary/20 space-y-3"
+              >
+                <p className="text-lg text-gray-650 font-light leading-relaxed text-center">
+                  Your website is often the first impression customers have of your business. In today&apos;s
+                  digital landscape, a slow, outdated, or poorly designed website can cost you valuable
+                  leads, sales, and credibility.
+                </p>
+                <p className="text-lg text-gray-650 font-light leading-relaxed text-center">
+                  Research shows that users form an opinion about a website within{" "}
+                  <span className="font-semibold text-navy">0.05 seconds</span>, and over{" "}
+                  <span className="font-semibold text-navy">75% of consumers</span> judge a company&apos;s
+                  credibility based on its website design.
+                </p>
+                <p className="text-lg text-gray-650 font-light leading-relaxed text-center">
+                  At Sparkle Media, we design and develop websites that combine aesthetics,
+                  functionality, speed, and conversion-focused strategy to help businesses attract,
+                  engage, and convert customers.
+                </p>
+              </motion.div>
+              <div className="flex justify-center">
                 <MotionLink
                   href="/contact"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold hover:bg-primary transition-colors mb-8 animate-pulse"
@@ -179,93 +177,87 @@ export default function WebDevelopmentPage() {
                   <ArrowRight className="w-4 h-4" />
                 </MotionLink>
               </div>
+            </div>
 
-              {/* ── WHY YOUR WEBSITE MATTERS ── */}
-              <section className="py-8 border-t border-primary/20">
-                <div>
-                  <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                    <span className="text-xs font-bold text-secondary uppercase tracking-widest">Why It Matters</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Why Your Website Matters</h2>
-                  </motion.div>
-                  {/* Stat accent rows — no icon boxes */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                    {whyMatters.map((item, i) => {
-                      const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
-                      const accent = accentMap[i % accentMap.length];
-                      return (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: i * 0.09 }}
-                          className="group relative flex items-start gap-6 p-8 overflow-hidden bg-white border border-primary/10 shadow-sm"
-                        >
-                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                            style={{ background: `linear-gradient(135deg, ${accent}07 0%, transparent 60%)` }} />
-                          <div className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            style={{ background: accent }} />
-                          <span className="text-4xl font-black text-[#e8f7ff] group-hover:text-primary-light transition-colors duration-300" style={{ color: `${accent}40` }}>
-                            {item.stat}
-                          </span>
-                          <div>
-                            <h3 className="text-base font-bold text-navy mb-2 group-hover:text-[#0099cc] transition-colors duration-300">{item.title}</h3>
-                            <p className="text-gray-500 font-light text-sm leading-relaxed">{item.desc}</p>
-                          </div>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </section>
-
-              {/* ── SERVICES ── */}
-              <section className="py-8 border-t border-primary/20">
-                <div>
-                  <div className="text-center mb-16">
-                    <span className="text-xs font-bold text-secondary uppercase tracking-widest">Our Services</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Website Development Solutions</h2>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {services.map((service, i) => (
+            {/* ── WHY YOUR WEBSITE MATTERS ── */}
+            <section className="py-8 border-t border-primary/20">
+              <div>
+                <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                  <span className="text-xs font-bold text-secondary uppercase tracking-widest">Why It Matters</span>
+                  <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Why Your Website Matters</h2>
+                </motion.div>
+                {/* Stat accent rows — no icon boxes */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                  {whyMatters.map((item, i) => {
+                    const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
+                    const accent = accentMap[i % accentMap.length];
+                    return (
                       <motion.div
-                        key={service.title}
+                        key={i}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: i * 0.08 }}
-                        className="bg-white border border-primary/20 p-8 flex flex-col justify-between group hover:border-primary hover:shadow-lg transition-all"
+                        transition={{ delay: i * 0.09 }}
+                        className="group relative flex items-start gap-6 p-8 overflow-hidden bg-white border border-primary/10 shadow-sm"
                       >
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                          style={{ background: `linear-gradient(135deg, ${accent}07 0%, transparent 60%)` }} />
+                        <div className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          style={{ background: accent }} />
+                        <span className="text-4xl font-black text-[#e8f7ff] group-hover:text-primary-light transition-colors duration-300" style={{ color: `${accent}40` }}>
+                          {item.stat}
+                        </span>
                         <div>
-                          <div className={`w-12 h-1 bg-gradient-to-r ${service.color} mb-6`} />
-                          <h3 className="text-2xl font-bold text-navy mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary transition-all origin-left">
-                            {service.title}
-                          </h3>
-                          <p className="text-gray-650 font-light text-sm leading-relaxed mb-6">{service.desc}</p>
-                        </div>
-                        <div>
-                          <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Ideal For:</h4>
-                          <div className="flex flex-wrap gap-1.5">
-                            {service.ideal.map((tag, j) => (
-                              <span key={j} className="text-xs font-medium px-2.5 py-1 bg-bg border border-primary/10 text-navy/70 rounded-full">
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
+                          <h3 className="text-base font-bold text-navy mb-2 group-hover:text-[#0099cc] transition-colors duration-300">{item.title}</h3>
+                          <p className="text-gray-500 font-light text-sm leading-relaxed">{item.desc}</p>
                         </div>
                       </motion.div>
-                    ))}
-                  </div>
+                    );
+                  })}
                 </div>
-              </section>
+              </div>
+            </section>
 
-            </div>
+            {/* ── SERVICES ── */}
+            <section className="py-8 border-t border-primary/20">
+              <div>
+                <div className="text-center mb-16">
+                  <span className="text-xs font-bold text-secondary uppercase tracking-widest">Our Services</span>
+                  <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Website Development Solutions</h2>
+                </div>
 
-            {/* Right Sticky Sidebar Area */}
-            <div className="lg:col-span-1 lg:sticky lg:top-32">
-              <ServiceSidebar />
-            </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {services.map((service, i) => (
+                    <motion.div
+                      key={service.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                      className="bg-white border border-primary/20 p-8 flex flex-col justify-between group hover:border-primary hover:shadow-lg transition-all"
+                    >
+                      <div>
+                        <div className={`w-12 h-1 bg-gradient-to-r ${service.color} mb-6`} />
+                        <h3 className="text-2xl font-bold text-navy mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary transition-all origin-left">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-650 font-light text-sm leading-relaxed mb-6">{service.desc}</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Ideal For:</h4>
+                        <div className="flex flex-wrap gap-1.5">
+                          {service.ideal.map((tag, j) => (
+                            <span key={j} className="text-xs font-medium px-2.5 py-1 bg-bg border border-primary/10 text-navy/70 rounded-full">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
 
           </div>
         </div>
