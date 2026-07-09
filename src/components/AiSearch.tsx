@@ -226,7 +226,7 @@ export function AiSearch() {
 
       {/* Central glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none hidden md:block"
         style={{ background: "radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 65%)", filter: "blur(40px)" }}
       />
 

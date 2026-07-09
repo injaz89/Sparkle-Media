@@ -78,14 +78,14 @@ export function ClientAchievements() {
 
         {/* Ambient glow */}
         <div
-          className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
+          className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none hidden md:block"
           style={{
             background: "radial-gradient(circle at 90% 10%, rgba(0,212,255,0.08) 0%, transparent 65%)",
             filter: "blur(60px)",
           }}
         />
         <div
-          className="absolute bottom-0 left-0 w-[400px] h-[400px] pointer-events-none"
+          className="absolute bottom-0 left-0 w-[400px] h-[400px] pointer-events-none hidden md:block"
           style={{
             background: "radial-gradient(circle at 10% 90%, rgba(124,58,237,0.06) 0%, transparent 65%)",
             filter: "blur(60px)",

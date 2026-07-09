@@ -41,14 +41,14 @@ export function Footer() {
       >
         {/* Ambient glow spots */}
         <div
-          className="absolute top-0 right-0 w-[400px] h-[400px] pointer-events-none opacity-40 select-none"
+          className="absolute top-0 right-0 w-[400px] h-[400px] pointer-events-none opacity-40 select-none hidden md:block"
           style={{
             background: "radial-gradient(circle at 90% 10%, rgba(0,212,255,0.08) 0%, transparent 70%)",
             filter: "blur(60px)",
           }}
         />
         <div
-          className="absolute bottom-0 left-0 w-[300px] h-[300px] pointer-events-none opacity-30 select-none"
+          className="absolute bottom-0 left-0 w-[300px] h-[300px] pointer-events-none opacity-30 select-none hidden md:block"
           style={{
             background: "radial-gradient(circle at 10% 90%, rgba(124,58,237,0.06) 0%, transparent 70%)",
             filter: "blur(50px)",

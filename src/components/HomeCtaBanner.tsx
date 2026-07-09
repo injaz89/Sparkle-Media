@@ -26,7 +26,7 @@ export function HomeCtaBanner() {
 
       {/* Ambient glow blobs */}
       <motion.div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none hidden md:block"
         style={{
           width: "600px", height: "350px",
           top: "50%", left: "50%",
@@ -38,14 +38,14 @@ export function HomeCtaBanner() {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       <div
-        className="absolute top-0 left-0 w-[350px] h-[350px] pointer-events-none"
+        className="absolute top-0 left-0 w-[350px] h-[350px] pointer-events-none hidden md:block"
         style={{
           background: "radial-gradient(circle at 0% 0%, rgba(0,212,255,0.1) 0%, transparent 65%)",
           filter: "blur(50px)",
         }}
       />
       <div
-        className="absolute bottom-0 right-0 w-[350px] h-[350px] pointer-events-none"
+        className="absolute bottom-0 right-0 w-[350px] h-[350px] pointer-events-none hidden md:block"
         style={{
           background: "radial-gradient(circle at 100% 100%, rgba(124,58,237,0.08) 0%, transparent 65%)",
           filter: "blur(50px)",

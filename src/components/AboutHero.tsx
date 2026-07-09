@@ -16,7 +16,7 @@ const sparkleData = [
 
 function SparkleParticle({ x, y, delay, size, duration }: { x: string; y: string; delay: number; size: number; duration: number }) {
   return (
-    <div className="absolute pointer-events-none" style={{ left: x, top: y, animation: `sparkle ${duration}s ease-in-out ${delay}s infinite` }}>
+    <div className="absolute pointer-events-none hidden md:block" style={{ left: x, top: y, animation: `sparkle ${duration}s ease-in-out ${delay}s infinite` }}>
       <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <path d="M12 2 L13.5 10.5 L22 12 L13.5 13.5 L12 22 L10.5 13.5 L2 12 L10.5 10.5 Z" fill="rgba(0,212,255,0.6)" />
       </svg>
@@ -58,19 +58,19 @@ export function AboutHero() {
 
         {/* Glow orbs */}
         <motion.div
-          className="absolute pointer-events-none"
+          className="absolute pointer-events-none hidden md:block"
           style={{ width: "600px", height: "600px", top: "-10%", right: "5%", background: "radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 65%)", filter: "blur(80px)" }}
           animate={{ scale: [1, 1.3, 1], x: [0, 30, 0], y: [0, -20, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute pointer-events-none"
+          className="absolute pointer-events-none hidden md:block"
           style={{ width: "500px", height: "500px", bottom: "-5%", left: "-5%", background: "radial-gradient(circle, rgba(124,58,237,0.14) 0%, transparent 65%)", filter: "blur(80px)" }}
           animate={{ scale: [1, 1.2, 1], x: [0, -20, 0], y: [0, 20, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
         <motion.div
-          className="absolute pointer-events-none"
+          className="absolute pointer-events-none hidden md:block"
           style={{ width: "350px", height: "350px", top: "40%", left: "30%", background: "radial-gradient(circle, rgba(0,153,204,0.08) 0%, transparent 70%)", filter: "blur(60px)" }}
           animate={{ scale: [1, 1.4, 1] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}

@@ -293,3 +293,26 @@ h3 { font-weight: 400; }
   color: #00d4ff !important;
   transform: translateX(4px) !important;
 }
+
+/* ── Mobile Performance Optimization ── */
+@media (max-width: 767px) {
+  * {
+    /* Disable expensive blur shaders on mobile GPUs to ensure 60fps smooth scrolling */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Disable heavy dynamic shadow keyframe animations on mobile */
+  [style*="cardGlowPulse"], 
+  [style*="pulseGlow"], 
+  .glow-cyan, 
+  .glow-violet {
+    animation: none !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important; /* static fallback shadow */
+  }
+
+  /* Turn off the infinite background animation and floating effects on mobile to save GPU cycles */
+  [style*="meshMove"], .float {
+    animation: none !important;
+  }
+}

@@ -23,7 +23,7 @@ const clients = [
 ];
 
 export function ClientLogosSlider({ title = "Trusted by leading brands", dark = false }: { title?: string; dark?: boolean }) {
-  const duplicated = [...clients, ...clients, ...clients, ...clients];
+  const duplicated = [...clients, ...clients];
 
   return (
     <section className={`py-16 overflow-hidden border-b ${dark ? "border-white/10" : "border-[rgba(0,212,255,0.15)]"}`}
@@ -32,7 +32,7 @@ export function ClientLogosSlider({ title = "Trusted by leading brands", dark = 
       <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
         <h3
           className="text-xs font-bold tracking-[0.18em] uppercase"
-          style={{ color: dark ? "rgba(255,255,255,0.6)" : "#00d4ff" }}
+          style={{ color: dark ? "rgba(255,255,255,0.6)" : "rgba(6, 15, 46, 0.45)" }}
         >
           {title}
         </h3>
@@ -51,17 +51,17 @@ export function ClientLogosSlider({ title = "Trusted by leading brands", dark = 
 
         <motion.div
           className="flex whitespace-nowrap items-center gap-0"
-          animate={{ x: [0, -2400] }}
+          animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
             ease: "linear",
-            duration: 30,
+            duration: 25,
           }}
         >
           {duplicated.map((client, i) => (
             <div
               key={i}
-              className={`mx-10 lg:mx-16 flex items-center justify-center h-14 w-36 flex-shrink-0 ${
+              className={`mx-4 sm:mx-10 lg:mx-16 flex items-center justify-center h-10 sm:h-14 w-28 sm:w-36 flex-shrink-0 ${
                 dark ? "opacity-75 hover:opacity-100" : "opacity-85 hover:opacity-100"
               } transition-opacity duration-300`}
             >
@@ -70,7 +70,7 @@ export function ClientLogosSlider({ title = "Trusted by leading brands", dark = 
                 <img
                   src={client.img}
                   alt={client.name}
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-12 max-w-full object-contain"
                   style={{ filter: "none" }}
                 />
               ) : (

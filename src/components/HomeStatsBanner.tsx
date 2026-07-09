@@ -75,7 +75,7 @@ export function HomeStatsBanner() {
 
       {/* Ambient glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[200px] pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[200px] pointer-events-none hidden md:block"
         style={{
           background: "radial-gradient(ellipse, rgba(0,212,255,0.08) 0%, transparent 70%)",
           filter: "blur(40px)",

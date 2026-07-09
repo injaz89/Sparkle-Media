@@ -46,7 +46,7 @@ function useCountUp(end: number, duration = 2000, suffix = "", prefix = "") {
 function SparkleParticle({ x, y, delay, size, duration }: { x: string; y: string; delay: number; size: number; duration: number }) {
   return (
     <div
-      className="absolute pointer-events-none"
+      className="absolute pointer-events-none hidden md:block"
       style={{
         left: x, top: y,
         animation: `sparkle ${duration}s ease-in-out ${delay}s infinite`,
@@ -133,19 +133,19 @@ function TiltCard() {
         </div>
 
         {/* Stat readouts */}
-        <div className="grid grid-cols-3 gap-3 mb-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mb-5">
           {stats.map((s) => (
             <div
               key={s.label}
-              className="rounded-xl px-3 py-3"
+              className="rounded-xl px-4 py-2.5 sm:px-3 sm:py-3 flex sm:flex-col justify-between sm:justify-start items-center sm:items-start gap-2"
               style={{ border: "1px solid rgba(0,212,255,0.14)", background: "rgba(0,212,255,0.05)" }}
             >
-              <div className="text-[9px] uppercase tracking-[.16em] mb-1.5 font-mono" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <div className="text-[10px] sm:text-[9px] uppercase tracking-[.1em] sm:tracking-[.16em] font-mono" style={{ color: "rgba(255,255,255,0.35)" }}>
                 {s.label}
               </div>
-              <div className="text-xl sm:text-2xl font-black tracking-[-0.02em]" style={{ color: s.up ? "#00d4ff" : "#fff" }}>
-                {s.val}
-                <span className="text-[10px] font-medium ml-1 font-mono" style={{ color: "#7c3aed" }}>{s.delta}</span>
+              <div className="flex items-baseline gap-1.5 sm:gap-1" style={{ color: s.up ? "#00d4ff" : "#fff" }}>
+                <span className="text-sm sm:text-xl md:text-2xl font-black tracking-[-0.02em]">{s.val}</span>
+                <span className="text-[9px] sm:text-[10px] font-medium font-mono leading-none" style={{ color: "#7c3aed" }}>{s.delta}</span>
               </div>
             </div>
           ))}
@@ -352,7 +352,7 @@ export function Hero() {
 
       {/* ── Animated gradient orbs ── */}
       <motion.div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none hidden md:block"
         style={{
           width: "600px", height: "600px",
           top: "-10%", right: "5%",
@@ -363,7 +363,7 @@ export function Hero() {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none hidden md:block"
         style={{
           width: "500px", height: "500px",
           bottom: "-5%", left: "-5%",
@@ -374,7 +374,7 @@ export function Hero() {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
       <motion.div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none hidden md:block"
         style={{
           width: "350px", height: "350px",
           top: "40%", left: "30%",
@@ -527,7 +527,7 @@ export function Hero() {
 
       {/* ── Scroll indicator ── */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5 }}
