@@ -223,11 +223,11 @@ export function Testimonials() {
           </div>
 
           {/* Mobile: single auto-carousel */}
-          <div className="lg:hidden overflow-hidden min-h-[290px] sm:min-h-[250px] flex flex-col justify-start">
+          <div className="lg:hidden overflow-hidden relative h-[380px] min-[480px]:h-[300px] sm:h-[280px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
-                className="relative flex flex-col p-8 overflow-hidden rounded-2xl"
+                className="absolute inset-0 flex flex-col p-6 sm:p-8 justify-between overflow-hidden rounded-2xl"
                 style={{
                   background: "linear-gradient(145deg, rgba(0,212,255,0.1) 0%, rgba(124,58,237,0.08) 100%)",
                   border: "1px solid rgba(0,212,255,0.3)",
@@ -239,10 +239,12 @@ export function Testimonials() {
                 transition={{ duration: 0.4 }}
               >
                 <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl" style={{ background: testimonials[current].grad }} />
-                <StarRating rating={testimonials[current].rating} />
-                <p className="font-light leading-relaxed mb-6 text-sm" style={{ color: "rgba(255,255,255,0.72)" }}>
-                  &ldquo;{testimonials[current].content}&rdquo;
-                </p>
+                <div>
+                  <StarRating rating={testimonials[current].rating} />
+                  <p className="font-light leading-relaxed mb-6 text-sm" style={{ color: "rgba(255,255,255,0.72)" }}>
+                    &ldquo;{testimonials[current].content}&rdquo;
+                  </p>
+                </div>
                 <div className="flex items-center gap-4 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
                   <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold" style={{ background: testimonials[current].grad }}>
                     {testimonials[current].avatar}

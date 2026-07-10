@@ -261,7 +261,7 @@ function TypewriterHeadline() {
   }, [phase, charCount, fullHighlight]);
 
   return (
-    <h1 className="text-[clamp(2.6rem,5.5vw,5.2rem)] leading-[1.0] tracking-[-0.03em] text-white mb-6" style={{ fontWeight: 800 }}>
+    <h1 className="text-[clamp(2.6rem,5.5vw,5.2rem)] leading-[1.0] tracking-[-0.03em] text-white mb-6 min-h-[4.8em] sm:min-h-0" style={{ fontWeight: 800 }}>
       {headline.pre}{" "}
       <br className="hidden sm:block" />
       <span style={{
