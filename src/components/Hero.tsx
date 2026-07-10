@@ -152,7 +152,7 @@ function TiltCard() {
         </div>
 
         {/* Chart */}
-        <div className="relative" style={{ height: "200px" }}>
+        <div className="relative" style={{ height: "140px" }}>
           {/* Tooltip */}
           <div
             className="absolute z-10 text-[10px] font-black px-2.5 py-1.5 rounded-[8px] whitespace-nowrap font-mono"
@@ -210,7 +210,7 @@ function TiltCard() {
         </div>
 
         {/* Trust bar at bottom */}
-        <div className="mt-4 pt-4 flex items-center gap-3 flex-wrap" style={{ borderTop: "1px solid rgba(0,212,255,0.1)" }}>
+        <div className="mt-2 pt-3 flex items-center gap-3" style={{ borderTop: "1px solid rgba(0,212,255,0.1)" }}>
           <div className="flex -space-x-1">
             {["GR", "MB", "PA", "MS"].map((c, i) => (
               <div key={i} className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-black text-white border border-white/10"

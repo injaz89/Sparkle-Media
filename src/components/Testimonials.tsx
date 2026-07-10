@@ -223,7 +223,7 @@ export function Testimonials() {
           </div>
 
           {/* Mobile: single auto-carousel */}
-          <div className="lg:hidden overflow-hidden">
+          <div className="lg:hidden overflow-hidden min-h-[290px] sm:min-h-[250px] flex flex-col justify-start">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
