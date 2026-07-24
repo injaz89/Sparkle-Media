@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 const stats = [
   { value: 5,   suffix: "M+", prefix: "$", label: "Revenue Generated",   sub: "across all clients",      accent: "#00d4ff", bg: "rgba(0,212,255,0.08)"  },
   { value: 60,  suffix: "X",  prefix: "",  label: "Peak ROAS Delivered", sub: "lead generation",         accent: "#7c3aed", bg: "rgba(124,58,237,0.07)" },
-  { value: 150, suffix: "K+", prefix: "",  label: "Qualified Leads",     sub: "across all campaigns",    accent: "#00d4ff", bg: "rgba(0,212,255,0.08)"  },
   { value: 50,  suffix: "+",  prefix: "",  label: "Brands Grown",        sub: "and counting",            accent: "#7c3aed", bg: "rgba(124,58,237,0.07)" },
 ];
 
@@ -99,7 +98,7 @@ export function HomeStatsBanner() {
         </motion.div>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-6">
           {stats.map((stat, i) => (
             <motion.div
               key={i}

@@ -120,29 +120,23 @@ export function Navbar() {
                 {[
                   { name: "HOME", href: "/" },
                   { 
-                    name: "OUR SERVICES", 
+                    name: "DIGITAL LAB", 
                     href: "#",
                     subItems: [
-                      {
-                        name: "DIGITAL LAB",
-                        href: "#",
-                        subItems: [
-                          { name: "Content Marketing", href: "/services/digital-lab/content-marketing" },
-                          { name: "Social Media Marketing", href: "/services/digital-lab/social-media" },
-                          { name: "Paid Media Management", href: "/services/digital-lab/paid-media" },
-                          { name: "Search Engine Optimisation", href: "/services/digital-lab/seo" },
-                          { name: "Search Engine Marketing", href: "/services/digital-lab/sem" },
-                          { name: "CRM & Marketing Automation", href: "/services/digital-lab/email-marketing" },
-                        ]
-                      },
-                      {
-                        name: "TECH LAB",
-                        href: "#",
-                        subItems: [
-                          { name: "Website Design & Development", href: "/services/tech-lab/web-development" },
-                          { name: "Software Development & Implementation", href: "/services/tech-lab/software-development" },
-                        ]
-                      },
+                      { name: "Content Marketing", href: "/services/digital-lab/content-marketing" },
+                      { name: "Social Media Marketing", href: "/services/digital-lab/social-media" },
+                      { name: "Paid Media Management", href: "/services/digital-lab/paid-media" },
+                      { name: "Search Engine Optimisation", href: "/services/digital-lab/seo" },
+                      { name: "Search Engine Marketing", href: "/services/digital-lab/sem" },
+                      { name: "CRM & Marketing Automation", href: "/services/digital-lab/email-marketing" },
+                    ]
+                  },
+                  {
+                    name: "TECH LAB",
+                    href: "#",
+                    subItems: [
+                      { name: "Website Design & Development", href: "/services/tech-lab/web-development" },
+                      { name: "Software Development & Implementation", href: "/services/tech-lab/software-development" },
                     ]
                   },
                   { name: "ABOUT US", href: "/about" },
@@ -178,52 +172,17 @@ export function Navbar() {
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          className="flex flex-col space-y-3 mt-4 mb-2 overflow-hidden items-end pr-4 border-r-2 border-[#87d4f8]"
+                          className="flex flex-col space-y-2 mt-4 mb-2 overflow-hidden items-end pr-4 border-r-2 border-[#87d4f8]"
                         >
                           {item.subItems.map((subItem) => (
-                            <div key={subItem.name} className="flex flex-col items-end w-full">
-                              {subItem.subItems ? (
-                                <button
-                                  onClick={() => toggleMenu(subItem.name)}
-                                  className="nav-item-dark text-xl md:text-2xl tracking-wide uppercase flex items-center justify-end space-x-2"
-                                >
-                                  <span className={`transition-transform duration-300 ${expandedMenus.includes(subItem.name) ? "rotate-90" : ""}`}>
-                                    ›
-                                  </span>
-                                  <span>{subItem.name}</span>
-                                </button>
-                              ) : (
-                                <Link
-                                  href={subItem.href}
-                                  onClick={() => setIsMenuOpen(false)}
-                                  className="nav-item-dark text-xl md:text-2xl tracking-wide uppercase"
-                                >
-                                  {subItem.name}
-                                </Link>
-                              )}
-                              
-                              <AnimatePresence>
-                                {subItem.subItems && expandedMenus.includes(subItem.name) && (
-                                  <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: "auto", opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
-                                    className="flex flex-col space-y-2 mt-3 mb-1 overflow-hidden items-end pr-4 border-r-2 border-cyan-50"
-                                  >
-                                    {subItem.subItems.map((nestedItem) => (
-                                      <Link
-                                        key={nestedItem.name}
-                                        href={nestedItem.href}
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className="text-lg md:text-xl font-light text-gray-500 hover:text-cyan-600 transition-colors capitalize"
-                                      >
-                                        {nestedItem.name}
-                                      </Link>
-                                    ))}
-                                  </motion.div>
-                                )}
-                              </AnimatePresence>
-                            </div>
+                            <Link
+                              key={subItem.name}
+                              href={subItem.href}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="text-lg md:text-xl font-light text-gray-400 hover:text-cyan-400 transition-colors"
+                            >
+                              {subItem.name}
+                            </Link>
                           ))}
                         </motion.div>
                       )}

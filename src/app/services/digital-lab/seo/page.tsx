@@ -4,8 +4,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SeoCounters } from "@/components/SeoCounters";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { ServiceSidebar, ServiceMobileNav } from "@/components/ServiceNavigation";
+import { AiSearch } from "@/components/AiSearch";
 
 const fullSeoFeatures = [
   {
@@ -95,7 +95,14 @@ export default function SeoPage() {
                 </p>
               </motion.div>
             </div>
+          </div>
+        </div>
 
+        {/* AI-First Search Visibility Section */}
+        <AiSearch />
+
+        <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+          <div className="max-w-5xl mx-auto space-y-12 w-full mt-8">
             {/* Main Features Grid */}
             <section className="py-8 border-t border-primary/20">
               <div>
@@ -232,15 +239,9 @@ export default function SeoPage() {
                         >
                           {item.title}
                         </h3>
-                        <p className="font-light text-base leading-relaxed mb-10 text-gray-500" style={{ color: "#64748b" }}>
+                        <p className="font-light text-base leading-relaxed mb-0 text-gray-500" style={{ color: "#64748b" }}>
                           {item.desc}
                         </p>
-                        <div
-                          className="flex items-center font-bold tracking-widest uppercase text-sm"
-                          style={{ color: accent }}
-                        >
-                          Learn More <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
-                        </div>
                       </div>
                     </motion.div>
                   );

@@ -81,7 +81,6 @@ function TiltCard() {
   const stats = [
     { label: "Revenue Generated", val: "$5M+", delta: "approx", up: true },
     { label: "CAC Reduction", val: "−38%", delta: "▼ avg", up: false },
-    { label: "Leads Generated", val: "150K+", delta: "qualified", up: true },
   ];
 
   return (
@@ -133,7 +132,7 @@ function TiltCard() {
         </div>
 
         {/* Stat readouts */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mb-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 mb-5">
           {stats.map((s) => (
             <div
               key={s.label}
@@ -490,8 +489,6 @@ export function Hero() {
             className="flex flex-wrap justify-center lg:justify-start gap-8 mb-10 w-full"
           >
             <StatCounter end={5} suffix="M+" prefix="$" label="Revenue Generated" />
-            <div className="w-px" style={{ background: "rgba(0,212,255,0.15)", height: "40px", alignSelf: "center" }} />
-            <StatCounter end={150} suffix="K+" prefix="" label="Qualified Leads" />
             <div className="w-px" style={{ background: "rgba(0,212,255,0.15)", height: "40px", alignSelf: "center" }} />
             <StatCounter end={60} suffix="X" prefix="" label="Peak ROAS" />
           </motion.div>

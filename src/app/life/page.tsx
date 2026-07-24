@@ -80,11 +80,7 @@ const values = [
   { label: "Excellence", icon: Award, color: "#38bdf8" },
 ];
 
-const quotes = [
-  { quote: "Working at Sparkle Media feels like being part of a family that genuinely cares about your growth and celebrates every win together.", name: "Inshath Ifham", role: "Founder & CEO", initial: "I", accent: "#00d4ff" },
-  { quote: "The culture here is electric. Every single day I come in excited to learn something new and push the boundaries of what we build.", name: "Creative Lead", role: "Design & Branding", initial: "C", accent: "#38bdf8" },
-  { quote: "There is no ceiling here. You are given real responsibility from day one, and the team support makes you unstoppable.", name: "Performance Strategist", role: "Paid Media & Analytics", initial: "P", accent: "#00d4ff" },
-];
+
 
 const socials = [
   { name: "Instagram", handle: "@sparklemedia.lk", href: "https://www.instagram.com/sparklemedia.lk/", Icon: InstagramIcon, bg: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)" },
@@ -116,15 +112,9 @@ function SparkleParticle({ x, y, delay, size, duration }: { x: string; y: string
 
 export default function LifeAtSparkleMediaPage() {
   const [slide, setSlide] = useState(0);
-  const [quoteIdx, setQuoteIdx] = useState(0);
 
   useEffect(() => {
     const t = setInterval(() => setSlide((p) => (p + 1) % heroSlides.length), 5000);
-    return () => clearInterval(t);
-  }, []);
-
-  useEffect(() => {
-    const t = setInterval(() => setQuoteIdx((p) => (p + 1) % quotes.length), 4500);
     return () => clearInterval(t);
   }, []);
 
@@ -287,30 +277,7 @@ export default function LifeAtSparkleMediaPage() {
           </div>
         </section>
 
-        {/* ── TEAM QUOTES ── */}
-        <section className="py-32 relative overflow-hidden" style={{ background: "radial-gradient(ellipse 700px 500px at 50% 50%, rgba(0,212,255,0.07) 0%, transparent 60%),linear-gradient(160deg, #020a20 0%, #060f2e 60%, #050c25 100%)" }}>
-          <div className="max-w-4xl mx-auto px-6 relative text-center">
-            <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-8 font-mono" style={{ color: "#00d4ff" }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Voices from the Team</motion.span>
-            <AnimatePresence mode="wait">
-              <motion.div key={quoteIdx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.5 }}>
-                <div className="text-[80px] leading-none font-serif mb-4" style={{ color: "rgba(0,212,255,0.15)" }}>&ldquo;</div>
-                <p className="text-xl md:text-2xl font-light leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.75)", fontFamily: "'Lora','Georgia',serif", fontStyle: "italic" }}>{quotes[quoteIdx].quote}</p>
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-lg" style={{ background: `linear-gradient(135deg, ${quotes[quoteIdx].accent}, #38bdf8)` }}>{quotes[quoteIdx].initial}</div>
-                  <div className="text-left">
-                    <p className="text-white font-bold text-sm">{quotes[quoteIdx].name}</p>
-                    <p className="text-xs font-mono" style={{ color: "rgba(255,255,255,0.4)" }}>{quotes[quoteIdx].role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-            <div className="flex justify-center gap-2 mt-10">
-              {quotes.map((_, i) => (
-                <button key={i} onClick={() => setQuoteIdx(i)} className="transition-all duration-300 h-1.5 rounded-full" style={{ width: i === quoteIdx ? "28px" : "8px", background: i === quoteIdx ? "#00d4ff" : "rgba(255,255,255,0.2)" }} />
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* ── SOCIAL MEDIA ── */}
         <section className="py-28 relative overflow-hidden" style={{ background: "#f0faff" }}>
@@ -342,76 +309,7 @@ export default function LifeAtSparkleMediaPage() {
           </div>
         </section>
 
-        {/* ── LETS TALK ── */}
-        <section className="py-32 relative overflow-hidden" style={{ background: "radial-gradient(ellipse 900px 600px at 50% 50%, rgba(0,212,255,0.12) 0%, transparent 65%),linear-gradient(160deg, #020a20 0%, #060f2e 50%, #050c25 100%)" }}>
-          <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-          <div className="max-w-5xl mx-auto px-6 relative">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-              <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[.18em] font-mono mb-6" style={{ border: "1px solid rgba(0,212,255,0.3)", color: "#00d4ff", background: "rgba(0,212,255,0.07)" }}>
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" style={{ animation: "pulseGlow 2s ease-in-out infinite" }} />
-                  {"Let's Talk"}
-                </span>
-                <h2 className="text-5xl md:text-6xl text-white mb-6 leading-tight" style={{ fontWeight: 200, letterSpacing: "-0.04em" }}>
-                  Ready to Start{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Something Great?</span>
-                </h2>
-                <p className="text-lg font-light mb-10" style={{ color: "rgba(255,255,255,0.5)" }}>Whether you want to join the team or grow your brand, we are excited to connect with you.</p>
-                <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                  <Link href="/contact" id="life-cta-call-btn" className="group relative inline-flex items-center gap-3 px-7 py-4 text-sm font-bold tracking-wide rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f", boxShadow: "0 10px 30px -10px rgba(0,212,255,0.6)" }}>
-                    <span className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                    <span className="relative z-10">Book a Strategy Call</span>
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                  </Link>
-                  <a href="https://wa.me/message/RBCP6CKB5PX6C1" target="_blank" rel="noopener noreferrer" id="life-whatsapp-btn" className="inline-flex items-center gap-3 px-7 py-4 text-sm font-semibold rounded-2xl transition-all hover:scale-105" style={{ border: "1px solid rgba(0,212,255,0.3)", color: "rgba(255,255,255,0.85)", background: "rgba(0,212,255,0.06)" }}>{"WhatsApp Us"}</a>
-                </div>
-                <div className="rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(0,212,255,0.15)", backdropFilter: "blur(12px)" }}>
-                  <p className="text-[10px] font-bold uppercase tracking-[.2em] font-mono mb-4" style={{ color: "rgba(255,255,255,0.3)" }}>Speak with our Founder & CEO</p>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-extrabold text-xl" style={{ background: "linear-gradient(135deg, #00d4ff, #38bdf8)" }}>I</div>
-                    <div>
-                      <p className="font-bold text-white text-sm">Inshath Ifham</p>
-                      <p className="text-[11px] font-mono" style={{ color: "rgba(255,255,255,0.4)" }}>Founder — Chairman & CEO</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    <Link href="/contact" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all hover:scale-105" style={{ background: "linear-gradient(135deg, #00d4ff, #38bdf8)", color: "#04091f" }}>Talk Now →</Link>
-                    <a href="https://www.linkedin.com/in/mohamed-inshath" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all hover:scale-105" style={{ border: "1px solid rgba(0,212,255,0.3)", color: "rgba(255,255,255,0.7)", background: "rgba(0,212,255,0.07)" }}><LinkedInIcon /> LinkedIn</a>
-                  </div>
-                </div>
-              </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
-                <div className="rounded-[28px] p-8" style={{ background: "linear-gradient(165deg, rgba(255,255,255,0.06) 0%, rgba(0,212,255,0.03) 50%, rgba(255,255,255,0.02) 100%)", border: "1px solid rgba(0,212,255,0.22)", boxShadow: "0 40px 80px -20px rgba(0,0,0,0.8), inset 0 1px 0 rgba(0,212,255,0.12)", backdropFilter: "blur(12px)", animation: "cardGlowPulse 4s ease-in-out infinite" }}>
-                  <div className="flex justify-between items-center mb-6">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-green-400" style={{ boxShadow: "0 0 8px rgba(74,222,128,0.8)" }} />
-                      <span className="text-[10px] uppercase tracking-[.22em] font-mono" style={{ color: "rgba(255,255,255,0.4)" }}>Join the family</span>
-                    </div>
-                    <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[.12em] rounded-full px-3 py-1.5 font-mono" style={{ color: "#00d4ff", border: "1px solid rgba(0,212,255,0.3)", background: "rgba(0,212,255,0.07)" }}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" style={{ animation: "pulseGlow 2s ease-in-out infinite" }} />
-                      Now Hiring
-                    </span>
-                  </div>
-                  {[
-                    { role: "Performance Marketing Lead", type: "Full-time", color: "#00d4ff" },
-                    { role: "Content Creator & Strategist", type: "Full-time", color: "#38bdf8" },
-                    { role: "Graphic Designer", type: "Full-time", color: "#00d4ff" },
-                    { role: "SEO & GEO Specialist", type: "Full-time", color: "#38bdf8" },
-                  ].map((r, i, arr) => (
-                    <div key={i} className="flex items-center justify-between py-4" style={{ borderBottom: i < arr.length - 1 ? "1px solid rgba(0,212,255,0.08)" : "none" }}>
-                      <div>
-                        <p className="text-sm font-semibold text-white">{r.role}</p>
-                        <p className="text-[10px] font-mono" style={{ color: "rgba(255,255,255,0.35)" }}>{r.type}</p>
-                      </div>
-                      <div className="text-[10px] font-bold px-3 py-1 rounded-full font-mono" style={{ background: `${r.color}15`, color: r.color, border: `1px solid ${r.color}30` }}>Open</div>
-                    </div>
-                  ))}
-                  <Link href="/contact" className="mt-6 w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold transition-all hover:scale-[1.02]" style={{ background: "linear-gradient(135deg, #2ee8ff 0%, #00d4ff 50%, #009ac2 100%)", color: "#04091f" }}>Apply Now →</Link>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
 
       </main>
       <Footer />
