@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, Target, Zap, Users, Gem, BarChart3 } from "lucide-react";
+import { TrendingUp, Target, Zap, Users, Gem, BarChart3, Database, Cpu, LineChart, Palette, Eye, Crosshair, Check, X } from "lucide-react";
 import Link from "next/link";
 
 const focusAreas = [
@@ -50,17 +50,17 @@ const focusAreas = [
 ];
 
 const comparison = [
-  { feature: "Data-Driven Decisions", us: true, them: false },
-  { feature: "AI-Powered Optimisation", us: true, them: false },
-  { feature: "Real ROAS Tracking", us: true, them: true },
-  { feature: "Creative + Performance Together", us: true, them: false },
-  { feature: "Transparent Reporting", us: true, them: false },
-  { feature: "Business Outcome Focus", us: true, them: false },
+  { feature: "Data-Driven Decisions", icon: Database, us: true, them: false },
+  { feature: "AI-Powered Optimisation", icon: Cpu, us: true, them: false },
+  { feature: "Real ROAS Tracking", icon: LineChart, us: true, them: true },
+  { feature: "Creative + Performance Together", icon: Palette, us: true, them: false },
+  { feature: "Transparent Reporting", icon: Eye, us: true, them: false },
+  { feature: "Business Outcome Focus", icon: Crosshair, us: true, them: false },
 ];
 
 export function WhyChooseUs() {
   return (
-    <section className="py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
+    <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
       <div className="absolute top-0 left-0 right-0 h-px section-line" />
 
       {/* Diagonal stripe background */}
@@ -81,7 +81,7 @@ export function WhyChooseUs() {
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-end mb-12 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export function WhyChooseUs() {
               Why Sparkle Media
             </span>
             <h2
-              className="text-5xl md:text-6xl leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl leading-tight"
               style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
             >
               Why Brands Choose{" "}
@@ -126,7 +126,7 @@ export function WhyChooseUs() {
         </div>
 
         {/* Glassmorphism feature cards — 3×2 grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16 md:mb-24">
           {focusAreas.map((area, i) => (
             <motion.div
               key={i}
@@ -193,92 +193,94 @@ export function WhyChooseUs() {
           ))}
         </div>
 
-        {/* Comparison table */}
-        <motion.div
-          className="rounded-2xl overflow-hidden"
-          style={{
-            border: "1px solid rgba(0,212,255,0.2)",
-            boxShadow: "0 8px 40px rgba(0,153,204,0.1)",
-          }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Table header */}
-          <div
-            className="grid grid-cols-3 gap-0 py-4 px-6"
-            style={{ background: "linear-gradient(135deg, #060f2e 0%, #0d1b4b 100%)" }}
+        {/* Comparison — battle cards (replaces old table) */}
+        <div className="mb-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <span
+            className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full"
+            style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)", color: "#fff", boxShadow: "0 6px 20px rgba(0,212,255,0.3)" }}
           >
-            <div className="text-sm font-bold uppercase tracking-widest text-left" style={{ color: "rgba(255,255,255,0.4)" }}>
-              Feature
-            </div>
-            <div className="text-center">
-              <span
-                className="inline-block text-sm font-black uppercase tracking-widest px-3 py-1 rounded-full"
-                style={{
-                  background: "linear-gradient(135deg, #00d4ff, #7c3aed)",
-                  color: "#fff",
-                }}
-              >
-                ✦ Sparkle Media
-              </span>
-            </div>
-            <div className="text-sm font-bold uppercase tracking-widest text-center" style={{ color: "rgba(255,255,255,0.25)" }}>
-              Other Agencies
-            </div>
-          </div>
+            ✦ Sparkle Media
+          </span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#94a3b8" }}>vs</span>
+          <span
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full"
+            style={{ background: "#e2e8f0", color: "#64748b" }}
+          >
+            Other Agencies
+          </span>
+        </div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16 md:mb-24">
           {comparison.map((row, i) => (
             <motion.div
               key={i}
-              className="grid grid-cols-3 gap-0 py-4 px-6 group transition-colors duration-200"
+              className="group relative rounded-2xl p-6 overflow-hidden transition-all duration-400"
               style={{
-                background: i % 2 === 0 ? "rgba(255,255,255,0.95)" : "rgba(240,250,255,0.95)",
-                borderTop: "1px solid rgba(0,212,255,0.08)",
+                background: "rgba(255,255,255,0.85)",
+                border: "1px solid rgba(0,212,255,0.15)",
+                boxShadow: "0 4px 20px rgba(0,153,204,0.06)",
               }}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 + i * 0.06 }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              whileHover={{
+                y: -5,
+                boxShadow: "0 20px 50px rgba(0,153,204,0.15), 0 0 0 1px rgba(0,212,255,0.3)",
+                borderColor: "rgba(0,212,255,0.4)",
+              }}
             >
-              <span className="text-sm font-medium" style={{ color: "#060f2e" }}>{row.feature}</span>
-              <div className="flex justify-center">
-                {row.us ? (
+              {/* Neon top accent */}
+              <div
+                className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ background: "linear-gradient(90deg, transparent, #00d4ff, transparent)" }}
+              />
+
+              {/* Feature title */}
+              <div className="flex items-center gap-3 mb-5">
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{ background: "linear-gradient(135deg, rgba(0,212,255,0.15), rgba(124,58,237,0.08))", border: "1px solid rgba(0,212,255,0.25)", color: "#00d4ff" }}
+                >
+                  <row.icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-[15px] font-bold leading-snug" style={{ color: "#060f2e", letterSpacing: "-0.01em" }}>
+                  {row.feature}
+                </h3>
+              </div>
+
+              {/* Us vs Them panels */}
+              <div className="flex items-stretch gap-3">
+                <div
+                  className="flex-1 rounded-xl px-3 py-4 flex flex-col items-center gap-2 text-center"
+                  style={{
+                    background: row.us ? "linear-gradient(160deg, rgba(0,212,255,0.14), rgba(124,58,237,0.08))" : "#f8fafc",
+                    border: row.us ? "1px solid rgba(0,212,255,0.35)" : "1px solid #e2e8f0",
+                  }}
+                >
                   <span
                     className="w-7 h-7 rounded-full flex items-center justify-center"
-                    style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)" }}
+                    style={{ background: row.us ? "linear-gradient(135deg, #00d4ff, #7c3aed)" : "#fee2e2" }}
                   >
-                    <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
+                    {row.us ? <Check className="w-4 h-4 text-white" strokeWidth={3} /> : <X className="w-4 h-4 text-red-400" strokeWidth={2.5} />}
                   </span>
-                ) : (
-                  <span className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "#fee2e2" }}>
-                    <svg className="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                  <span className="text-[10px] font-black uppercase tracking-wider" style={{ color: row.us ? "#0099cc" : "#94a3b8" }}>
+                    Sparkle Media
                   </span>
-                )}
-              </div>
-              <div className="flex justify-center">
-                {row.them ? (
-                  <span className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "#f0fdf4" }}>
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="#86efac" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
+                </div>
+
+                <div className="flex-1 rounded-xl px-3 py-4 flex flex-col items-center gap-2 text-center" style={{ background: "#f8fafc", border: "1px solid #e2e8f0" }}>
+                  <span className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: row.them ? "#f0fdf4" : "#fef2f2" }}>
+                    {row.them ? <Check className="w-4 h-4 text-green-400" strokeWidth={2.5} /> : <X className="w-4 h-4 text-red-300" strokeWidth={2.5} />}
                   </span>
-                ) : (
-                  <span className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "#fef2f2" }}>
-                    <svg className="w-3.5 h-3.5 text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                  <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: "#94a3b8" }}>
+                    Other Agencies
                   </span>
-                )}
+                </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA */}
         <motion.div

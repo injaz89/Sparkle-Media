@@ -89,7 +89,7 @@ export function Navbar() {
           <>
             {/* Backdrop */}
             <motion.div
-              className="fixed inset-0 z-50 bg-black/10 backdrop-blur-sm"
+              className="fixed inset-0 z-50 bg-[#020617]/50 backdrop-blur-md"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -97,7 +97,7 @@ export function Navbar() {
             />
             {/* Drawer */}
             <motion.div
-              className="fixed top-0 right-0 bottom-0 w-full sm:w-[400px] md:w-[500px] lg:w-[600px] z-[60] shadow-2xl flex flex-col pt-24 pb-12 px-12 sm:px-20 overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-[82%] max-w-[340px] sm:w-[400px] sm:max-w-none md:w-[500px] lg:w-[600px] z-[60] shadow-2xl flex flex-col pt-24 pb-10 px-7 sm:px-20 overflow-y-auto overflow-x-hidden rounded-l-[28px] sm:rounded-l-none"
               style={{
                 background: "linear-gradient(160deg, #060f2e 0%, #0d1b4b 100%)",
                 borderLeft: "1px solid rgba(0,212,255,0.15)",
@@ -107,16 +107,26 @@ export function Navbar() {
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
             >
+              {/* Ambient glow + dot grid, matching site design language */}
+              <div
+                className="absolute inset-0 pointer-events-none opacity-[0.4] rounded-l-[28px] sm:rounded-l-none"
+                style={{ backgroundImage: "radial-gradient(circle, rgba(0,212,255,0.15) 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+              />
+              <div
+                className="absolute -top-10 -right-10 w-64 h-64 pointer-events-none rounded-l-[28px] sm:rounded-l-none"
+                style={{ background: "radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%)" }}
+              />
+
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="nav-item-dark absolute top-8 right-8 focus:outline-none"
+                className="nav-item-dark absolute top-6 right-6 sm:top-8 sm:right-8 focus:outline-none z-10"
               >
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
 
-              <div className="flex flex-col space-y-4 mt-8 w-full text-right">
+              <div className="relative flex flex-col space-y-3.5 sm:space-y-4 mt-8 w-full text-right">
                 {[
                   { name: "HOME", href: "/" },
                   { 
@@ -146,7 +156,7 @@ export function Navbar() {
                     {item.subItems ? (
                       <button
                         onClick={() => toggleMenu(item.name)}
-                        className="nav-item-dark text-3xl md:text-[2.25rem] tracking-wide uppercase flex items-center justify-end space-x-2"
+                        className="nav-item-dark text-2xl sm:text-3xl md:text-[2.25rem] tracking-wide uppercase flex items-center justify-end space-x-2"
                       >
                         <span className={`transition-transform duration-300 ${expandedMenus.includes(item.name) ? "rotate-90" : ""}`}>
                           ›
@@ -157,7 +167,7 @@ export function Navbar() {
                       <MotionLink
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className="nav-item-dark text-3xl md:text-[2.25rem] tracking-wide uppercase"
+                        className="nav-item-dark text-2xl sm:text-3xl md:text-[2.25rem] tracking-wide uppercase"
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 + i * 0.05 }}

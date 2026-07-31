@@ -6,7 +6,7 @@ import Link from "next/link";
 export function HomeCtaBanner() {
   return (
     <section
-      className="relative py-28 overflow-hidden"
+      className="relative py-16 md:py-28 overflow-hidden"
       style={{
         background: "linear-gradient(160deg, #e0f6ff 0%, #f0faff 40%, #e8f3ff 70%, #eef0ff 100%)",
       }}
@@ -111,7 +111,7 @@ export function HomeCtaBanner() {
 
         {/* Big headline */}
         <motion.h2
-          className="text-5xl md:text-7xl font-black mb-6 leading-tight"
+          className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-tight"
           style={{ color: "#060f2e", letterSpacing: "-0.04em" }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
