@@ -75,7 +75,7 @@ export function Testimonials() {
   }, [next, paused]);
 
   return (
-    <section id="testimonials" className="py-32 relative overflow-hidden">
+    <section id="testimonials" className="py-20 md:py-32 relative overflow-hidden">
       {/* Dark gradient background */}
       <div
         className="absolute inset-0"
@@ -91,7 +91,7 @@ export function Testimonials() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <motion.span
             className="inline-block text-xs font-black tracking-[.28em] uppercase mb-5 font-mono"
             style={{ color: "#00d4ff" }}
@@ -102,7 +102,7 @@ export function Testimonials() {
             ✦ Client Stories ✦
           </motion.span>
           <motion.h2
-            className="text-5xl md:text-6xl mb-6 text-white"
+            className="text-4xl sm:text-5xl md:text-6xl mb-6 text-white"
             style={{ fontWeight: 200, letterSpacing: "-0.04em" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -207,7 +207,7 @@ function ServiceCard({ service, i }: { service: typeof services[0]; i: number })
 
 export function Services() {
   return (
-    <section id="services" className="py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
+    <section id="services" className="py-20 md:py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
       {/* Top line */}
       <div className="absolute top-0 left-0 right-0 h-px section-line" />
 
@@ -219,7 +219,7 @@ export function Services() {
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+        <div className="mb-10 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -228,7 +228,7 @@ export function Services() {
             <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: "#00d4ff" }}>
               What We Do
             </span>
-            <h2 className="text-5xl md:text-6xl mb-4" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.03em" }}>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl mb-4" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.03em" }}>
               Our Services
             </h2>
             <div className="w-20 h-[2px]" style={{ background: "linear-gradient(90deg, #00d4ff, #7c3aed)" }} />
@@ -246,7 +246,7 @@ export function Services() {
         </div>
 
         {/* Service card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10 md:mb-14">
           {services.map((service, i) => (
             <ServiceCard key={i} service={service} i={i} />
           ))}

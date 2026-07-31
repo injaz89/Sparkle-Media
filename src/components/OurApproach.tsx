@@ -35,7 +35,7 @@ const steps = [
 
 export function OurApproach() {
   return (
-    <section className="py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
+    <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
       {/* Top line */}
       <div className="absolute top-0 left-0 right-0 h-px section-line" />
 
@@ -49,7 +49,7 @@ export function OurApproach() {
 
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          className="text-center mb-24"
+          className="text-center mb-14 md:mb-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -61,7 +61,7 @@ export function OurApproach() {
             How We Work
           </span>
           <h2
-            className="text-5xl md:text-6xl mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl mb-6"
             style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
           >
             Our Approach
