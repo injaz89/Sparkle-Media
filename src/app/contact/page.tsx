@@ -18,7 +18,7 @@ export default function ContactPage() {
     formData.append("_subject", "New Contact Inquiry - Sparkle Media Website");
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/sparklemediacreatives@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/info@sparklemedia.lk", {
         method: "POST",
         body: formData,
         headers: {
@@ -102,7 +102,7 @@ export default function ContactPage() {
 
               {/* Email Card */}
               <a
-                href="mailto:sparklemediacreatives@gmail.com"
+                href="mailto:info@sparklemedia.lk"
                 className="group flex items-center gap-5 p-5 bg-white/50 backdrop-blur-md border border-primary/10 hover:border-primary hover:bg-white hover:shadow-lg transition-all duration-300 rounded-2xl"
               >
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-primary to-secondary shadow-md group-hover:scale-110 transition-transform flex-shrink-0">
@@ -111,7 +111,7 @@ export default function ContactPage() {
                 <div className="flex-grow min-w-0">
                   <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Email us</p>
                   <p className="text-base font-bold text-navy group-hover:text-primary transition-colors leading-tight truncate">
-                    sparklemediacreatives@gmail.com
+                    info@sparklemedia.lk
                   </p>
                 </div>
                 <ArrowRight className="w-4 h-4 text-primary/45 group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0" />

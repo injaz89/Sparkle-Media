@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 // Real client logos
 const clients = [
@@ -66,12 +67,13 @@ export function ClientLogosSlider({ title = "Trusted by leading brands", dark = 
               } transition-opacity duration-300`}
             >
               {client.img ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
+                <Image
                   src={client.img}
                   alt={client.name}
-                  className="max-h-8 sm:max-h-12 max-w-full object-contain"
-                  style={{ filter: "none" }}
+                  width={144}
+                  height={48}
+                  loading="lazy"
+                  className="max-h-8 sm:max-h-12 max-w-full w-auto h-auto object-contain"
                 />
               ) : (
                 <span

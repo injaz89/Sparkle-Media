@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { HomeStatsBanner } from "@/components/HomeStatsBanner";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Services } from "@/components/Services";
-import { AboutBrief } from "@/components/AboutBrief";
 import { OurApproach } from "@/components/OurApproach";
 import { Testimonials } from "@/components/Testimonials";
 import { HomeCtaBanner } from "@/components/HomeCtaBanner";
@@ -25,9 +24,6 @@ export default function Home() {
 
         {/* ── Services — Interactive hover card grid ── */}
         <Services />
-
-        {/* ── About Brief ── */}
-        <AboutBrief />
 
         {/* ── Our Approach ── */}
         <OurApproach />

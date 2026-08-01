@@ -4,7 +4,6 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import {
   Heart,
   Sparkles,
@@ -188,7 +187,7 @@ export default function LifeAtSparkleMediaPage() {
         </section>
 
         {/* ── CULTURE INTRO ── */}
-        <section id="culture" className="py-28 relative overflow-hidden" style={{ background: "#f0faff" }}>
+        <section id="culture" className="py-20 md:py-28 relative overflow-hidden" style={{ background: "#f0faff" }}>
           <div className="absolute top-0 left-0 right-0 h-px section-line" />
           <div className="absolute top-0 left-0 w-[600px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(circle at 0% 0%, rgba(0,212,255,0.07) 0%, transparent 60%)" }} />
           <div className="absolute bottom-0 right-0 w-[500px] h-[400px] pointer-events-none" style={{ background: "radial-gradient(circle at 100% 100%, rgba(124,58,237,0.05) 0%, transparent 60%)" }} />
@@ -199,7 +198,7 @@ export default function LifeAtSparkleMediaPage() {
             <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Our Culture</motion.span>
             {/* Animated divider line */}
             <motion.div className="w-0 h-px mx-auto mb-6" style={{ background: "linear-gradient(90deg, transparent, #00d4ff, transparent)" }} whileInView={{ width: "120px" }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }} />
-            <motion.h2 className="text-5xl md:text-6xl mb-10 leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+            <motion.h2 className="text-4xl sm:text-5xl md:text-6xl mb-10 leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
               Life at{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Sparkle Media</span>
             </motion.h2>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-light">
@@ -215,12 +214,12 @@ export default function LifeAtSparkleMediaPage() {
         </section>
 
         {/* ── PERKS ── */}
-        <section className="py-32 relative overflow-hidden" style={{ background: "radial-gradient(ellipse 800px 600px at 80% 0%, rgba(0,212,255,0.10) 0%, transparent 60%),radial-gradient(ellipse 700px 700px at 5% 100%, rgba(124,58,237,0.10) 0%, transparent 55%),linear-gradient(160deg, #020a20 0%, #060f2e 50%, #050c25 100%)" }}>
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: "radial-gradient(ellipse 800px 600px at 80% 0%, rgba(0,212,255,0.10) 0%, transparent 60%),radial-gradient(ellipse 700px 700px at 5% 100%, rgba(124,58,237,0.10) 0%, transparent 55%),linear-gradient(160deg, #020a20 0%, #060f2e 50%, #050c25 100%)" }}>
           <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
           <div className="max-w-7xl mx-auto px-6 relative">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 md:mb-16">
               <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5 font-mono" style={{ color: "#00d4ff" }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Why Work With Us</motion.span>
-              <motion.h2 className="text-5xl md:text-6xl text-white leading-tight" style={{ fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <motion.h2 className="text-4xl sm:text-5xl md:text-6xl text-white leading-tight" style={{ fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                 What Makes Us{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Different</span>
               </motion.h2>
             </div>
@@ -244,16 +243,16 @@ export default function LifeAtSparkleMediaPage() {
         </section>
 
         {/* ── VALUES ── */}
-        <section className="py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
           <div className="absolute top-0 left-0 right-0 h-px section-line" />
           <div className="absolute top-0 left-0 w-[500px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(circle at 0% 0%, rgba(0,212,255,0.07) 0%, transparent 60%)" }} />
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>What We Stand For</motion.span>
                 {/* Animated reveal line */}
                 <motion.div className="w-0 h-px mb-5" style={{ background: "linear-gradient(90deg, #00d4ff, transparent)" }} whileInView={{ width: "80px" }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.1 }} />
-                <motion.h2 className="text-5xl md:text-6xl mb-8 leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+                <motion.h2 className="text-4xl sm:text-5xl md:text-6xl mb-8 leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
                   Our Core{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Values</span>
                 </motion.h2>
                 <motion.div className="pl-6 py-2" style={{ borderLeft: "3px solid #00d4ff" }} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.6 }}>
@@ -280,7 +279,7 @@ export default function LifeAtSparkleMediaPage() {
 
 
         {/* ── SOCIAL MEDIA ── */}
-        <section className="py-28 relative overflow-hidden" style={{ background: "#f0faff" }}>
+        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: "#f0faff" }}>
           <div className="absolute top-0 left-0 right-0 h-px section-line" />
           {/* Floating accent shapes */}
           <motion.div className="absolute right-[5%] top-1/4 w-4 h-4 rounded-full pointer-events-none" style={{ background: "rgba(0,212,255,0.25)", boxShadow: "0 0 20px rgba(0,212,255,0.4)" }} animate={{ y: [0, -18, 0], scale: [1, 1.2, 1] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} />
@@ -290,7 +289,7 @@ export default function LifeAtSparkleMediaPage() {
               <motion.span className="inline-block text-xs font-bold tracking-[0.2em] uppercase mb-5" style={{ color: "#00d4ff" }} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Follow Our Journey</motion.span>
               {/* Animated underline */}
               <motion.div className="w-0 h-px mx-auto mb-6" style={{ background: "linear-gradient(90deg, transparent, #00d4ff, transparent)" }} whileInView={{ width: "100px" }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }} />
-              <motion.h2 className="text-5xl md:text-6xl leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+              <motion.h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight" style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }} initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
                 Find Us on{" "}<span style={{ backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Social Media</span>
               </motion.h2>
             </div>

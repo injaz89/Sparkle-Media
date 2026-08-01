@@ -29,8 +29,6 @@ const features = [
     icon: Video,
     title: "Vlogs",
     desc: "Visualized content that consumes less effort of the audience has the highest interaction levels. And we create videos built around the \"3-second rule\" — your first 3 seconds of the video will be irresistible and trigger the audience to watch the entire video. From scripting and ideation to full production, our team manages the entire process to ensure your videos are not just seen, but remembered.",
-    link: "/services/creative-lab/video-production",
-    linkText: "Click here to know more about our Photography and Videography services."
   },
 ];
 

@@ -8,77 +8,80 @@ const leaders = [
     name: "Inshath Ifham",
     role: "Founder & Chairman",
     title: "CEO",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800",
     link: "https://www.linkedin.com/in/mohamed-inshath",
-    gradient: "from-primary to-secondary",
+    grad: "linear-gradient(135deg, #00d4ff, #7c3aed)",
   },
   {
     name: "Milsath Ahamed",
     role: "Co-Founder",
     title: "Managing Director",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800",
     link: "https://www.linkedin.com/in/milsathahamed/",
-    gradient: "from-secondary to-primary",
+    grad: "linear-gradient(135deg, #7c3aed, #00d4ff)",
   },
   {
     name: "Kawsheka Radhakrishnan",
     role: "Co-Founder",
     title: "Chief Creative Officer",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800",
     link: "https://www.linkedin.com/in/kawshekaradhakrishnan/",
-    gradient: "from-primary to-secondary",
+    grad: "linear-gradient(135deg, #0099cc, #00d4ff)",
   },
   {
     name: "Abdullah Buhary",
     role: "Leadership",
     title: "Chief Operations Officer",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800",
     link: "https://www.linkedin.com/in/abdullahbuhary/",
-    gradient: "from-secondary to-primary",
+    grad: "linear-gradient(135deg, #00d4ff, #7c3aed)",
   },
   {
     name: "Lukman Hakeem",
     role: "Leadership",
     title: "Chief Financial Officer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
     link: "https://www.linkedin.com/in/lukman-hakeem-9024b717a/",
-    gradient: "from-primary to-secondary",
+    grad: "linear-gradient(135deg, #7c3aed, #00d4ff)",
   },
   {
     name: "Nashath Naizer",
     role: "Finance",
     title: "Head of Finance",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800",
     link: "https://www.linkedin.com/in/nashath-naizer-1545b6142/",
-    gradient: "from-secondary to-primary",
+    grad: "linear-gradient(135deg, #0099cc, #00d4ff)",
   },
   {
     name: "Mohamed Amjed",
     role: "Strategy",
     title: "Head of Content Strategy",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800",
     link: "https://www.linkedin.com/in/mohamed-amjed-a30b40151/",
-    gradient: "from-primary to-secondary",
+    grad: "linear-gradient(135deg, #00d4ff, #7c3aed)",
   },
 ];
 
+function initials(name: string) {
+  return name
+    .split(" ")
+    .map((p) => p[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
+
 export function LeadershipTeam() {
   return (
-    <section id="team" className="py-32 bg-bg relative overflow-hidden">
-      {/* Background grid */}
+    <section id="team" className="py-20 md:py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
+      <div className="absolute top-0 left-0 right-0 h-px section-line" />
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#0A1128 1px, transparent 1px), linear-gradient(90deg, #0A1128 1px, transparent 1px)",
-          backgroundSize: "50px 50px",
-        }}
+        className="absolute inset-0 pointer-events-none opacity-[0.3]"
+        style={{ backgroundImage: "radial-gradient(circle, #87d4f8 1px, transparent 1px)", backgroundSize: "40px 40px" }}
+      />
+      <div
+        className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
+        style={{ background: "radial-gradient(circle at 100% 0%, rgba(0,212,255,0.06) 0%, transparent 60%)" }}
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <motion.span
-            className="inline-block text-xs font-bold tracking-widest text-[#129adc] uppercase mb-4"
+            className="inline-block text-xs font-bold tracking-[.2em] uppercase mb-5"
+            style={{ color: "#00d4ff" }}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -86,16 +89,28 @@ export function LeadershipTeam() {
             The People Behind the Magic
           </motion.span>
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-navy mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl mb-6 leading-tight"
+            style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            Leadership Team
+            Leadership{" "}
+            <span
+              style={{
+                backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Team
+            </span>
           </motion.h2>
           <motion.p
-            className="text-xl text-gray-500 font-light max-w-2xl mx-auto"
+            className="font-light max-w-2xl mx-auto text-lg"
+            style={{ color: "#64748b" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -105,15 +120,15 @@ export function LeadershipTeam() {
           </motion.p>
         </div>
 
-        {/* Top row — 3 founders */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+        {/* Top row — 3 founders, featured */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
           {leaders.slice(0, 3).map((leader, i) => (
             <LeaderCard key={i} leader={leader} i={i} featured />
           ))}
         </div>
 
-        {/* Bottom row — 4 heads */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Bottom row — the rest */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {leaders.slice(3).map((leader, i) => (
             <LeaderCard key={i + 3} leader={leader} i={i + 3} />
           ))}
@@ -134,41 +149,65 @@ function LeaderCard({
 }) {
   return (
     <motion.div
-      className={`bg-white rounded-none ${featured ? "p-8" : "p-6"} border border-primary/25 shadow-xl shadow-sky-900/5 group text-center relative overflow-hidden`}
-      initial={{ opacity: 0, y: 30 }}
+      className={`group relative rounded-2xl ${featured ? "p-7" : "p-5"} text-center overflow-hidden transition-all duration-400`}
+      style={{
+        background: "rgba(255,255,255,0.85)",
+        border: "1px solid rgba(0,212,255,0.15)",
+        boxShadow: "0 4px 20px rgba(0,153,204,0.06)",
+      }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: i * 0.08 }}
+      transition={{ duration: 0.5, delay: i * 0.07 }}
+      whileHover={{
+        y: -5,
+        boxShadow: "0 20px 50px rgba(0,153,204,0.15), 0 0 0 1px rgba(0,212,255,0.3)",
+        borderColor: "rgba(0,212,255,0.4)",
+      }}
     >
-      {/* Top gradient bar */}
-      <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${leader.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+      {/* Neon top accent */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{ background: leader.grad }}
+      />
 
-      <div className={`relative ${featured ? "w-36 h-36" : "w-28 h-28"} mx-auto rounded-none overflow-hidden mb-6 ring-2 ring-gray-100 group-hover:ring-cyan-100 transition-all duration-300`}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={leader.image}
-          alt={leader.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-        {/* Gradient overlay on hover */}
-        <div className={`absolute inset-0 bg-gradient-to-t ${leader.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
+      {/* Initials avatar */}
+      <div
+        className={`relative mx-auto ${featured ? "w-24 h-24" : "w-16 h-16"} rounded-full flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-105`}
+        style={{ background: leader.grad, boxShadow: `0 8px 24px -6px ${featured ? "rgba(0,212,255,0.4)" : "rgba(0,212,255,0.3)"}` }}
+      >
+        <span className={`font-black text-white ${featured ? "text-2xl" : "text-lg"} tracking-tight`}>
+          {initials(leader.name)}
+        </span>
       </div>
 
-      <h3 className={`${featured ? "text-xl" : "text-lg"} font-bold text-navy mb-1`}>
+      <h3 className={`${featured ? "text-lg" : "text-sm"} font-bold mb-1`} style={{ color: "#060f2e", letterSpacing: "-0.01em" }}>
         {leader.name}
       </h3>
-      <p className={`text-transparent bg-clip-text bg-gradient-to-r ${leader.gradient} font-semibold text-xs uppercase tracking-widest mb-1`}>
+      <p
+        className={`font-bold uppercase tracking-wider mb-1 ${featured ? "text-xs" : "text-[10px]"}`}
+        style={{
+          backgroundImage: leader.grad,
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
+        }}
+      >
         {leader.title}
       </p>
-      <p className="text-gray-400 text-xs font-light mb-5">{leader.role}</p>
+      <p className="font-light mb-4" style={{ color: "#94a3b8", fontSize: featured ? "12px" : "11px" }}>
+        {leader.role}
+      </p>
 
       <a
         href={leader.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center w-9 h-9 rounded-none bg-gray-50 text-gray-400 hover:bg-[#39bcfc] hover:text-white transition-colors"
+        aria-label={`${leader.name} on LinkedIn`}
+        className="inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-200 hover:scale-110"
+        style={{ background: "rgba(0,212,255,0.08)", border: "1px solid rgba(0,212,255,0.2)", color: "#0099cc" }}
       >
-        <LinkedinIcon className="w-4 h-4" />
+        <LinkedinIcon className="w-3.5 h-3.5" />
       </a>
     </motion.div>
   );

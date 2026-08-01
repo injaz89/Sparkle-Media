@@ -32,9 +32,14 @@ const caseStudies = [
 ];
 
 export function CaseStudies() {
-  // HIDDEN — set display to block when case study content is ready
+  // HIDDEN — flip to false when case study content is ready.
+  // Returning null (rather than a display:none section) keeps the browser
+  // from fetching the placeholder images while this is unused.
+  const isReady = false;
+  if (!isReady) return null;
+
   return (
-    <section id="case-studies" className="py-32 bg-navy relative overflow-hidden" style={{ display: "none" }}>
+    <section id="case-studies" className="py-32 bg-navy relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"
         style={{

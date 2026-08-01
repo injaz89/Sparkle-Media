@@ -213,13 +213,13 @@ export function AboutHero() {
       </section>
 
       {/* ── STORY SECTION ── */}
-      <section className="py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
+      <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: "#f0faff" }}>
         <div className="absolute top-0 left-0 right-0 h-px section-line" />
         <div className="absolute top-0 left-0 w-[600px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(circle at 0% 0%, rgba(0,212,255,0.07) 0%, transparent 60%)" }} />
         <div className="absolute bottom-0 right-0 w-[500px] h-[400px] pointer-events-none" style={{ background: "radial-gradient(circle at 100% 100%, rgba(124,58,237,0.05) 0%, transparent 60%)" }} />
 
         <div className="max-w-7xl mx-auto px-6 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -231,7 +231,7 @@ export function AboutHero() {
                 Who We Are
               </span>
               <h2
-                className="text-5xl md:text-6xl mb-8 leading-tight"
+                className="text-4xl sm:text-5xl md:text-6xl mb-8 leading-tight"
                 style={{ color: "#060f2e", fontWeight: 200, letterSpacing: "-0.04em" }}
               >
                 Built For Businesses That{" "}

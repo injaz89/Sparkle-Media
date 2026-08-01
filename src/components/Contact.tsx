@@ -16,7 +16,7 @@ export function Contact() {
     formData.append("_subject", "New Contact Inquiry - Sparkle Media Website");
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/sparklemediacreatives@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/info@sparklemedia.lk", {
         method: "POST",
         body: formData,
         headers: {
@@ -105,7 +105,7 @@ export function Contact() {
               </a>
 
               <a
-                href="mailto:sparklemediacreatives@gmail.com"
+                href="mailto:info@sparklemedia.lk"
                 className="contact-card group flex items-center gap-5 p-5 bg-white"
               >
                 <div
@@ -117,7 +117,7 @@ export function Contact() {
                 <div className="flex-1">
                   <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-0.5">Email us</p>
                   <p className="text-xl font-bold text-[#0A1128] group-hover:text-[#129adc] transition-colors" style={{ wordBreak: "break-all" }}>
-                    sparklemediacreatives@gmail.com
+                    info@sparklemedia.lk
                   </p>
                   <p className="text-xs text-[#39bcfc] mt-0.5 font-medium">We reply within 24 hours</p>
                 </div>

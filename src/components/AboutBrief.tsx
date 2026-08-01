@@ -107,14 +107,14 @@ export function AboutBrief() {
             </div>
 
             <MotionLink
-              href="/about"
+              href="/contact"
               className="inline-flex items-center gap-2 mt-10 px-8 py-4 border-2 border-[#87d4f8] text-[#0A1128] font-semibold hover:border-[#39bcfc] hover:text-[#129adc] transition-all text-sm bg-white"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              Learn About Us
+              Get in Touch
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

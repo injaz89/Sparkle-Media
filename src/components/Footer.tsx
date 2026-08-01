@@ -75,11 +75,11 @@ export function Footer() {
                   Exemplary digital journeys for brands that dare to sparkle. A 360° digital marketing agency.
                 </p>
                 <a
-                  href="mailto:sparklemediacreatives@gmail.com"
+                  href="mailto:info@sparklemedia.lk"
                   className="block text-xs font-light hover:text-[#00d4ff] transition-colors mb-6"
                   style={{ color: "rgba(255,255,255,0.4)" }}
                 >
-                  sparklemediacreatives@gmail.com
+                  info@sparklemedia.lk
                 </a>
 
                 {/* Socials — CSS hover via .footer-social class */}
