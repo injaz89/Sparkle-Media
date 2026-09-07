@@ -1,258 +1,46 @@
-"use client";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
+import PageClient from "./PageClient";
 
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { SeoCounters } from "@/components/SeoCounters";
-import { motion } from "framer-motion";
-import { ServiceSidebar, ServiceMobileNav } from "@/components/ServiceNavigation";
-import { AiSearch } from "@/components/AiSearch";
+const PATH = "/services/digital-lab/seo";
 
-const fullSeoFeatures = [
-  {
-    title: "ON-PAGE OPTIMISATION",
-    desc: "The content on your website pages must match the intent and expectations of users so Google ranks your page high in the search. We'll create unique content and make expert optimisations to drive new traffic and clicks.",
-    grad: "linear-gradient(135deg, #00d4ff, #0099cc)",
+export const metadata: Metadata = {
+  title: "SEO & AEO Services in Sri Lanka",
+  description:
+    "On-page, technical and local SEO plus Answer Engine Optimisation to get your brand found on Google and cited by AI search tools like ChatGPT.",
+  alternates: {
+    canonical: PATH,
   },
-  {
-    title: "TECHNICAL SEO",
-    desc: "There are hundreds of elements that fall under a technical SEO remit from site speed to re-directs. We'll identify and fix the technical elements of your site to give you a solid SEO foundation for further growth.",
-    grad: "linear-gradient(135deg, #7c3aed, #00d4ff)",
-  },
-  {
-    title: "MEDIA PLACEMENTS & LINKS",
-    desc: "High-quality links from reputable sources will increase the trust of your brand in the eyes of Google and your target audience. We'll secure authority-boosting placements to generate impressions, clicks and online sales.",
-    grad: "linear-gradient(135deg, #00d4ff, #7c3aed)",
-  },
-];
+};
 
-const specializedSeo = [
-  {
-    title: "E-Commerce SEO",
-    desc: "E-commerce SEO will bring in the right leads who have a direct interest in your brand. Save time and money by targeting a specific niche!",
-    grad: "linear-gradient(135deg, #00d4ff, #0099cc)",
-  },
-  {
-    title: "Local SEO",
-    desc: "People often look for services around them that are more convenient for them. Even if you provide service globally you can still attract visitors by being available to them on the local search results.",
-    grad: "linear-gradient(135deg, #7c3aed, #00d4ff)",
-  },
-];
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Search Engine Optimisation",
+  name: "SEO & AEO",
+  description:
+    "On-page optimisation, technical SEO, link building, e-commerce SEO and Local SEO to improve organic search visibility.",
+  provider: { "@type": "Organization", name: "Sparkle Media", url: "https://sparklemedia.lk" },
+  areaServed: "LK",
+  url: `https://sparklemedia.lk${PATH}`,
+};
 
-export default function SeoPage() {
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://sparklemedia.lk/" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://sparklemedia.lk/services" },
+    { "@type": "ListItem", position: 3, name: "SEO & AEO", item: `https://sparklemedia.lk${PATH}` },
+  ],
+};
+
+export default function Page() {
   return (
     <>
-      <Navbar />
-      <main className="pt-32 min-h-screen relative overflow-hidden" style={{ background: "#f0faff" }}>
-
-        {/* Background glows */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none"
-          style={{ background: "radial-gradient(circle at 100% 0%, rgba(0,212,255,0.07) 0%, transparent 60%)" }} />
-
-        <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          
-          {/* Mobile Service Navigation */}
-          <ServiceMobileNav />
-
-          {/* Centered Single Column Content Layout */}
-          <div className="max-w-5xl mx-auto space-y-12 w-full mt-8">
-
-            {/* Header / Hero */}
-            <div className="space-y-6 text-center">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-xs font-bold tracking-[0.18em] uppercase mb-4"
-                style={{ color: "#00d4ff" }}
-              >
-                Digital Lab
-              </motion.p>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-[1.1] tracking-tight text-center"
-              >
-                Search Engine Optimisation
-              </motion.h1>
-              <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-2xl font-light leading-relaxed text-navy-light text-center"
-                style={{ color: "#334155" }}
-              >
-                Be Found and Visible on Search Engines!
-              </motion.h3>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="max-w-3xl mx-auto py-6 border-y border-[#00d4ff]/20"
-              >
-                <p className="text-xl font-light leading-relaxed text-gray-500 text-center" style={{ color: "#64748b" }}>
-                  Why do you need SEO, AEO and GEO? Because 92.9% of traffic is generated by Google Search, ChatGPT and other AI engines &mdash; and your brand needs to be visible across all of them.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-
-        {/* AI-First Search Visibility Section */}
-        <AiSearch />
-
-        <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="max-w-5xl mx-auto space-y-12 w-full mt-8">
-            {/* Main Features Grid */}
-            <section className="py-8 border-t border-primary/20">
-              <div>
-                <div className="text-center mb-16">
-                  <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#00d4ff" }}>Modern Search Optimization</span>
-                  <h2 className="text-4xl md:text-5xl font-bold text-navy mt-3">Be Visible Where Customers Search</h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {fullSeoFeatures.map((item, i) => {
-                    const accentMap = ["#00d4ff", "#7c3aed", "#4db8ff", "#0099cc"];
-                    const accent = accentMap[i % accentMap.length];
-                    const numStr = String(i + 1).padStart(2, "0");
-                    return (
-                      <motion.div
-                        key={i}
-                        className="group relative p-10 bg-white overflow-hidden transition-all duration-300 border border-primary/10 shadow-sm"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 + i * 0.08 }}
-                        whileHover={{ y: -4, borderColor: `${accent}40` }}
-                      >
-                        <div className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300"
-                          style={{ background: `linear-gradient(180deg, ${accent}60, transparent)` }} />
-                        <div className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                          style={{ background: accent }} />
-                        
-                        <div className="absolute right-4 bottom-2 text-[100px] font-black leading-none select-none pointer-events-none"
-                          style={{
-                            backgroundImage: `linear-gradient(135deg, ${accent}15, transparent)`,
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text"
-                          }}
-                        >
-                          {numStr}
-                        </div>
-
-                        <div className="relative z-10 pl-2">
-                          <div className="flex items-center gap-3 mb-6">
-                            <span className="text-xs font-black" style={{ color: `${accent}80` }}>{numStr}</span>
-                            <div className="flex-1 h-px max-w-[40px]" style={{ background: `${accent}30` }} />
-                          </div>
-
-                          <h3 className="text-2xl mb-4 font-normal text-navy" style={{ letterSpacing: "-0.02em" }}>
-                            {item.title}
-                          </h3>
-                          <p className="font-light leading-relaxed text-gray-500" style={{ color: "#64748b" }}>
-                            {item.desc}
-                          </p>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
-
-          </div>
-        </div>
-
-        {/* Specialized SEO Section (Moved Outside Grid) */}
-        <section
-          className="py-12 relative overflow-hidden border-t border-primary/20 bg-[#e8f7ff]"
-        >
-          <div
-            className="absolute top-1/2 left-1/4 w-96 h-96 pointer-events-none -translate-y-1/2"
-            style={{ background: "radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%)" }}
-          />
-
-          <div className="max-w-7xl mx-auto px-6">
-            <div>
-              <div className="mb-16">
-                <span
-                  className="inline-block text-xs font-bold tracking-[0.18em] uppercase mb-5"
-                  style={{ color: "#00d4ff" }}
-                >
-                  Specialized Services
-                </span>
-                <h2
-                  className="text-4xl md:text-5xl mb-6 text-navy font-bold leading-tight"
-                >
-                  Type of SEO you can pick:
-                </h2>
-                <div className="w-24 h-[2px]" style={{ background: "linear-gradient(90deg, #00d4ff, #7c3aed)" }} />
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {specializedSeo.map((item, i) => {
-                  const accentMap = ["#00d4ff", "#7c3aed"];
-                  const accent = accentMap[i % accentMap.length];
-                  return (
-                    <motion.div
-                      key={item.title}
-                      initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      className="group relative bg-white p-8 xl:p-12 transition-all duration-300 cursor-pointer overflow-hidden shadow-sm"
-                      style={{ border: "1px solid rgba(0,212,255,0.2)" }}
-                      whileHover={{ y: -4, borderColor: `${accent}60` }}
-                    >
-                      {/* Left accent bar */}
-                      <div
-                        className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-300"
-                        style={{ background: `linear-gradient(180deg, ${accent}60, transparent)` }}
-                      />
-                      <div
-                        className="absolute left-0 top-0 bottom-0 w-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{ background: `linear-gradient(180deg, ${accent}, ${accent}44)` }}
-                      />
-                      {/* Large watermark letter */}
-                      <div
-                        className="absolute -right-4 -bottom-6 text-[120px] font-black leading-none select-none pointer-events-none"
-                        style={{
-                          backgroundImage: `linear-gradient(135deg, ${accent}22, transparent)`,
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                          backgroundClip: "text",
-                        }}
-                      >
-                        {item.title.charAt(0)}
-                      </div>
-                      <div className="relative z-10">
-                        <span
-                          className="inline-block text-xs font-bold tracking-widest uppercase mb-4"
-                          style={{ color: accent }}
-                        >
-                          Specialized
-                        </span>
-                        <h3
-                          className="text-3xl mb-6"
-                          style={{ color: "#060f2e", fontWeight: 300, letterSpacing: "-0.02em" }}
-                        >
-                          {item.title}
-                        </h3>
-                        <p className="font-light text-base leading-relaxed mb-0 text-gray-500" style={{ color: "#64748b" }}>
-                          {item.desc}
-                        </p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </main>
-      <Footer />
+      <JsonLd data={serviceJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+      <PageClient />
     </>
   );
 }

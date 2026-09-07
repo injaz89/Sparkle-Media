@@ -1,7 +1,33 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Lora } from "next/font/google";
 import Script from "next/script";
+import { JsonLd } from "@/components/JsonLd";
 import "./globals.css";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Sparkle Media",
+  legalName: "Sparkle Media (Pvt) Ltd",
+  url: "https://sparklemedia.lk",
+  logo: "https://sparklemedia.lk/SM_Black.png",
+  sameAs: [
+    "https://www.instagram.com/sparklemedia.lk/",
+    "https://www.facebook.com/people/Sparkle-Media/100083969542491/",
+    "https://www.linkedin.com/company/sparkle-media-pvt-ltd/",
+    "https://www.tiktok.com/@sparklemedia_?lang=en",
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+94-77-654-0689",
+      contactType: "customer service",
+      email: "info@sparklemedia.lk",
+      areaServed: "LK",
+      availableLanguage: ["English"],
+    },
+  ],
+};
 
 // Outfit — a geometric, humanist sans-serif with beautifully thin weights.
 // Perfect for headers (weight 200–300) and strong CTAs (weight 700–800).
@@ -22,7 +48,11 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Sparkle Media | Strategy-lead websites & marketing",
+  metadataBase: new URL("https://sparklemedia.lk"),
+  title: {
+    default: "Sparkle Media | Strategy-led Websites & Marketing",
+    template: "%s | Sparkle Media",
+  },
   description:
     "Strategy-lead websites & marketing that connect, convert, & grow. Every brand has its own identity. We make them sparkle with data-driven strategies and creative excellence.",
   keywords:
@@ -52,6 +82,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${lora.variable} min-h-screen scroll-smooth antialiased`}
     >
       <head>
+        <JsonLd data={organizationJsonLd} />
         {/* Google Tag Manager */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

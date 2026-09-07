@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { HomeStatsBanner } from "@/components/HomeStatsBanner";
@@ -7,6 +8,15 @@ import { OurApproach } from "@/components/OurApproach";
 import { Testimonials } from "@/components/Testimonials";
 import { HomeCtaBanner } from "@/components/HomeCtaBanner";
 import { Footer } from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Sparkle Media | AI-Powered Performance Marketing Agency",
+  description:
+    "Sparkle Media turns ad spend into predictable ROAS with AI-driven performance marketing, SEO/AEO, social media and web development for growing Sri Lankan brands.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (
