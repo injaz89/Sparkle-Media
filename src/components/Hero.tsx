@@ -490,7 +490,7 @@ export function Hero() {
           >
             <StatCounter end={5} suffix="M+" prefix="$" label="Revenue Generated" />
             <div className="w-px" style={{ background: "rgba(0,212,255,0.15)", height: "40px", alignSelf: "center" }} />
-            <StatCounter end={60} suffix="X" prefix="" label="Peak ROAS" />
+            <StatCounter end={20} suffix="X" prefix="" label="Peak ROAS" />
           </motion.div>
 
           {/* Trust strip */}

@@ -5,37 +5,37 @@ import { useState, useEffect, useCallback } from "react";
 
 const testimonials = [
   {
-    name: "Kevin Caraco",
-    role: "Head of Marketing",
-    company: "Select Group",
-    avatar: "K",
+    name: "Fathima",
+    role: "CEO & Founder",
+    company: "GR Events & Gulabi Run, Sri Lanka",
+    avatar: "F",
     grad: "linear-gradient(135deg, #00d4ff, #7c3aed)",
     content:
-      "Sparkle Media completely revolutionized our digital presence. Their attention to detail and data-driven approach led to phenomenal growth in our conversions. Within 3 months, we saw a 240% increase in qualified leads. Highly recommend!",
-    metric: "240% ↑ Leads",
-    rating: 5,
-  },
-  {
-    name: "Benali Sari",
-    role: "Brand Director",
-    company: "Mysk",
-    avatar: "B",
-    grad: "linear-gradient(135deg, #7c3aed, #00d4ff)",
-    content:
-      "Working with them was an absolute game changer. The aesthetic of our brand has been elevated to luxury standards, and the leads have never been better. The team's creativity combined with their strategic thinking is truly unmatched.",
-    metric: "Luxury Benchmark",
+      "As someone who values quality, consistency, and professionalism, it's been a pleasure working with Inshath and his team. They're approachable, responsive, and genuinely committed to delivering good work while staying aligned with our brand vision. I appreciate the partnership we've built and look forward to achieving even greater results together.",
+    metric: "40X–60X ROAS",
     rating: 5,
     featured: true,
   },
   {
-    name: "Rania Al-Hassan",
-    role: "CEO",
-    company: "Prestige Auto",
-    avatar: "R",
+    name: "Sachin Withanachchi",
+    role: "Founder",
+    company: "Prestige Auto Detailers, New Zealand",
+    avatar: "S",
+    grad: "linear-gradient(135deg, #7c3aed, #00d4ff)",
+    content:
+      "Since partnering with Sparkle Media, we've seen real momentum in how our brand shows up and connects with customers. The entire team is proactive, easy to work with, and clearly invested in our results — not just delivering tasks, but genuinely thinking about what moves the business forward. It's been a great partnership so far.",
+    metric: "15X ROAS",
+    rating: 5,
+  },
+  {
+    name: "Mohamed Azhar",
+    role: "Managing Director",
+    company: "Gallestar Homes PVT Ltd",
+    avatar: "M",
     grad: "linear-gradient(135deg, #0099cc, #00d4ff)",
     content:
-      "We partnered with Sparkle Media for a full brand overhaul and digital campaign. The results were extraordinary — our social media engagement tripled and our website traffic grew by 180% in just two months. A world-class team!",
-    metric: "180% ↑ Traffic",
+      "Since working with Sparkle Media, our brand presence has grown in a way that actually reflects the quality of the homes we build. They're responsive, detail-oriented, and take real ownership of the work rather than just executing tasks. It's been a smooth, professional partnership, and we're excited for what's next.",
+    metric: "Elevated Brand Presence",
     rating: 5,
   },
 ];

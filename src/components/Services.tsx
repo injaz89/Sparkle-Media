@@ -76,7 +76,7 @@ function ServiceCard({ service, i }: { service: typeof services[0]; i: number })
   return (
     <MotionLink
       href={service.href}
-      className="group relative rounded-2xl p-7 flex flex-col gap-4 overflow-hidden cursor-pointer transition-all duration-400"
+      className="group relative rounded-2xl p-7 flex flex-col gap-4 overflow-hidden cursor-pointer transition-all duration-400 flex-shrink-0 w-[82%] sm:w-[55%] snap-center md:w-auto md:flex-shrink md:snap-none"
       style={{
         background: hovered
           ? `linear-gradient(145deg, ${service.accent}10, ${service.accent}04)`
@@ -245,8 +245,8 @@ export function Services() {
           </motion.p>
         </div>
 
-        {/* Service card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10 md:mb-14">
+        {/* Service card grid — horizontal scroll on mobile, 3×2 grid on desktop */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 md:pb-0 md:overflow-visible md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10 md:mb-14 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
           {services.map((service, i) => (
             <ServiceCard key={i} service={service} i={i} />
           ))}

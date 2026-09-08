@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   { value: 5,   suffix: "M+", prefix: "$", label: "Revenue Generated",   sub: "across all clients",      accent: "#00d4ff", bg: "rgba(0,212,255,0.08)"  },
-  { value: 60,  suffix: "X",  prefix: "",  label: "Peak ROAS Delivered", sub: "lead generation",         accent: "#7c3aed", bg: "rgba(124,58,237,0.07)" },
+  { value: 20,  suffix: "X",  prefix: "",  label: "Peak ROAS Delivered", sub: "lead generation",         accent: "#7c3aed", bg: "rgba(124,58,237,0.07)" },
   { value: 50,  suffix: "+",  prefix: "",  label: "Brands Grown",        sub: "and counting",            accent: "#7c3aed", bg: "rgba(124,58,237,0.07)" },
 ];
 
